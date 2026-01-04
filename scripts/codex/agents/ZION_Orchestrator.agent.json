@@ -1,0 +1,14 @@
+{
+  "name": "ZION Orchestrator",
+  "id": "zion.orchestrator",
+  "inputs": { "feature": "string", "path": "string?", "impact": "enum(low|med|high)?" },
+  "steps": [
+    "Validate inputs",
+    "Route to the right agent: prisma.migrationDoctor, social.forge, etc.",
+    "Enforce guardrails: dry-run when impact=high unless --force",
+    "Emit next-step commands and rollback hints"
+  ],
+  "artifacts": ["Console summary","Suggested PS commands","Guardrail report"],
+  "danger": "med"
+}
+

@@ -1,0 +1,41 @@
+﻿{
+  "difficulties": {
+    "easy": {
+      "windowsMs": {
+        "MARVELOUS": 45,
+        "PERFECT": 75,
+        "GREAT": 110,
+        "GOOD": 160
+      }
+    },
+    "normal": {
+      "windowsMs": {
+        "MARVELOUS": 35,
+        "PERFECT": 60,
+        "GREAT": 95,
+        "GOOD": 140
+      }
+    },
+    "expert": {
+      "windowsMs": {
+        "MARVELOUS": 25,
+        "PERFECT": 45,
+        "GREAT": 80,
+        "GOOD": 120
+      }
+    }
+  },
+  "judgementWeights": {
+    "MARVELOUS": 1.0,
+    "PERFECT": 0.98,
+    "GREAT": 0.9,
+    "GOOD": 0.7,
+    "MISS": 0.0
+  },
+  "baseScorePerNote": 1000000,
+  "comboBonusCurve": {
+    "startCombo": 10,
+    "maxCombo": 200,
+    "maxBonusMultiplier": 0.2
+  }
+}

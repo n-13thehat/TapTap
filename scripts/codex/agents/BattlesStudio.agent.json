@@ -1,0 +1,22 @@
+{
+  "name": "Battles Studio",
+  "id": "battles.studio",
+  "inputs": {
+    "routePage": "string=app/battles/page.tsx",
+    "routeApi": "string=app/api/battles/route.ts",
+    "sort": "enum(recent|popular)=recent",
+    "maxResults": "number=24"
+  },
+  "steps": [
+    "Ensure YOUTUBE_API_KEY exists in environment",
+    "Create/refresh leagues config (YouTube channels & playlists)",
+    "Scaffold Next.js API route to query YouTube Data API",
+    "Create/patch Battles page that calls the API"
+  ],
+  "artifacts": [
+    "config/battles.leagues.json",
+    "app/api/battles/route.ts",
+    "app/battles/page.tsx"
+  ],
+  "danger": "med"
+}

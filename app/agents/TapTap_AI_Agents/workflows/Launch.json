@@ -1,0 +1,51 @@
+﻿{
+    "name":  "Launch",
+    "steps":  [
+                  {
+                      "outputs":  "hooks/angles",
+                      "agent":  "Nova",
+                      "action":  "concept_batch"
+                  },
+                  {
+                      "outputs":  "narrative",
+                      "agent":  "Fable",
+                      "action":  "story",
+                      "inputs":  "HPPPCTA"
+                  },
+                  {
+                      "outputs":  "visual brief",
+                      "agent":  "Aura",
+                      "action":  "brand_check"
+                  },
+                  {
+                      "outputs":  "cuts/banners",
+                      "agent":  "Lumen",
+                      "action":  "assets"
+                  },
+                  {
+                      "outputs":  "engagement plan",
+                      "agent":  "Echo",
+                      "action":  "threads+replies"
+                  },
+                  {
+                      "outputs":  "outreach pack",
+                      "agent":  "Charm",
+                      "action":  "partner_pitches"
+                  },
+                  {
+                      "outputs":  "one-graph",
+                      "agent":  "Prism",
+                      "action":  "impact_readout"
+                  },
+                  {
+                      "outputs":  "summary",
+                      "agent":  "Fortune",
+                      "action":  "revenue_projection"
+                  },
+                  {
+                      "outputs":  "staged timeline",
+                      "agent":  "Serenity",
+                      "action":  "schedule"
+                  }
+              ]
+}

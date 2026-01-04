@@ -1,0 +1,5225 @@
+{
+  "songId": "life is worth the wait 2.0",
+  "title": "life is worth the wait 2.0",
+  "artist": "STEMSTATION",
+  "bpm": 120,
+  "offsetMs": 0,
+  "difficulty": "easy",
+  "notes": [
+    {
+      "timeMs": 0,
+      "endTimeMs": 250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 125,
+      "endTimeMs": 375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 250,
+      "endTimeMs": 500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 625,
+      "endTimeMs": 875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 625,
+      "endTimeMs": 875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 750,
+      "endTimeMs": 1000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 1125,
+      "endTimeMs": 1375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 1375,
+      "endTimeMs": 1625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 1500,
+      "endTimeMs": 1750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 1875,
+      "endTimeMs": 2125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 2125,
+      "endTimeMs": 2375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 2125,
+      "endTimeMs": 2375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 2750,
+      "endTimeMs": 3000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 2875,
+      "endTimeMs": 3125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 3375,
+      "endTimeMs": 3625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 3500,
+      "endTimeMs": 3750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 3875,
+      "endTimeMs": 4125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 4000,
+      "endTimeMs": 4250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 4375,
+      "endTimeMs": 4625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 4875,
+      "endTimeMs": 5125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5000,
+      "endTimeMs": 5250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5250,
+      "endTimeMs": 5500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5500,
+      "endTimeMs": 5750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5500,
+      "endTimeMs": 5750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5625,
+      "endTimeMs": 5875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 5750,
+      "endTimeMs": 6000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6000,
+      "endTimeMs": 6250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6250,
+      "endTimeMs": 6500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6375,
+      "endTimeMs": 6625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6750,
+      "endTimeMs": 7000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6750,
+      "endTimeMs": 7000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 6875,
+      "endTimeMs": 7125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7375,
+      "endTimeMs": 7625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7625,
+      "endTimeMs": 7875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7875,
+      "endTimeMs": 8125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 8125,
+      "endTimeMs": 8375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 8250,
+      "endTimeMs": 8500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 8500,
+      "endTimeMs": 8750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 8750,
+      "endTimeMs": 9000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 8875,
+      "endTimeMs": 9125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 9250,
+      "endTimeMs": 9500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 9625,
+      "endTimeMs": 9875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 9750,
+      "endTimeMs": 10000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 9875,
+      "endTimeMs": 10125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10125,
+      "endTimeMs": 10375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10125,
+      "endTimeMs": 10375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10375,
+      "endTimeMs": 10625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10500,
+      "endTimeMs": 10750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10625,
+      "endTimeMs": 10875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 10875,
+      "endTimeMs": 11125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 11125,
+      "endTimeMs": 11375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 11625,
+      "endTimeMs": 11875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 11750,
+      "endTimeMs": 12000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 12125,
+      "endTimeMs": 12375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 12750,
+      "endTimeMs": 13000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 12875,
+      "endTimeMs": 13125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 14500,
+      "endTimeMs": 14750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 14750,
+      "endTimeMs": 15000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 15125,
+      "endTimeMs": 15375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 15375,
+      "endTimeMs": 15625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 15500,
+      "endTimeMs": 15750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 15750,
+      "endTimeMs": 16000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 16500,
+      "endTimeMs": 16750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 16500,
+      "endTimeMs": 16750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 16625,
+      "endTimeMs": 16875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 16875,
+      "endTimeMs": 17125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 17125,
+      "endTimeMs": 17375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 17500,
+      "endTimeMs": 17750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 17625,
+      "endTimeMs": 17875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 17750,
+      "endTimeMs": 18000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 18125,
+      "endTimeMs": 18375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 18250,
+      "endTimeMs": 18500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 18375,
+      "endTimeMs": 18625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19125,
+      "endTimeMs": 19375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19250,
+      "endTimeMs": 19500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19625,
+      "endTimeMs": 19875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19750,
+      "endTimeMs": 20000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19875,
+      "endTimeMs": 20125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 20125,
+      "endTimeMs": 20375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 20500,
+      "endTimeMs": 20750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 20625,
+      "endTimeMs": 20875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 20750,
+      "endTimeMs": 21000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 20750,
+      "endTimeMs": 21000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21250,
+      "endTimeMs": 21500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21250,
+      "endTimeMs": 21500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21375,
+      "endTimeMs": 21625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21375,
+      "endTimeMs": 21625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21875,
+      "endTimeMs": 22125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 22000,
+      "endTimeMs": 22250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 22125,
+      "endTimeMs": 22375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 22875,
+      "endTimeMs": 23125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 23375,
+      "endTimeMs": 23625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24000,
+      "endTimeMs": 24250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24000,
+      "endTimeMs": 24250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24125,
+      "endTimeMs": 24375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24625,
+      "endTimeMs": 24875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24875,
+      "endTimeMs": 25125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 25125,
+      "endTimeMs": 25375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 25250,
+      "endTimeMs": 25500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 25375,
+      "endTimeMs": 25625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 29250,
+      "endTimeMs": 29500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 29625,
+      "endTimeMs": 29875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 31250,
+      "endTimeMs": 31500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 31375,
+      "endTimeMs": 31625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 33375,
+      "endTimeMs": 33625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 34500,
+      "endTimeMs": 34750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 34625,
+      "endTimeMs": 34875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 34875,
+      "endTimeMs": 35125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 35250,
+      "endTimeMs": 35500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 35375,
+      "endTimeMs": 35625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 35375,
+      "endTimeMs": 35625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 36000,
+      "endTimeMs": 36250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 36125,
+      "endTimeMs": 36375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 37000,
+      "endTimeMs": 37250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 37000,
+      "endTimeMs": 37250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 37500,
+      "endTimeMs": 37750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 37500,
+      "endTimeMs": 37750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 37875,
+      "endTimeMs": 38125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 38125,
+      "endTimeMs": 38375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 38500,
+      "endTimeMs": 38750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 38750,
+      "endTimeMs": 39000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39000,
+      "endTimeMs": 39250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39125,
+      "endTimeMs": 39375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39625,
+      "endTimeMs": 39875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39625,
+      "endTimeMs": 39875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39750,
+      "endTimeMs": 40000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 39750,
+      "endTimeMs": 40000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 40250,
+      "endTimeMs": 40500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 40500,
+      "endTimeMs": 40750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 40875,
+      "endTimeMs": 41125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 41500,
+      "endTimeMs": 41750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 44125,
+      "endTimeMs": 44375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 44125,
+      "endTimeMs": 44375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 44250,
+      "endTimeMs": 44500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 45250,
+      "endTimeMs": 45500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 45375,
+      "endTimeMs": 45625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 45500,
+      "endTimeMs": 45750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 45625,
+      "endTimeMs": 45875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 45750,
+      "endTimeMs": 46000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 46250,
+      "endTimeMs": 46500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 46625,
+      "endTimeMs": 46875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 47000,
+      "endTimeMs": 47250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 47250,
+      "endTimeMs": 47500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 49250,
+      "endTimeMs": 49500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 49625,
+      "endTimeMs": 49875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 49875,
+      "endTimeMs": 50125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 50750,
+      "endTimeMs": 51000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 50875,
+      "endTimeMs": 51125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 51250,
+      "endTimeMs": 51500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 51250,
+      "endTimeMs": 51500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 51250,
+      "endTimeMs": 51500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 51375,
+      "endTimeMs": 51625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 52250,
+      "endTimeMs": 52500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 52250,
+      "endTimeMs": 52500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 52875,
+      "endTimeMs": 53125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 53000,
+      "endTimeMs": 53250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 53250,
+      "endTimeMs": 53500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 53375,
+      "endTimeMs": 53625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 53500,
+      "endTimeMs": 53750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 53625,
+      "endTimeMs": 53875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 54250,
+      "endTimeMs": 54500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 55375,
+      "endTimeMs": 55625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 60125,
+      "endTimeMs": 60375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 60500,
+      "endTimeMs": 60750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 64000,
+      "endTimeMs": 64250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 64125,
+      "endTimeMs": 64375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 64125,
+      "endTimeMs": 64375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 64250,
+      "endTimeMs": 64500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 64750,
+      "endTimeMs": 65000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 65000,
+      "endTimeMs": 65250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 65625,
+      "endTimeMs": 65875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 65625,
+      "endTimeMs": 65875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 65875,
+      "endTimeMs": 66125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 66375,
+      "endTimeMs": 66625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 66625,
+      "endTimeMs": 66875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 67375,
+      "endTimeMs": 67625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 67500,
+      "endTimeMs": 67750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 68000,
+      "endTimeMs": 68250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 68000,
+      "endTimeMs": 68250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 68375,
+      "endTimeMs": 68625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 68375,
+      "endTimeMs": 68625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 68500,
+      "endTimeMs": 68750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 69000,
+      "endTimeMs": 69250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 69125,
+      "endTimeMs": 69375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 69500,
+      "endTimeMs": 69750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 69500,
+      "endTimeMs": 69750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 69625,
+      "endTimeMs": 69875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 70125,
+      "endTimeMs": 70375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 70125,
+      "endTimeMs": 70375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 70375,
+      "endTimeMs": 70625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 70500,
+      "endTimeMs": 70750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71125,
+      "endTimeMs": 71375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71250,
+      "endTimeMs": 71500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71375,
+      "endTimeMs": 71625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71625,
+      "endTimeMs": 71875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 72875,
+      "endTimeMs": 73125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 73000,
+      "endTimeMs": 73250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 73250,
+      "endTimeMs": 73500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74375,
+      "endTimeMs": 74625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74750,
+      "endTimeMs": 75000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74875,
+      "endTimeMs": 75125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74875,
+      "endTimeMs": 75125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 75250,
+      "endTimeMs": 75500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 75250,
+      "endTimeMs": 75500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 75375,
+      "endTimeMs": 75625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 75750,
+      "endTimeMs": 76000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 75875,
+      "endTimeMs": 76125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 76000,
+      "endTimeMs": 76250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 76375,
+      "endTimeMs": 76625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 76625,
+      "endTimeMs": 76875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 77625,
+      "endTimeMs": 77875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 78375,
+      "endTimeMs": 78625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 78500,
+      "endTimeMs": 78750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79000,
+      "endTimeMs": 79250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79000,
+      "endTimeMs": 79250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79125,
+      "endTimeMs": 79375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79625,
+      "endTimeMs": 79875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79750,
+      "endTimeMs": 80000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80000,
+      "endTimeMs": 80250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80250,
+      "endTimeMs": 80500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80375,
+      "endTimeMs": 80625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80500,
+      "endTimeMs": 80750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80750,
+      "endTimeMs": 81000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 80875,
+      "endTimeMs": 81125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81000,
+      "endTimeMs": 81250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81125,
+      "endTimeMs": 81375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81375,
+      "endTimeMs": 81625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81500,
+      "endTimeMs": 81750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81625,
+      "endTimeMs": 81875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81875,
+      "endTimeMs": 82125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 81875,
+      "endTimeMs": 82125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 82125,
+      "endTimeMs": 82375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 82375,
+      "endTimeMs": 82625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 89375,
+      "endTimeMs": 89625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 89500,
+      "endTimeMs": 89750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 89500,
+      "endTimeMs": 89750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 89875,
+      "endTimeMs": 90125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 92000,
+      "endTimeMs": 92250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 92500,
+      "endTimeMs": 92750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 92875,
+      "endTimeMs": 93125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 93500,
+      "endTimeMs": 93750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 94375,
+      "endTimeMs": 94625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 94625,
+      "endTimeMs": 94875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 95250,
+      "endTimeMs": 95500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 95375,
+      "endTimeMs": 95625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 95625,
+      "endTimeMs": 95875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 95875,
+      "endTimeMs": 96125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 96500,
+      "endTimeMs": 96750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 96750,
+      "endTimeMs": 97000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97000,
+      "endTimeMs": 97250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97125,
+      "endTimeMs": 97375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97250,
+      "endTimeMs": 97500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97375,
+      "endTimeMs": 97625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97750,
+      "endTimeMs": 98000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97875,
+      "endTimeMs": 98125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 97875,
+      "endTimeMs": 98125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 98125,
+      "endTimeMs": 98375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 98250,
+      "endTimeMs": 98500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 98375,
+      "endTimeMs": 98625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 98750,
+      "endTimeMs": 99000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 98875,
+      "endTimeMs": 99125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 99000,
+      "endTimeMs": 99250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 99375,
+      "endTimeMs": 99625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 99500,
+      "endTimeMs": 99750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 101875,
+      "endTimeMs": 102125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 102125,
+      "endTimeMs": 102375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 102500,
+      "endTimeMs": 102750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 102625,
+      "endTimeMs": 102875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 103000,
+      "endTimeMs": 103250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 103375,
+      "endTimeMs": 103625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 103500,
+      "endTimeMs": 103750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 103500,
+      "endTimeMs": 103750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 103875,
+      "endTimeMs": 104125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 104000,
+      "endTimeMs": 104250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 104125,
+      "endTimeMs": 104375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 104625,
+      "endTimeMs": 104875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 104625,
+      "endTimeMs": 104875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 105000,
+      "endTimeMs": 105250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 105125,
+      "endTimeMs": 105375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 106000,
+      "endTimeMs": 106250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 106125,
+      "endTimeMs": 106375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 106250,
+      "endTimeMs": 106500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 106375,
+      "endTimeMs": 106625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 106750,
+      "endTimeMs": 107000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 107000,
+      "endTimeMs": 107250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 107125,
+      "endTimeMs": 107375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 107375,
+      "endTimeMs": 107625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 107750,
+      "endTimeMs": 108000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 107875,
+      "endTimeMs": 108125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 108000,
+      "endTimeMs": 108250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 108500,
+      "endTimeMs": 108750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 108500,
+      "endTimeMs": 108750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 108750,
+      "endTimeMs": 109000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 108750,
+      "endTimeMs": 109000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109125,
+      "endTimeMs": 109375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109125,
+      "endTimeMs": 109375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109250,
+      "endTimeMs": 109500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109250,
+      "endTimeMs": 109500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109750,
+      "endTimeMs": 110000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109750,
+      "endTimeMs": 110000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 109875,
+      "endTimeMs": 110125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 110125,
+      "endTimeMs": 110375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 110375,
+      "endTimeMs": 110625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 110500,
+      "endTimeMs": 110750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 110625,
+      "endTimeMs": 110875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 111000,
+      "endTimeMs": 111250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 111125,
+      "endTimeMs": 111375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 111375,
+      "endTimeMs": 111625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 111625,
+      "endTimeMs": 111875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 111750,
+      "endTimeMs": 112000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 112375,
+      "endTimeMs": 112625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 112500,
+      "endTimeMs": 112750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 112625,
+      "endTimeMs": 112875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 112750,
+      "endTimeMs": 113000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 112875,
+      "endTimeMs": 113125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 114000,
+      "endTimeMs": 114250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 114625,
+      "endTimeMs": 114875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 114750,
+      "endTimeMs": 115000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 114875,
+      "endTimeMs": 115125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 115250,
+      "endTimeMs": 115500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 115375,
+      "endTimeMs": 115625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 115750,
+      "endTimeMs": 116000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116250,
+      "endTimeMs": 116500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116250,
+      "endTimeMs": 116500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116375,
+      "endTimeMs": 116625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116500,
+      "endTimeMs": 116750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116750,
+      "endTimeMs": 117000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 116875,
+      "endTimeMs": 117125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 117250,
+      "endTimeMs": 117500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 117250,
+      "endTimeMs": 117500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 118375,
+      "endTimeMs": 118625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 118500,
+      "endTimeMs": 118750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 118875,
+      "endTimeMs": 119125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 120000,
+      "endTimeMs": 120250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 121500,
+      "endTimeMs": 121750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 122125,
+      "endTimeMs": 122375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 122625,
+      "endTimeMs": 122875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 122750,
+      "endTimeMs": 123000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 122750,
+      "endTimeMs": 123000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 123125,
+      "endTimeMs": 123375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 123625,
+      "endTimeMs": 123875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 124375,
+      "endTimeMs": 124625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 124500,
+      "endTimeMs": 124750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 125125,
+      "endTimeMs": 125375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 125125,
+      "endTimeMs": 125375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 125375,
+      "endTimeMs": 125625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 126375,
+      "endTimeMs": 126625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 126375,
+      "endTimeMs": 126625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 126500,
+      "endTimeMs": 126750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 126875,
+      "endTimeMs": 127125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 126875,
+      "endTimeMs": 127125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 127375,
+      "endTimeMs": 127625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 127500,
+      "endTimeMs": 127750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 127750,
+      "endTimeMs": 128000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 128000,
+      "endTimeMs": 128250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 128375,
+      "endTimeMs": 128625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 128750,
+      "endTimeMs": 129000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 128750,
+      "endTimeMs": 129000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 129125,
+      "endTimeMs": 129375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 129250,
+      "endTimeMs": 129500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 130000,
+      "endTimeMs": 130250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 130125,
+      "endTimeMs": 130375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 131625,
+      "endTimeMs": 131875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 131625,
+      "endTimeMs": 131875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 132000,
+      "endTimeMs": 132250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 132500,
+      "endTimeMs": 132750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 132625,
+      "endTimeMs": 132875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 132625,
+      "endTimeMs": 132875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 132875,
+      "endTimeMs": 133125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 133125,
+      "endTimeMs": 133375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 133250,
+      "endTimeMs": 133500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 133375,
+      "endTimeMs": 133625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 133750,
+      "endTimeMs": 134000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 134000,
+      "endTimeMs": 134250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 134125,
+      "endTimeMs": 134375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 134500,
+      "endTimeMs": 134750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 134750,
+      "endTimeMs": 135000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 135000,
+      "endTimeMs": 135250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 135250,
+      "endTimeMs": 135500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 135750,
+      "endTimeMs": 136000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 136125,
+      "endTimeMs": 136375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 136250,
+      "endTimeMs": 136500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 136875,
+      "endTimeMs": 137125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 137125,
+      "endTimeMs": 137375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 137125,
+      "endTimeMs": 137375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 137625,
+      "endTimeMs": 137875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 137750,
+      "endTimeMs": 138000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 137875,
+      "endTimeMs": 138125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 138125,
+      "endTimeMs": 138375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 138375,
+      "endTimeMs": 138625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 138750,
+      "endTimeMs": 139000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 139000,
+      "endTimeMs": 139250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 139500,
+      "endTimeMs": 139750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 139875,
+      "endTimeMs": 140125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 140000,
+      "endTimeMs": 140250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 140000,
+      "endTimeMs": 140250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 140500,
+      "endTimeMs": 140750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 140625,
+      "endTimeMs": 140875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 141250,
+      "endTimeMs": 141500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 141375,
+      "endTimeMs": 141625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 141625,
+      "endTimeMs": 141875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 141750,
+      "endTimeMs": 142000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 142000,
+      "endTimeMs": 142250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 142125,
+      "endTimeMs": 142375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 142500,
+      "endTimeMs": 142750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 142750,
+      "endTimeMs": 143000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 143000,
+      "endTimeMs": 143250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 143125,
+      "endTimeMs": 143375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 144125,
+      "endTimeMs": 144375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 144250,
+      "endTimeMs": 144500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 144250,
+      "endTimeMs": 144500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 152750,
+      "endTimeMs": 153000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 152875,
+      "endTimeMs": 153125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 153000,
+      "endTimeMs": 153250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 153625,
+      "endTimeMs": 153875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 154000,
+      "endTimeMs": 154250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 154500,
+      "endTimeMs": 154750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 154750,
+      "endTimeMs": 155000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 154875,
+      "endTimeMs": 155125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 155000,
+      "endTimeMs": 155250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 155375,
+      "endTimeMs": 155625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 155375,
+      "endTimeMs": 155625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 155875,
+      "endTimeMs": 156125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 156125,
+      "endTimeMs": 156375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 156500,
+      "endTimeMs": 156750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 156750,
+      "endTimeMs": 157000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 156750,
+      "endTimeMs": 157000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 157000,
+      "endTimeMs": 157250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 157250,
+      "endTimeMs": 157500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 157500,
+      "endTimeMs": 157750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 157875,
+      "endTimeMs": 158125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 157875,
+      "endTimeMs": 158125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 158000,
+      "endTimeMs": 158250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 158125,
+      "endTimeMs": 158375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 158625,
+      "endTimeMs": 158875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 158625,
+      "endTimeMs": 158875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 159000,
+      "endTimeMs": 159250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 159125,
+      "endTimeMs": 159375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 160375,
+      "endTimeMs": 160625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 160500,
+      "endTimeMs": 160750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 160625,
+      "endTimeMs": 160875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 160875,
+      "endTimeMs": 161125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 161125,
+      "endTimeMs": 161375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 161375,
+      "endTimeMs": 161625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 161625,
+      "endTimeMs": 161875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 161750,
+      "endTimeMs": 162000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 162125,
+      "endTimeMs": 162375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 162625,
+      "endTimeMs": 162875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 162625,
+      "endTimeMs": 162875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 162750,
+      "endTimeMs": 163000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 162750,
+      "endTimeMs": 163000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 163250,
+      "endTimeMs": 163500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 163500,
+      "endTimeMs": 163750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 163875,
+      "endTimeMs": 164125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 164000,
+      "endTimeMs": 164250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 164125,
+      "endTimeMs": 164375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 164250,
+      "endTimeMs": 164500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 164750,
+      "endTimeMs": 165000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 165000,
+      "endTimeMs": 165250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 165125,
+      "endTimeMs": 165375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 165375,
+      "endTimeMs": 165625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 165500,
+      "endTimeMs": 165750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 165500,
+      "endTimeMs": 165750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166000,
+      "endTimeMs": 166250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166125,
+      "endTimeMs": 166375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166250,
+      "endTimeMs": 166500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166750,
+      "endTimeMs": 167000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166750,
+      "endTimeMs": 167000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 166875,
+      "endTimeMs": 167125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 167250,
+      "endTimeMs": 167500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 167375,
+      "endTimeMs": 167625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 167375,
+      "endTimeMs": 167625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 167875,
+      "endTimeMs": 168125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 168000,
+      "endTimeMs": 168250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 168375,
+      "endTimeMs": 168625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 168625,
+      "endTimeMs": 168875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 168750,
+      "endTimeMs": 169000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 169625,
+      "endTimeMs": 169875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 169750,
+      "endTimeMs": 170000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 170000,
+      "endTimeMs": 170250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 170500,
+      "endTimeMs": 170750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 170750,
+      "endTimeMs": 171000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 170750,
+      "endTimeMs": 171000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 175000,
+      "endTimeMs": 175250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 175125,
+      "endTimeMs": 175375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 175375,
+      "endTimeMs": 175625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 175500,
+      "endTimeMs": 175750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 175875,
+      "endTimeMs": 176125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 176125,
+      "endTimeMs": 176375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 176250,
+      "endTimeMs": 176500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 176375,
+      "endTimeMs": 176625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 176375,
+      "endTimeMs": 176625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 176875,
+      "endTimeMs": 177125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 177375,
+      "endTimeMs": 177625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 178125,
+      "endTimeMs": 178375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 178250,
+      "endTimeMs": 178500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 178375,
+      "endTimeMs": 178625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 179750,
+      "endTimeMs": 180000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 180000,
+      "endTimeMs": 180250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 180125,
+      "endTimeMs": 180375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 180750,
+      "endTimeMs": 181000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 181000,
+      "endTimeMs": 181250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 181125,
+      "endTimeMs": 181375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 181375,
+      "endTimeMs": 181625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 181875,
+      "endTimeMs": 182125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 181875,
+      "endTimeMs": 182125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 182000,
+      "endTimeMs": 182250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 182500,
+      "endTimeMs": 182750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 182750,
+      "endTimeMs": 183000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 183250,
+      "endTimeMs": 183500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 183375,
+      "endTimeMs": 183625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 183750,
+      "endTimeMs": 184000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 184125,
+      "endTimeMs": 184375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 184125,
+      "endTimeMs": 184375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 184625,
+      "endTimeMs": 184875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 184750,
+      "endTimeMs": 185000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185000,
+      "endTimeMs": 185250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185125,
+      "endTimeMs": 185375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185250,
+      "endTimeMs": 185500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185375,
+      "endTimeMs": 185625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185750,
+      "endTimeMs": 186000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 185750,
+      "endTimeMs": 186000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 186375,
+      "endTimeMs": 186625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 187250,
+      "endTimeMs": 187500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 187375,
+      "endTimeMs": 187625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 187500,
+      "endTimeMs": 187750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 187625,
+      "endTimeMs": 187875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 187875,
+      "endTimeMs": 188125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 188375,
+      "endTimeMs": 188625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 189500,
+      "endTimeMs": 189750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 189625,
+      "endTimeMs": 189875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190000,
+      "endTimeMs": 190250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190125,
+      "endTimeMs": 190375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190250,
+      "endTimeMs": 190500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190375,
+      "endTimeMs": 190625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190875,
+      "endTimeMs": 191125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 190875,
+      "endTimeMs": 191125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 191000,
+      "endTimeMs": 191250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 191000,
+      "endTimeMs": 191250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 191625,
+      "endTimeMs": 191875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 191625,
+      "endTimeMs": 191875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 191750,
+      "endTimeMs": 192000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 192125,
+      "endTimeMs": 192375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 192250,
+      "endTimeMs": 192500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 192250,
+      "endTimeMs": 192500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 192625,
+      "endTimeMs": 192875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 192750,
+      "endTimeMs": 193000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 193125,
+      "endTimeMs": 193375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 193750,
+      "endTimeMs": 194000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 193875,
+      "endTimeMs": 194125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 193875,
+      "endTimeMs": 194125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 194250,
+      "endTimeMs": 194500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 194375,
+      "endTimeMs": 194625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 194375,
+      "endTimeMs": 194625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 195125,
+      "endTimeMs": 195375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 195125,
+      "endTimeMs": 195375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 195625,
+      "endTimeMs": 195875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 195875,
+      "endTimeMs": 196125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 196000,
+      "endTimeMs": 196250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 196500,
+      "endTimeMs": 196750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 196625,
+      "endTimeMs": 196875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 197000,
+      "endTimeMs": 197250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 197000,
+      "endTimeMs": 197250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 197625,
+      "endTimeMs": 197875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 197750,
+      "endTimeMs": 198000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 197875,
+      "endTimeMs": 198125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 198000,
+      "endTimeMs": 198250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 198250,
+      "endTimeMs": 198500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 198875,
+      "endTimeMs": 199125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 198875,
+      "endTimeMs": 199125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 199500,
+      "endTimeMs": 199750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 200000,
+      "endTimeMs": 200250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 200000,
+      "endTimeMs": 200250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 200000,
+      "endTimeMs": 200250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 200125,
+      "endTimeMs": 200375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203250,
+      "endTimeMs": 203500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203375,
+      "endTimeMs": 203625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203375,
+      "endTimeMs": 203625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203625,
+      "endTimeMs": 203875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203875,
+      "endTimeMs": 204125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203875,
+      "endTimeMs": 204125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 204125,
+      "endTimeMs": 204375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 204500,
+      "endTimeMs": 204750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 204750,
+      "endTimeMs": 205000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 205000,
+      "endTimeMs": 205250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 205500,
+      "endTimeMs": 205750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 205625,
+      "endTimeMs": 205875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 205750,
+      "endTimeMs": 206000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 206000,
+      "endTimeMs": 206250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 206000,
+      "endTimeMs": 206250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 207125,
+      "endTimeMs": 207375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 207250,
+      "endTimeMs": 207500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 207375,
+      "endTimeMs": 207625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 207500,
+      "endTimeMs": 207750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 207875,
+      "endTimeMs": 208125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 208000,
+      "endTimeMs": 208250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 208125,
+      "endTimeMs": 208375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 208875,
+      "endTimeMs": 209125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 209125,
+      "endTimeMs": 209375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 209500,
+      "endTimeMs": 209750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 209625,
+      "endTimeMs": 209875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 209750,
+      "endTimeMs": 210000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 210000,
+      "endTimeMs": 210250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 211000,
+      "endTimeMs": 211250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 212125,
+      "endTimeMs": 212375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 212750,
+      "endTimeMs": 213000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 212750,
+      "endTimeMs": 213000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 214500,
+      "endTimeMs": 214750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 214500,
+      "endTimeMs": 214750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 214625,
+      "endTimeMs": 214875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 215125,
+      "endTimeMs": 215375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 215375,
+      "endTimeMs": 215625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 215500,
+      "endTimeMs": 215750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 216625,
+      "endTimeMs": 216875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 217125,
+      "endTimeMs": 217375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 217500,
+      "endTimeMs": 217750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 218375,
+      "endTimeMs": 218625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 218500,
+      "endTimeMs": 218750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 218750,
+      "endTimeMs": 219000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 219000,
+      "endTimeMs": 219250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 219000,
+      "endTimeMs": 219250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 219500,
+      "endTimeMs": 219750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 220125,
+      "endTimeMs": 220375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 220625,
+      "endTimeMs": 220875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 220750,
+      "endTimeMs": 221000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 220750,
+      "endTimeMs": 221000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 221000,
+      "endTimeMs": 221250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 222000,
+      "endTimeMs": 222250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 222000,
+      "endTimeMs": 222250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 222375,
+      "endTimeMs": 222625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 222750,
+      "endTimeMs": 223000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 223875,
+      "endTimeMs": 224125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 224000,
+      "endTimeMs": 224250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 224125,
+      "endTimeMs": 224375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 224750,
+      "endTimeMs": 225000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 224750,
+      "endTimeMs": 225000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 225500,
+      "endTimeMs": 225750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 225500,
+      "endTimeMs": 225750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 225625,
+      "endTimeMs": 225875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 225750,
+      "endTimeMs": 226000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 226000,
+      "endTimeMs": 226250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 226250,
+      "endTimeMs": 226500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 226750,
+      "endTimeMs": 227000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 227000,
+      "endTimeMs": 227250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 227125,
+      "endTimeMs": 227375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 227500,
+      "endTimeMs": 227750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 227750,
+      "endTimeMs": 228000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 228125,
+      "endTimeMs": 228375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 228125,
+      "endTimeMs": 228375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 228500,
+      "endTimeMs": 228750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 228500,
+      "endTimeMs": 228750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 229125,
+      "endTimeMs": 229375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 229125,
+      "endTimeMs": 229375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 229250,
+      "endTimeMs": 229500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 229875,
+      "endTimeMs": 230125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 229875,
+      "endTimeMs": 230125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 230000,
+      "endTimeMs": 230250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 233375,
+      "endTimeMs": 233625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 233500,
+      "endTimeMs": 233750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 233750,
+      "endTimeMs": 234000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 234000,
+      "endTimeMs": 234250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 234750,
+      "endTimeMs": 235000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 234875,
+      "endTimeMs": 235125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 238625,
+      "endTimeMs": 238875,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 238750,
+      "endTimeMs": 239000,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 238750,
+      "endTimeMs": 239000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 238875,
+      "endTimeMs": 239125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 239500,
+      "endTimeMs": 239750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 239750,
+      "endTimeMs": 240000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 239875,
+      "endTimeMs": 240125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 240500,
+      "endTimeMs": 240750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 240500,
+      "endTimeMs": 240750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 240750,
+      "endTimeMs": 241000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 241250,
+      "endTimeMs": 241500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 241375,
+      "endTimeMs": 241625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 241375,
+      "endTimeMs": 241625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 241500,
+      "endTimeMs": 241750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 242125,
+      "endTimeMs": 242375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 242250,
+      "endTimeMs": 242500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 242625,
+      "endTimeMs": 242875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 242750,
+      "endTimeMs": 243000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 243625,
+      "endTimeMs": 243875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 243625,
+      "endTimeMs": 243875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 243750,
+      "endTimeMs": 244000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 244250,
+      "endTimeMs": 244500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 244375,
+      "endTimeMs": 244625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 244375,
+      "endTimeMs": 244625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 244625,
+      "endTimeMs": 244875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 244875,
+      "endTimeMs": 245125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 245500,
+      "endTimeMs": 245750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 245875,
+      "endTimeMs": 246125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 246500,
+      "endTimeMs": 246750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 247375,
+      "endTimeMs": 247625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 247500,
+      "endTimeMs": 247750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 247750,
+      "endTimeMs": 248000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 248000,
+      "endTimeMs": 248250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 248375,
+      "endTimeMs": 248625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 248875,
+      "endTimeMs": 249125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 249250,
+      "endTimeMs": 249500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 249375,
+      "endTimeMs": 249625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 249375,
+      "endTimeMs": 249625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 249500,
+      "endTimeMs": 249750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 250000,
+      "endTimeMs": 250250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 250250,
+      "endTimeMs": 250500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 250625,
+      "endTimeMs": 250875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 250875,
+      "endTimeMs": 251125,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 251000,
+      "endTimeMs": 251250,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 251125,
+      "endTimeMs": 251375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 251625,
+      "endTimeMs": 251875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 252000,
+      "endTimeMs": 252250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 253125,
+      "endTimeMs": 253375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 253375,
+      "endTimeMs": 253625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 253375,
+      "endTimeMs": 253625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 254125,
+      "endTimeMs": 254375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 254250,
+      "endTimeMs": 254500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 254250,
+      "endTimeMs": 254500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 254500,
+      "endTimeMs": 254750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 254625,
+      "endTimeMs": 254875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 255125,
+      "endTimeMs": 255375,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 255500,
+      "endTimeMs": 255750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 255625,
+      "endTimeMs": 255875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256000,
+      "endTimeMs": 256250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256125,
+      "endTimeMs": 256375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256250,
+      "endTimeMs": 256500,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256750,
+      "endTimeMs": 257000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256750,
+      "endTimeMs": 257000,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 256875,
+      "endTimeMs": 257125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 257000,
+      "endTimeMs": 257250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 257375,
+      "endTimeMs": 257625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 257375,
+      "endTimeMs": 257625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 257625,
+      "endTimeMs": 257875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 257875,
+      "endTimeMs": 258125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 258000,
+      "endTimeMs": 258250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 258125,
+      "endTimeMs": 258375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 258250,
+      "endTimeMs": 258500,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 258750,
+      "endTimeMs": 259000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 259250,
+      "endTimeMs": 259500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 260125,
+      "endTimeMs": 260375,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 260375,
+      "endTimeMs": 260625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 260375,
+      "endTimeMs": 260625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 260750,
+      "endTimeMs": 261000,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 261125,
+      "endTimeMs": 261375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 261500,
+      "endTimeMs": 261750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 261875,
+      "endTimeMs": 262125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 262125,
+      "endTimeMs": 262375,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    }
+  ]
+}

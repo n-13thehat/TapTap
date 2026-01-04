@@ -1,0 +1,19 @@
+{
+  "name": "Library Architect",
+  "id": "library.architect",
+  "inputs": {
+    "theme": "string=matrixTeal",
+    "queue": "string=right",
+    "wavesurfer": "bool=true",
+    "rightRail": "bool=true",
+    "route": "string=app/library/CodexLibrary.tsx"
+  },
+  "steps": [
+    "Create or patch library page with queue + waveform",
+    "Add lightweight offline cache stub (localStorage)",
+    "Emit TODOs for advanced features"
+  ],
+  "artifacts": ["Patched/created TSX","Next steps checklist"],
+  "danger": "med"
+}
+

@@ -1,0 +1,230 @@
+{
+  "songId": "local:1:deep end.mp3",
+  "title": "deep end.mp3",
+  "artist": "STEMSTATION",
+  "bpm": 120,
+  "offsetMs": 0,
+  "difficulty": "easy",
+  "notes": [
+    {
+      "timeMs": 1500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 5500,
+      "lane": 3,
+      "type": "tap"
+    },
+    {
+      "timeMs": 6750,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 7125,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 10000,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 10500,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 13500,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 13750,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 16125,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 19500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 26125,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 27500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 30500,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 34000,
+      "lane": 3,
+      "type": "tap"
+    },
+    {
+      "timeMs": 40000,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 41500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 46125,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 47125,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 49500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 52500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 60000,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 62500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 65000,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 67125,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 70000,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 73500,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 80000,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 80500,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 82250,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 82500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 86125,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 87125,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 92250,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 97500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 99500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 102500,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 103250,
+      "lane": 3,
+      "type": "tap"
+    },
+    {
+      "timeMs": 103750,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 107500,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 108500,
+      "lane": 3,
+      "type": "tap"
+    },
+    {
+      "timeMs": 114750,
+      "lane": 1,
+      "type": "tap"
+    },
+    {
+      "timeMs": 115000,
+      "lane": 2,
+      "type": "tap"
+    },
+    {
+      "timeMs": 116125,
+      "lane": 0,
+      "type": "tap"
+    },
+    {
+      "timeMs": 117125,
+      "lane": 1,
+      "type": "tap"
+    }
+  ]
+}

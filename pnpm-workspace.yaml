@@ -1,0 +1,5 @@
+ignoredBuiltDependencies:
+  - electron
+  - sharp
+
+onlyBuiltDependencies: esbuild unrs-resolver @prisma/client @prisma/engines prisma

@@ -1,0 +1,110 @@
+﻿[
+    {
+        "name":  "Aura",
+        "role":  "Brand Spirit",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Bliss",
+        "role":  "Community Healer",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Charm",
+        "role":  "Influencer Connector",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Echo",
+        "role":  "Social Reactor",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Fable",
+        "role":  "Story Weaver",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Fortune",
+        "role":  "Strategic Forecaster",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Harmony",
+        "role":  "Playlist Architect",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Haven",
+        "role":  "Guardian",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Hope",
+        "role":  "Listener Companion",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Lumen",
+        "role":  "Visual Engine",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Merit",
+        "role":  "Reward Judge",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Muse",
+        "role":  "Creator Whisperer",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Nova",
+        "role":  "Creative Burst",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Prism",
+        "role":  "Analytics Oracle",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Rune",
+        "role":  "Automation Sorceress",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Saga",
+        "role":  "Campaign Conductor",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Serenity",
+        "role":  "Timekeeper",
+        "kpis":  null,
+        "last_updated":  null
+    },
+    {
+        "name":  "Treasure",
+        "role":  "Economy Keeper",
+        "kpis":  null,
+        "last_updated":  null
+    }
+]

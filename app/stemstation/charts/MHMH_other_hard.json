@@ -1,0 +1,234 @@
+{
+  "songId": "MHMH",
+  "title": "MHMH",
+  "artist": "STEMSTATION",
+  "bpm": 120,
+  "offsetMs": 0,
+  "difficulty": "hard",
+  "notes": [
+    {
+      "timeMs": 250,
+      "endTimeMs": 500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 3375,
+      "endTimeMs": 3625,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 3375,
+      "endTimeMs": 3625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7125,
+      "endTimeMs": 7375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7250,
+      "endTimeMs": 7500,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 7500,
+      "endTimeMs": 7750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 13875,
+      "endTimeMs": 14125,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 19375,
+      "endTimeMs": 19625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 21000,
+      "endTimeMs": 21250,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 24625,
+      "endTimeMs": 24875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 28500,
+      "endTimeMs": 28750,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 33125,
+      "endTimeMs": 33375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71375,
+      "endTimeMs": 71625,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71375,
+      "endTimeMs": 71625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71500,
+      "endTimeMs": 71750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71625,
+      "endTimeMs": 71875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 71750,
+      "endTimeMs": 72000,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 73500,
+      "endTimeMs": 73750,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 73625,
+      "endTimeMs": 73875,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74250,
+      "endTimeMs": 74500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74375,
+      "endTimeMs": 74625,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74375,
+      "endTimeMs": 74625,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74500,
+      "endTimeMs": 74750,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 74625,
+      "endTimeMs": 74875,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 78500,
+      "endTimeMs": 78750,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 78625,
+      "endTimeMs": 78875,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 79250,
+      "endTimeMs": 79500,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 99875,
+      "endTimeMs": 100125,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    },
+    {
+      "timeMs": 203875,
+      "endTimeMs": 204125,
+      "durationMs": 250,
+      "lane": 0,
+      "type": "hold"
+    },
+    {
+      "timeMs": 204000,
+      "endTimeMs": 204250,
+      "durationMs": 250,
+      "lane": 1,
+      "type": "hold"
+    },
+    {
+      "timeMs": 204000,
+      "endTimeMs": 204250,
+      "durationMs": 250,
+      "lane": 2,
+      "type": "hold"
+    },
+    {
+      "timeMs": 211125,
+      "endTimeMs": 211375,
+      "durationMs": 250,
+      "lane": 3,
+      "type": "hold"
+    }
+  ]
+}

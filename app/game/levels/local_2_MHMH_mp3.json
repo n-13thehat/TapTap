@@ -1,0 +1,5058 @@
+{
+  "songId": "local:2:MHMH.mp3",
+  "title": "MHMH",
+  "artist": "STEMSTATION",
+  "bpm": 136,
+  "offsetMs": 0,
+  "difficulty": "all",
+  "notes": [
+    {
+      "id": "local:2:MHMH.mp3-Easy-0-0",
+      "lane": 2,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-0-2",
+      "lane": 3,
+      "timeMs": 1941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-0-4",
+      "lane": 2,
+      "timeMs": 2824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-1-0",
+      "lane": 3,
+      "timeMs": 3265,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-1-3",
+      "lane": 1,
+      "timeMs": 4699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-2-0",
+      "lane": 0,
+      "timeMs": 5029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-3-1",
+      "lane": 2,
+      "timeMs": 7456,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-3-3",
+      "lane": 3,
+      "timeMs": 8338,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-4-3",
+      "lane": 3,
+      "timeMs": 9882,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-5-3",
+      "lane": 1,
+      "timeMs": 11426,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-7-0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-7-1",
+      "lane": 3,
+      "timeMs": 14735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-8-1",
+      "lane": 2,
+      "timeMs": 16279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-8-3",
+      "lane": 3,
+      "timeMs": 17162,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-9-3",
+      "lane": 3,
+      "timeMs": 18706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-10-2",
+      "lane": 3,
+      "timeMs": 19588,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-10-3",
+      "lane": 1,
+      "timeMs": 20250,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-11-0",
+      "lane": 3,
+      "timeMs": 20912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-11-2",
+      "lane": 2,
+      "timeMs": 22015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-11-3",
+      "lane": 1,
+      "timeMs": 22346,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-12-1",
+      "lane": 3,
+      "timeMs": 23559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-13-0",
+      "lane": 1,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-14-3",
+      "lane": 3,
+      "timeMs": 27529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-15-1",
+      "lane": 1,
+      "timeMs": 28191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-15-2",
+      "lane": 3,
+      "timeMs": 28412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-15-3",
+      "lane": 1,
+      "timeMs": 29074,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-15-4",
+      "lane": 2,
+      "timeMs": 29294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-16-0",
+      "lane": 3,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-16-2",
+      "lane": 2,
+      "timeMs": 30838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-18-0",
+      "lane": 1,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-20-1",
+      "lane": 1,
+      "timeMs": 37015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-20-2",
+      "lane": 3,
+      "timeMs": 37235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-20-4",
+      "lane": 2,
+      "timeMs": 38118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-21-2",
+      "lane": 2,
+      "timeMs": 39662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-22-1",
+      "lane": 3,
+      "timeMs": 41206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-23-0",
+      "lane": 1,
+      "timeMs": 42088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-23-3",
+      "lane": 3,
+      "timeMs": 43632,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-24-0",
+      "lane": 0,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-24-1",
+      "lane": 1,
+      "timeMs": 44294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-24-3",
+      "lane": 3,
+      "timeMs": 45176,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-25-0",
+      "lane": 2,
+      "timeMs": 45618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-25-1",
+      "lane": 1,
+      "timeMs": 45838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-25-2",
+      "lane": 3,
+      "timeMs": 46059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-26-1",
+      "lane": 0,
+      "timeMs": 47934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-26-2",
+      "lane": 2,
+      "timeMs": 48485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-27-0",
+      "lane": 0,
+      "timeMs": 49147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-28-1",
+      "lane": 2,
+      "timeMs": 51574,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-28-2",
+      "lane": 1,
+      "timeMs": 51794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-29-0",
+      "lane": 0,
+      "timeMs": 52676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-31-2",
+      "lane": 2,
+      "timeMs": 57309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-32-0",
+      "lane": 0,
+      "timeMs": 57971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-32-1",
+      "lane": 3,
+      "timeMs": 58853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-33-2",
+      "lane": 1,
+      "timeMs": 60618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-34-1",
+      "lane": 1,
+      "timeMs": 61941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-34-2",
+      "lane": 2,
+      "timeMs": 62382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-35-0",
+      "lane": 2,
+      "timeMs": 63265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-35-1",
+      "lane": 1,
+      "timeMs": 63485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-36-1",
+      "lane": 0,
+      "timeMs": 65581,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-36-2",
+      "lane": 2,
+      "timeMs": 66132,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-37-0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-37-1",
+      "lane": 3,
+      "timeMs": 67676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-39-0",
+      "lane": 0,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-40-0",
+      "lane": 2,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-40-3",
+      "lane": 1,
+      "timeMs": 73191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-41-1",
+      "lane": 0,
+      "timeMs": 74404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-41-2",
+      "lane": 2,
+      "timeMs": 74956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-41-3",
+      "lane": 1,
+      "timeMs": 75287,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-44-3",
+      "lane": 3,
+      "timeMs": 80471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-45-4",
+      "lane": 2,
+      "timeMs": 82235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-46-1",
+      "lane": 0,
+      "timeMs": 83228,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-47-1",
+      "lane": 3,
+      "timeMs": 85324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-48-0",
+      "lane": 1,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-48-3",
+      "lane": 3,
+      "timeMs": 87750,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-49-0",
+      "lane": 0,
+      "timeMs": 87971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-49-1",
+      "lane": 1,
+      "timeMs": 88412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-49-2",
+      "lane": 2,
+      "timeMs": 88853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-50-0",
+      "lane": 2,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-50-1",
+      "lane": 1,
+      "timeMs": 89956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-50-4",
+      "lane": 2,
+      "timeMs": 91059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-51-1",
+      "lane": 0,
+      "timeMs": 92051,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-51-3",
+      "lane": 1,
+      "timeMs": 92934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-54-1",
+      "lane": 1,
+      "timeMs": 97235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-55-3",
+      "lane": 1,
+      "timeMs": 99662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-55-4",
+      "lane": 2,
+      "timeMs": 99882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-56-3",
+      "lane": 1,
+      "timeMs": 101757,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-58-1",
+      "lane": 2,
+      "timeMs": 104515,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-59-2",
+      "lane": 2,
+      "timeMs": 106500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-60-2",
+      "lane": 3,
+      "timeMs": 107824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-60-3",
+      "lane": 1,
+      "timeMs": 108485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-60-4",
+      "lane": 2,
+      "timeMs": 108706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-61-0",
+      "lane": 3,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-61-1",
+      "lane": 0,
+      "timeMs": 109699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-62-0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-63-0",
+      "lane": 1,
+      "timeMs": 112676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-63-3",
+      "lane": 3,
+      "timeMs": 114221,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-65-3",
+      "lane": 1,
+      "timeMs": 117309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-65-4",
+      "lane": 2,
+      "timeMs": 117529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-66-2",
+      "lane": 2,
+      "timeMs": 119074,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-66-3",
+      "lane": 1,
+      "timeMs": 119404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Easy-67-0",
+      "lane": 0,
+      "timeMs": 119735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-0-0",
+      "lane": 2,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-0-3",
+      "lane": 1,
+      "timeMs": 2603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-1-1",
+      "lane": 0,
+      "timeMs": 3816,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-1-3",
+      "lane": 1,
+      "timeMs": 4699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-3-1",
+      "lane": 2,
+      "timeMs": 7456,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-3-2",
+      "lane": 1,
+      "timeMs": 7676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-3-3",
+      "lane": 3,
+      "timeMs": 8338,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-4-0",
+      "lane": 0,
+      "timeMs": 8559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-4-3",
+      "lane": 3,
+      "timeMs": 9882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-5-0",
+      "lane": 2,
+      "timeMs": 10324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-5-1",
+      "lane": 1,
+      "timeMs": 10544,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-5-2",
+      "lane": 3,
+      "timeMs": 10765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-5-4",
+      "lane": 2,
+      "timeMs": 11647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-6-0",
+      "lane": 3,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-6-1",
+      "lane": 0,
+      "timeMs": 12640,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-6-2",
+      "lane": 2,
+      "timeMs": 13191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-7-0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-7-1",
+      "lane": 3,
+      "timeMs": 14735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-8-0",
+      "lane": 1,
+      "timeMs": 15618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-8-1",
+      "lane": 2,
+      "timeMs": 16279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-8-2",
+      "lane": 1,
+      "timeMs": 16500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-9-1",
+      "lane": 1,
+      "timeMs": 17824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-9-3",
+      "lane": 3,
+      "timeMs": 18706,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-10-1",
+      "lane": 1,
+      "timeMs": 19368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-10-3",
+      "lane": 1,
+      "timeMs": 20250,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-10-4",
+      "lane": 2,
+      "timeMs": 20471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-11-1",
+      "lane": 0,
+      "timeMs": 21463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-11-2",
+      "lane": 2,
+      "timeMs": 22015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-11-3",
+      "lane": 1,
+      "timeMs": 22346,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-12-1",
+      "lane": 3,
+      "timeMs": 23559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-13-1",
+      "lane": 2,
+      "timeMs": 25103,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-13-2",
+      "lane": 1,
+      "timeMs": 25324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-14-1",
+      "lane": 1,
+      "timeMs": 26647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-15-2",
+      "lane": 3,
+      "timeMs": 28412,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-15-4",
+      "lane": 2,
+      "timeMs": 29294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-16-2",
+      "lane": 2,
+      "timeMs": 30838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-17-0",
+      "lane": 0,
+      "timeMs": 31500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-18-0",
+      "lane": 1,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-18-1",
+      "lane": 2,
+      "timeMs": 33926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-18-3",
+      "lane": 3,
+      "timeMs": 34809,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-19-0",
+      "lane": 0,
+      "timeMs": 35029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-19-2",
+      "lane": 2,
+      "timeMs": 35912,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-20-0",
+      "lane": 2,
+      "timeMs": 36794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-20-1",
+      "lane": 1,
+      "timeMs": 37015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-20-3",
+      "lane": 1,
+      "timeMs": 37897,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-21-0",
+      "lane": 3,
+      "timeMs": 38559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-21-2",
+      "lane": 2,
+      "timeMs": 39662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-21-3",
+      "lane": 1,
+      "timeMs": 39993,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-22-1",
+      "lane": 3,
+      "timeMs": 41206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-24-0",
+      "lane": 0,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-24-1",
+      "lane": 1,
+      "timeMs": 44294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-24-3",
+      "lane": 3,
+      "timeMs": 45176,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-25-1",
+      "lane": 1,
+      "timeMs": 45838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-26-1",
+      "lane": 0,
+      "timeMs": 47934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-26-3",
+      "lane": 1,
+      "timeMs": 48816,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-27-0",
+      "lane": 0,
+      "timeMs": 49147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-28-0",
+      "lane": 1,
+      "timeMs": 50912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-29-0",
+      "lane": 0,
+      "timeMs": 52676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-29-1",
+      "lane": 1,
+      "timeMs": 53118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-29-3",
+      "lane": 3,
+      "timeMs": 54000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-30-1",
+      "lane": 1,
+      "timeMs": 54662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-30-3",
+      "lane": 1,
+      "timeMs": 55544,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-31-0",
+      "lane": 3,
+      "timeMs": 56206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-31-1",
+      "lane": 0,
+      "timeMs": 56757,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-31-2",
+      "lane": 2,
+      "timeMs": 57309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-33-0",
+      "lane": 1,
+      "timeMs": 59735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-33-1",
+      "lane": 2,
+      "timeMs": 60397,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-33-3",
+      "lane": 3,
+      "timeMs": 61279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-34-1",
+      "lane": 1,
+      "timeMs": 61941,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-34-2",
+      "lane": 2,
+      "timeMs": 62382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-35-1",
+      "lane": 1,
+      "timeMs": 63485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-35-2",
+      "lane": 3,
+      "timeMs": 63706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-35-4",
+      "lane": 2,
+      "timeMs": 64588,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-36-3",
+      "lane": 1,
+      "timeMs": 66463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-37-0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-37-1",
+      "lane": 3,
+      "timeMs": 67676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-38-2",
+      "lane": 1,
+      "timeMs": 69441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-39-0",
+      "lane": 0,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-39-3",
+      "lane": 3,
+      "timeMs": 71647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-40-2",
+      "lane": 3,
+      "timeMs": 72529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-40-3",
+      "lane": 1,
+      "timeMs": 73191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-40-4",
+      "lane": 2,
+      "timeMs": 73412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-41-0",
+      "lane": 3,
+      "timeMs": 73853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-41-1",
+      "lane": 0,
+      "timeMs": 74404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-41-2",
+      "lane": 2,
+      "timeMs": 74956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-41-3",
+      "lane": 1,
+      "timeMs": 75287,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-43-2",
+      "lane": 1,
+      "timeMs": 78265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-43-3",
+      "lane": 3,
+      "timeMs": 78926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-44-0",
+      "lane": 0,
+      "timeMs": 79147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-44-3",
+      "lane": 3,
+      "timeMs": 80471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-45-0",
+      "lane": 2,
+      "timeMs": 80912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-45-2",
+      "lane": 3,
+      "timeMs": 81353,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-46-0",
+      "lane": 3,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-47-1",
+      "lane": 3,
+      "timeMs": 85324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-48-0",
+      "lane": 1,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-48-1",
+      "lane": 2,
+      "timeMs": 86868,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-48-2",
+      "lane": 1,
+      "timeMs": 87088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-48-3",
+      "lane": 3,
+      "timeMs": 87750,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-49-0",
+      "lane": 0,
+      "timeMs": 87971,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-49-1",
+      "lane": 1,
+      "timeMs": 88412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-49-2",
+      "lane": 2,
+      "timeMs": 88853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-49-3",
+      "lane": 3,
+      "timeMs": 89294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-50-2",
+      "lane": 3,
+      "timeMs": 90176,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-50-3",
+      "lane": 1,
+      "timeMs": 90838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-51-2",
+      "lane": 2,
+      "timeMs": 92603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-51-3",
+      "lane": 1,
+      "timeMs": 92934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-52-1",
+      "lane": 3,
+      "timeMs": 94147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-53-0",
+      "lane": 1,
+      "timeMs": 95029,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-53-1",
+      "lane": 2,
+      "timeMs": 95691,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-53-3",
+      "lane": 3,
+      "timeMs": 96574,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-54-0",
+      "lane": 0,
+      "timeMs": 96794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-54-1",
+      "lane": 1,
+      "timeMs": 97235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-54-3",
+      "lane": 3,
+      "timeMs": 98118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-55-0",
+      "lane": 2,
+      "timeMs": 98559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-55-2",
+      "lane": 3,
+      "timeMs": 99000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-55-4",
+      "lane": 2,
+      "timeMs": 99882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-56-0",
+      "lane": 3,
+      "timeMs": 100324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-57-0",
+      "lane": 0,
+      "timeMs": 102088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-57-1",
+      "lane": 3,
+      "timeMs": 102971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-58-0",
+      "lane": 1,
+      "timeMs": 103853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-58-3",
+      "lane": 3,
+      "timeMs": 105397,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-60-1",
+      "lane": 1,
+      "timeMs": 107603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-60-2",
+      "lane": 3,
+      "timeMs": 107824,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-60-3",
+      "lane": 1,
+      "timeMs": 108485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-60-4",
+      "lane": 2,
+      "timeMs": 108706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-61-1",
+      "lane": 0,
+      "timeMs": 109699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-62-0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-62-1",
+      "lane": 3,
+      "timeMs": 111794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-63-3",
+      "lane": 3,
+      "timeMs": 114221,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-64-1",
+      "lane": 1,
+      "timeMs": 114882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-64-3",
+      "lane": 3,
+      "timeMs": 115765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-65-1",
+      "lane": 1,
+      "timeMs": 116426,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-65-2",
+      "lane": 3,
+      "timeMs": 116647,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-65-3",
+      "lane": 1,
+      "timeMs": 117309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Medium-67-0",
+      "lane": 0,
+      "timeMs": 119735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-0",
+      "lane": 2,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-ch0",
+      "lane": 0,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-ch3",
+      "lane": 3,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-1",
+      "lane": 1,
+      "timeMs": 1721,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-2",
+      "lane": 3,
+      "timeMs": 1941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-3",
+      "lane": 1,
+      "timeMs": 2603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-0-4",
+      "lane": 2,
+      "timeMs": 2824,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-1-0",
+      "lane": 3,
+      "timeMs": 3265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-1-ch0",
+      "lane": 0,
+      "timeMs": 3265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-1-ch3",
+      "lane": 3,
+      "timeMs": 3265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-1-1",
+      "lane": 0,
+      "timeMs": 3816,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-1-3",
+      "lane": 1,
+      "timeMs": 4699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-2-0",
+      "lane": 0,
+      "timeMs": 5029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-2-1",
+      "lane": 3,
+      "timeMs": 5912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-3-1",
+      "lane": 2,
+      "timeMs": 7456,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-3-2",
+      "lane": 1,
+      "timeMs": 7676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-4-0",
+      "lane": 0,
+      "timeMs": 8559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-4-3",
+      "lane": 3,
+      "timeMs": 9882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-0",
+      "lane": 2,
+      "timeMs": 10324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-ch0",
+      "lane": 0,
+      "timeMs": 10324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-ch3",
+      "lane": 3,
+      "timeMs": 10324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-1",
+      "lane": 1,
+      "timeMs": 10544,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-3",
+      "lane": 1,
+      "timeMs": 11426,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-5-4",
+      "lane": 2,
+      "timeMs": 11647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-6-0",
+      "lane": 3,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-6-ch0",
+      "lane": 0,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-6-ch3",
+      "lane": 3,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-6-1",
+      "lane": 0,
+      "timeMs": 12640,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-6-3",
+      "lane": 1,
+      "timeMs": 13522,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-7-0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-7-ch0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-7-ch3",
+      "lane": 3,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-7-1",
+      "lane": 3,
+      "timeMs": 14735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-0",
+      "lane": 1,
+      "timeMs": 15618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-ch0",
+      "lane": 0,
+      "timeMs": 15618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-ch3",
+      "lane": 3,
+      "timeMs": 15618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-1",
+      "lane": 2,
+      "timeMs": 16279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-2",
+      "lane": 1,
+      "timeMs": 16500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-8-3",
+      "lane": 3,
+      "timeMs": 17162,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-9-0",
+      "lane": 0,
+      "timeMs": 17382,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-9-1",
+      "lane": 1,
+      "timeMs": 17824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-9-2",
+      "lane": 2,
+      "timeMs": 18265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-0",
+      "lane": 2,
+      "timeMs": 19147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-ch0",
+      "lane": 0,
+      "timeMs": 19147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-ch3",
+      "lane": 3,
+      "timeMs": 19147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-1",
+      "lane": 1,
+      "timeMs": 19368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-3",
+      "lane": 1,
+      "timeMs": 20250,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-10-4",
+      "lane": 2,
+      "timeMs": 20471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-11-1",
+      "lane": 0,
+      "timeMs": 21463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-11-3",
+      "lane": 1,
+      "timeMs": 22346,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-12-0",
+      "lane": 0,
+      "timeMs": 22676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-12-1",
+      "lane": 3,
+      "timeMs": 23559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-0",
+      "lane": 1,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-ch0",
+      "lane": 0,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-ch3",
+      "lane": 3,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-1",
+      "lane": 2,
+      "timeMs": 25103,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-2",
+      "lane": 1,
+      "timeMs": 25324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-13-3",
+      "lane": 3,
+      "timeMs": 25985,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-14-0",
+      "lane": 0,
+      "timeMs": 26206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-14-1",
+      "lane": 1,
+      "timeMs": 26647,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-14-2",
+      "lane": 2,
+      "timeMs": 27088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-14-3",
+      "lane": 3,
+      "timeMs": 27529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-0",
+      "lane": 2,
+      "timeMs": 27971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-ch0",
+      "lane": 0,
+      "timeMs": 27971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-ch3",
+      "lane": 3,
+      "timeMs": 27971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-1",
+      "lane": 1,
+      "timeMs": 28191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-2",
+      "lane": 3,
+      "timeMs": 28412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-3",
+      "lane": 1,
+      "timeMs": 29074,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-15-4",
+      "lane": 2,
+      "timeMs": 29294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-0",
+      "lane": 3,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-ch0",
+      "lane": 0,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-ch3",
+      "lane": 3,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-1",
+      "lane": 0,
+      "timeMs": 30287,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-2",
+      "lane": 2,
+      "timeMs": 30838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-16-3",
+      "lane": 1,
+      "timeMs": 31169,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-17-0",
+      "lane": 0,
+      "timeMs": 31500,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-17-1",
+      "lane": 3,
+      "timeMs": 32382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-18-0",
+      "lane": 1,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-18-ch0",
+      "lane": 0,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-18-ch3",
+      "lane": 3,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-18-1",
+      "lane": 2,
+      "timeMs": 33926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-19-0",
+      "lane": 0,
+      "timeMs": 35029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-19-1",
+      "lane": 1,
+      "timeMs": 35471,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-19-3",
+      "lane": 3,
+      "timeMs": 36353,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-0",
+      "lane": 2,
+      "timeMs": 36794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-ch0",
+      "lane": 0,
+      "timeMs": 36794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-ch3",
+      "lane": 3,
+      "timeMs": 36794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-1",
+      "lane": 1,
+      "timeMs": 37015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-2",
+      "lane": 3,
+      "timeMs": 37235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-20-4",
+      "lane": 2,
+      "timeMs": 38118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-21-0",
+      "lane": 3,
+      "timeMs": 38559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-21-1",
+      "lane": 0,
+      "timeMs": 39110,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-21-2",
+      "lane": 2,
+      "timeMs": 39662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-21-3",
+      "lane": 1,
+      "timeMs": 39993,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-22-0",
+      "lane": 0,
+      "timeMs": 40324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-22-1",
+      "lane": 3,
+      "timeMs": 41206,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-23-1",
+      "lane": 2,
+      "timeMs": 42750,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-23-2",
+      "lane": 1,
+      "timeMs": 42971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-23-3",
+      "lane": 3,
+      "timeMs": 43632,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-24-0",
+      "lane": 0,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-25-0",
+      "lane": 2,
+      "timeMs": 45618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-25-1",
+      "lane": 1,
+      "timeMs": 45838,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-25-2",
+      "lane": 3,
+      "timeMs": 46059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-25-3",
+      "lane": 1,
+      "timeMs": 46721,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-25-4",
+      "lane": 2,
+      "timeMs": 46941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-26-0",
+      "lane": 3,
+      "timeMs": 47382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-26-1",
+      "lane": 0,
+      "timeMs": 47934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-26-2",
+      "lane": 2,
+      "timeMs": 48485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-26-3",
+      "lane": 1,
+      "timeMs": 48816,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-27-0",
+      "lane": 0,
+      "timeMs": 49147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-27-1",
+      "lane": 3,
+      "timeMs": 50029,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-28-1",
+      "lane": 2,
+      "timeMs": 51574,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-28-2",
+      "lane": 1,
+      "timeMs": 51794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-28-3",
+      "lane": 3,
+      "timeMs": 52456,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-29-0",
+      "lane": 0,
+      "timeMs": 52676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-29-3",
+      "lane": 3,
+      "timeMs": 54000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-ch0",
+      "lane": 0,
+      "timeMs": 54441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-ch3",
+      "lane": 3,
+      "timeMs": 54441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-1",
+      "lane": 1,
+      "timeMs": 54662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-2",
+      "lane": 3,
+      "timeMs": 54882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-3",
+      "lane": 1,
+      "timeMs": 55544,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-30-4",
+      "lane": 2,
+      "timeMs": 55765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-31-0",
+      "lane": 3,
+      "timeMs": 56206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-31-ch0",
+      "lane": 0,
+      "timeMs": 56206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-31-ch3",
+      "lane": 3,
+      "timeMs": 56206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-31-3",
+      "lane": 1,
+      "timeMs": 57640,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-32-0",
+      "lane": 0,
+      "timeMs": 57971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-33-0",
+      "lane": 1,
+      "timeMs": 59735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-33-1",
+      "lane": 2,
+      "timeMs": 60397,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-33-2",
+      "lane": 1,
+      "timeMs": 60618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-33-3",
+      "lane": 3,
+      "timeMs": 61279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-34-0",
+      "lane": 0,
+      "timeMs": 61500,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-34-ch0",
+      "lane": 0,
+      "timeMs": 61500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-34-ch3",
+      "lane": 3,
+      "timeMs": 61500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-34-1",
+      "lane": 1,
+      "timeMs": 61941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-35-1",
+      "lane": 1,
+      "timeMs": 63485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-35-2",
+      "lane": 3,
+      "timeMs": 63706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-35-3",
+      "lane": 1,
+      "timeMs": 64368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-36-ch0",
+      "lane": 0,
+      "timeMs": 65029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-36-ch3",
+      "lane": 3,
+      "timeMs": 65029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-36-1",
+      "lane": 0,
+      "timeMs": 65581,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-36-2",
+      "lane": 2,
+      "timeMs": 66132,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-36-3",
+      "lane": 1,
+      "timeMs": 66463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-37-0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-37-ch0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-37-ch3",
+      "lane": 3,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-38-0",
+      "lane": 1,
+      "timeMs": 68559,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-38-1",
+      "lane": 2,
+      "timeMs": 69221,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-39-0",
+      "lane": 0,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-39-2",
+      "lane": 2,
+      "timeMs": 71206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-39-3",
+      "lane": 3,
+      "timeMs": 71647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-ch0",
+      "lane": 0,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-ch3",
+      "lane": 3,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-1",
+      "lane": 1,
+      "timeMs": 72309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-2",
+      "lane": 3,
+      "timeMs": 72529,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-3",
+      "lane": 1,
+      "timeMs": 73191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-40-4",
+      "lane": 2,
+      "timeMs": 73412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-41-0",
+      "lane": 3,
+      "timeMs": 73853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-41-1",
+      "lane": 0,
+      "timeMs": 74404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-41-2",
+      "lane": 2,
+      "timeMs": 74956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-41-3",
+      "lane": 1,
+      "timeMs": 75287,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-42-0",
+      "lane": 0,
+      "timeMs": 75618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-42-ch0",
+      "lane": 0,
+      "timeMs": 75618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-42-ch3",
+      "lane": 3,
+      "timeMs": 75618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-42-1",
+      "lane": 3,
+      "timeMs": 76500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-43-0",
+      "lane": 1,
+      "timeMs": 77382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-43-ch0",
+      "lane": 0,
+      "timeMs": 77382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-43-ch3",
+      "lane": 3,
+      "timeMs": 77382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-43-2",
+      "lane": 1,
+      "timeMs": 78265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-43-3",
+      "lane": 3,
+      "timeMs": 78926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-44-0",
+      "lane": 0,
+      "timeMs": 79147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-44-1",
+      "lane": 1,
+      "timeMs": 79588,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-44-2",
+      "lane": 2,
+      "timeMs": 80029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-44-3",
+      "lane": 3,
+      "timeMs": 80471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-45-0",
+      "lane": 2,
+      "timeMs": 80912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-45-ch0",
+      "lane": 0,
+      "timeMs": 80912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-45-ch3",
+      "lane": 3,
+      "timeMs": 80912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-45-1",
+      "lane": 1,
+      "timeMs": 81132,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-45-3",
+      "lane": 1,
+      "timeMs": 82015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-46-0",
+      "lane": 3,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-46-ch0",
+      "lane": 0,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-46-ch3",
+      "lane": 3,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-46-1",
+      "lane": 0,
+      "timeMs": 83228,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-46-3",
+      "lane": 1,
+      "timeMs": 84110,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-47-0",
+      "lane": 0,
+      "timeMs": 84441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-47-ch0",
+      "lane": 0,
+      "timeMs": 84441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-47-ch3",
+      "lane": 3,
+      "timeMs": 84441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-47-1",
+      "lane": 3,
+      "timeMs": 85324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-48-0",
+      "lane": 1,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-48-1",
+      "lane": 2,
+      "timeMs": 86868,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-48-2",
+      "lane": 1,
+      "timeMs": 87088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-48-3",
+      "lane": 3,
+      "timeMs": 87750,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-0",
+      "lane": 0,
+      "timeMs": 87971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-ch0",
+      "lane": 0,
+      "timeMs": 87971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-ch3",
+      "lane": 3,
+      "timeMs": 87971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-1",
+      "lane": 1,
+      "timeMs": 88412,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-2",
+      "lane": 2,
+      "timeMs": 88853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-49-3",
+      "lane": 3,
+      "timeMs": 89294,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-0",
+      "lane": 2,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-ch0",
+      "lane": 0,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-ch3",
+      "lane": 3,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-1",
+      "lane": 1,
+      "timeMs": 89956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-2",
+      "lane": 3,
+      "timeMs": 90176,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-3",
+      "lane": 1,
+      "timeMs": 90838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-50-4",
+      "lane": 2,
+      "timeMs": 91059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-0",
+      "lane": 3,
+      "timeMs": 91500,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-ch0",
+      "lane": 0,
+      "timeMs": 91500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-ch3",
+      "lane": 3,
+      "timeMs": 91500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-1",
+      "lane": 0,
+      "timeMs": 92051,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-2",
+      "lane": 2,
+      "timeMs": 92603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-51-3",
+      "lane": 1,
+      "timeMs": 92934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-52-0",
+      "lane": 0,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-52-ch0",
+      "lane": 0,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-52-ch3",
+      "lane": 3,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-52-1",
+      "lane": 3,
+      "timeMs": 94147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-53-0",
+      "lane": 1,
+      "timeMs": 95029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-53-ch0",
+      "lane": 0,
+      "timeMs": 95029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-53-ch3",
+      "lane": 3,
+      "timeMs": 95029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-53-1",
+      "lane": 2,
+      "timeMs": 95691,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-53-2",
+      "lane": 1,
+      "timeMs": 95912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-0",
+      "lane": 0,
+      "timeMs": 96794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-ch0",
+      "lane": 0,
+      "timeMs": 96794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-ch3",
+      "lane": 3,
+      "timeMs": 96794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-1",
+      "lane": 1,
+      "timeMs": 97235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-2",
+      "lane": 2,
+      "timeMs": 97676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-54-3",
+      "lane": 3,
+      "timeMs": 98118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-55-2",
+      "lane": 3,
+      "timeMs": 99000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-55-4",
+      "lane": 2,
+      "timeMs": 99882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-56-0",
+      "lane": 3,
+      "timeMs": 100324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-56-1",
+      "lane": 0,
+      "timeMs": 100875,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-56-3",
+      "lane": 1,
+      "timeMs": 101757,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-57-0",
+      "lane": 0,
+      "timeMs": 102088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-57-ch0",
+      "lane": 0,
+      "timeMs": 102088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-57-ch3",
+      "lane": 3,
+      "timeMs": 102088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-57-1",
+      "lane": 3,
+      "timeMs": 102971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-58-1",
+      "lane": 2,
+      "timeMs": 104515,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-58-2",
+      "lane": 1,
+      "timeMs": 104735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-58-3",
+      "lane": 3,
+      "timeMs": 105397,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-59-0",
+      "lane": 0,
+      "timeMs": 105618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-59-1",
+      "lane": 1,
+      "timeMs": 106059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-59-2",
+      "lane": 2,
+      "timeMs": 106500,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-59-3",
+      "lane": 3,
+      "timeMs": 106941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-60-0",
+      "lane": 2,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-60-ch0",
+      "lane": 0,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-60-ch3",
+      "lane": 3,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-60-2",
+      "lane": 3,
+      "timeMs": 107824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-60-4",
+      "lane": 2,
+      "timeMs": 108706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-0",
+      "lane": 3,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-ch0",
+      "lane": 0,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-ch3",
+      "lane": 3,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-1",
+      "lane": 0,
+      "timeMs": 109699,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-2",
+      "lane": 2,
+      "timeMs": 110250,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-61-3",
+      "lane": 1,
+      "timeMs": 110581,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-62-0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-62-ch0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-62-ch3",
+      "lane": 3,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-62-1",
+      "lane": 3,
+      "timeMs": 111794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-63-0",
+      "lane": 1,
+      "timeMs": 112676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-63-1",
+      "lane": 2,
+      "timeMs": 113338,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-64-0",
+      "lane": 0,
+      "timeMs": 114441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-64-1",
+      "lane": 1,
+      "timeMs": 114882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-64-2",
+      "lane": 2,
+      "timeMs": 115324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-64-3",
+      "lane": 3,
+      "timeMs": 115765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-65-0",
+      "lane": 2,
+      "timeMs": 116206,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-65-1",
+      "lane": 1,
+      "timeMs": 116426,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-65-2",
+      "lane": 3,
+      "timeMs": 116647,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-66-0",
+      "lane": 3,
+      "timeMs": 117971,
+      "type": "hold",
+      "holdDuration": 882.3529411764706
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-66-ch0",
+      "lane": 0,
+      "timeMs": 117971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-66-ch3",
+      "lane": 3,
+      "timeMs": 117971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-66-1",
+      "lane": 0,
+      "timeMs": 118522,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-66-3",
+      "lane": 1,
+      "timeMs": 119404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Hard-67-1",
+      "lane": 3,
+      "timeMs": 120618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-0-0",
+      "lane": 2,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-0-1",
+      "lane": 1,
+      "timeMs": 1721,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-0-2",
+      "lane": 3,
+      "timeMs": 1941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-0-3",
+      "lane": 1,
+      "timeMs": 2603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-0-4",
+      "lane": 2,
+      "timeMs": 2824,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-1-0",
+      "lane": 3,
+      "timeMs": 3265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-1-1",
+      "lane": 0,
+      "timeMs": 3816,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-1-2",
+      "lane": 2,
+      "timeMs": 4368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-1-3",
+      "lane": 1,
+      "timeMs": 4699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-2-0",
+      "lane": 0,
+      "timeMs": 5029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-2-1",
+      "lane": 3,
+      "timeMs": 5912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-3-0",
+      "lane": 1,
+      "timeMs": 6794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-3-1",
+      "lane": 2,
+      "timeMs": 7456,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-3-2",
+      "lane": 1,
+      "timeMs": 7676,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-3-3",
+      "lane": 3,
+      "timeMs": 8338,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-4-0",
+      "lane": 0,
+      "timeMs": 8559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-4-1",
+      "lane": 1,
+      "timeMs": 9000,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-4-2",
+      "lane": 2,
+      "timeMs": 9441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-4-3",
+      "lane": 3,
+      "timeMs": 9882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-5-0",
+      "lane": 2,
+      "timeMs": 10324,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-5-1",
+      "lane": 1,
+      "timeMs": 10544,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-5-2",
+      "lane": 3,
+      "timeMs": 10765,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-5-3",
+      "lane": 1,
+      "timeMs": 11426,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-5-4",
+      "lane": 2,
+      "timeMs": 11647,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-0",
+      "lane": 3,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-ch0",
+      "lane": 0,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-ch3",
+      "lane": 3,
+      "timeMs": 12088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-1",
+      "lane": 0,
+      "timeMs": 12640,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-2",
+      "lane": 2,
+      "timeMs": 13191,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-6-3",
+      "lane": 1,
+      "timeMs": 13522,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-7-0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-7-ch0",
+      "lane": 0,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-7-ch3",
+      "lane": 3,
+      "timeMs": 13853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-7-1",
+      "lane": 3,
+      "timeMs": 14735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-8-0",
+      "lane": 1,
+      "timeMs": 15618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-8-1",
+      "lane": 2,
+      "timeMs": 16279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-8-2",
+      "lane": 1,
+      "timeMs": 16500,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-8-3",
+      "lane": 3,
+      "timeMs": 17162,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-9-0",
+      "lane": 0,
+      "timeMs": 17382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-9-1",
+      "lane": 1,
+      "timeMs": 17824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-9-2",
+      "lane": 2,
+      "timeMs": 18265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-9-3",
+      "lane": 3,
+      "timeMs": 18706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-10-0",
+      "lane": 2,
+      "timeMs": 19147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-10-1",
+      "lane": 1,
+      "timeMs": 19368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-10-2",
+      "lane": 3,
+      "timeMs": 19588,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-10-3",
+      "lane": 1,
+      "timeMs": 20250,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-10-4",
+      "lane": 2,
+      "timeMs": 20471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-0",
+      "lane": 3,
+      "timeMs": 20912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-ch0",
+      "lane": 0,
+      "timeMs": 20912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-ch3",
+      "lane": 3,
+      "timeMs": 20912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-1",
+      "lane": 0,
+      "timeMs": 21463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-2",
+      "lane": 2,
+      "timeMs": 22015,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-11-3",
+      "lane": 1,
+      "timeMs": 22346,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-12-0",
+      "lane": 0,
+      "timeMs": 22676,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-12-ch0",
+      "lane": 0,
+      "timeMs": 22676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-12-ch3",
+      "lane": 3,
+      "timeMs": 22676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-12-1",
+      "lane": 3,
+      "timeMs": 23559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-0",
+      "lane": 1,
+      "timeMs": 24441,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-ch0",
+      "lane": 0,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-ch3",
+      "lane": 3,
+      "timeMs": 24441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-1",
+      "lane": 2,
+      "timeMs": 25103,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-2",
+      "lane": 1,
+      "timeMs": 25324,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-13-3",
+      "lane": 3,
+      "timeMs": 25985,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-14-0",
+      "lane": 0,
+      "timeMs": 26206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-14-1",
+      "lane": 1,
+      "timeMs": 26647,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-14-2",
+      "lane": 2,
+      "timeMs": 27088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-14-3",
+      "lane": 3,
+      "timeMs": 27529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-15-0",
+      "lane": 2,
+      "timeMs": 27971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-15-1",
+      "lane": 1,
+      "timeMs": 28191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-15-2",
+      "lane": 3,
+      "timeMs": 28412,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-15-3",
+      "lane": 1,
+      "timeMs": 29074,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-15-4",
+      "lane": 2,
+      "timeMs": 29294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-0",
+      "lane": 3,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-ch0",
+      "lane": 0,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-ch3",
+      "lane": 3,
+      "timeMs": 29735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-1",
+      "lane": 0,
+      "timeMs": 30287,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-2",
+      "lane": 2,
+      "timeMs": 30838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-16-3",
+      "lane": 1,
+      "timeMs": 31169,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-17-0",
+      "lane": 0,
+      "timeMs": 31500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-17-1",
+      "lane": 3,
+      "timeMs": 32382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-0",
+      "lane": 1,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-ch0",
+      "lane": 0,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-ch3",
+      "lane": 3,
+      "timeMs": 33265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-1",
+      "lane": 2,
+      "timeMs": 33926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-2",
+      "lane": 1,
+      "timeMs": 34147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-18-3",
+      "lane": 3,
+      "timeMs": 34809,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-19-0",
+      "lane": 0,
+      "timeMs": 35029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-19-1",
+      "lane": 1,
+      "timeMs": 35471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-19-2",
+      "lane": 2,
+      "timeMs": 35912,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-19-3",
+      "lane": 3,
+      "timeMs": 36353,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-20-0",
+      "lane": 2,
+      "timeMs": 36794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-20-1",
+      "lane": 1,
+      "timeMs": 37015,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-20-2",
+      "lane": 3,
+      "timeMs": 37235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-20-3",
+      "lane": 1,
+      "timeMs": 37897,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-20-4",
+      "lane": 2,
+      "timeMs": 38118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-0",
+      "lane": 3,
+      "timeMs": 38559,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-ch0",
+      "lane": 0,
+      "timeMs": 38559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-ch3",
+      "lane": 3,
+      "timeMs": 38559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-1",
+      "lane": 0,
+      "timeMs": 39110,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-2",
+      "lane": 2,
+      "timeMs": 39662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-21-3",
+      "lane": 1,
+      "timeMs": 39993,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-22-0",
+      "lane": 0,
+      "timeMs": 40324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-22-1",
+      "lane": 3,
+      "timeMs": 41206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-23-0",
+      "lane": 1,
+      "timeMs": 42088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-23-1",
+      "lane": 2,
+      "timeMs": 42750,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-23-2",
+      "lane": 1,
+      "timeMs": 42971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-23-3",
+      "lane": 3,
+      "timeMs": 43632,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-0",
+      "lane": 0,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-ch0",
+      "lane": 0,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-ch3",
+      "lane": 3,
+      "timeMs": 43853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-1",
+      "lane": 1,
+      "timeMs": 44294,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-2",
+      "lane": 2,
+      "timeMs": 44735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-24-3",
+      "lane": 3,
+      "timeMs": 45176,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-25-0",
+      "lane": 2,
+      "timeMs": 45618,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-25-1",
+      "lane": 1,
+      "timeMs": 45838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-25-2",
+      "lane": 3,
+      "timeMs": 46059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-25-3",
+      "lane": 1,
+      "timeMs": 46721,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-25-4",
+      "lane": 2,
+      "timeMs": 46941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-0",
+      "lane": 3,
+      "timeMs": 47382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-ch0",
+      "lane": 0,
+      "timeMs": 47382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-ch3",
+      "lane": 3,
+      "timeMs": 47382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-1",
+      "lane": 0,
+      "timeMs": 47934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-2",
+      "lane": 2,
+      "timeMs": 48485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-26-3",
+      "lane": 1,
+      "timeMs": 48816,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-27-0",
+      "lane": 0,
+      "timeMs": 49147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-27-1",
+      "lane": 3,
+      "timeMs": 50029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-28-0",
+      "lane": 1,
+      "timeMs": 50912,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-28-1",
+      "lane": 2,
+      "timeMs": 51574,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-28-2",
+      "lane": 1,
+      "timeMs": 51794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-28-3",
+      "lane": 3,
+      "timeMs": 52456,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-29-0",
+      "lane": 0,
+      "timeMs": 52676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-29-1",
+      "lane": 1,
+      "timeMs": 53118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-29-2",
+      "lane": 2,
+      "timeMs": 53559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-29-3",
+      "lane": 3,
+      "timeMs": 54000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-0",
+      "lane": 2,
+      "timeMs": 54441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-ch0",
+      "lane": 0,
+      "timeMs": 54441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-ch3",
+      "lane": 3,
+      "timeMs": 54441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-1",
+      "lane": 1,
+      "timeMs": 54662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-2",
+      "lane": 3,
+      "timeMs": 54882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-3",
+      "lane": 1,
+      "timeMs": 55544,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-30-4",
+      "lane": 2,
+      "timeMs": 55765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-31-0",
+      "lane": 3,
+      "timeMs": 56206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-31-1",
+      "lane": 0,
+      "timeMs": 56757,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-31-2",
+      "lane": 2,
+      "timeMs": 57309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-31-3",
+      "lane": 1,
+      "timeMs": 57640,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-32-0",
+      "lane": 0,
+      "timeMs": 57971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-32-ch0",
+      "lane": 0,
+      "timeMs": 57971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-32-ch3",
+      "lane": 3,
+      "timeMs": 57971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-32-1",
+      "lane": 3,
+      "timeMs": 58853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-33-0",
+      "lane": 1,
+      "timeMs": 59735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-33-1",
+      "lane": 2,
+      "timeMs": 60397,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-33-2",
+      "lane": 1,
+      "timeMs": 60618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-33-3",
+      "lane": 3,
+      "timeMs": 61279,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-34-0",
+      "lane": 0,
+      "timeMs": 61500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-34-1",
+      "lane": 1,
+      "timeMs": 61941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-34-2",
+      "lane": 2,
+      "timeMs": 62382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-34-3",
+      "lane": 3,
+      "timeMs": 62824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-35-0",
+      "lane": 2,
+      "timeMs": 63265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-35-1",
+      "lane": 1,
+      "timeMs": 63485,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-35-2",
+      "lane": 3,
+      "timeMs": 63706,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-35-3",
+      "lane": 1,
+      "timeMs": 64368,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-35-4",
+      "lane": 2,
+      "timeMs": 64588,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-0",
+      "lane": 3,
+      "timeMs": 65029,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-ch0",
+      "lane": 0,
+      "timeMs": 65029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-ch3",
+      "lane": 3,
+      "timeMs": 65029,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-1",
+      "lane": 0,
+      "timeMs": 65581,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-2",
+      "lane": 2,
+      "timeMs": 66132,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-36-3",
+      "lane": 1,
+      "timeMs": 66463,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-37-0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-37-ch0",
+      "lane": 0,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-37-ch3",
+      "lane": 3,
+      "timeMs": 66794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-37-1",
+      "lane": 3,
+      "timeMs": 67676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-38-0",
+      "lane": 1,
+      "timeMs": 68559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-38-1",
+      "lane": 2,
+      "timeMs": 69221,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-38-2",
+      "lane": 1,
+      "timeMs": 69441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-38-3",
+      "lane": 3,
+      "timeMs": 70103,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-0",
+      "lane": 0,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-ch0",
+      "lane": 0,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-ch3",
+      "lane": 3,
+      "timeMs": 70324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-1",
+      "lane": 1,
+      "timeMs": 70765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-2",
+      "lane": 2,
+      "timeMs": 71206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-39-3",
+      "lane": 3,
+      "timeMs": 71647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-0",
+      "lane": 2,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-ch0",
+      "lane": 0,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-ch3",
+      "lane": 3,
+      "timeMs": 72088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-1",
+      "lane": 1,
+      "timeMs": 72309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-2",
+      "lane": 3,
+      "timeMs": 72529,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-3",
+      "lane": 1,
+      "timeMs": 73191,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-40-4",
+      "lane": 2,
+      "timeMs": 73412,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-0",
+      "lane": 3,
+      "timeMs": 73853,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-ch0",
+      "lane": 0,
+      "timeMs": 73853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-ch3",
+      "lane": 3,
+      "timeMs": 73853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-1",
+      "lane": 0,
+      "timeMs": 74404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-2",
+      "lane": 2,
+      "timeMs": 74956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-41-3",
+      "lane": 1,
+      "timeMs": 75287,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-42-0",
+      "lane": 0,
+      "timeMs": 75618,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-42-1",
+      "lane": 3,
+      "timeMs": 76500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-43-0",
+      "lane": 1,
+      "timeMs": 77382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-43-1",
+      "lane": 2,
+      "timeMs": 78044,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-43-2",
+      "lane": 1,
+      "timeMs": 78265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-43-3",
+      "lane": 3,
+      "timeMs": 78926,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-44-0",
+      "lane": 0,
+      "timeMs": 79147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-44-1",
+      "lane": 1,
+      "timeMs": 79588,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-44-2",
+      "lane": 2,
+      "timeMs": 80029,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-44-3",
+      "lane": 3,
+      "timeMs": 80471,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-45-0",
+      "lane": 2,
+      "timeMs": 80912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-45-1",
+      "lane": 1,
+      "timeMs": 81132,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-45-2",
+      "lane": 3,
+      "timeMs": 81353,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-45-3",
+      "lane": 1,
+      "timeMs": 82015,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-45-4",
+      "lane": 2,
+      "timeMs": 82235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-0",
+      "lane": 3,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-ch0",
+      "lane": 0,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-ch3",
+      "lane": 3,
+      "timeMs": 82676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-1",
+      "lane": 0,
+      "timeMs": 83228,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-2",
+      "lane": 2,
+      "timeMs": 83779,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-46-3",
+      "lane": 1,
+      "timeMs": 84110,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-47-0",
+      "lane": 0,
+      "timeMs": 84441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-47-1",
+      "lane": 3,
+      "timeMs": 85324,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-0",
+      "lane": 1,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-ch0",
+      "lane": 0,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-ch3",
+      "lane": 3,
+      "timeMs": 86206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-1",
+      "lane": 2,
+      "timeMs": 86868,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-2",
+      "lane": 1,
+      "timeMs": 87088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-48-3",
+      "lane": 3,
+      "timeMs": 87750,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-49-0",
+      "lane": 0,
+      "timeMs": 87971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-49-1",
+      "lane": 1,
+      "timeMs": 88412,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-49-2",
+      "lane": 2,
+      "timeMs": 88853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-49-3",
+      "lane": 3,
+      "timeMs": 89294,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-0",
+      "lane": 2,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-ch0",
+      "lane": 0,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-ch3",
+      "lane": 3,
+      "timeMs": 89735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-1",
+      "lane": 1,
+      "timeMs": 89956,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-2",
+      "lane": 3,
+      "timeMs": 90176,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-3",
+      "lane": 1,
+      "timeMs": 90838,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-50-4",
+      "lane": 2,
+      "timeMs": 91059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-51-0",
+      "lane": 3,
+      "timeMs": 91500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-51-1",
+      "lane": 0,
+      "timeMs": 92051,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-51-2",
+      "lane": 2,
+      "timeMs": 92603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-51-3",
+      "lane": 1,
+      "timeMs": 92934,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-52-0",
+      "lane": 0,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-52-ch0",
+      "lane": 0,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-52-ch3",
+      "lane": 3,
+      "timeMs": 93265,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-52-1",
+      "lane": 3,
+      "timeMs": 94147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-53-0",
+      "lane": 1,
+      "timeMs": 95029,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-53-1",
+      "lane": 2,
+      "timeMs": 95691,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-53-2",
+      "lane": 1,
+      "timeMs": 95912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-53-3",
+      "lane": 3,
+      "timeMs": 96574,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-54-0",
+      "lane": 0,
+      "timeMs": 96794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-54-1",
+      "lane": 1,
+      "timeMs": 97235,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-54-2",
+      "lane": 2,
+      "timeMs": 97676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-54-3",
+      "lane": 3,
+      "timeMs": 98118,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-0",
+      "lane": 2,
+      "timeMs": 98559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-ch0",
+      "lane": 0,
+      "timeMs": 98559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-ch3",
+      "lane": 3,
+      "timeMs": 98559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-1",
+      "lane": 1,
+      "timeMs": 98779,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-2",
+      "lane": 3,
+      "timeMs": 99000,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-3",
+      "lane": 1,
+      "timeMs": 99662,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-55-4",
+      "lane": 2,
+      "timeMs": 99882,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-0",
+      "lane": 3,
+      "timeMs": 100324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-ch0",
+      "lane": 0,
+      "timeMs": 100324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-ch3",
+      "lane": 3,
+      "timeMs": 100324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-1",
+      "lane": 0,
+      "timeMs": 100875,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-2",
+      "lane": 2,
+      "timeMs": 101426,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-56-3",
+      "lane": 1,
+      "timeMs": 101757,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-57-0",
+      "lane": 0,
+      "timeMs": 102088,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-57-1",
+      "lane": 3,
+      "timeMs": 102971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-0",
+      "lane": 1,
+      "timeMs": 103853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-ch0",
+      "lane": 0,
+      "timeMs": 103853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-ch3",
+      "lane": 3,
+      "timeMs": 103853,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-1",
+      "lane": 2,
+      "timeMs": 104515,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-2",
+      "lane": 1,
+      "timeMs": 104735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-58-3",
+      "lane": 3,
+      "timeMs": 105397,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-59-0",
+      "lane": 0,
+      "timeMs": 105618,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-59-1",
+      "lane": 1,
+      "timeMs": 106059,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-59-2",
+      "lane": 2,
+      "timeMs": 106500,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-59-3",
+      "lane": 3,
+      "timeMs": 106941,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-0",
+      "lane": 2,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-ch0",
+      "lane": 0,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-ch3",
+      "lane": 3,
+      "timeMs": 107382,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-1",
+      "lane": 1,
+      "timeMs": 107603,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-2",
+      "lane": 3,
+      "timeMs": 107824,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-3",
+      "lane": 1,
+      "timeMs": 108485,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-60-4",
+      "lane": 2,
+      "timeMs": 108706,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-0",
+      "lane": 3,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-ch0",
+      "lane": 0,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-ch3",
+      "lane": 3,
+      "timeMs": 109147,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-1",
+      "lane": 0,
+      "timeMs": 109699,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-2",
+      "lane": 2,
+      "timeMs": 110250,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-61-3",
+      "lane": 1,
+      "timeMs": 110581,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-62-0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-62-ch0",
+      "lane": 0,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-62-ch3",
+      "lane": 3,
+      "timeMs": 110912,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-62-1",
+      "lane": 3,
+      "timeMs": 111794,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-63-0",
+      "lane": 1,
+      "timeMs": 112676,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-63-1",
+      "lane": 2,
+      "timeMs": 113338,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-63-2",
+      "lane": 1,
+      "timeMs": 113559,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-63-3",
+      "lane": 3,
+      "timeMs": 114221,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-0",
+      "lane": 0,
+      "timeMs": 114441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-ch0",
+      "lane": 0,
+      "timeMs": 114441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-ch3",
+      "lane": 3,
+      "timeMs": 114441,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-1",
+      "lane": 1,
+      "timeMs": 114882,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-2",
+      "lane": 2,
+      "timeMs": 115324,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-64-3",
+      "lane": 3,
+      "timeMs": 115765,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-0",
+      "lane": 2,
+      "timeMs": 116206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-ch0",
+      "lane": 0,
+      "timeMs": 116206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-ch3",
+      "lane": 3,
+      "timeMs": 116206,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-1",
+      "lane": 1,
+      "timeMs": 116426,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-2",
+      "lane": 3,
+      "timeMs": 116647,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-3",
+      "lane": 1,
+      "timeMs": 117309,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-65-4",
+      "lane": 2,
+      "timeMs": 117529,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-66-0",
+      "lane": 3,
+      "timeMs": 117971,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-66-1",
+      "lane": 0,
+      "timeMs": 118522,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-66-2",
+      "lane": 2,
+      "timeMs": 119074,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-66-3",
+      "lane": 1,
+      "timeMs": 119404,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-67-0",
+      "lane": 0,
+      "timeMs": 119735,
+      "type": "hold",
+      "holdDuration": 1323.5294117647059
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-67-ch0",
+      "lane": 0,
+      "timeMs": 119735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-67-ch3",
+      "lane": 3,
+      "timeMs": 119735,
+      "type": "tap"
+    },
+    {
+      "id": "local:2:MHMH.mp3-Expert-67-1",
+      "lane": 3,
+      "timeMs": 120618,
+      "type": "tap"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "songId": "local:1:deep end.mp3",
+  "title": "local_1_deep_end_mp3.mid",
+  "artist": "STEMSTATION",
+  "bpm": 120,
+  "offsetMs": 0,
+  "difficulty": "easy",
+  "notes": [
+    {
+      "timeMs": 8000,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 8180,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 13500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 13680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 25000,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 25180,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 33500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 33680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 43500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 43680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 48000,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 48180,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 60500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 60680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 63500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 63680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 82750,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 82930,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 95000,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 95180,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 103500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 103680,
+      "durationMs": 180,
+      "pitch": 60
+    },
+    {
+      "timeMs": 113500,
+      "lane": 2,
+      "type": "hold",
+      "endTimeMs": 113680,
+      "durationMs": 180,
+      "pitch": 60
+    }
+  ]
+}

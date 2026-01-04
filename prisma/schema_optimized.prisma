@@ -1,0 +1,368 @@
+// TapTap ZION - Optimized Prisma Schema
+// Production-ready schema with proper indexes and constraints
+// Prisma v6+ | Supabase Postgres | relationMode = "prisma"
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+  previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+  extensions   = [pg_trgm, uuid_ossp]
+}
+
+// =======================
+// Enums
+// =======================
+
+enum Role {
+  LISTENER
+  CREATOR
+  ADMIN
+  MODERATOR
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  DELETED
+  PENDING
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum DeviceType {
+  WEB
+  MOBILE
+  DESKTOP
+  API
+}
+
+enum AuthTokenType {
+  REFRESH
+  RESET_PASSWORD
+  EMAIL_VERIFICATION
+  INVITE
+}
+
+// =======================
+// Core User & Profile
+// =======================
+
+model User {
+  id               String               @id @default(uuid()) @db.Uuid
+  email            String               @unique
+  username         String               @unique
+  hashedPassword   String?
+  authUserId       String               @unique @db.Uuid
+  
+  // Profile fields
+  avatarUrl        String?
+  bio              String?
+  country          String?
+  headerUrl        String?
+  
+  // Status fields
+  role             Role                 @default(LISTENER)
+  status           AccountStatus        @default(ACTIVE)
+  verified         VerificationStatus   @default(UNVERIFIED)
+  deletedAt        DateTime?
+  
+  // Timestamps
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  lastLoginAt      DateTime?
+  
+  // Relations
+  profile          Profile?
+  artist           Artist?
+  devices          Device[]
+  sessions         Session[]
+  authTokens       AuthToken[]
+  
+  // Social
+  following        Follow[]             @relation("Following")
+  followers        Follow[]             @relation("Followers")
+  posts            Post[]
+  comments         Comment[]
+  likes            Like[]
+  reposts          Repost[]
+  
+  // Messaging
+  chatParticipants ChatParticipant[]
+  sentMessages     Message[]            @relation("UserSentMessages")
+  messageReads     MessageRead[]
+  
+  // Library & Playlists
+  playlists        Playlist[]
+  libraries        Library[]
+  
+  // Commerce
+  orders           Order[]
+  carts            Cart[]
+  payouts          Payout[]
+  reviews          Review[]
+  
+  // Wallets & Tokens
+  wallets          Wallet[]
+  transactions     Transaction[]
+  tapPasses        TapPass[]
+  airdropClaims    AirdropClaim[]
+  
+  // Live & Battles
+  liveStreams      LiveStream[]
+  battlesAsA       Battle[]             @relation("BattleA")
+  battlesAsB       Battle[]             @relation("BattleB")
+  battlesWon       Battle[]             @relation("BattleWinner")
+  votes            Vote[]
+  
+  // Analytics & Events
+  playEvents       PlayEvent[]
+  metrics          MetricEvent[]
+  
+  // AI & Recommendations
+  aiDialogs        AIDialog[]
+  aiTasks          AITask[]
+  aiProfiles       AIProfile[]
+  aiInteractionLogs AIInteractionLog[]
+  embeddings       Embedding[]
+  recommendations  Recommendation[]
+  
+  // Admin & Moderation
+  apiKeys          APIKey[]
+  reports          Report[]             @relation("ReporterReports")
+  moderations      ModerationAction[]   @relation("ModeratorActions")
+  auditLogs        AuditLog[]           @relation("ActorLogs")
+  notifications    Notification[]
+  settings         Setting[]
+  
+  // Subscriptions & Tiers
+  subscriptions    Subscription[]       @relation("SubscriberSubs")
+  subscribers      Subscription[]       @relation("CreatorSubs")
+  tiers            Tier[]
+  
+  // Trades
+  tradesInitiated  Trade[]              @relation("TradeInitiator")
+  tradesReceived   Trade[]              @relation("TradeReceiver")
+  
+  // User Badges
+  userBadges       UserBadge[]
+  
+  // Performance indexes
+  @@index([email])
+  @@index([username])
+  @@index([status])
+  @@index([authUserId])
+  @@index([role])
+  @@index([verified])
+  @@index([createdAt])
+  @@index([lastLoginAt])
+  @@index([deletedAt])
+  
+  // Full-text search indexes
+  @@index([username, email])
+}
+
+model Profile {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @unique @db.Uuid
+  displayName String?
+  location    String?
+  links       Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// =======================
+// Devices & Sessions
+// =======================
+
+model Device {
+  id        String     @id @default(uuid()) @db.Uuid
+  userId    String     @db.Uuid
+  type      DeviceType @default(WEB)
+  ua        String?
+  lastSeen  DateTime?
+  createdAt DateTime   @default(now())
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([type])
+  @@index([lastSeen])
+}
+
+model Session {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String?   @db.Uuid
+  deviceId  String?
+  ip        String?
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+  user      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([deviceId])
+  @@index([expiresAt])
+  @@index([ip])
+}
+
+model AuthToken {
+  id        String        @id @default(uuid()) @db.Uuid
+  userId    String        @db.Uuid
+  type      AuthTokenType @default(REFRESH)
+  tokenHash String        @unique
+  expiresAt DateTime
+  createdAt DateTime      @default(now())
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([type])
+  @@index([expiresAt])
+  @@index([tokenHash])
+}
+
+// =======================
+// Music Graph
+// =======================
+
+model Artist {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @unique @db.Uuid
+  stageName String
+  about     String?
+  links     Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  albums    Album[]
+  tracks    Track[]
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([stageName])
+  @@index([createdAt])
+}
+
+model Album {
+  id        String    @id @default(uuid()) @db.Uuid
+  artistId  String    @db.Uuid
+  title     String
+  coverUrl  String?
+  releaseAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  tracks    Track[]
+  artist    Artist    @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@index([artistId])
+  @@index([title])
+  @@index([releaseAt])
+  @@index([createdAt])
+}
+
+model Track {
+  id           String    @id @default(uuid()) @db.Uuid
+  artistId     String    @db.Uuid
+  albumId      String?   @db.Uuid
+  title        String
+  audioUrl     String?
+  durationMs   Int?
+  waveformId   String?
+  lyrics       String?
+  tags         String[]
+  isExplicit   Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  artist       Artist    @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  album        Album?    @relation(fields: [albumId], references: [id], onDelete: SetNull)
+
+  // Relations
+  playlistTracks PlaylistTrack[]
+  libraryItems   LibraryItem[]
+  playEvents     PlayEvent[]
+  likes          Like[]
+  comments       Comment[]
+
+  @@index([artistId])
+  @@index([albumId])
+  @@index([title])
+  @@index([createdAt])
+  @@index([durationMs])
+  @@index([isExplicit])
+  @@index([tags])
+}
+
+// =======================
+// Library & Playlists
+// =======================
+
+model Library {
+  id        String        @id @default(uuid()) @db.Uuid
+  userId    String        @unique @db.Uuid
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  items     LibraryItem[]
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model LibraryItem {
+  id        String   @id @default(uuid()) @db.Uuid
+  libraryId String   @db.Uuid
+  trackId   String   @db.Uuid
+  createdAt DateTime @default(now())
+  library   Library  @relation(fields: [libraryId], references: [id], onDelete: Cascade)
+  track     Track    @relation(fields: [trackId], references: [id], onDelete: Cascade)
+
+  @@unique([libraryId, trackId])
+  @@index([libraryId])
+  @@index([trackId])
+  @@index([createdAt])
+}
+
+model Playlist {
+  id          String          @id @default(uuid()) @db.Uuid
+  userId      String          @db.Uuid
+  title       String
+  description String?
+  coverUrl    String?
+  isPublic    Boolean         @default(false)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  tracks      PlaylistTrack[]
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([title])
+  @@index([isPublic])
+  @@index([createdAt])
+}
+
+model PlaylistTrack {
+  id         String   @id @default(uuid()) @db.Uuid
+  playlistId String   @db.Uuid
+  trackId    String   @db.Uuid
+  position   Int
+  createdAt  DateTime @default(now())
+  playlist   Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  track      Track    @relation(fields: [trackId], references: [id], onDelete: Cascade)
+
+  @@unique([playlistId, trackId])
+  @@unique([playlistId, position])
+  @@index([playlistId])
+  @@index([trackId])
+  @@index([position])
+}

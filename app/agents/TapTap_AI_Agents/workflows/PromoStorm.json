@@ -1,0 +1,30 @@
+﻿{
+    "name":  "PromoStorm",
+    "steps":  [
+                  {
+                      "outputs":  "angles",
+                      "agent":  "Nova",
+                      "action":  "hooks_x10"
+                  },
+                  {
+                      "outputs":  "threads",
+                      "agent":  "Echo",
+                      "action":  "reply_storm"
+                  },
+                  {
+                      "outputs":  "emails+DMs",
+                      "agent":  "Charm",
+                      "action":  "partner_outreach"
+                  },
+                  {
+                      "outputs":  "15s cuts",
+                      "agent":  "Lumen",
+                      "action":  "shorts"
+                  },
+                  {
+                      "outputs":  "kpi one-graph",
+                      "agent":  "Prism",
+                      "action":  "impact_summary"
+                  }
+              ]
+}

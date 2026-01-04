@@ -1,0 +1,22 @@
+diff --git a/dist/node.js b/dist/node.js
+index 513168c89e387668a79b6beb109587b3eb41a7d0..f7757af8c9cad23c271b416d2d20f1e517f6afc7 100755
+--- a/dist/node.js
++++ b/dist/node.js
+@@ -1,13 +1,16 @@
+ 'use strict';
+ 
+ Object.defineProperty(exports, "__esModule", { value: true });
++const shouldWarn = process.env.SILENCE_BIGINT_NATIVE_WARNING !== '1';
+ let converter;
+ {
+     try {
+         converter = require('bindings')('bigint_buffer');
+     }
+     catch (e) {
+-        console.warn('bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)');
++        if (shouldWarn) {
++            console.warn('bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)');
++        }
+     }
+ }
+ /**

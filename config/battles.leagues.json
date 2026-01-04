@@ -1,0 +1,55 @@
+﻿{
+    "leagues":  [
+                    {
+                        "name":  "URL (SMACK/Ultimate Rap League)",
+                        "channels":  [
+                                         {
+                                             "title":  "Ultimate Rap League",
+                                             "channelId":  "UCYkq8J0QmS9B3rR9f7D7xVg"
+                                         }
+                                     ],
+                        "playlists":  [
+                                          {
+                                              "title":  "URL â€“ Recent Battles",
+                                              "playlistId":  ""
+                                          }
+                                      ]
+                    },
+                    {
+                        "name":  "BullPen Battle League",
+                        "channels":  [
+                                         {
+                                             "title":  "BullPen Battle League",
+                                             "channelId":  "UCk0S7m8uhZ8vPZbPKQ0n2GQ"
+                                         }
+                                     ],
+                        "playlists":  [
+
+                                      ]
+                    },
+                    {
+                        "name":  "King Of The Dot",
+                        "channels":  [
+                                         {
+                                             "title":  "KOTD - King Of The Dot",
+                                             "channelId":  "UCQ7Dq9PSQw-DAKjN9Vy5ElQ"
+                                         }
+                                     ],
+                        "playlists":  [
+
+                                      ]
+                    },
+                    {
+                        "name":  "RBE (Rare Breed Ent.)",
+                        "channels":  [
+                                         {
+                                             "title":  "Rare Breed Ent",
+                                             "channelId":  "UCpQeZLAqM6TZcX5q6T1gQLg"
+                                         }
+                                     ],
+                        "playlists":  [
+
+                                      ]
+                    }
+                ]
+}

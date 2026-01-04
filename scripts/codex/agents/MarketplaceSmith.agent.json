@@ -1,0 +1,17 @@
+{
+  "name": "Marketplace Smith",
+  "id": "marketplace.smith",
+  "inputs": {
+    "providers": "string=stripe,solana",
+    "products": "string=TapPass,Tracks,Bundles",
+    "route": "string=app/marketplace/CodexMarketplace.tsx"
+  },
+  "steps": [
+    "Create marketplace shell with product grid",
+    "Add checkout stubs for providers",
+    "Emit TODOs for receipts and history"
+  ],
+  "artifacts": ["Created TSX","Next steps checklist"],
+  "danger": "low"
+}
+

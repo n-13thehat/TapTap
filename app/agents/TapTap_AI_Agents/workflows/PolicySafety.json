@@ -1,0 +1,30 @@
+﻿{
+    "name":  "PolicySafety",
+    "steps":  [
+                  {
+                      "outputs":  "matrix",
+                      "agent":  "Haven",
+                      "action":  "triage_rubric"
+                  },
+                  {
+                      "outputs":  "responses",
+                      "agent":  "Bliss",
+                      "action":  "support_macros"
+                  },
+                  {
+                      "outputs":  "design notes",
+                      "agent":  "Aura",
+                      "action":  "ui_notices"
+                  },
+                  {
+                      "outputs":  "phased plan",
+                      "agent":  "Saga",
+                      "action":  "rollout"
+                  },
+                  {
+                      "outputs":  "cooldowns",
+                      "agent":  "Serenity",
+                      "action":  "timing"
+                  }
+              ]
+}

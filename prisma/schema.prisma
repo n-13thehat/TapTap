@@ -1,0 +1,2925 @@
+// ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€šÃ‚Â± TapTap ZION ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Billion-Dollar Prisma Schema (Verbose)
+// Fully upgraded for AI, Social, Marketplace, Analytics, and Web3 scalability
+// Prisma v6+ | Supabase Postgres | relationMode = "prisma" (no DB FKs)
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+/// *
+///  * =======================
+///  * Core User & Profile
+///  * =======================
+model User {
+  email            String               @unique
+  avatarUrl        String?
+  bio              String?
+  birthday         DateTime?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  authUserId String @unique @db.Uuid
+  country          String?
+  deletedAt        DateTime?
+  hashedPassword   String?
+  headerUrl        String?
+  role             Role                 @default(LISTENER)
+  status           AccountStatus        @default(ACTIVE)
+  username         String               @unique
+  verified         VerificationStatus   @default(UNVERIFIED)
+  id String @id @default(uuid()) @db.Uuid
+  aiDialogs        AIDialog[]
+  missionProgress  AIMissionProgress[]
+  aiTasks          AITask[]
+  apiKeys          APIKey[]
+
+  artists          Artist?
+  auditLogs        AuditLog[]           @relation("ActorLogs")
+  battlesA         Battle[]             @relation("BattleA")
+  battlesB         Battle[]             @relation("BattleB")
+  battlesWon       Battle[]             @relation("BattleWinner")
+  battleUnlocks    BattleUnlock[]
+
+  betaInvites      BetaInvite[]
+  carts            Cart[]
+  chatParticipants ChatParticipant[]
+  comments         Comment[]
+  devices          Device[]
+  embeddings       Embedding[]
+  favorites        Favorite[]
+  followsOutgoing  Follow[]             @relation("Following")
+  followsIncoming  Follow[]             @relation("Followers")
+  histories        History[]
+  library          Library?
+  likes            Like[]
+  liveChatMessages LiveChatMessage[]
+  liveStreams      LiveStream[]         @relation("UserLiveStreams")
+  sentMessages     Message[]            @relation("UserSentMessages")
+  moderations      ModerationAction[]   @relation("ModeratorActions")
+  notifications    Notification[]
+  orders           Order[]
+  payouts          Payout[]
+  playEvents       PlayEvent[]
+  playlists        Playlist[]
+  playlistTracks   PlaylistTrack[]      @relation("UserAddedPlaylistTracks")
+  posts            Post[]
+  products         Product[]
+  profile          Profile?
+  recommendations  Recommendation[]
+  reportsMade      Report[]             @relation("ReporterReports")
+  reposts          Repost[]
+  sessions         Session[]
+  settings         Setting[]
+  surfAllowance    SurfAllowance?
+  surfSessions     SurfSession[]
+  tapCoinTxns      TapCoinTransaction[]
+  tapPasses        TapPass[]
+  trackCredits     TrackCredit[]
+  transactions     Transaction[]        @relation("UserTransactions")
+  treasures        Treasure[]
+  uploads          Upload[]
+  votes            Vote[]
+  wallets          Wallet[]
+  externalRoyaltyLedgers   ExternalRoyaltyLedger[] @relation("ExternalRoyaltyBuyer")
+  claimedExternalRoyalties ExternalArtistRoyalty[] @relation("ExternalRoyaltyClaimants")
+  externalLibraryItems ExternalLibraryItem[]
+  inviteCode       String?
+  walletAddress    String?
+  hasTapPass       Boolean              @default(false)
+  CreatorRequest   CreatorRequest[]
+
+  // New relations for upgraded features
+  // Subscriptions & Tiers
+  subscriptions        Subscription[]         @relation("SubscriberSubs")
+  subscribers          Subscription[]         @relation("CreatorSubs")
+  tiers                Tier[]
+  // Trades
+  tradesInitiated      Trade[]                @relation("TradeInitiator")
+  tradesReceived       Trade[]                @relation("TradeReceiver")
+  // AI Profiles
+  aiProfiles           AIProfile[]
+  // Metrics / Badges / Tokens
+  metrics              MetricEvent[]
+  userBadges           UserBadge[]
+  authTokens           AuthToken[]
+  messageReads         MessageRead[]
+  reviews              Review[]
+  aiInteractionLogs    AIInteractionLog[]
+  UploadSession        UploadSession[]
+  BmiConnection        BmiConnection?
+  BmiOAuthState        BmiOAuthState[]
+  BmiTrackRegistration BmiTrackRegistration[]
+  BmiPerformanceLog    BmiPerformanceLog[]
+  eventLogs            EventLog[]
+  eventBatches         EventBatch[]
+  analyticsEvents      AnalyticsEvent[]
+  errorLogs            ErrorLog[]
+
+  // Governance Relations
+  proposals            Proposal[]
+  proposalVotes        ProposalVote[]
+  delegationsGiven     VoteDelegation[] @relation("DelegatorRelation")
+  delegationsReceived  VoteDelegation[] @relation("DelegateRelation")
+
+  // Staking Relations
+  stakes               Stake[]
+  stakingRewards       StakingReward[]
+
+  // Vesting Relations
+  vestingSchedules     VestingSchedule[]
+
+  // Liquidity Mining Relations
+  liquidityPositions   LiquidityPosition[]
+  liquidityRewards     LiquidityReward[]
+
+  // Airdrop Relations
+  airdropEligibility   AirdropEligibility[]
+  airdropClaims        AirdropClaim[]
+
+  // Referral Relations
+  referralsGiven       Referral[]         @relation("ReferrerRelation")
+  referralsReceived    Referral[]         @relation("RefereeRelation")
+  referralRewards      ReferralReward[]
+
+  // Cross-Chain Relations
+  crossChainTransfers  CrossChainTransfer[]
+
+  // NFT Staking Relations
+  nftStakes            NFTStake[]
+  nftStakingRewards    NFTStakingReward[]
+
+  // Dynamic Fee Relations
+  feeApplications      FeeApplication[]
+
+  // Treasury Relations
+  treasuryTransactions TreasuryTransaction[]
+
+  // Battle System Relations
+  featuredBattleNominations FeaturedBattleNomination[]
+  featuredBattleVotes FeaturedBattleVote[]
+  battleReactions     BattleReaction[]
+
+
+  @@index([email])
+  @@index([username])
+  @@index([status])
+  @@index([authUserId])
+}
+
+model Profile {
+  id String @id @default(uuid()) @db.Uuid 
+  userId      String   @unique 
+  displayName String?
+  location    String?
+  links Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Devices & Sessions
+///  * =======================
+model Device {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String     
+  type      DeviceType @default(WEB)
+  ua        String?
+  lastSeen  DateTime?
+  createdAt DateTime   @default(now())
+  user      User       @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model Session {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?   
+  deviceId  String?
+  ip        String?
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+  user      User?     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([deviceId])
+}
+
+// New: Auth tokens (refresh/reset/invite)
+model AuthToken {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String        
+  type      AuthTokenType @default(REFRESH)
+  tokenHash String        @unique
+  expiresAt DateTime
+  createdAt DateTime      @default(now())
+  user      User          @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([type])
+  @@index([expiresAt])
+}
+
+/// *
+///  * =======================
+///  * Music Graph
+///  * =======================
+model Artist {
+  id String @id @default(uuid()) @db.Uuid
+  userId    String   @unique @db.Uuid
+  stageName String
+  about     String?
+  links Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  albums    Album[]
+  user      User     @relation(fields: [userId], references: [id])
+  tracks    Track[]
+
+  @@index([userId])
+}
+
+model Album {
+  id String @id @default(uuid()) @db.Uuid
+  artistId  String    @db.Uuid
+  title     String
+  coverUrl  String?
+  releaseAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  artist    Artist    @relation(fields: [artistId], references: [id])
+  tracks    Track[]
+
+  @@index([artistId])
+}
+
+model Waveform {
+  id String @id @default(uuid()) @db.Uuid 
+  points    String
+  createdAt DateTime @default(now())
+  tracks    Track[]
+}
+
+model Track {
+  id String @id @default(uuid()) @db.Uuid 
+  artistId        String           @db.Uuid
+  albumId         String?          @db.Uuid
+  title           String
+  durationMs      Int?
+  storageKey      String?
+  mimeType        String?
+  waveformId      String?          @db.Uuid
+  meta Json?
+  visibility      Visibility       @default(PUBLIC)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  libraryItems    LibraryItem[]
+  likeTargets     LikeTarget[]     @relation("LikeTrack")
+  playEvents      PlayEvent[]
+  playlistEntries PlaylistTrack[]
+  posts           Post[]
+  recommendations Recommendation[]
+  album           Album?           @relation(fields: [albumId], references: [id])
+  artist          Artist           @relation(fields: [artistId], references: [id])
+  waveform        Waveform?        @relation(fields: [waveformId], references: [id])
+  credits         TrackCredit[]
+  // New: aggregate stats
+  stats           TrackStat?
+  UploadSession   UploadSession[]
+
+  @@index([artistId])
+  @@index([albumId])
+  @@index([visibility])
+}
+
+// New: Aggregated counters per track
+model TrackStat {
+  id String @id @default(uuid()) @db.Uuid 
+  trackId     String   @unique 
+  playCount   Int      @default(0)
+  likeCount   Int      @default(0)
+  repostCount Int      @default(0)
+  updatedAt   DateTime @updatedAt
+  track       Track    @relation(fields: [trackId], references: [id])
+}
+
+model TrackCredit {
+  id String @id @default(uuid()) @db.Uuid 
+  trackId   String   
+  userId    String?  
+  name      String
+  role      String
+  createdAt DateTime @default(now())
+  track     Track    @relation(fields: [trackId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([trackId])
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Library & Playlists
+///  * =======================
+model Playlist {
+  id String @id @default(uuid()) @db.Uuid 
+  userId     String          
+  title      String
+  coverUrl   String?
+  visibility Visibility      @default(PRIVATE)
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+  deletedAt  DateTime?
+  user       User            @relation(fields: [userId], references: [id])
+  tracks     PlaylistTrack[]
+
+  @@index([userId])
+  @@index([visibility])
+}
+
+model PlaylistTrack {
+  id String @id @default(uuid()) @db.Uuid 
+  playlistId String   
+  trackId    String   
+  addedById  String?  
+  createdAt  DateTime @default(now())
+  orderIndex Int      @default(0)
+  addedBy    User?    @relation("UserAddedPlaylistTracks", fields: [addedById], references: [id])
+  playlist   Playlist @relation(fields: [playlistId], references: [id])
+  track      Track    @relation(fields: [trackId], references: [id])
+
+  @@unique([playlistId, trackId])
+  @@index([playlistId])
+  @@index([trackId])
+  @@index([addedById])
+}
+
+model Library {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String        @unique 
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  user      User          @relation(fields: [userId], references: [id])
+  items     LibraryItem[]
+
+  @@index([userId])
+}
+
+model LibraryItem {
+  id String @id @default(uuid()) @db.Uuid 
+  libraryId String   
+  trackId   String   
+  createdAt DateTime @default(now())
+  library   Library  @relation(fields: [libraryId], references: [id])
+  track     Track    @relation(fields: [trackId], references: [id])
+
+  @@unique([libraryId, trackId])
+  @@index([libraryId])
+  @@index([trackId])
+}
+
+model Favorite {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String         
+  targetId  String         
+  createdAt DateTime       @default(now())
+  target    FavoriteTarget @relation(fields: [targetId], references: [id])
+  user      User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([targetId])
+}
+
+model FavoriteTarget {
+  id String @id @default(uuid()) @db.Uuid 
+  type      FavoriteTargetType
+  refId     String
+  meta Json?
+  createdAt DateTime           @default(now())
+  favorites Favorite[]
+
+  @@index([refId])
+  @@index([type])
+}
+
+/// *
+///  * =======================
+///  * Social
+///  * =======================
+model Follow {
+  createdAt   DateTime @default(now())
+  followingId String   
+  id String @id @default(uuid()) @db.Uuid 
+  followerId  String   
+  follower    User     @relation("Following", fields: [followerId], references: [id])
+  following   User     @relation("Followers", fields: [followingId], references: [id])
+
+  @@unique([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model Post {
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  deletedAt        DateTime?
+  linkUrl          String?
+  mediaType        MediaType?
+  mediaUrl         String?
+  poll Json?
+  text             String?
+  trackId          String?      
+  type             PostType     @default(TEXT)
+  userId           String       
+  visibility       Visibility   @default(PUBLIC)
+  // New: algorithmic feed weight
+  engagementWeight Float        @default(0)
+  id String @id @default(uuid()) @db.Uuid 
+  comments         Comment[]
+  likeTargets      LikeTarget[] @relation("LikePost")
+  track            Track?       @relation(fields: [trackId], references: [id])
+  user             User         @relation(fields: [userId], references: [id])
+  reposts          Repost[]
+  // New: tags
+  tags             PostTag[]
+
+  @@index([userId])
+  @@index([trackId])
+  @@index([visibility])
+  @@index([createdAt])
+  @@index([engagementWeight])
+}
+
+model Comment {
+  createdAt   DateTime     @default(now())
+  parentId    String?      
+  text        String
+  updatedAt   DateTime     @updatedAt
+  userId      String       
+  id String @id @default(uuid()) @db.Uuid 
+  postId      String       
+  parent      Comment?     @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  children    Comment[]    @relation("CommentReplies")
+  post        Post         @relation(fields: [postId], references: [id])
+  user        User         @relation(fields: [userId], references: [id])
+  likeTargets LikeTarget[]
+
+  @@index([postId])
+  @@index([userId])
+  @@index([parentId])
+}
+
+model Like {
+  createdAt DateTime   @default(now())
+  targetId  String     
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String     
+  target    LikeTarget @relation(fields: [targetId], references: [id])
+  user      User       @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([targetId])
+}
+
+model LikeTarget {
+  id String @id @default(uuid()) @db.Uuid 
+  type      LikeTargetType
+  postId    String?        
+  commentId String?        
+  trackId   String?        
+  createdAt DateTime       @default(now())
+  likes     Like[]
+  comment   Comment?       @relation(fields: [commentId], references: [id])
+  post      Post?          @relation("LikePost", fields: [postId], references: [id])
+  track     Track?         @relation("LikeTrack", fields: [trackId], references: [id])
+
+  @@index([postId])
+  @@index([commentId])
+  @@index([trackId])
+}
+
+model Repost {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String   
+  postId    String   
+  createdAt DateTime @default(now())
+  post      Post     @relation(fields: [postId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, postId])
+  @@index([userId])
+  @@index([postId])
+}
+
+// New: Tagging system for discovery/feeds
+model Tag {
+  id String @id @default(uuid()) @db.Uuid 
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  posts     PostTag[]
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id])
+  tag    Tag    @relation(fields: [tagId], references: [id])
+
+  @@id([postId, tagId])
+  @@index([tagId])
+  @@index([postId])
+}
+
+/// *
+///  * =======================
+///  * Messaging
+///  * =======================
+model Chat {
+  id String @id @default(uuid()) @db.Uuid 
+  title         String?
+  lastMessageId String?           
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  lastMessage   Message?          @relation("ChatLastMessage", fields: [lastMessageId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  participants  ChatParticipant[] @relation("ChatParticipants")
+  messages      Message[]         @relation("MessageChat")
+
+  @@index([lastMessageId])
+}
+
+model ChatParticipant {
+  id String @id @default(uuid()) @db.Uuid 
+  chatId   String   
+  userId   String   
+  role     String?
+  joinedAt DateTime @default(now())
+  chat     Chat     @relation("ChatParticipants", fields: [chatId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@unique([chatId, userId])
+  @@index([chatId])
+  @@index([userId])
+}
+
+model Message {
+  createdAt       DateTime      @default(now())
+  text            String?
+  mediaUrl        String?
+  chatId          String        
+  senderId        String        
+  type            MessageType   @default(TEXT)
+  id String @id @default(uuid()) @db.Uuid 
+  clientRequestId String?       @unique
+  lastForChat     Chat[]        @relation("ChatLastMessage")
+  chat            Chat          @relation("MessageChat", fields: [chatId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  sender          User          @relation("UserSentMessages", fields: [senderId], references: [id])
+  // New: read receipts
+  reads           MessageRead[]
+
+  @@index([chatId])
+  @@index([senderId])
+}
+
+// New: read receipts for messages
+model MessageRead {
+  id String @id @default(uuid()) @db.Uuid 
+  messageId String   
+  userId    String   
+  readAt    DateTime @default(now())
+  message   Message  @relation(fields: [messageId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([messageId, userId])
+  @@index([messageId])
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Marketplace
+///  * =======================
+model Product {
+  id String @id @default(uuid()) @db.Uuid 
+  ownerId      String?       
+  title        String
+  desc         String?
+  priceCents   Int           @default(0)
+  currency     Currency      @default(USD)
+  inventory    Int           @default(0)
+  images       String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  cartItems    CartItem[]
+  owner        User?         @relation(fields: [ownerId], references: [id])
+  reviews      Review[]
+  transactions Transaction[]
+
+  @@index([ownerId])
+  @@index([currency])
+}
+
+model Review {
+  id String @id @default(uuid()) @db.Uuid 
+  productId String   
+  userId    String   
+  rating    Int
+  text      String?
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([productId, userId])
+  @@index([productId])
+  @@index([userId])
+}
+
+model Cart {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String     
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  user      User       @relation(fields: [userId], references: [id])
+  items     CartItem[]
+
+  @@index([userId])
+}
+
+model CartItem {
+  id String @id @default(uuid()) @db.Uuid 
+  cartId    String   
+  productId String   
+  qty       Int      @default(1)
+  createdAt DateTime @default(now())
+  cart      Cart     @relation(fields: [cartId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@unique([cartId, productId])
+  @@index([cartId])
+  @@index([productId])
+}
+
+model Order {
+  id String @id @default(uuid()) @db.Uuid 
+  userId       String          
+  status       OrderStatus     @default(CREATED)
+  totalCents   Int             @default(0)
+  currency     Currency        @default(USD)
+  items        String
+  provider     PaymentProvider @default(STRIPE)
+  providerRef  String?
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  user         User            @relation(fields: [userId], references: [id])
+  transactions Transaction[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([currency])
+}
+
+model Payout {
+  id String @id @default(uuid()) @db.Uuid 
+  userId      String          
+  amount      Int
+  currency    Currency        @default(USD)
+  provider    PaymentProvider @default(STRIPE)
+  providerRef String?
+  createdAt   DateTime        @default(now())
+  user        User            @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([currency])
+}
+
+/// *
+///  * =======================
+///  * External Catalog Royalties (Deezer, etc.)
+///  * =======================
+enum ExternalRoyaltySource {
+  DEEZER
+  BANDCAMP
+  OTHER
+}
+
+enum ExternalRoyaltyStatus {
+  UNCLAIMED
+  CLAIMED
+  DISPUTED
+}
+
+model ExternalArtistRoyalty {
+  id String @id @default(uuid()) @db.Uuid
+  source    ExternalRoyaltySource
+  sourceId  String
+  stageName String
+  claimToken String?
+  pendingTap Int @default(0)
+  claimedByUserId String? @db.Uuid
+  status    ExternalRoyaltyStatus @default(UNCLAIMED)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  claimedByUser User? @relation("ExternalRoyaltyClaimants", fields: [claimedByUserId], references: [id])
+  ledgers       ExternalRoyaltyLedger[]
+
+  @@unique([source, sourceId])
+  @@index([status])
+}
+
+model ExternalRoyaltyLedger {
+  id String @id @default(uuid()) @db.Uuid
+  artistRoyaltyId String @db.Uuid
+  listingId       String
+  buyerUserId     String @db.Uuid
+  tapAmount       Int
+  grossTap        Int
+  taxApplied      Boolean @default(false)
+  createdAt       DateTime @default(now())
+
+  artistRoyalty ExternalArtistRoyalty @relation(fields: [artistRoyaltyId], references: [id])
+  buyer         User                  @relation("ExternalRoyaltyBuyer", fields: [buyerUserId], references: [id])
+
+  @@index([artistRoyaltyId])
+  @@index([buyerUserId])
+}
+
+model Wallet {
+  address            String               @unique
+  createdAt          DateTime             @default(now())
+  provider           PaymentProvider      @default(SOLANA)
+  id String @id @default(uuid()) @db.Uuid 
+  userId             String               
+  transactions       TapCoinTransaction[]
+  walletTransactions Transaction[]
+  user               User                 @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([provider])
+}
+
+model Transaction {
+  amount    Int
+  createdAt DateTime @default(now())
+  buyerId   String?  
+  currency  Currency @default(USD)
+  orderId   String?  
+  productId String?  
+  id String @id @default(uuid()) @db.Uuid 
+  walletId  String?  
+  buyer     User?    @relation("UserTransactions", fields: [buyerId], references: [id])
+  order     Order?   @relation(fields: [orderId], references: [id])
+  product   Product? @relation(fields: [productId], references: [id])
+  wallet    Wallet?  @relation(fields: [walletId], references: [id])
+
+  @@index([orderId])
+  @@index([walletId])
+  @@index([buyerId])
+  @@index([productId])
+  @@index([currency])
+}
+
+// TapTax logging models
+model TaxEvent {
+  id String @id @default(uuid()) @db.Uuid 
+  fromUserId String   
+  toUserId   String   
+  amount     Int
+  tax        Int
+  treasury   Int
+  burn       Int
+  reason     String?
+  createdAt  DateTime @default(now())
+}
+
+model Distribution {
+  id String @id @default(uuid()) @db.Uuid
+  type      String
+  amount    Int
+  note      String?
+  createdAt DateTime @default(now())
+}
+
+// External library saves (privileged users saving provider tracks without local Track rows)
+model ExternalLibraryItem {
+  id String @id @default(uuid()) @db.Uuid
+  userId     String   @db.Uuid
+  provider   String
+  externalId String
+  title      String
+  artist     String
+  album      String?
+  coverUrl   String?
+  audioUrl   String?
+  deezerUrl  String?
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, provider, externalId])
+  @@index([userId])
+}
+
+// Governance & DAO Models
+model Proposal {
+  id String @id @default(uuid()) @db.Uuid
+  title         String
+  description   String
+  proposerId    String
+  type          ProposalType
+  status        ProposalStatus @default(PENDING)
+  votingPower   Int            @default(0)
+  votesFor      Int            @default(0)
+  votesAgainst  Int            @default(0)
+  votesAbstain  Int            @default(0)
+  quorumReached Boolean        @default(false)
+  executed      Boolean        @default(false)
+  executedAt    DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  votingEndsAt  DateTime
+  executionData Json?
+
+  // Treasury Relations
+  treasuryTransactions TreasuryTransaction[]
+
+  proposer      User           @relation(fields: [proposerId], references: [id])
+  votes         ProposalVote[]
+
+  @@index([status])
+  @@index([type])
+  @@index([votingEndsAt])
+}
+
+model ProposalVote {
+  id String @id @default(uuid()) @db.Uuid
+  proposalId    String
+  voterId       String
+  vote          VoteChoice
+  votingPower   Int
+  reason        String?
+  createdAt     DateTime @default(now())
+
+  proposal      Proposal @relation(fields: [proposalId], references: [id])
+  voter         User     @relation(fields: [voterId], references: [id])
+
+  @@unique([proposalId, voterId])
+  @@index([proposalId])
+  @@index([voterId])
+}
+
+model VoteDelegation {
+  id String @id @default(uuid()) @db.Uuid
+  delegatorId   String
+  delegateId    String
+  votingPower   Int
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  revokedAt     DateTime?
+
+  delegator     User @relation("DelegatorRelation", fields: [delegatorId], references: [id])
+  delegate      User @relation("DelegateRelation", fields: [delegateId], references: [id])
+
+  @@unique([delegatorId, delegateId])
+  @@index([delegateId])
+}
+
+enum ProposalType {
+  PARAMETER_CHANGE
+  TREASURY_SPEND
+  FEATURE_REQUEST
+  PLATFORM_UPGRADE
+  FEE_ADJUSTMENT
+  PARTNERSHIP
+  EMERGENCY
+}
+
+enum ProposalStatus {
+  PENDING
+  ACTIVE
+  SUCCEEDED
+  DEFEATED
+  EXECUTED
+  CANCELLED
+  EXPIRED
+}
+
+enum VoteChoice {
+  FOR
+  AGAINST
+  ABSTAIN
+}
+
+// Staking System Models
+model StakingPool {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  poolType      StakingPoolType
+  minStakeAmount Int
+  maxStakeAmount Int?
+  lockPeriodDays Int
+  apy           Float
+  totalStaked   Int            @default(0)
+  totalRewards  Int            @default(0)
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  stakes        Stake[]
+  rewards       StakingReward[]
+
+  @@index([poolType])
+  @@index([isActive])
+}
+
+model Stake {
+  id String @id @default(uuid()) @db.Uuid
+  userId        String
+  poolId        String
+  amount        Int
+  stakedAt      DateTime       @default(now())
+  unstakedAt    DateTime?
+  lockEndsAt    DateTime
+  status        StakeStatus    @default(ACTIVE)
+  rewardsClaimed Int           @default(0)
+
+  user          User           @relation(fields: [userId], references: [id])
+  pool          StakingPool    @relation(fields: [poolId], references: [id])
+  rewards       StakingReward[]
+
+  @@index([userId])
+  @@index([poolId])
+  @@index([status])
+  @@index([lockEndsAt])
+}
+
+model StakingReward {
+  id String @id @default(uuid()) @db.Uuid
+  stakeId       String
+  poolId        String
+  userId        String
+  amount        Int
+  rewardType    RewardType
+  claimedAt     DateTime?
+  createdAt     DateTime       @default(now())
+
+  stake         Stake          @relation(fields: [stakeId], references: [id])
+  pool          StakingPool    @relation(fields: [poolId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([stakeId])
+  @@index([claimedAt])
+}
+
+enum StakingPoolType {
+  BASIC
+  PREMIUM
+  LIQUIDITY
+  NFT_BOOST
+  GOVERNANCE
+}
+
+enum StakeStatus {
+  ACTIVE
+  UNSTAKING
+  COMPLETED
+  SLASHED
+}
+
+enum RewardType {
+  STAKING_YIELD
+  LIQUIDITY_MINING
+  GOVERNANCE_BONUS
+  NFT_MULTIPLIER
+  COMPOUND_INTEREST
+}
+
+// Token Vesting System Models
+model VestingSchedule {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  beneficiaryId String
+  totalAmount   Int
+  claimedAmount Int            @default(0)
+  vestingType   VestingType
+  startDate     DateTime
+  cliffDate     DateTime?
+  endDate       DateTime
+  isRevocable   Boolean        @default(false)
+  isRevoked     Boolean        @default(false)
+  revokedAt     DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  beneficiary   User           @relation(fields: [beneficiaryId], references: [id])
+  releases      VestingRelease[]
+  milestones    VestingMilestone[]
+
+  @@index([beneficiaryId])
+  @@index([vestingType])
+  @@index([startDate])
+  @@index([endDate])
+}
+
+model VestingRelease {
+  id String @id @default(uuid()) @db.Uuid
+  scheduleId    String
+  amount        Int
+  releaseDate   DateTime
+  claimedAt     DateTime?
+  isAutomatic   Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+
+  schedule      VestingSchedule @relation(fields: [scheduleId], references: [id])
+
+  @@index([scheduleId])
+  @@index([releaseDate])
+  @@index([claimedAt])
+}
+
+model VestingMilestone {
+  id String @id @default(uuid()) @db.Uuid
+  scheduleId    String
+  name          String
+  description   String?
+  amount        Int
+  condition     String         // JSON string describing milestone condition
+  isCompleted   Boolean        @default(false)
+  completedAt   DateTime?
+  claimedAt     DateTime?
+  createdAt     DateTime       @default(now())
+
+  schedule      VestingSchedule @relation(fields: [scheduleId], references: [id])
+
+  @@index([scheduleId])
+  @@index([isCompleted])
+}
+
+enum VestingType {
+  LINEAR
+  CLIFF_THEN_LINEAR
+  MILESTONE_BASED
+  PERFORMANCE_BASED
+  HYBRID
+}
+
+// Liquidity Mining System Models
+model LiquidityPool {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  tokenA        String         // TAP
+  tokenB        String         // SOL, USDC, etc.
+  poolAddress   String         @unique
+  totalLiquidity Decimal       @default(0) @db.Decimal(20, 8)
+  totalRewards  Int            @default(0)
+  rewardRate    Int            // Rewards per second
+  lastUpdateTime DateTime      @default(now())
+  periodFinish  DateTime
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  positions     LiquidityPosition[]
+  rewards       LiquidityReward[]
+
+  @@index([poolAddress])
+  @@index([isActive])
+  @@index([periodFinish])
+}
+
+model LiquidityPosition {
+  id String @id @default(uuid()) @db.Uuid
+  userId        String
+  poolId        String
+  lpTokenAmount Decimal        @db.Decimal(20, 8)
+  tokenAAmount  Decimal        @db.Decimal(20, 8)
+  tokenBAmount  Decimal        @db.Decimal(20, 8)
+  rewardDebt    Int            @default(0)
+  lastClaimTime DateTime       @default(now())
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  user          User           @relation(fields: [userId], references: [id])
+  pool          LiquidityPool  @relation(fields: [poolId], references: [id])
+  rewards       LiquidityReward[]
+
+  @@index([userId])
+  @@index([poolId])
+  @@unique([userId, poolId])
+}
+
+model LiquidityReward {
+  id String @id @default(uuid()) @db.Uuid
+  userId        String
+  poolId        String
+  positionId    String
+  amount        Int
+  rewardType    LiquidityRewardType
+  claimedAt     DateTime?
+  createdAt     DateTime       @default(now())
+
+  user          User           @relation(fields: [userId], references: [id])
+  pool          LiquidityPool  @relation(fields: [poolId], references: [id])
+  position      LiquidityPosition @relation(fields: [positionId], references: [id])
+
+  @@index([userId])
+  @@index([poolId])
+  @@index([claimedAt])
+}
+
+enum LiquidityRewardType {
+  MINING_REWARD
+  TRADING_FEE
+  BONUS_MULTIPLIER
+  IMPERMANENT_LOSS_PROTECTION
+}
+
+// Advanced Airdrop System Models
+model AirdropCampaign {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  totalAmount   Int
+  claimedAmount Int            @default(0)
+  campaignType  AirdropType
+  status        AirdropStatus  @default(DRAFT)
+  startDate     DateTime
+  endDate       DateTime
+  merkleRoot    String?        // For merkle tree distributions
+  eligibilityCriteria Json     // JSON object with criteria
+  antiSybilEnabled Boolean     @default(true)
+  maxClaimPerUser Int?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  claims        AirdropClaim[]
+  eligibility   AirdropEligibility[]
+
+  @@index([status])
+  @@index([startDate])
+  @@index([endDate])
+  @@index([campaignType])
+}
+
+model AirdropEligibility {
+  id String @id @default(uuid()) @db.Uuid
+  campaignId    String
+  userId        String
+  amount        Int
+  merkleProof   String[]       // Array of merkle proof hashes
+  isEligible    Boolean        @default(true)
+  eligibilityScore Float       @default(0)
+  createdAt     DateTime       @default(now())
+
+  campaign      AirdropCampaign @relation(fields: [campaignId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+  claim         AirdropClaim?
+
+  @@unique([campaignId, userId])
+  @@index([userId])
+  @@index([isEligible])
+}
+
+model AirdropClaim {
+  id String @id @default(uuid()) @db.Uuid
+  campaignId    String
+  userId        String
+  eligibilityId String         @unique
+  amount        Int
+  claimedAt     DateTime       @default(now())
+  txHash        String?        // Blockchain transaction hash
+
+  campaign      AirdropCampaign @relation(fields: [campaignId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+  eligibility   AirdropEligibility @relation(fields: [eligibilityId], references: [id])
+
+  @@unique([campaignId, userId])
+  @@index([userId])
+  @@index([claimedAt])
+}
+
+enum AirdropType {
+  SNAPSHOT_BASED
+  ACTIVITY_BASED
+  REFERRAL_BASED
+  CREATOR_REWARDS
+  COMMUNITY_REWARDS
+  RETROACTIVE
+  MERKLE_TREE
+}
+
+enum AirdropStatus {
+  DRAFT
+  ACTIVE
+  PAUSED
+  COMPLETED
+  CANCELLED
+}
+
+// Referral & Affiliate System Models
+model ReferralProgram {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  isActive      Boolean        @default(true)
+  maxLevels     Int            @default(3)
+  baseReward    Int            @default(1000)
+  levelMultipliers Json        // Array of multipliers for each level
+  minReferrals  Int            @default(1)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  referrals     Referral[]
+  rewards       ReferralReward[]
+
+  @@index([isActive])
+}
+
+model Referral {
+  id String @id @default(uuid()) @db.Uuid
+  programId     String
+  referrerId    String
+  refereeId     String
+  referralCode  String         @unique
+  status        ReferralStatus @default(PENDING)
+  level         Int            @default(1)
+  completedAt   DateTime?
+  createdAt     DateTime       @default(now())
+
+  program       ReferralProgram @relation(fields: [programId], references: [id])
+  referrer      User           @relation("ReferrerRelation", fields: [referrerId], references: [id])
+  referee       User           @relation("RefereeRelation", fields: [refereeId], references: [id])
+  rewards       ReferralReward[]
+
+  @@unique([referrerId, refereeId])
+  @@index([referrerId])
+  @@index([refereeId])
+  @@index([referralCode])
+  @@index([status])
+}
+
+model ReferralReward {
+  id String @id @default(uuid()) @db.Uuid
+  programId     String
+  referralId    String
+  userId        String
+  amount        Int
+  rewardType    ReferralRewardType
+  level         Int
+  claimedAt     DateTime?
+  createdAt     DateTime       @default(now())
+
+  program       ReferralProgram @relation(fields: [programId], references: [id])
+  referral      Referral       @relation(fields: [referralId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([referralId])
+  @@index([claimedAt])
+}
+
+enum ReferralStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  EXPIRED
+  CANCELLED
+}
+
+enum ReferralRewardType {
+  SIGNUP_BONUS
+  ACTIVITY_BONUS
+  MILESTONE_BONUS
+  PERFORMANCE_BONUS
+  LOYALTY_BONUS
+}
+
+// Cross-Chain Bridge System Models
+model CrossChainBridge {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  sourceChain   String         // solana, ethereum, polygon, etc.
+  targetChain   String
+  contractAddress String
+  isActive      Boolean        @default(true)
+  minAmount     Int            @default(1000)
+  maxAmount     Int            @default(1000000)
+  bridgeFee     Int            @default(100)
+  estimatedTime Int            @default(300) // seconds
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  transfers     CrossChainTransfer[]
+
+  @@unique([sourceChain, targetChain])
+  @@index([isActive])
+}
+
+model CrossChainTransfer {
+  id String @id @default(uuid()) @db.Uuid
+  bridgeId      String
+  userId        String
+  amount        Int
+  bridgeFee     Int
+  sourceChain   String
+  targetChain   String
+  sourceTxHash  String?
+  targetTxHash  String?
+  status        BridgeStatus   @default(PENDING)
+  initiatedAt   DateTime       @default(now())
+  completedAt   DateTime?
+  failedAt      DateTime?
+  errorMessage  String?
+
+  bridge        CrossChainBridge @relation(fields: [bridgeId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([status])
+  @@index([sourceChain])
+  @@index([targetChain])
+  @@index([sourceTxHash])
+}
+
+enum BridgeStatus {
+  PENDING
+  CONFIRMED
+  BRIDGING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+// NFT Staking & Utility System Models
+model NFTStakingPool {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  collectionAddress String?      // NFT collection contract address
+  stakingType   NFTStakingType
+  baseRewardRate Int            @default(100) // Base TAP per day
+  rarityMultipliers Json        // Multipliers based on NFT rarity
+  minStakingPeriod Int          @default(1)   // Days
+  maxStakingPeriod Int?         // Optional max period
+  totalStaked   Int            @default(0)
+  totalRewards  Int            @default(0)
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  stakes        NFTStake[]
+  rewards       NFTStakingReward[]
+
+  @@index([stakingType])
+  @@index([isActive])
+}
+
+model NFTStake {
+  id String @id @default(uuid()) @db.Uuid
+  poolId        String
+  userId        String
+  nftId         String         // NFT token ID or identifier
+  nftMetadata   Json           // NFT metadata (name, image, attributes, etc.)
+  rarityScore   Float          @default(0)
+  stakingMultiplier Float      @default(1.0)
+  stakedAt      DateTime       @default(now())
+  unstakedAt    DateTime?
+  lockEndsAt    DateTime?
+  status        NFTStakeStatus @default(ACTIVE)
+  rewardsClaimed Int           @default(0)
+
+  pool          NFTStakingPool @relation(fields: [poolId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+  rewards       NFTStakingReward[]
+
+  @@unique([nftId, poolId])
+  @@index([userId])
+  @@index([poolId])
+  @@index([status])
+}
+
+model NFTStakingReward {
+  id String @id @default(uuid()) @db.Uuid
+  poolId        String
+  stakeId       String
+  userId        String
+  amount        Int
+  rewardType    NFTRewardType
+  rarityBonus   Int            @default(0)
+  loyaltyBonus  Int            @default(0)
+  claimedAt     DateTime?
+  createdAt     DateTime       @default(now())
+
+  pool          NFTStakingPool @relation(fields: [poolId], references: [id])
+  stake         NFTStake       @relation(fields: [stakeId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([stakeId])
+  @@index([claimedAt])
+}
+
+enum NFTStakingType {
+  MUSIC_NFTS
+  PROFILE_NFTS
+  UTILITY_NFTS
+  COLLECTION_SPECIFIC
+  CROSS_COLLECTION
+}
+
+enum NFTStakeStatus {
+  ACTIVE
+  UNSTAKING
+  COMPLETED
+  EXPIRED
+}
+
+enum NFTRewardType {
+  BASE_STAKING
+  RARITY_BONUS
+  LOYALTY_BONUS
+  COLLECTION_BONUS
+  SPECIAL_EVENT
+}
+
+// Dynamic Fee Structure Models
+model FeeStructure {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  feeType       FeeType
+  baseRate      Float          // Base fee percentage (0.01 = 1%)
+  minFee        Int            @default(1)    // Minimum fee in TAP
+  maxFee        Int            @default(10000) // Maximum fee in TAP
+  tierMultipliers Json         // Multipliers for different user tiers
+  congestionMultipliers Json   // Multipliers based on network congestion
+  volumeDiscounts Json         // Volume-based discounts
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  applications  FeeApplication[]
+
+  @@index([feeType])
+  @@index([isActive])
+}
+
+model FeeApplication {
+  id String @id @default(uuid()) @db.Uuid
+  structureId   String
+  userId        String
+  transactionType String       // TRANSFER, TRADE, STAKE, etc.
+  baseAmount    Int            // Amount before fees
+  feeAmount     Int            // Calculated fee amount
+  effectiveRate Float          // Actual rate applied
+  tierDiscount  Float          @default(0)
+  volumeDiscount Float         @default(0)
+  congestionMultiplier Float   @default(1.0)
+  appliedAt     DateTime       @default(now())
+
+  structure     FeeStructure   @relation(fields: [structureId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([transactionType])
+  @@index([appliedAt])
+}
+
+model NetworkMetrics {
+  id String @id @default(uuid()) @db.Uuid
+  timestamp     DateTime       @default(now())
+  activeUsers   Int            @default(0)
+  transactionVolume Int        @default(0)
+  avgResponseTime Float        @default(0)
+  congestionLevel CongestionLevel @default(LOW)
+  feeMultiplier Float          @default(1.0)
+
+  @@index([timestamp])
+  @@index([congestionLevel])
+}
+
+enum FeeType {
+  TRANSFER_FEE
+  TRADING_FEE
+  STAKING_FEE
+  BRIDGE_FEE
+  WITHDRAWAL_FEE
+  PREMIUM_FEE
+}
+
+enum CongestionLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+// Community Treasury Management Models
+model TreasuryWallet {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  walletAddress String         @unique
+  walletType    TreasuryWalletType
+  balance       Int            @default(0)
+  isActive      Boolean        @default(true)
+  requiresMultisig Boolean     @default(true)
+  signatories   Json           // Array of signatory user IDs
+  minSignatures Int            @default(2)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  transactions  TreasuryTransaction[]
+  allocations   TreasuryAllocation[]
+
+  @@index([walletType])
+  @@index([isActive])
+}
+
+model TreasuryTransaction {
+  id String @id @default(uuid()) @db.Uuid
+  walletId      String
+  proposalId    String?        // Link to governance proposal if applicable
+  amount        Int
+  transactionType TreasuryTransactionType
+  description   String
+  recipient     String?        // Recipient address or user ID
+  txHash        String?        // Blockchain transaction hash
+  status        TreasuryTransactionStatus @default(PENDING)
+  signatures    Json           @default("[]") // Array of signatures
+  requiredSignatures Int       @default(2)
+  initiatedBy   String
+  approvedAt    DateTime?
+  executedAt    DateTime?
+  createdAt     DateTime       @default(now())
+
+  wallet        TreasuryWallet @relation(fields: [walletId], references: [id])
+  proposal      Proposal?      @relation(fields: [proposalId], references: [id])
+  initiator     User           @relation(fields: [initiatedBy], references: [id])
+
+  @@index([walletId])
+  @@index([status])
+  @@index([transactionType])
+}
+
+model TreasuryAllocation {
+  id String @id @default(uuid()) @db.Uuid
+  walletId      String
+  category      String         // DEVELOPMENT, MARKETING, REWARDS, etc.
+  allocatedAmount Int
+  spentAmount   Int            @default(0)
+  remainingAmount Int
+  allocationPeriod String      // MONTHLY, QUARTERLY, YEARLY
+  startDate     DateTime
+  endDate       DateTime
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  wallet        TreasuryWallet @relation(fields: [walletId], references: [id])
+
+  @@index([walletId])
+  @@index([category])
+  @@index([isActive])
+}
+
+enum TreasuryWalletType {
+  MAIN_TREASURY
+  DEVELOPMENT_FUND
+  MARKETING_FUND
+  REWARDS_POOL
+  EMERGENCY_FUND
+  COMMUNITY_GRANTS
+}
+
+enum TreasuryTransactionType {
+  DEPOSIT
+  WITHDRAWAL
+  ALLOCATION
+  GRANT
+  REWARD_DISTRIBUTION
+  EMERGENCY_SPEND
+  DEVELOPMENT_PAYMENT
+  MARKETING_SPEND
+}
+
+enum TreasuryTransactionStatus {
+  PENDING
+  PARTIALLY_SIGNED
+  FULLY_SIGNED
+  EXECUTED
+  REJECTED
+  CANCELLED
+}
+
+// Battle System Models - Comprehensive Battle Platform
+model BattleLeague {
+  id String @id @default(uuid()) @db.Uuid
+  name          String
+  description   String?
+  youtubeChannelId String      @unique
+  channelName   String
+  logoUrl       String?
+  websiteUrl    String?
+  isActive      Boolean        @default(true)
+  tier          LeagueTier     @default(MAJOR)
+  totalBattles  Int            @default(0)
+  totalViews    Int            @default(0)
+  avgViewCount  Int            @default(0)
+  lastSyncAt    DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  battles       BattleContent[]
+  partnerships  LeaguePartnership[]
+
+  @@index([youtubeChannelId])
+  @@index([tier])
+  @@index([isActive])
+}
+
+model BattleContent {
+  id String @id @default(uuid()) @db.Uuid
+  leagueId      String
+  youtubeVideoId String        @unique
+  title         String
+  description   String?
+  thumbnailUrl  String?
+  publishedAt   DateTime
+  viewCount     Int            @default(0)
+  likeCount     Int            @default(0)
+  commentCount  Int            @default(0)
+  duration      Int?           // seconds
+  battlerA      String?        // extracted from title/description
+  battlerB      String?
+  battleType    BattleType     @default(HEAD_TO_HEAD)
+  status        BattleContentStatus @default(ACTIVE)
+  isFeatured    Boolean        @default(false)
+  featuredAt    DateTime?
+  syncedAt      DateTime       @default(now())
+
+  league        BattleLeague   @relation(fields: [leagueId], references: [id])
+  reactions     BattleReaction[]
+
+  analytics     BattleAnalytics[]
+
+  @@index([leagueId])
+  @@index([publishedAt])
+  @@index([isFeatured])
+  @@index([status])
+}
+
+model WeeklyFeaturedBattle {
+  id String @id @default(uuid()) @db.Uuid
+  weekStartDate DateTime
+  weekEndDate   DateTime
+  status        FeaturedBattleStatus @default(NOMINATION)
+  votingStartsAt DateTime
+  votingEndsAt  DateTime
+  featuredBattleId String?
+  totalVotes    Int            @default(0)
+  totalViewers  Int            @default(0)
+  prizePool     Int            @default(0)
+  createdAt     DateTime       @default(now())
+
+  nominations   FeaturedBattleNomination[]
+  votes         FeaturedBattleVote[]
+
+  @@unique([weekStartDate])
+  @@index([status])
+}
+
+model FeaturedBattleNomination {
+  id String @id @default(uuid()) @db.Uuid
+  weeklyFeaturedId String
+  battleContentId String
+  nominatedBy   String
+  votes         Int            @default(0)
+  createdAt     DateTime       @default(now())
+
+  weeklyFeatured WeeklyFeaturedBattle @relation(fields: [weeklyFeaturedId], references: [id])
+  nominator     User           @relation(fields: [nominatedBy], references: [id])
+
+  @@unique([weeklyFeaturedId, battleContentId])
+  @@index([weeklyFeaturedId])
+  @@index([votes])
+}
+
+model FeaturedBattleVote {
+  id String @id @default(uuid()) @db.Uuid
+  weeklyFeaturedId String
+  nominationId  String
+  userId        String
+  votingPower   Int            @default(1)
+  createdAt     DateTime       @default(now())
+
+  weeklyFeatured WeeklyFeaturedBattle @relation(fields: [weeklyFeaturedId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@unique([weeklyFeaturedId, userId])
+  @@index([weeklyFeaturedId])
+  @@index([userId])
+}
+
+model BattleReaction {
+  id String @id @default(uuid()) @db.Uuid
+  battleContentId String
+  userId        String
+  reactionType  ReactionType
+  intensity     Int            @default(1) // 1-5 scale
+  timestamp     DateTime       @default(now())
+  sessionId     String?        // for grouping reactions
+
+  battleContent BattleContent  @relation(fields: [battleContentId], references: [id])
+  user          User           @relation(fields: [userId], references: [id])
+
+  @@index([battleContentId])
+  @@index([userId])
+  @@index([timestamp])
+  @@index([reactionType])
+}
+
+
+
+model BattleAnalytics {
+  id String @id @default(uuid()) @db.Uuid
+  battleContentId String
+  timestamp     DateTime       @default(now())
+  totalReactions Int           @default(0)
+  reactionBreakdown Json       // breakdown by reaction type
+  activeViewers Int            @default(0)
+  totalWagers   Int            @default(0)
+  wagerVolume   Int            @default(0)
+  engagementScore Float        @default(0)
+
+  battleContent BattleContent  @relation(fields: [battleContentId], references: [id])
+
+  @@index([battleContentId])
+  @@index([timestamp])
+}
+
+model LeaguePartnership {
+  id String @id @default(uuid()) @db.Uuid
+  leagueId      String
+  partnershipType PartnershipType
+  status        PartnershipType @default(REVENUE_SHARE)
+  revenueShare  Float          @default(0.5) // 50% default
+  exclusivity   Boolean        @default(false)
+  startDate     DateTime
+  endDate       DateTime?
+  totalRevenue  Int            @default(0)
+  createdAt     DateTime       @default(now())
+
+  league        BattleLeague   @relation(fields: [leagueId], references: [id])
+
+  @@index([leagueId])
+
+  @@index([partnershipType])
+}
+
+enum LeagueTier {
+  MAJOR          // URL, KOTD, etc.
+  REGIONAL       // Regional leagues
+  UNDERGROUND    // Smaller leagues
+  EMERGING       // New leagues
+}
+
+enum BattleType {
+  HEAD_TO_HEAD
+  TOURNAMENT
+  CYPHER
+  FREESTYLE
+  WRITTEN
+  ACAPELLA
+}
+
+enum BattleContentStatus {
+  ACTIVE
+  ARCHIVED
+  REMOVED
+  PENDING_REVIEW
+}
+
+enum FeaturedBattleStatus {
+  NOMINATION
+  VOTING
+  FEATURED
+  COMPLETED
+}
+
+enum ReactionType {
+  FIRE          // 🔥
+  CLAP          // 👏
+  MIND_BLOWN    // 🤯
+  LAUGHING      // 😂
+  CRINGE        // 😬
+  SLEEPY        // 😴
+  ANGRY         // 😡
+  LOVE          // ❤️
+}
+
+enum WagerType {
+  REACTION_COUNT    // bet on total reactions
+  BATTLER_WIN      // bet on which battler wins
+  REACTION_TYPE    // bet on dominant reaction type
+  VIEW_MILESTONE   // bet on view count milestones
+}
+
+enum WagerStatus {
+  ACTIVE
+  WON
+  LOST
+  CANCELLED
+  PENDING_SETTLEMENT
+}
+
+enum PartnershipType {
+  CONTENT_LICENSING
+  EXCLUSIVE_PREMIERE
+  REVENUE_SHARE
+  PROMOTIONAL
+}
+
+/// *
+///  * =======================
+///  * Coins / Passes / Airdrops
+///  * =======================
+
+
+model TapPass {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String    
+  level     Int       @default(0)
+  features Json? @default("[]")
+  isActive  Boolean   @default(true)
+  expiresAt DateTime?
+  meta Json?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  user      User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([level])
+  @@index([isActive])
+  @@index([expiresAt])
+}
+
+model TapCoinTransaction {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String   
+  walletId  String?  
+  amount    Int
+  reason    String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  wallet    Wallet?  @relation(fields: [walletId], references: [id])
+
+  @@index([userId])
+  @@index([walletId])
+}
+
+/// *
+///  * =======================
+///  * Live
+///  * =======================
+model LiveStream {
+  id String @id @default(uuid()) @db.Uuid 
+  creatorId    String            
+  title        String
+  desc         String?
+  startedAt    DateTime?
+  endedAt      DateTime?
+  visibility   Visibility        @default(PUBLIC)
+  createdAt    DateTime          @default(now())
+  chatMessages LiveChatMessage[]
+  creator      User              @relation("UserLiveStreams", fields: [creatorId], references: [id])
+
+  @@index([creatorId])
+  @@index([visibility])
+}
+
+model LiveChatMessage {
+  id String @id @default(uuid()) @db.Uuid 
+  streamId  String     
+  userId    String     
+  text      String
+  createdAt DateTime   @default(now())
+  stream    LiveStream @relation(fields: [streamId], references: [id])
+  user      User       @relation(fields: [userId], references: [id])
+
+  @@index([streamId])
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Battles
+///  * =======================
+model Battle {
+  id String @id @default(uuid()) @db.Uuid 
+  aUserId   String         
+  bUserId   String         
+  winnerId  String?        
+  rules     String?
+  createdAt DateTime       @default(now())
+  endedAt   DateTime?
+  userA     User           @relation("BattleA", fields: [aUserId], references: [id])
+  userB     User           @relation("BattleB", fields: [bUserId], references: [id])
+  winner    User?          @relation("BattleWinner", fields: [winnerId], references: [id])
+  unlocks   BattleUnlock[]
+
+  votes     Vote[]
+
+  @@index([aUserId])
+  @@index([bUserId])
+  @@index([winnerId])
+}
+
+model Vote {
+  id String @id @default(uuid()) @db.Uuid 
+  battleId  String   
+  userId    String   
+  type      VoteType @default(UP)
+  createdAt DateTime @default(now())
+  battle    Battle   @relation(fields: [battleId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([battleId, userId])
+  @@index([battleId])
+  @@index([userId])
+}
+
+model BattleUnlock {
+  id String @id @default(uuid()) @db.Uuid 
+  battleId   String   
+  userId     String?  
+  treasureId String?  
+  createdAt  DateTime @default(now())
+  battle     Battle   @relation(fields: [battleId], references: [id])
+  user       User?    @relation(fields: [userId], references: [id])
+
+  @@index([battleId])
+  @@index([userId])
+  @@index([treasureId])
+}
+
+
+
+/// *
+///  * =======================
+///  * Uploads / Playback
+///  * =======================
+model Upload {
+  id String @id @default(uuid()) @db.Uuid 
+  userId        String          
+  fileName      String
+  sizeBytes     Int
+  mimeType      String?
+  storageKey    String
+  createdAt     DateTime        @default(now())
+  user          User            @relation(fields: [userId], references: [id])
+  UploadSession UploadSession[]
+
+  @@index([userId])
+}
+
+enum UploadSessionStatus {
+  PENDING
+  UPLOADING
+  COMPLETED
+  FAILED
+}
+
+model UploadSession {
+  id String @id @default(uuid()) @db.Uuid 
+  userId         String              
+  trackId        String              
+  uploadId       String?             
+  fileName       String
+  mimeType       String?
+  sizeBytes      Int
+  chunkSize      Int
+  totalChunks    Int
+  uploadedBytes  Int                 @default(0)
+  uploadedChunks String                @default("[]")
+  bucket         String
+  objectKey      String
+  status         UploadSessionStatus @default(PENDING)
+  errorMessage   String?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+  completedAt    DateTime?
+  tempDir        String?
+  user           User                @relation(fields: [userId], references: [id])
+  track          Track               @relation(fields: [trackId], references: [id])
+  upload         Upload?             @relation(fields: [uploadId], references: [id])
+
+  @@index([userId])
+  @@index([trackId])
+}
+
+model PlayEvent {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?  
+  trackId   String   
+  deviceId  String?
+  sessionId String?
+  msPlayed  Int      @default(0)
+  timestamp DateTime @default(now())
+  duration  Int?
+  position  Int      @default(0)
+  metadata  String?
+  createdAt DateTime @default(now())
+  track     Track    @relation(fields: [trackId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([trackId])
+  @@index([deviceId])
+  @@index([sessionId])
+  @@index([timestamp])
+}
+
+model EventLog {
+  id String @id @default(uuid()) @db.Uuid 
+  eventId          String   @unique
+  userId           String   
+  eventType        String
+  eventData        String
+  sessionId        String
+  clientTimestamp  DateTime
+  serverTimestamp  DateTime @default(now())
+  metadata         String     @default("{}")
+  user             User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([eventType])
+  @@index([sessionId])
+  @@index([serverTimestamp])
+  @@index([clientTimestamp])
+}
+
+model EventBatch {
+  id String @id @default(uuid()) @db.Uuid 
+  batchId          String    @unique
+  userId           String    
+  eventCount       Int
+  processedCount   Int
+  failedCount      Int
+  skippedCount     Int
+  clientTimestamp  DateTime?
+  serverTimestamp  DateTime  @default(now())
+  user             User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([serverTimestamp])
+}
+
+model AnalyticsEvent {
+  id String @id @default(uuid()) @db.Uuid 
+  userId      String   
+  eventType   String
+  eventData   String
+  sessionId   String
+  timestamp   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([eventType])
+  @@index([sessionId])
+  @@index([timestamp])
+}
+
+model ErrorLog {
+  id String @id @default(uuid()) @db.Uuid 
+  userId       String   
+  errorType    String
+  errorMessage String
+  stackTrace   String?
+  context      String     @default("{}")
+  sessionId    String
+  timestamp    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([errorType])
+  @@index([sessionId])
+  @@index([timestamp])
+}
+
+/// *
+///  * =======================
+///  * AI (Muse/Hope)
+///  * =======================
+model AIDialog {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?  
+  title     String?
+  meta Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User?    @relation(fields: [userId], references: [id])
+  tasks     AITask[]
+}
+
+model AITask {
+  id String @id @default(uuid()) @db.Uuid 
+  dialogId  String?   
+  userId    String?   
+  input     String?
+  output    String?
+  status    String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  dialog    AIDialog? @relation(fields: [dialogId], references: [id])
+  user      User?     @relation(fields: [userId], references: [id])
+
+  @@index([dialogId])
+  @@index([userId])
+}
+
+model Embedding {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?  
+  space     String
+  refId     String
+  vector    Bytes
+  dims      Int
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([space, refId])
+  @@index([userId])
+}
+
+model Recommendation {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String   
+  trackId   String   
+  score     Float    @default(0)
+  reason    String?
+  createdAt DateTime @default(now())
+  track     Track    @relation(fields: [trackId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, trackId])
+  @@index([userId])
+  @@index([trackId])
+}
+
+/// New: AI Profiles (Hope/Muse/Treasure/Zion personas)
+model AIProfile {
+  id String @id @default(uuid()) @db.Uuid 
+  userId       String?            
+  name         String
+  persona      AIPersona          @default(HOPE)
+  systemPrompt String?
+  avatarUrl    String?
+  createdAt    DateTime           @default(now())
+  user         User?              @relation(fields: [userId], references: [id])
+  interactions AIInteractionLog[]
+
+  @@index([userId])
+  @@index([persona])
+}
+
+/// New: AI interaction log (for analytics + training signals)
+model AIInteractionLog {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?    
+  profileId String?    
+  message   String
+  response  String?
+  createdAt DateTime   @default(now())
+  user      User?      @relation(fields: [userId], references: [id])
+  profile   AIProfile? @relation(fields: [profileId], references: [id])
+
+  @@index([userId])
+  @@index([profileId])
+}
+
+/// *
+///  * =======================
+///  * Reporting & Moderation
+///  * =======================
+model Report {
+  id String @id @default(uuid()) @db.Uuid 
+  reporterId String   
+  targetType String
+  targetId   String
+  reason     String?
+  createdAt  DateTime @default(now())
+  reporter   User     @relation("ReporterReports", fields: [reporterId], references: [id])
+
+  @@index([reporterId])
+  @@index([targetType, targetId])
+}
+
+model ModerationAction {
+  id String @id @default(uuid()) @db.Uuid 
+  moderatorId String               
+  action      ModerationActionType @default(WARN)
+  targetType  String
+  targetId    String
+  notes       String?
+  createdAt   DateTime             @default(now())
+  moderator   User                 @relation("ModeratorActions", fields: [moderatorId], references: [id])
+
+  @@index([moderatorId])
+  @@index([targetType, targetId])
+}
+
+model AuditLog {
+  id String @id @default(uuid()) @db.Uuid 
+  actorUserId String?  
+  action      String
+  payload     String?
+  createdAt   DateTime @default(now())
+  actor       User?    @relation("ActorLogs", fields: [actorUserId], references: [id])
+
+  @@index([actorUserId])
+}
+
+/// *
+///  * =======================
+///  * Platform
+///  * =======================
+model APIKey {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String    
+  name      String
+  keyHash   String    @unique
+  scopes Json?
+  createdAt DateTime  @default(now())
+  revokedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model BetaInvite {
+  id String @id @default(uuid()) @db.Uuid 
+  code            String    @unique
+  claimedByUserId String?   
+  claimedAt       DateTime?
+  createdAt       DateTime  @default(now())
+  claimedBy       User?     @relation(fields: [claimedByUserId], references: [id])
+
+  @@index([claimedByUserId])
+}
+
+model FeatureFlag {
+  id String @id @default(uuid()) @db.Uuid 
+  key               String    @unique
+  enabled           Boolean   @default(false)
+  description       String?
+  rolloutPercentage Int       @default(100)
+  userGroups Json? @default("[]")
+  environment       String    @default("all")
+  expiresAt         DateTime?
+  metadata          String?     @default("{}")
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([key])
+  @@index([environment])
+  @@index([enabled])
+  @@index([expiresAt])
+}
+
+model Notification {
+  createdAt DateTime         @default(now())
+  payload   String?
+  readAt    DateTime?
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String           
+  type      NotificationType
+  user      User             @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([readAt])
+  @@index([type])
+}
+
+model Setting {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?  
+  key       String
+  value     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@unique([userId, key])
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Surf (YouTube)
+///  * =======================
+model SurfSession {
+  id String @id @default(uuid()) @db.Uuid 
+  userId         String    
+  youtubeVideoId String
+  startedAt      DateTime  @default(now())
+  endedAt        DateTime?
+  secondsPlayed  Int       @default(0)
+  user           User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([youtubeVideoId])
+}
+
+model SurfAllowance {
+  id String @id @default(uuid()) @db.Uuid 
+  userId           String    @unique 
+  minutesAvailable Int       @default(0)
+  refreshedAt      DateTime?
+  user             User      @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * History / Treasure / Missions
+///  * =======================
+model History {
+  id String @id @default(uuid()) @db.Uuid 
+  userId     String   
+  targetType String
+  targetId   String
+  event      String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([targetType, targetId])
+}
+
+model Treasure {
+  id String @id @default(uuid()) @db.Uuid 
+  creatorId String      
+  currency  Currency    @default(TAP)
+  amount    Int
+  name      String
+  desc      String?
+  meta Json?
+  expiresAt DateTime?
+  createdAt DateTime    @default(now())
+  missions  AIMission[]
+  creator   User        @relation(fields: [creatorId], references: [id])
+
+  @@index([creatorId])
+  @@index([currency])
+}
+
+model AIMission {
+  id String @id @default(uuid()) @db.Uuid 
+  treasureId String?             
+  name       String
+  desc       String?
+  isActive   Boolean             @default(true)
+  rules      String?
+  createdAt  DateTime            @default(now())
+  treasure   Treasure?           @relation(fields: [treasureId], references: [id])
+  progress   AIMissionProgress[]
+
+  @@index([treasureId])
+  @@index([isActive])
+}
+
+model AIMissionProgress {
+  id String @id @default(uuid()) @db.Uuid 
+  missionId String    
+  userId    String    
+  progress  Int       @default(0)
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  mission   AIMission @relation(fields: [missionId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
+
+  @@unique([missionId, userId])
+  @@index([missionId])
+  @@index([userId])
+}
+
+/// *
+///  * =======================
+///  * Analytics & Search (New)
+///  * =======================
+model MetricEvent {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String?  
+  type      String
+  targetId  String?
+  meta Json?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([type])
+  @@index([createdAt])
+}
+
+model SearchIndex {
+  id String @id @default(uuid()) @db.Uuid 
+  refType   String
+  refId     String
+  keywords Json?
+  vector    Bytes?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([refType, refId])
+}
+
+model UserBadge {
+  id String @id @default(uuid()) @db.Uuid 
+  userId    String   
+  name      String
+  desc      String?
+  iconUrl   String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([name])
+}
+
+/// *
+///  * =======================
+///  * Subscriptions & Trades (New)
+///  * =======================
+model Tier {
+  id String @id @default(uuid()) @db.Uuid 
+  creatorId     String         
+  name          String
+  priceCents    Int
+  perks         String?
+  createdAt     DateTime       @default(now())
+  creator       User           @relation(fields: [creatorId], references: [id])
+  subscriptions Subscription[]
+
+  @@index([creatorId])
+}
+
+model Subscription {
+  id String @id @default(uuid()) @db.Uuid 
+  creatorId    String   
+  subscriberId String   
+  tierId       String   
+  status       String   @default("ACTIVE")
+  renewsAt     DateTime
+  createdAt    DateTime @default(now())
+  creator      User     @relation("CreatorSubs", fields: [creatorId], references: [id])
+  subscriber   User     @relation("SubscriberSubs", fields: [subscriberId], references: [id])
+  tier         Tier     @relation(fields: [tierId], references: [id])
+
+  @@index([creatorId])
+  @@index([subscriberId])
+  @@index([tierId])
+  @@index([status])
+  @@index([renewsAt])
+}
+
+model Trade {
+  id String @id @default(uuid()) @db.Uuid 
+  initiatorId String      
+  receiverId  String      
+  status      TradeStatus @default(PENDING)
+  items       String?
+  createdAt   DateTime    @default(now())
+  initiator   User        @relation("TradeInitiator", fields: [initiatorId], references: [id])
+  receiver    User        @relation("TradeReceiver", fields: [receiverId], references: [id])
+
+  @@index([initiatorId])
+  @@index([receiverId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+/// *
+///  * =======================
+///  * Enums
+///  * =======================
+enum Role {
+  LISTENER
+  CREATOR
+  ADMIN
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  BANNED
+  DELETED
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  PENDING
+  VERIFIED
+}
+
+enum MediaType {
+  AUDIO
+  IMAGE
+  VIDEO
+  OTHER
+}
+
+enum PostType {
+  TEXT
+  TRACK
+  IMAGE
+  VIDEO
+  LINK
+  POLL
+}
+
+enum Visibility {
+  PUBLIC
+  UNLISTED
+  PRIVATE
+}
+
+enum MessageType {
+  TEXT
+  TRACK
+  IMAGE
+  VIDEO
+  SYSTEM
+}
+
+enum NotificationType {
+  FOLLOW
+  LIKE
+  REPOST
+  COMMENT
+  MENTION
+  MESSAGE
+  ORDER_STATUS
+  STREAM_LIVE
+  SYSTEM
+}
+
+enum PaymentProvider {
+  STRIPE
+  SOLANA
+  VENMO
+}
+
+enum OrderStatus {
+  CREATED
+  PAID
+  FULFILLED
+  CANCELED
+  REFUNDED
+}
+
+enum DeviceType {
+  WEB
+  IOS
+  ANDROID
+  DESKTOP
+}
+
+enum VoteType {
+  UP
+  DOWN
+}
+
+enum Currency {
+  TAP
+  USD
+  SOL
+}
+
+enum PassFeature {
+  SURF
+  COINS
+  BATTLES
+  LIVE
+  MARKETPLACE
+}
+
+enum ModerationActionType {
+  WARN
+  MUTE
+  SUSPEND
+  BAN
+  DELETE
+}
+
+enum FavoriteTargetType {
+  USER
+  TRACK
+  PLAYLIST
+  ALBUM
+  ARTIST
+  POST
+}
+
+enum LikeTargetType {
+  POST
+  COMMENT
+  TRACK
+}
+
+enum AuthTokenType {
+  REFRESH
+  RESET
+  INVITE
+}
+
+enum AIPersona {
+  HOPE
+  MUSE
+  TREASURE
+  ZION
+}
+
+enum TradeStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  CANCELED
+}
+
+model CreatorRequest {
+  id          String   @id @default(cuid())
+  userId      String   
+  stageName   String
+  genre       String?
+  socialLinks String?
+  status      String   @default("PENDING")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+/// --- TapTap Agents V2 (BEGIN) ---
+model Agent {
+  id        String  @id @default(cuid())
+  name      String  @unique
+  role      String
+  tone      String?
+  vibe      String?
+  signature String?
+  summary   String?
+
+  version   String? @default("2.0.0")
+  meta Json?
+  changelog String?
+
+  tools      AgentTool[]
+  datasets   AgentDataset[]
+  playbooks  AgentPlaybook[]
+  guardrails AgentGuardrail[]
+  handoffs   AgentHandoff[]
+  kpis       AgentKPI[]
+  evals      AgentEval[]
+
+  cadence AgentCadence?
+  abTest  AgentABTest?
+  prompt  AgentPrompt?
+  reports AgentReport[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AgentTool {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  name    String
+
+  @@unique([agentId, name])
+}
+
+model AgentDataset {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  key     String
+
+  @@unique([agentId, key])
+}
+
+model AgentPlaybook {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  name    String
+
+  @@unique([agentId, name])
+}
+
+model AgentGuardrail {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  rule    String
+
+  @@unique([agentId, rule])
+}
+
+model AgentHandoff {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  toName  String
+
+  @@unique([agentId, toName])
+}
+
+model AgentKPI {
+  id      String  @id @default(cuid())
+  agent   Agent   @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  key     String
+  target  String?
+
+  @@unique([agentId, key])
+}
+
+model AgentEval {
+  id      String @id @default(cuid())
+  agent   Agent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId String
+  name    String
+
+  @@unique([agentId, name])
+}
+
+model AgentCadence {
+  id        String   @id @default(cuid())
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId   String   @unique
+  config    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AgentABTest {
+  id        String   @id @default(cuid())
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId   String   @unique
+  enabled   Boolean  @default(false)
+  variants  String?
+  sample    Float?
+  metrics   String?
+  logPath   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AgentPrompt {
+  id        String   @id @default(cuid())
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId   String   @unique
+  body      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AgentReport {
+  id        String   @id @default(cuid())
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  agentId   String
+  kind      String
+  path      String?
+  payload   String?
+  createdAt DateTime @default(now())
+}
+
+model Workflow {
+  id        String         @id @default(cuid())
+  name      String         @unique
+  steps     WorkflowStep[]
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+model WorkflowStep {
+  id         String   @id @default(cuid())
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  workflowId String
+  order      Int
+  agentName  String
+  action     String
+  inputs     String?
+  outputs    String?
+
+  @@unique([workflowId, order])
+}
+
+model BmiConnection {
+  id String @id @default(uuid()) @db.Uuid 
+  userId        String                 @unique 
+  accessToken   String?
+  refreshToken  String?
+  expiresAt     DateTime?
+  connectedAt   DateTime?
+  metadata      String?
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+  user          User                   @relation(fields: [userId], references: [id])
+  registrations BmiTrackRegistration[]
+  performances  BmiPerformanceLog[]
+  oauthStates   BmiOAuthState[]
+
+  @@index([userId])
+}
+
+model BmiOAuthState {
+  id String @id @default(uuid()) @db.Uuid 
+  state           String         @unique
+  userId          String         
+  expiresAt       DateTime?
+  createdAt       DateTime       @default(now())
+  user            User           @relation(fields: [userId], references: [id])
+  BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
+  bmiConnectionId String?        
+
+  @@index([userId])
+}
+
+model BmiTrackRegistration {
+  id String @id @default(uuid()) @db.Uuid 
+  userId          String         
+  trackId         String
+  status          BmiSyncStatus  @default(PENDING)
+  payload         String?
+  response        String?
+  registeredAt    DateTime       @default(now())
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  user            User           @relation(fields: [userId], references: [id])
+  BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
+  bmiConnectionId String?        
+
+  @@index([userId])
+  @@index([trackId])
+}
+
+model BmiPerformanceLog {
+  id String @id @default(uuid()) @db.Uuid 
+  userId          String         
+  title           String
+  streamDate      DateTime
+  durationMinutes Float
+  audienceCount   Int
+  payload         String?
+  syncedAt        DateTime?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  user            User           @relation(fields: [userId], references: [id])
+  BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
+  bmiConnectionId String?        
+
+  @@index([userId])
+}
+
+enum BmiSyncStatus {
+  PENDING
+  SYNCED
+  FAILED
+}
+
+/// --- TapTap Agents V2 (END) ---
+
+/// *
+///  * =======================
+///  * Exchange Rates & Tokenomics
+///  * =======================
+model ExchangeRate {
+  id String @id @default(uuid()) @db.Uuid
+  base      String   // Base currency (e.g., "TAPC", "USD", "SOL")
+  quote     String   // Quote currency (e.g., "USD", "SOL", "TAPC")
+  rate      Float    // Exchange rate (1 base = rate quote)
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@unique([base, quote])
+  @@index([base])
+  @@index([quote])
+  @@index([updatedAt])
+}

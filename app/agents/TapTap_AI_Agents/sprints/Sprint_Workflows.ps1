@@ -1,0 +1,10 @@
+﻿param([string]$RootPath = "")
+$RootPath = if($RootPath){$RootPath} else { Split-Path $MyInvocation.MyCommand.Path -Parent | Split-Path -Parent }
+$WF = Join-Path $RootPath 'workflows'
+if(!(Test-Path $WF)){ New-Item -ItemType Directory -Path $WF | Out-Null }
+function WriteWF($name,$obj){ ($obj | ConvertTo-Json -Depth 40) | Set-Content -Encoding UTF8 (Join-Path $WF ($name+'.json')) }
+WriteWF 'Launch' @{name='Launch';steps=@(@{agent='Nova';action='concept_batch';outputs='hooks/angles'},@{agent='Fable';action='story';inputs='HPPPCTA';outputs='narrative'},@{agent='Aura';action='brand_check';outputs='visual brief'},@{agent='Lumen';action='assets';outputs='cuts/banners'},@{agent='Echo';action='threads+replies';outputs='engagement plan'},@{agent='Charm';action='partner_pitches';outputs='outreach pack'},@{agent='Prism';action='impact_readout';outputs='one-graph'},@{agent='Fortune';action='revenue_projection';outputs='summary'},@{agent='Serenity';action='schedule';outputs='staged timeline'})}
+WriteWF 'Onboarding' @{name='Onboarding';steps=@(@{agent='Muse';action='interview_10Q';outputs='bio+EPK'},@{agent='Fable';action='about+profile';outputs='copy'},@{agent='Harmony';action='starter_playlist';outputs='playlist'},@{agent='Hope';action='welcome_DM';outputs='2+1 recs'},@{agent='Merit';action='tier_assign';outputs='tier'},@{agent='Treasure';action='rewards_setup';outputs='TapPass perks'})}
+WriteWF 'PromoStorm' @{name='PromoStorm';steps=@(@{agent='Nova';action='hooks_x10';outputs='angles'},@{agent='Echo';action='reply_storm';outputs='threads'},@{agent='Charm';action='partner_outreach';outputs='emails+DMs'},@{agent='Lumen';action='shorts';outputs='15s cuts'},@{agent='Prism';action='impact_summary';outputs='kpi one-graph'})}
+WriteWF 'PolicySafety' @{name='PolicySafety';steps=@(@{agent='Haven';action='triage_rubric';outputs='matrix'},@{agent='Bliss';action='support_macros';outputs='responses'},@{agent='Aura';action='ui_notices';outputs='design notes'},@{agent='Saga';action='rollout';outputs='phased plan'},@{agent='Serenity';action='timing';outputs='cooldowns'})}
+Write-Host '✅ Workflows written'

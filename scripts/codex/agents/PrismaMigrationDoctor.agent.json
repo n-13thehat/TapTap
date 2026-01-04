@@ -1,0 +1,20 @@
+{
+  "name": "Prisma Migration Doctor",
+  "id": "prisma.migrationDoctor",
+  "inputs": {
+    "schemaPath": "string=prisma/schema.prisma",
+    "mode": "enum(safe|force)=safe",
+    "seed": "bool=false"
+  },
+  "steps": [
+    "Verify prisma CLI is available",
+    "Run `prisma validate`",
+    "Run `prisma db pull` (info only)",
+    "Run `prisma migrate diff` (preview)",
+    "If mode=safe -> print plan; If force -> run `prisma migrate dev`",
+    "Optional: `prisma db seed`"
+  ],
+  "artifacts": ["Migration plan preview","Executed migrations","Seed logs"],
+  "danger": "high"
+}
+

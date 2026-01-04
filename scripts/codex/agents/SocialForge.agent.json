@@ -1,0 +1,18 @@
+{
+  "name": "Social Forge",
+  "id": "social.forge",
+  "inputs": {
+    "features": "string=threads,media,notifications,dms",
+    "route": "string=app/social/page.tsx",
+    "realtime": "bool=true"
+  },
+  "steps": [
+    "Check and install missing shadcn components",
+    "Create or patch social page shell with sockets + providers",
+    "Scaffold API handlers (GET/POST) and zod validators (plan only, non-destructive)",
+    "Emit TODOs for deep features, keep file compilable"
+  ],
+  "artifacts": ["Patched/created page.tsx","Component install log","Next steps checklist"],
+  "danger": "med"
+}
+

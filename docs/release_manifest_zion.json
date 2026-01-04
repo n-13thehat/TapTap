@@ -1,0 +1,141 @@
+{
+  "name": "TapTap Matrix ZION – Public Release Manifest",
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-15T00:00:00.000Z",
+  "phases": [
+    {
+      "id": 1,
+      "name": "Core App & Data Layer",
+      "status": "in_progress",
+      "percentComplete": 85,
+      "summary": "Prisma schema, DB connectivity, and health checks ready for staging.",
+      "keyArtifacts": [
+        "prisma/schema.prisma",
+        "prisma/schema_optimized.prisma",
+        "lib/database/connection.ts",
+        "app/api/health/route.ts",
+        ".env.local"
+      ],
+      "tasksRemaining": [
+        "Normalize .env.local (single DATABASE_URL, single NEXTAUTH_SECRET, remove duplicates)",
+        "Run prisma generate and db push against staging database",
+        "Run db seed if desired for baseline data",
+        "Verify /api/health?check=database&detailed=true returns status=healthy"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "UI/UX, Navigation & Pages",
+      "status": "in_progress",
+      "percentComplete": 90,
+      "summary": "All core pages upgraded with standardized components and Matrix theming.",
+      "keyArtifacts": [
+        "app/**",
+        "components/**",
+        "COMPLETE_UPGRADE_SUMMARY.md"
+      ],
+      "tasksRemaining": [
+        "Manual QA of core routes: /, /ai, /upload, /dm, /posterize, /mainframe, /settings, /library, /marketplace, /social, /battles",
+        "Fix any navigation errors, 404s, or layout glitches found during QA",
+        "Ensure standardized headers, loading, and error components are used consistently",
+        "Verify no React/Next runtime errors in browser console for main flows"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Reliability, Testing & Performance",
+      "status": "in_progress",
+      "percentComplete": 65,
+      "summary": "Vitest, logging, and performance hooks in place; coverage and perf tuning pending.",
+      "keyArtifacts": [
+        "tests/**",
+        "tests/setup.ts",
+        "lib/monitoring/metrics.ts",
+        "lib/cache/redis.ts"
+      ],
+      "tasksRemaining": [
+        "Run pnpm test and fix failing tests (update mocks and handlers as needed)",
+        "Add tests for auth, upload/tracks, library, surf/social, and admin tools",
+        "Use performance helpers or tooling to benchmark surf/social/upload endpoints",
+        "Add or refine Prisma indexes and caching for slow critical endpoints"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Security & Compliance",
+      "status": "in_progress",
+      "percentComplete": 70,
+      "summary": "Auth, CSRF, validation, and rate limiting implemented; review and hardening needed.",
+      "keyArtifacts": [
+        "auth.config.ts",
+        "lib/middleware/**",
+        "lib/validation/schemas.ts",
+        ".env.local"
+      ],
+      "tasksRemaining": [
+        "Confirm .env.local is git-ignored and rotate any production secrets post-testing",
+        "Document route-to-role access matrix and ensure all /api/admin/** endpoints are gated",
+        "Ensure all API inputs are validated with Zod and uploads enforce type/size limits",
+        "Review logs for security events and confirm sensitive data is not logged"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Deployment, DevOps & CI/CD",
+      "status": "planned",
+      "percentComplete": 40,
+      "summary": "Health checks and observability-ready code exist; pipeline and infra to be wired.",
+      "keyArtifacts": [
+        "package.json",
+        "app/api/health/route.ts",
+        "lib/logger.ts",
+        "lib/monitoring/metrics.ts"
+      ],
+      "tasksRemaining": [
+        "Create/verify Dockerfile and optional docker-compose.yml for production runs",
+        "Configure CI to run lint, typecheck, test, and build on PRs and main",
+        "Set up staging and production environments with separate envs/DBs",
+        "Wire logs and metrics into chosen monitoring/alerting stack"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Media, Real-Time & Advanced Features",
+      "status": "in_progress",
+      "percentComplete": 50,
+      "summary": "Media pipeline and advanced features are scaffolded; v1 scope must be finalized.",
+      "keyArtifacts": [
+        "scripts/upload_default_album.js",
+        "README.md",
+        "morpheus todo/todo manifest 1.json",
+        "lib/features/flags.ts"
+      ],
+      "tasksRemaining": [
+        "Run upload:default-album script and verify admin tools for metadata/waveforms",
+        "Decide which of battles, live streaming, astroVibes, wallet, marketplace ship in v1",
+        "Guard non-v1 features behind feature flags and/or role conditions",
+        "Verify Socket.io-based real-time flows (DMs/live/battles) handle auth and failures cleanly"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Docs, Support & Launch Readiness",
+      "status": "planned",
+      "percentComplete": 35,
+      "summary": "Technical summaries exist; runbooks, checklists, and public notes still needed.",
+      "keyArtifacts": [
+        "README.md",
+        "IMPROVEMENTS_SUMMARY.md",
+        "COMPLETE_UPGRADE_SUMMARY.md",
+        "docs/**"
+      ],
+      "tasksRemaining": [
+        "Extend docs with new-engineer setup guide and production runbook",
+        "Create docs/LAUNCH_CHECKLIST.md with pre-, during-, and post-launch steps",
+        "Draft public-facing release notes for users based on upgrade summaries",
+        "Document rollback procedure and test it once in staging"
+      ]
+    }
+  ]
+}
+

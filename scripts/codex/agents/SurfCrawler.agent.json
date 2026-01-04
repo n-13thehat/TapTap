@@ -1,0 +1,17 @@
+{
+  "name": "Surf Crawler",
+  "id": "surf.crawler",
+  "inputs": {
+    "allowance": "string=25/day",
+    "quality": "string=720p",
+    "route": "string=app/surf/CodexSurf.tsx"
+  },
+  "steps": [
+    "Create surf shell with allowance meter",
+    "Apply quality cap UI and history stub",
+    "Emit TODOs for parental filters"
+  ],
+  "artifacts": ["Created TSX","Next steps checklist"],
+  "danger": "low"
+}
+

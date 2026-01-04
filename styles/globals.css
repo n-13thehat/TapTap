@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔲 Force true-black background for the whole app */
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Optional: fade text in smoothly on load */
+body {
+  transition: background-color 0.5s ease;
+}
+/*──────────────────────────────────────────────
+  🎨 TapTap ZION Dynamic Theme Styles
+──────────────────────────────────────────────*/
+.theme-zion {
+  --accent: #14b8a6;
+}
+.theme-hope {
+  --accent: #3b82f6;
+}
+.theme-muse {
+  --accent: #8b5cf6;
+}
+.theme-treasure {
+  --accent: #22c55e;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+.bg-surface {
+  background-color: rgba(10, 10, 10, 0.7);
+}
+.accent-accent {
+  accent-color: var(--accent);
+}

@@ -1,0 +1,35 @@
+﻿{
+    "name":  "Onboarding",
+    "steps":  [
+                  {
+                      "outputs":  "bio+EPK",
+                      "agent":  "Muse",
+                      "action":  "interview_10Q"
+                  },
+                  {
+                      "outputs":  "copy",
+                      "agent":  "Fable",
+                      "action":  "about+profile"
+                  },
+                  {
+                      "outputs":  "playlist",
+                      "agent":  "Harmony",
+                      "action":  "starter_playlist"
+                  },
+                  {
+                      "outputs":  "2+1 recs",
+                      "agent":  "Hope",
+                      "action":  "welcome_DM"
+                  },
+                  {
+                      "outputs":  "tier",
+                      "agent":  "Merit",
+                      "action":  "tier_assign"
+                  },
+                  {
+                      "outputs":  "TapPass perks",
+                      "agent":  "Treasure",
+                      "action":  "rewards_setup"
+                  }
+              ]
+}

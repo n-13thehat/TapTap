@@ -1,0 +1,4717 @@
+{
+  "songId": "local:1:Lost (Stay Frosty).mp3",
+  "title": "Lost (Stay Frosty)",
+  "artist": "STEMSTATION",
+  "bpm": 123,
+  "offsetMs": 0,
+  "difficulty": "all",
+  "notes": [
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-0-1",
+      "lane": 0,
+      "timeMs": 2110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-0-2",
+      "lane": 2,
+      "timeMs": 2720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-0-3",
+      "lane": 1,
+      "timeMs": 3085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-1-0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-2-2",
+      "lane": 1,
+      "timeMs": 6378,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-3-1",
+      "lane": 1,
+      "timeMs": 7841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-3-2",
+      "lane": 2,
+      "timeMs": 8329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-3-3",
+      "lane": 3,
+      "timeMs": 8817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-4-0",
+      "lane": 2,
+      "timeMs": 9305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-4-1",
+      "lane": 1,
+      "timeMs": 9549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-4-2",
+      "lane": 3,
+      "timeMs": 9793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-4-4",
+      "lane": 2,
+      "timeMs": 10768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-5-1",
+      "lane": 0,
+      "timeMs": 11866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-6-0",
+      "lane": 0,
+      "timeMs": 13207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-7-0",
+      "lane": 1,
+      "timeMs": 15159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-8-1",
+      "lane": 1,
+      "timeMs": 17598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-8-2",
+      "lane": 2,
+      "timeMs": 18085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-9-4",
+      "lane": 2,
+      "timeMs": 20524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-10-1",
+      "lane": 0,
+      "timeMs": 21622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-10-2",
+      "lane": 2,
+      "timeMs": 22232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-12-0",
+      "lane": 1,
+      "timeMs": 24915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-12-2",
+      "lane": 1,
+      "timeMs": 25890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-12-3",
+      "lane": 3,
+      "timeMs": 26622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-13-3",
+      "lane": 3,
+      "timeMs": 28329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-14-1",
+      "lane": 1,
+      "timeMs": 29061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-14-4",
+      "lane": 2,
+      "timeMs": 30280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-15-0",
+      "lane": 3,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-15-1",
+      "lane": 0,
+      "timeMs": 31378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-17-0",
+      "lane": 1,
+      "timeMs": 34671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-17-2",
+      "lane": 1,
+      "timeMs": 35646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-17-3",
+      "lane": 3,
+      "timeMs": 36378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-18-1",
+      "lane": 1,
+      "timeMs": 37110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-18-2",
+      "lane": 2,
+      "timeMs": 37598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-18-3",
+      "lane": 3,
+      "timeMs": 38085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-19-1",
+      "lane": 1,
+      "timeMs": 38817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-19-2",
+      "lane": 3,
+      "timeMs": 39061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-19-4",
+      "lane": 2,
+      "timeMs": 40037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-20-0",
+      "lane": 3,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-20-1",
+      "lane": 0,
+      "timeMs": 41134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-21-0",
+      "lane": 0,
+      "timeMs": 42476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-21-1",
+      "lane": 3,
+      "timeMs": 43451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-22-3",
+      "lane": 3,
+      "timeMs": 46134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-23-3",
+      "lane": 3,
+      "timeMs": 47841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-24-0",
+      "lane": 2,
+      "timeMs": 48329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-24-1",
+      "lane": 1,
+      "timeMs": 48573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-24-2",
+      "lane": 3,
+      "timeMs": 48817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-25-0",
+      "lane": 3,
+      "timeMs": 50280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-26-1",
+      "lane": 3,
+      "timeMs": 53207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-27-2",
+      "lane": 1,
+      "timeMs": 55159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-27-3",
+      "lane": 3,
+      "timeMs": 55890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-28-1",
+      "lane": 1,
+      "timeMs": 56622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-29-1",
+      "lane": 1,
+      "timeMs": 58329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-30-1",
+      "lane": 0,
+      "timeMs": 60646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-32-1",
+      "lane": 2,
+      "timeMs": 64671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-33-1",
+      "lane": 1,
+      "timeMs": 66378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-34-4",
+      "lane": 2,
+      "timeMs": 69305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-35-1",
+      "lane": 0,
+      "timeMs": 70402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-35-2",
+      "lane": 2,
+      "timeMs": 71012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-36-0",
+      "lane": 0,
+      "timeMs": 71744,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-37-0",
+      "lane": 1,
+      "timeMs": 73695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-37-2",
+      "lane": 1,
+      "timeMs": 74671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-39-0",
+      "lane": 2,
+      "timeMs": 77598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-39-2",
+      "lane": 3,
+      "timeMs": 78085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-39-3",
+      "lane": 1,
+      "timeMs": 78817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-39-4",
+      "lane": 2,
+      "timeMs": 79061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-40-1",
+      "lane": 0,
+      "timeMs": 80159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-40-2",
+      "lane": 2,
+      "timeMs": 80768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-40-3",
+      "lane": 1,
+      "timeMs": 81134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-41-0",
+      "lane": 0,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-41-1",
+      "lane": 3,
+      "timeMs": 82476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-42-0",
+      "lane": 1,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-42-2",
+      "lane": 1,
+      "timeMs": 84427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-44-1",
+      "lane": 1,
+      "timeMs": 87598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-48-0",
+      "lane": 0,
+      "timeMs": 95159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-49-1",
+      "lane": 1,
+      "timeMs": 97354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-49-4",
+      "lane": 2,
+      "timeMs": 98573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-50-0",
+      "lane": 3,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-50-1",
+      "lane": 0,
+      "timeMs": 99671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-50-2",
+      "lane": 2,
+      "timeMs": 100280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-50-3",
+      "lane": 1,
+      "timeMs": 100646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-52-0",
+      "lane": 1,
+      "timeMs": 102963,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-53-1",
+      "lane": 1,
+      "timeMs": 105402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-54-4",
+      "lane": 2,
+      "timeMs": 108329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-55-0",
+      "lane": 3,
+      "timeMs": 108817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-55-1",
+      "lane": 0,
+      "timeMs": 109427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-55-2",
+      "lane": 2,
+      "timeMs": 110037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-57-1",
+      "lane": 2,
+      "timeMs": 113451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-57-2",
+      "lane": 1,
+      "timeMs": 113695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-57-3",
+      "lane": 3,
+      "timeMs": 114427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-58-2",
+      "lane": 2,
+      "timeMs": 115646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-59-0",
+      "lane": 2,
+      "timeMs": 116622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-59-3",
+      "lane": 1,
+      "timeMs": 117841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-59-4",
+      "lane": 2,
+      "timeMs": 118085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-60-1",
+      "lane": 0,
+      "timeMs": 119183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-60-2",
+      "lane": 2,
+      "timeMs": 119793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-60-3",
+      "lane": 1,
+      "timeMs": 120159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Easy-61-1",
+      "lane": 3,
+      "timeMs": 121500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-0-0",
+      "lane": 3,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-0-2",
+      "lane": 2,
+      "timeMs": 2720,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-0-3",
+      "lane": 1,
+      "timeMs": 3085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-1-0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-1-1",
+      "lane": 3,
+      "timeMs": 4427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-2-2",
+      "lane": 1,
+      "timeMs": 6378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-2-3",
+      "lane": 3,
+      "timeMs": 7110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-3-0",
+      "lane": 0,
+      "timeMs": 7354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-3-3",
+      "lane": 3,
+      "timeMs": 8817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-4-2",
+      "lane": 3,
+      "timeMs": 9793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-4-3",
+      "lane": 1,
+      "timeMs": 10524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-4-4",
+      "lane": 2,
+      "timeMs": 10768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-5-1",
+      "lane": 0,
+      "timeMs": 11866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-5-2",
+      "lane": 2,
+      "timeMs": 12476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-5-3",
+      "lane": 1,
+      "timeMs": 12841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-6-0",
+      "lane": 0,
+      "timeMs": 13207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-6-1",
+      "lane": 3,
+      "timeMs": 14183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-7-1",
+      "lane": 2,
+      "timeMs": 15890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-7-2",
+      "lane": 1,
+      "timeMs": 16134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-7-3",
+      "lane": 3,
+      "timeMs": 16866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-8-0",
+      "lane": 0,
+      "timeMs": 17110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-8-3",
+      "lane": 3,
+      "timeMs": 18573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-9-0",
+      "lane": 2,
+      "timeMs": 19061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-9-1",
+      "lane": 1,
+      "timeMs": 19305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-9-3",
+      "lane": 1,
+      "timeMs": 20280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-9-4",
+      "lane": 2,
+      "timeMs": 20524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-10-0",
+      "lane": 3,
+      "timeMs": 21012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-10-3",
+      "lane": 1,
+      "timeMs": 22598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-11-0",
+      "lane": 0,
+      "timeMs": 22963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-12-0",
+      "lane": 1,
+      "timeMs": 24915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-13-0",
+      "lane": 0,
+      "timeMs": 26866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-13-1",
+      "lane": 1,
+      "timeMs": 27354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-14-0",
+      "lane": 2,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-14-1",
+      "lane": 1,
+      "timeMs": 29061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-14-3",
+      "lane": 1,
+      "timeMs": 30037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-15-0",
+      "lane": 3,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-15-1",
+      "lane": 0,
+      "timeMs": 31378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-15-2",
+      "lane": 2,
+      "timeMs": 31988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-15-3",
+      "lane": 1,
+      "timeMs": 32354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-16-1",
+      "lane": 3,
+      "timeMs": 33695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-17-1",
+      "lane": 2,
+      "timeMs": 35402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-17-2",
+      "lane": 1,
+      "timeMs": 35646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-18-0",
+      "lane": 0,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-18-1",
+      "lane": 1,
+      "timeMs": 37110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-18-2",
+      "lane": 2,
+      "timeMs": 37598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-19-2",
+      "lane": 3,
+      "timeMs": 39061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-19-3",
+      "lane": 1,
+      "timeMs": 39793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-20-0",
+      "lane": 3,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-20-1",
+      "lane": 0,
+      "timeMs": 41134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-20-3",
+      "lane": 1,
+      "timeMs": 42110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-22-0",
+      "lane": 1,
+      "timeMs": 44427,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-22-1",
+      "lane": 2,
+      "timeMs": 45159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-22-2",
+      "lane": 1,
+      "timeMs": 45402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-22-3",
+      "lane": 3,
+      "timeMs": 46134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-23-0",
+      "lane": 0,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-23-2",
+      "lane": 2,
+      "timeMs": 47354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-23-3",
+      "lane": 3,
+      "timeMs": 47841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-24-0",
+      "lane": 2,
+      "timeMs": 48329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-24-1",
+      "lane": 1,
+      "timeMs": 48573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-24-3",
+      "lane": 1,
+      "timeMs": 49549,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-25-0",
+      "lane": 3,
+      "timeMs": 50280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-25-1",
+      "lane": 0,
+      "timeMs": 50890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-25-2",
+      "lane": 2,
+      "timeMs": 51500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-26-0",
+      "lane": 0,
+      "timeMs": 52232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-26-1",
+      "lane": 3,
+      "timeMs": 53207,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-27-0",
+      "lane": 1,
+      "timeMs": 54183,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-27-1",
+      "lane": 2,
+      "timeMs": 54915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-27-2",
+      "lane": 1,
+      "timeMs": 55159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-27-3",
+      "lane": 3,
+      "timeMs": 55890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-28-1",
+      "lane": 1,
+      "timeMs": 56622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-28-2",
+      "lane": 2,
+      "timeMs": 57110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-28-3",
+      "lane": 3,
+      "timeMs": 57598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-29-1",
+      "lane": 1,
+      "timeMs": 58329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-29-2",
+      "lane": 3,
+      "timeMs": 58573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-29-4",
+      "lane": 2,
+      "timeMs": 59549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-30-0",
+      "lane": 3,
+      "timeMs": 60037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-30-3",
+      "lane": 1,
+      "timeMs": 61622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-32-0",
+      "lane": 1,
+      "timeMs": 63939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-32-1",
+      "lane": 2,
+      "timeMs": 64671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-32-2",
+      "lane": 1,
+      "timeMs": 64915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-32-3",
+      "lane": 3,
+      "timeMs": 65646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-33-1",
+      "lane": 1,
+      "timeMs": 66378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-33-2",
+      "lane": 2,
+      "timeMs": 66866,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-34-0",
+      "lane": 2,
+      "timeMs": 67841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-34-1",
+      "lane": 1,
+      "timeMs": 68085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-34-2",
+      "lane": 3,
+      "timeMs": 68329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-34-3",
+      "lane": 1,
+      "timeMs": 69061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-34-4",
+      "lane": 2,
+      "timeMs": 69305,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-35-1",
+      "lane": 0,
+      "timeMs": 70402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-35-3",
+      "lane": 1,
+      "timeMs": 71378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-36-0",
+      "lane": 0,
+      "timeMs": 71744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-36-1",
+      "lane": 3,
+      "timeMs": 72720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-37-1",
+      "lane": 2,
+      "timeMs": 74427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-37-2",
+      "lane": 1,
+      "timeMs": 74671,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-38-1",
+      "lane": 1,
+      "timeMs": 76134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-38-3",
+      "lane": 3,
+      "timeMs": 77110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-39-2",
+      "lane": 3,
+      "timeMs": 78085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-40-1",
+      "lane": 0,
+      "timeMs": 80159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-41-1",
+      "lane": 3,
+      "timeMs": 82476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-42-0",
+      "lane": 1,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-42-1",
+      "lane": 2,
+      "timeMs": 84183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-43-0",
+      "lane": 0,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-43-3",
+      "lane": 3,
+      "timeMs": 86866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-44-1",
+      "lane": 1,
+      "timeMs": 87598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-44-3",
+      "lane": 1,
+      "timeMs": 88573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-44-4",
+      "lane": 2,
+      "timeMs": 88817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-45-2",
+      "lane": 2,
+      "timeMs": 90524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-46-1",
+      "lane": 3,
+      "timeMs": 92232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-47-0",
+      "lane": 1,
+      "timeMs": 93207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-47-1",
+      "lane": 2,
+      "timeMs": 93939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-47-2",
+      "lane": 1,
+      "timeMs": 94183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-48-2",
+      "lane": 2,
+      "timeMs": 96134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-48-3",
+      "lane": 3,
+      "timeMs": 96622,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-50-0",
+      "lane": 3,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-50-1",
+      "lane": 0,
+      "timeMs": 99671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-50-2",
+      "lane": 2,
+      "timeMs": 100280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-51-0",
+      "lane": 0,
+      "timeMs": 101012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-51-1",
+      "lane": 3,
+      "timeMs": 101988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-52-0",
+      "lane": 1,
+      "timeMs": 102963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-52-2",
+      "lane": 1,
+      "timeMs": 103939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-54-0",
+      "lane": 2,
+      "timeMs": 106866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-54-1",
+      "lane": 1,
+      "timeMs": 107110,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-54-3",
+      "lane": 1,
+      "timeMs": 108085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-55-0",
+      "lane": 3,
+      "timeMs": 108817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-57-1",
+      "lane": 2,
+      "timeMs": 113451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-57-2",
+      "lane": 1,
+      "timeMs": 113695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-57-3",
+      "lane": 3,
+      "timeMs": 114427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-58-0",
+      "lane": 0,
+      "timeMs": 114671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-58-2",
+      "lane": 2,
+      "timeMs": 115646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-58-3",
+      "lane": 3,
+      "timeMs": 116134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-59-0",
+      "lane": 2,
+      "timeMs": 116622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-59-1",
+      "lane": 1,
+      "timeMs": 116866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-59-2",
+      "lane": 3,
+      "timeMs": 117110,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-60-0",
+      "lane": 3,
+      "timeMs": 118573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-60-1",
+      "lane": 0,
+      "timeMs": 119183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-60-2",
+      "lane": 2,
+      "timeMs": 119793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Medium-61-1",
+      "lane": 3,
+      "timeMs": 121500,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-0-0",
+      "lane": 3,
+      "timeMs": 1500,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-0-ch0",
+      "lane": 0,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-0-ch3",
+      "lane": 3,
+      "timeMs": 1500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-0-2",
+      "lane": 2,
+      "timeMs": 2720,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-0-3",
+      "lane": 1,
+      "timeMs": 3085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-1-0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-1-ch0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-1-ch3",
+      "lane": 3,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-1-1",
+      "lane": 3,
+      "timeMs": 4427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-2-0",
+      "lane": 1,
+      "timeMs": 5402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-2-1",
+      "lane": 2,
+      "timeMs": 6134,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-2-2",
+      "lane": 1,
+      "timeMs": 6378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-2-3",
+      "lane": 3,
+      "timeMs": 7110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-0",
+      "lane": 0,
+      "timeMs": 7354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-ch0",
+      "lane": 0,
+      "timeMs": 7354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-ch3",
+      "lane": 3,
+      "timeMs": 7354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-1",
+      "lane": 1,
+      "timeMs": 7841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-2",
+      "lane": 2,
+      "timeMs": 8329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-3-3",
+      "lane": 3,
+      "timeMs": 8817,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-4-1",
+      "lane": 1,
+      "timeMs": 9549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-4-2",
+      "lane": 3,
+      "timeMs": 9793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-4-3",
+      "lane": 1,
+      "timeMs": 10524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-4-4",
+      "lane": 2,
+      "timeMs": 10768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-5-1",
+      "lane": 0,
+      "timeMs": 11866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-5-2",
+      "lane": 2,
+      "timeMs": 12476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-5-3",
+      "lane": 1,
+      "timeMs": 12841,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-7-2",
+      "lane": 1,
+      "timeMs": 16134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-7-3",
+      "lane": 3,
+      "timeMs": 16866,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-8-0",
+      "lane": 0,
+      "timeMs": 17110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-8-2",
+      "lane": 2,
+      "timeMs": 18085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-8-3",
+      "lane": 3,
+      "timeMs": 18573,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-0",
+      "lane": 2,
+      "timeMs": 19061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-ch0",
+      "lane": 0,
+      "timeMs": 19061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-ch3",
+      "lane": 3,
+      "timeMs": 19061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-1",
+      "lane": 1,
+      "timeMs": 19305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-2",
+      "lane": 3,
+      "timeMs": 19549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-3",
+      "lane": 1,
+      "timeMs": 20280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-9-4",
+      "lane": 2,
+      "timeMs": 20524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-10-0",
+      "lane": 3,
+      "timeMs": 21012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-10-1",
+      "lane": 0,
+      "timeMs": 21622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-10-2",
+      "lane": 2,
+      "timeMs": 22232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-10-3",
+      "lane": 1,
+      "timeMs": 22598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-11-0",
+      "lane": 0,
+      "timeMs": 22963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-11-ch0",
+      "lane": 0,
+      "timeMs": 22963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-11-ch3",
+      "lane": 3,
+      "timeMs": 22963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-11-1",
+      "lane": 3,
+      "timeMs": 23939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-12-0",
+      "lane": 1,
+      "timeMs": 24915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-12-1",
+      "lane": 2,
+      "timeMs": 25646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-12-2",
+      "lane": 1,
+      "timeMs": 25890,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-12-3",
+      "lane": 3,
+      "timeMs": 26622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-13-0",
+      "lane": 0,
+      "timeMs": 26866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-13-ch0",
+      "lane": 0,
+      "timeMs": 26866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-13-ch3",
+      "lane": 3,
+      "timeMs": 26866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-13-1",
+      "lane": 1,
+      "timeMs": 27354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-13-3",
+      "lane": 3,
+      "timeMs": 28329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-0",
+      "lane": 2,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-ch0",
+      "lane": 0,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-ch3",
+      "lane": 3,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-1",
+      "lane": 1,
+      "timeMs": 29061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-2",
+      "lane": 3,
+      "timeMs": 29305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-3",
+      "lane": 1,
+      "timeMs": 30037,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-14-4",
+      "lane": 2,
+      "timeMs": 30280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-15-0",
+      "lane": 3,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-15-ch0",
+      "lane": 0,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-15-ch3",
+      "lane": 3,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-15-2",
+      "lane": 2,
+      "timeMs": 31988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-15-3",
+      "lane": 1,
+      "timeMs": 32354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-16-0",
+      "lane": 0,
+      "timeMs": 32720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-16-ch0",
+      "lane": 0,
+      "timeMs": 32720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-16-ch3",
+      "lane": 3,
+      "timeMs": 32720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-17-1",
+      "lane": 2,
+      "timeMs": 35402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-17-2",
+      "lane": 1,
+      "timeMs": 35646,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-17-3",
+      "lane": 3,
+      "timeMs": 36378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-18-0",
+      "lane": 0,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-18-ch0",
+      "lane": 0,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-18-ch3",
+      "lane": 3,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-18-1",
+      "lane": 1,
+      "timeMs": 37110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-18-2",
+      "lane": 2,
+      "timeMs": 37598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-19-0",
+      "lane": 2,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-19-ch0",
+      "lane": 0,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-19-ch3",
+      "lane": 3,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-19-2",
+      "lane": 3,
+      "timeMs": 39061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-19-3",
+      "lane": 1,
+      "timeMs": 39793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-20-0",
+      "lane": 3,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-20-1",
+      "lane": 0,
+      "timeMs": 41134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-20-2",
+      "lane": 2,
+      "timeMs": 41744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-20-3",
+      "lane": 1,
+      "timeMs": 42110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-21-0",
+      "lane": 0,
+      "timeMs": 42476,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-21-ch0",
+      "lane": 0,
+      "timeMs": 42476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-21-ch3",
+      "lane": 3,
+      "timeMs": 42476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-21-1",
+      "lane": 3,
+      "timeMs": 43451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-0",
+      "lane": 1,
+      "timeMs": 44427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-ch0",
+      "lane": 0,
+      "timeMs": 44427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-ch3",
+      "lane": 3,
+      "timeMs": 44427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-1",
+      "lane": 2,
+      "timeMs": 45159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-2",
+      "lane": 1,
+      "timeMs": 45402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-22-3",
+      "lane": 3,
+      "timeMs": 46134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-0",
+      "lane": 0,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-ch0",
+      "lane": 0,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-ch3",
+      "lane": 3,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-1",
+      "lane": 1,
+      "timeMs": 46866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-2",
+      "lane": 2,
+      "timeMs": 47354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-23-3",
+      "lane": 3,
+      "timeMs": 47841,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-0",
+      "lane": 2,
+      "timeMs": 48329,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-ch0",
+      "lane": 0,
+      "timeMs": 48329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-ch3",
+      "lane": 3,
+      "timeMs": 48329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-1",
+      "lane": 1,
+      "timeMs": 48573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-2",
+      "lane": 3,
+      "timeMs": 48817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-3",
+      "lane": 1,
+      "timeMs": 49549,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-24-4",
+      "lane": 2,
+      "timeMs": 49793,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-25-0",
+      "lane": 3,
+      "timeMs": 50280,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-25-3",
+      "lane": 1,
+      "timeMs": 51866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-26-0",
+      "lane": 0,
+      "timeMs": 52232,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-26-ch0",
+      "lane": 0,
+      "timeMs": 52232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-26-ch3",
+      "lane": 3,
+      "timeMs": 52232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-26-1",
+      "lane": 3,
+      "timeMs": 53207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-0",
+      "lane": 1,
+      "timeMs": 54183,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-ch0",
+      "lane": 0,
+      "timeMs": 54183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-ch3",
+      "lane": 3,
+      "timeMs": 54183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-1",
+      "lane": 2,
+      "timeMs": 54915,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-2",
+      "lane": 1,
+      "timeMs": 55159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-27-3",
+      "lane": 3,
+      "timeMs": 55890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-28-0",
+      "lane": 0,
+      "timeMs": 56134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-28-ch0",
+      "lane": 0,
+      "timeMs": 56134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-28-ch3",
+      "lane": 3,
+      "timeMs": 56134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-28-2",
+      "lane": 2,
+      "timeMs": 57110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-28-3",
+      "lane": 3,
+      "timeMs": 57598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-29-0",
+      "lane": 2,
+      "timeMs": 58085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-29-1",
+      "lane": 1,
+      "timeMs": 58329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-0",
+      "lane": 3,
+      "timeMs": 60037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-ch0",
+      "lane": 0,
+      "timeMs": 60037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-ch3",
+      "lane": 3,
+      "timeMs": 60037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-1",
+      "lane": 0,
+      "timeMs": 60646,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-2",
+      "lane": 2,
+      "timeMs": 61256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-30-3",
+      "lane": 1,
+      "timeMs": 61622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-31-0",
+      "lane": 0,
+      "timeMs": 61988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-32-1",
+      "lane": 2,
+      "timeMs": 64671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-32-2",
+      "lane": 1,
+      "timeMs": 64915,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-32-3",
+      "lane": 3,
+      "timeMs": 65646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-33-2",
+      "lane": 2,
+      "timeMs": 66866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-34-0",
+      "lane": 2,
+      "timeMs": 67841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-34-1",
+      "lane": 1,
+      "timeMs": 68085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-34-2",
+      "lane": 3,
+      "timeMs": 68329,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-34-3",
+      "lane": 1,
+      "timeMs": 69061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-34-4",
+      "lane": 2,
+      "timeMs": 69305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-35-0",
+      "lane": 3,
+      "timeMs": 69793,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-35-1",
+      "lane": 0,
+      "timeMs": 70402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-36-0",
+      "lane": 0,
+      "timeMs": 71744,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-0",
+      "lane": 1,
+      "timeMs": 73695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-ch0",
+      "lane": 0,
+      "timeMs": 73695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-ch3",
+      "lane": 3,
+      "timeMs": 73695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-1",
+      "lane": 2,
+      "timeMs": 74427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-2",
+      "lane": 1,
+      "timeMs": 74671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-37-3",
+      "lane": 3,
+      "timeMs": 75402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-38-0",
+      "lane": 0,
+      "timeMs": 75646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-38-1",
+      "lane": 1,
+      "timeMs": 76134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-0",
+      "lane": 2,
+      "timeMs": 77598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-ch0",
+      "lane": 0,
+      "timeMs": 77598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-ch3",
+      "lane": 3,
+      "timeMs": 77598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-1",
+      "lane": 1,
+      "timeMs": 77841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-2",
+      "lane": 3,
+      "timeMs": 78085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-39-4",
+      "lane": 2,
+      "timeMs": 79061,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-40-0",
+      "lane": 3,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-40-ch0",
+      "lane": 0,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-40-ch3",
+      "lane": 3,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-40-1",
+      "lane": 0,
+      "timeMs": 80159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-40-2",
+      "lane": 2,
+      "timeMs": 80768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-41-0",
+      "lane": 0,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-41-ch0",
+      "lane": 0,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-41-ch3",
+      "lane": 3,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-41-1",
+      "lane": 3,
+      "timeMs": 82476,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-42-0",
+      "lane": 1,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-42-ch0",
+      "lane": 0,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-42-ch3",
+      "lane": 3,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-42-3",
+      "lane": 3,
+      "timeMs": 85159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-0",
+      "lane": 0,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-ch0",
+      "lane": 0,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-ch3",
+      "lane": 3,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-1",
+      "lane": 1,
+      "timeMs": 85890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-2",
+      "lane": 2,
+      "timeMs": 86378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-43-3",
+      "lane": 3,
+      "timeMs": 86866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-44-0",
+      "lane": 2,
+      "timeMs": 87354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-44-1",
+      "lane": 1,
+      "timeMs": 87598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-44-2",
+      "lane": 3,
+      "timeMs": 87841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-44-3",
+      "lane": 1,
+      "timeMs": 88573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-44-4",
+      "lane": 2,
+      "timeMs": 88817,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-45-0",
+      "lane": 3,
+      "timeMs": 89305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-45-2",
+      "lane": 2,
+      "timeMs": 90524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-46-0",
+      "lane": 0,
+      "timeMs": 91256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-47-0",
+      "lane": 1,
+      "timeMs": 93207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-47-1",
+      "lane": 2,
+      "timeMs": 93939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-47-2",
+      "lane": 1,
+      "timeMs": 94183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-47-3",
+      "lane": 3,
+      "timeMs": 94915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-48-0",
+      "lane": 0,
+      "timeMs": 95159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-48-1",
+      "lane": 1,
+      "timeMs": 95646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-48-2",
+      "lane": 2,
+      "timeMs": 96134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-48-3",
+      "lane": 3,
+      "timeMs": 96622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-49-1",
+      "lane": 1,
+      "timeMs": 97354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-49-2",
+      "lane": 3,
+      "timeMs": 97598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-49-3",
+      "lane": 1,
+      "timeMs": 98329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-49-4",
+      "lane": 2,
+      "timeMs": 98573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-50-0",
+      "lane": 3,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-50-1",
+      "lane": 0,
+      "timeMs": 99671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-50-2",
+      "lane": 2,
+      "timeMs": 100280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-50-3",
+      "lane": 1,
+      "timeMs": 100646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-51-0",
+      "lane": 0,
+      "timeMs": 101012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-51-1",
+      "lane": 3,
+      "timeMs": 101988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-52-0",
+      "lane": 1,
+      "timeMs": 102963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-52-1",
+      "lane": 2,
+      "timeMs": 103695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-52-2",
+      "lane": 1,
+      "timeMs": 103939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-0",
+      "lane": 0,
+      "timeMs": 104915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-ch0",
+      "lane": 0,
+      "timeMs": 104915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-ch3",
+      "lane": 3,
+      "timeMs": 104915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-1",
+      "lane": 1,
+      "timeMs": 105402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-2",
+      "lane": 2,
+      "timeMs": 105890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-53-3",
+      "lane": 3,
+      "timeMs": 106378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-0",
+      "lane": 2,
+      "timeMs": 106866,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-ch0",
+      "lane": 0,
+      "timeMs": 106866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-ch3",
+      "lane": 3,
+      "timeMs": 106866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-1",
+      "lane": 1,
+      "timeMs": 107110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-2",
+      "lane": 3,
+      "timeMs": 107354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-54-3",
+      "lane": 1,
+      "timeMs": 108085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-55-1",
+      "lane": 0,
+      "timeMs": 109427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-55-3",
+      "lane": 1,
+      "timeMs": 110402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-56-ch0",
+      "lane": 0,
+      "timeMs": 110768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-56-ch3",
+      "lane": 3,
+      "timeMs": 110768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-56-1",
+      "lane": 3,
+      "timeMs": 111744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-57-0",
+      "lane": 1,
+      "timeMs": 112720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-57-1",
+      "lane": 2,
+      "timeMs": 113451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-57-2",
+      "lane": 1,
+      "timeMs": 113695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-57-3",
+      "lane": 3,
+      "timeMs": 114427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-58-0",
+      "lane": 0,
+      "timeMs": 114671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-58-2",
+      "lane": 2,
+      "timeMs": 115646,
+      "type": "hold",
+      "holdDuration": 975.609756097561
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-58-3",
+      "lane": 3,
+      "timeMs": 116134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-59-1",
+      "lane": 1,
+      "timeMs": 116866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-59-2",
+      "lane": 3,
+      "timeMs": 117110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-59-3",
+      "lane": 1,
+      "timeMs": 117841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-59-4",
+      "lane": 2,
+      "timeMs": 118085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-60-0",
+      "lane": 3,
+      "timeMs": 118573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-60-2",
+      "lane": 2,
+      "timeMs": 119793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-60-3",
+      "lane": 1,
+      "timeMs": 120159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-61-0",
+      "lane": 0,
+      "timeMs": 120524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-61-ch0",
+      "lane": 0,
+      "timeMs": 120524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Hard-61-ch3",
+      "lane": 3,
+      "timeMs": 120524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-0-0",
+      "lane": 3,
+      "timeMs": 1500,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-0-1",
+      "lane": 0,
+      "timeMs": 2110,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-0-2",
+      "lane": 2,
+      "timeMs": 2720,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-0-3",
+      "lane": 1,
+      "timeMs": 3085,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-1-0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-1-ch0",
+      "lane": 0,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-1-ch3",
+      "lane": 3,
+      "timeMs": 3451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-1-1",
+      "lane": 3,
+      "timeMs": 4427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-0",
+      "lane": 1,
+      "timeMs": 5402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-ch0",
+      "lane": 0,
+      "timeMs": 5402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-ch3",
+      "lane": 3,
+      "timeMs": 5402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-1",
+      "lane": 2,
+      "timeMs": 6134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-2",
+      "lane": 1,
+      "timeMs": 6378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-2-3",
+      "lane": 3,
+      "timeMs": 7110,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-3-0",
+      "lane": 0,
+      "timeMs": 7354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-3-1",
+      "lane": 1,
+      "timeMs": 7841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-3-2",
+      "lane": 2,
+      "timeMs": 8329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-3-3",
+      "lane": 3,
+      "timeMs": 8817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-4-0",
+      "lane": 2,
+      "timeMs": 9305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-4-1",
+      "lane": 1,
+      "timeMs": 9549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-4-2",
+      "lane": 3,
+      "timeMs": 9793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-4-3",
+      "lane": 1,
+      "timeMs": 10524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-4-4",
+      "lane": 2,
+      "timeMs": 10768,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-5-0",
+      "lane": 3,
+      "timeMs": 11256,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-5-1",
+      "lane": 0,
+      "timeMs": 11866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-5-2",
+      "lane": 2,
+      "timeMs": 12476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-5-3",
+      "lane": 1,
+      "timeMs": 12841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-6-0",
+      "lane": 0,
+      "timeMs": 13207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-6-1",
+      "lane": 3,
+      "timeMs": 14183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-0",
+      "lane": 1,
+      "timeMs": 15159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-ch0",
+      "lane": 0,
+      "timeMs": 15159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-ch3",
+      "lane": 3,
+      "timeMs": 15159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-1",
+      "lane": 2,
+      "timeMs": 15890,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-2",
+      "lane": 1,
+      "timeMs": 16134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-7-3",
+      "lane": 3,
+      "timeMs": 16866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-0",
+      "lane": 0,
+      "timeMs": 17110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-ch0",
+      "lane": 0,
+      "timeMs": 17110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-ch3",
+      "lane": 3,
+      "timeMs": 17110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-1",
+      "lane": 1,
+      "timeMs": 17598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-2",
+      "lane": 2,
+      "timeMs": 18085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-8-3",
+      "lane": 3,
+      "timeMs": 18573,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-9-0",
+      "lane": 2,
+      "timeMs": 19061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-9-1",
+      "lane": 1,
+      "timeMs": 19305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-9-2",
+      "lane": 3,
+      "timeMs": 19549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-9-3",
+      "lane": 1,
+      "timeMs": 20280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-9-4",
+      "lane": 2,
+      "timeMs": 20524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-0",
+      "lane": 3,
+      "timeMs": 21012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-ch0",
+      "lane": 0,
+      "timeMs": 21012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-ch3",
+      "lane": 3,
+      "timeMs": 21012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-1",
+      "lane": 0,
+      "timeMs": 21622,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-2",
+      "lane": 2,
+      "timeMs": 22232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-10-3",
+      "lane": 1,
+      "timeMs": 22598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-11-0",
+      "lane": 0,
+      "timeMs": 22963,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-11-1",
+      "lane": 3,
+      "timeMs": 23939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-12-0",
+      "lane": 1,
+      "timeMs": 24915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-12-1",
+      "lane": 2,
+      "timeMs": 25646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-12-2",
+      "lane": 1,
+      "timeMs": 25890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-12-3",
+      "lane": 3,
+      "timeMs": 26622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-13-0",
+      "lane": 0,
+      "timeMs": 26866,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-13-1",
+      "lane": 1,
+      "timeMs": 27354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-13-2",
+      "lane": 2,
+      "timeMs": 27841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-13-3",
+      "lane": 3,
+      "timeMs": 28329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-0",
+      "lane": 2,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-ch0",
+      "lane": 0,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-ch3",
+      "lane": 3,
+      "timeMs": 28817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-1",
+      "lane": 1,
+      "timeMs": 29061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-2",
+      "lane": 3,
+      "timeMs": 29305,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-3",
+      "lane": 1,
+      "timeMs": 30037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-14-4",
+      "lane": 2,
+      "timeMs": 30280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-15-0",
+      "lane": 3,
+      "timeMs": 30768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-15-1",
+      "lane": 0,
+      "timeMs": 31378,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-15-2",
+      "lane": 2,
+      "timeMs": 31988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-15-3",
+      "lane": 1,
+      "timeMs": 32354,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-16-0",
+      "lane": 0,
+      "timeMs": 32720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-16-1",
+      "lane": 3,
+      "timeMs": 33695,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-17-0",
+      "lane": 1,
+      "timeMs": 34671,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-17-1",
+      "lane": 2,
+      "timeMs": 35402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-17-2",
+      "lane": 1,
+      "timeMs": 35646,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-17-3",
+      "lane": 3,
+      "timeMs": 36378,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-0",
+      "lane": 0,
+      "timeMs": 36622,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-ch0",
+      "lane": 0,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-ch3",
+      "lane": 3,
+      "timeMs": 36622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-1",
+      "lane": 1,
+      "timeMs": 37110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-2",
+      "lane": 2,
+      "timeMs": 37598,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-18-3",
+      "lane": 3,
+      "timeMs": 38085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-0",
+      "lane": 2,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-ch0",
+      "lane": 0,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-ch3",
+      "lane": 3,
+      "timeMs": 38573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-1",
+      "lane": 1,
+      "timeMs": 38817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-2",
+      "lane": 3,
+      "timeMs": 39061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-3",
+      "lane": 1,
+      "timeMs": 39793,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-19-4",
+      "lane": 2,
+      "timeMs": 40037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-0",
+      "lane": 3,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-ch0",
+      "lane": 0,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-ch3",
+      "lane": 3,
+      "timeMs": 40524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-1",
+      "lane": 0,
+      "timeMs": 41134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-2",
+      "lane": 2,
+      "timeMs": 41744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-20-3",
+      "lane": 1,
+      "timeMs": 42110,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-21-0",
+      "lane": 0,
+      "timeMs": 42476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-21-1",
+      "lane": 3,
+      "timeMs": 43451,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-22-0",
+      "lane": 1,
+      "timeMs": 44427,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-22-1",
+      "lane": 2,
+      "timeMs": 45159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-22-2",
+      "lane": 1,
+      "timeMs": 45402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-22-3",
+      "lane": 3,
+      "timeMs": 46134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-0",
+      "lane": 0,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-ch0",
+      "lane": 0,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-ch3",
+      "lane": 3,
+      "timeMs": 46378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-1",
+      "lane": 1,
+      "timeMs": 46866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-2",
+      "lane": 2,
+      "timeMs": 47354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-23-3",
+      "lane": 3,
+      "timeMs": 47841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-24-0",
+      "lane": 2,
+      "timeMs": 48329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-24-1",
+      "lane": 1,
+      "timeMs": 48573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-24-2",
+      "lane": 3,
+      "timeMs": 48817,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-24-3",
+      "lane": 1,
+      "timeMs": 49549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-24-4",
+      "lane": 2,
+      "timeMs": 49793,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-25-0",
+      "lane": 3,
+      "timeMs": 50280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-25-1",
+      "lane": 0,
+      "timeMs": 50890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-25-2",
+      "lane": 2,
+      "timeMs": 51500,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-25-3",
+      "lane": 1,
+      "timeMs": 51866,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-26-0",
+      "lane": 0,
+      "timeMs": 52232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-26-1",
+      "lane": 3,
+      "timeMs": 53207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-27-0",
+      "lane": 1,
+      "timeMs": 54183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-27-1",
+      "lane": 2,
+      "timeMs": 54915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-27-2",
+      "lane": 1,
+      "timeMs": 55159,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-27-3",
+      "lane": 3,
+      "timeMs": 55890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-0",
+      "lane": 0,
+      "timeMs": 56134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-ch0",
+      "lane": 0,
+      "timeMs": 56134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-ch3",
+      "lane": 3,
+      "timeMs": 56134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-1",
+      "lane": 1,
+      "timeMs": 56622,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-2",
+      "lane": 2,
+      "timeMs": 57110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-28-3",
+      "lane": 3,
+      "timeMs": 57598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-0",
+      "lane": 2,
+      "timeMs": 58085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-ch0",
+      "lane": 0,
+      "timeMs": 58085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-ch3",
+      "lane": 3,
+      "timeMs": 58085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-1",
+      "lane": 1,
+      "timeMs": 58329,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-2",
+      "lane": 3,
+      "timeMs": 58573,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-3",
+      "lane": 1,
+      "timeMs": 59305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-29-4",
+      "lane": 2,
+      "timeMs": 59549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-30-0",
+      "lane": 3,
+      "timeMs": 60037,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-30-1",
+      "lane": 0,
+      "timeMs": 60646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-30-2",
+      "lane": 2,
+      "timeMs": 61256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-30-3",
+      "lane": 1,
+      "timeMs": 61622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-31-0",
+      "lane": 0,
+      "timeMs": 61988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-31-ch0",
+      "lane": 0,
+      "timeMs": 61988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-31-ch3",
+      "lane": 3,
+      "timeMs": 61988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-31-1",
+      "lane": 3,
+      "timeMs": 62963,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-0",
+      "lane": 1,
+      "timeMs": 63939,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-ch0",
+      "lane": 0,
+      "timeMs": 63939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-ch3",
+      "lane": 3,
+      "timeMs": 63939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-1",
+      "lane": 2,
+      "timeMs": 64671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-2",
+      "lane": 1,
+      "timeMs": 64915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-32-3",
+      "lane": 3,
+      "timeMs": 65646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-0",
+      "lane": 0,
+      "timeMs": 65890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-ch0",
+      "lane": 0,
+      "timeMs": 65890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-ch3",
+      "lane": 3,
+      "timeMs": 65890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-1",
+      "lane": 1,
+      "timeMs": 66378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-2",
+      "lane": 2,
+      "timeMs": 66866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-33-3",
+      "lane": 3,
+      "timeMs": 67354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-34-0",
+      "lane": 2,
+      "timeMs": 67841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-34-1",
+      "lane": 1,
+      "timeMs": 68085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-34-2",
+      "lane": 3,
+      "timeMs": 68329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-34-3",
+      "lane": 1,
+      "timeMs": 69061,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-34-4",
+      "lane": 2,
+      "timeMs": 69305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-35-0",
+      "lane": 3,
+      "timeMs": 69793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-35-1",
+      "lane": 0,
+      "timeMs": 70402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-35-2",
+      "lane": 2,
+      "timeMs": 71012,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-35-3",
+      "lane": 1,
+      "timeMs": 71378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-36-0",
+      "lane": 0,
+      "timeMs": 71744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-36-ch0",
+      "lane": 0,
+      "timeMs": 71744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-36-ch3",
+      "lane": 3,
+      "timeMs": 71744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-36-1",
+      "lane": 3,
+      "timeMs": 72720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-37-0",
+      "lane": 1,
+      "timeMs": 73695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-37-1",
+      "lane": 2,
+      "timeMs": 74427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-37-2",
+      "lane": 1,
+      "timeMs": 74671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-37-3",
+      "lane": 3,
+      "timeMs": 75402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-0",
+      "lane": 0,
+      "timeMs": 75646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-ch0",
+      "lane": 0,
+      "timeMs": 75646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-ch3",
+      "lane": 3,
+      "timeMs": 75646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-1",
+      "lane": 1,
+      "timeMs": 76134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-2",
+      "lane": 2,
+      "timeMs": 76622,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-38-3",
+      "lane": 3,
+      "timeMs": 77110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-39-0",
+      "lane": 2,
+      "timeMs": 77598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-39-1",
+      "lane": 1,
+      "timeMs": 77841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-39-2",
+      "lane": 3,
+      "timeMs": 78085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-39-3",
+      "lane": 1,
+      "timeMs": 78817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-39-4",
+      "lane": 2,
+      "timeMs": 79061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-0",
+      "lane": 3,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-ch0",
+      "lane": 0,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-ch3",
+      "lane": 3,
+      "timeMs": 79549,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-1",
+      "lane": 0,
+      "timeMs": 80159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-2",
+      "lane": 2,
+      "timeMs": 80768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-40-3",
+      "lane": 1,
+      "timeMs": 81134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-41-0",
+      "lane": 0,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-41-ch0",
+      "lane": 0,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-41-ch3",
+      "lane": 3,
+      "timeMs": 81500,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-41-1",
+      "lane": 3,
+      "timeMs": 82476,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-42-0",
+      "lane": 1,
+      "timeMs": 83451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-42-1",
+      "lane": 2,
+      "timeMs": 84183,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-42-2",
+      "lane": 1,
+      "timeMs": 84427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-42-3",
+      "lane": 3,
+      "timeMs": 85159,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-0",
+      "lane": 0,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-ch0",
+      "lane": 0,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-ch3",
+      "lane": 3,
+      "timeMs": 85402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-1",
+      "lane": 1,
+      "timeMs": 85890,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-2",
+      "lane": 2,
+      "timeMs": 86378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-43-3",
+      "lane": 3,
+      "timeMs": 86866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-0",
+      "lane": 2,
+      "timeMs": 87354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-ch0",
+      "lane": 0,
+      "timeMs": 87354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-ch3",
+      "lane": 3,
+      "timeMs": 87354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-1",
+      "lane": 1,
+      "timeMs": 87598,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-2",
+      "lane": 3,
+      "timeMs": 87841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-3",
+      "lane": 1,
+      "timeMs": 88573,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-44-4",
+      "lane": 2,
+      "timeMs": 88817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-45-0",
+      "lane": 3,
+      "timeMs": 89305,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-45-1",
+      "lane": 0,
+      "timeMs": 89915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-45-2",
+      "lane": 2,
+      "timeMs": 90524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-45-3",
+      "lane": 1,
+      "timeMs": 90890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-46-0",
+      "lane": 0,
+      "timeMs": 91256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-46-ch0",
+      "lane": 0,
+      "timeMs": 91256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-46-ch3",
+      "lane": 3,
+      "timeMs": 91256,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-46-1",
+      "lane": 3,
+      "timeMs": 92232,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-47-0",
+      "lane": 1,
+      "timeMs": 93207,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-47-1",
+      "lane": 2,
+      "timeMs": 93939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-47-2",
+      "lane": 1,
+      "timeMs": 94183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-47-3",
+      "lane": 3,
+      "timeMs": 94915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-0",
+      "lane": 0,
+      "timeMs": 95159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-ch0",
+      "lane": 0,
+      "timeMs": 95159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-ch3",
+      "lane": 3,
+      "timeMs": 95159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-1",
+      "lane": 1,
+      "timeMs": 95646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-2",
+      "lane": 2,
+      "timeMs": 96134,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-48-3",
+      "lane": 3,
+      "timeMs": 96622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-0",
+      "lane": 2,
+      "timeMs": 97110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-ch0",
+      "lane": 0,
+      "timeMs": 97110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-ch3",
+      "lane": 3,
+      "timeMs": 97110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-1",
+      "lane": 1,
+      "timeMs": 97354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-2",
+      "lane": 3,
+      "timeMs": 97598,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-3",
+      "lane": 1,
+      "timeMs": 98329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-49-4",
+      "lane": 2,
+      "timeMs": 98573,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-0",
+      "lane": 3,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-ch0",
+      "lane": 0,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-ch3",
+      "lane": 3,
+      "timeMs": 99061,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-1",
+      "lane": 0,
+      "timeMs": 99671,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-2",
+      "lane": 2,
+      "timeMs": 100280,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-50-3",
+      "lane": 1,
+      "timeMs": 100646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-51-0",
+      "lane": 0,
+      "timeMs": 101012,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-51-1",
+      "lane": 3,
+      "timeMs": 101988,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-0",
+      "lane": 1,
+      "timeMs": 102963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-ch0",
+      "lane": 0,
+      "timeMs": 102963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-ch3",
+      "lane": 3,
+      "timeMs": 102963,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-1",
+      "lane": 2,
+      "timeMs": 103695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-2",
+      "lane": 1,
+      "timeMs": 103939,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-52-3",
+      "lane": 3,
+      "timeMs": 104671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-53-0",
+      "lane": 0,
+      "timeMs": 104915,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-53-1",
+      "lane": 1,
+      "timeMs": 105402,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-53-2",
+      "lane": 2,
+      "timeMs": 105890,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-53-3",
+      "lane": 3,
+      "timeMs": 106378,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-54-0",
+      "lane": 2,
+      "timeMs": 106866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-54-1",
+      "lane": 1,
+      "timeMs": 107110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-54-2",
+      "lane": 3,
+      "timeMs": 107354,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-54-3",
+      "lane": 1,
+      "timeMs": 108085,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-54-4",
+      "lane": 2,
+      "timeMs": 108329,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-55-0",
+      "lane": 3,
+      "timeMs": 108817,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-55-1",
+      "lane": 0,
+      "timeMs": 109427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-55-2",
+      "lane": 2,
+      "timeMs": 110037,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-55-3",
+      "lane": 1,
+      "timeMs": 110402,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-56-0",
+      "lane": 0,
+      "timeMs": 110768,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-56-1",
+      "lane": 3,
+      "timeMs": 111744,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-0",
+      "lane": 1,
+      "timeMs": 112720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-ch0",
+      "lane": 0,
+      "timeMs": 112720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-ch3",
+      "lane": 3,
+      "timeMs": 112720,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-1",
+      "lane": 2,
+      "timeMs": 113451,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-2",
+      "lane": 1,
+      "timeMs": 113695,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-57-3",
+      "lane": 3,
+      "timeMs": 114427,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-58-0",
+      "lane": 0,
+      "timeMs": 114671,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-58-1",
+      "lane": 1,
+      "timeMs": 115159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-58-2",
+      "lane": 2,
+      "timeMs": 115646,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-58-3",
+      "lane": 3,
+      "timeMs": 116134,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-0",
+      "lane": 2,
+      "timeMs": 116622,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-ch0",
+      "lane": 0,
+      "timeMs": 116622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-ch3",
+      "lane": 3,
+      "timeMs": 116622,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-1",
+      "lane": 1,
+      "timeMs": 116866,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-2",
+      "lane": 3,
+      "timeMs": 117110,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-3",
+      "lane": 1,
+      "timeMs": 117841,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-59-4",
+      "lane": 2,
+      "timeMs": 118085,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-60-0",
+      "lane": 3,
+      "timeMs": 118573,
+      "type": "hold",
+      "holdDuration": 1463.4146341463415
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-60-1",
+      "lane": 0,
+      "timeMs": 119183,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-60-2",
+      "lane": 2,
+      "timeMs": 119793,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-60-3",
+      "lane": 1,
+      "timeMs": 120159,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-61-0",
+      "lane": 0,
+      "timeMs": 120524,
+      "type": "tap"
+    },
+    {
+      "id": "local:1:Lost (Stay Frosty).mp3-Expert-61-1",
+      "lane": 3,
+      "timeMs": 121500,
+      "type": "tap"
+    }
+  ]
+}

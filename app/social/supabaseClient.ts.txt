@@ -1,0 +1,133 @@
+'use client'
+import { createClient } from '@supabase/supabase-js'
+import type { Database } from '@/lib/types'
+
+// --- Create Supabase client ---
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
+
+// --- Helpers for each major table ---
+export const PostsAPI = {
+  async list(limit = 30) {
+    const { data, error } = await supabase
+      .from('Post')
+      .select('*, author:User(*)')
+      .order('createdAt', { ascending: false })
+      .limit(limit)
+    if (error) console.error('PostsAPI.list', error)
+    return data ?? []
+  },
+  async create(payload: Partial<Database['public']['Tables']['Post']['Insert']>) {
+    const { data, error } = await supabase
+      .from('Post')
+      .insert(payload)
+      .select()
+      .single()
+    if (error) console.error('PostsAPI.create', error)
+    return data
+  },
+  subscribe(callback: (post: any) => void) {
+    return supabase
+      .channel('posts')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'Post' },
+        (payload) => callback(payload.new)
+      )
+      .subscribe()
+  },
+}
+
+export const MessagesAPI = {
+  async send(payload: Partial<Database['public']['Tables']['Message']['Insert']>) {
+    const { data, error } = await supabase
+      .from('Message')
+      .insert(payload)
+      .select()
+      .single()
+    if (error) console.error('MessagesAPI.send', error)
+    return data
+  },
+  async list(userId: string, partnerId: string) {
+    const { data, error } = await supabase
+      .from('Message')
+      .select('*')
+      .or(`(senderId.eq.${userId},recipientId.eq.${partnerId})`)
+      .order('createdAt', { ascending: true })
+    if (error) console.error('MessagesAPI.list', error)
+    return data ?? []
+  },
+  subscribe(callback: (msg: any) => void) {
+    return supabase
+      .channel('messages')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'Message' },
+        (payload) => callback(payload.new)
+      )
+      .subscribe()
+  },
+}
+
+export const NotificationsAPI = {
+  async list(userId: string) {
+    const { data, error } = await supabase
+      .from('Notification')
+      .select('*')
+      .eq('userId', userId)
+      .order('createdAt', { ascending: false })
+    if (error) console.error('NotificationsAPI.list', error)
+    return data ?? []
+  },
+  subscribe(callback: (notif: any) => void) {
+    return supabase
+      .channel('notifications')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'Notification' },
+        (payload) => callback(payload.new)
+      )
+      .subscribe()
+  },
+}
+
+export const TradesAPI = {
+  async list() {
+    const { data, error } = await supabase
+      .from('Trade')
+      .select('*, requester:User(*), target:User(*)')
+      .order('createdAt', { ascending: false })
+    if (error) console.error('TradesAPI.list', error)
+    return data ?? []
+  },
+  async create(payload: Partial<Database['public']['Tables']['Trade']['Insert']>) {
+    const { data, error } = await supabase
+      .from('Trade')
+      .insert(payload)
+      .select()
+      .single()
+    if (error) console.error('TradesAPI.create', error)
+    return data
+  },
+  subscribe(callback: (trade: any) => void) {
+    return supabase
+      .channel('trades')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'Trade' },
+        (payload) => callback(payload.new)
+      )
+      .subscribe()
+  },
+}
+
+// --- Storage helpers for uploads ---
+export async function uploadMedia(file: File, pathPrefix = 'uploads') {
+  const filePath = `${pathPrefix}/${Date.now()}_${file.name}`
+  const { error } = await supabase.storage.from('taptap_uploads').upload(filePath, file)
+  if (error) throw error
+  const { data } = supabase.storage.from('taptap_uploads').getPublicUrl(filePath)
+  return data.publicUrl
+}
