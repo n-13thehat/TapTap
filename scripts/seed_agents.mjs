@@ -1,12 +1,18 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
+import { config } from "dotenv";
 import { PrismaClient } from "@prisma/client";
+
+// Load environment variables
+config({ path: ".env.local" });
+
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
+
 const prisma = new PrismaClient();
 
 const home = process.env.HOME || process.env.USERPROFILE || "";
 
-function resolveAgentsRoot(): string {
-  // Prefer an explicit env var, then in-repo locations, then Desktop fallback.
+function resolveAgentsRoot() {
   const envDir = (process.env.TAPTAP_AGENTS_DIR || "").trim();
   const repoDir = path.join(process.cwd(), "app", "agents");
   const repoNested = path.join(repoDir, "TapTap_AI_Agents");
@@ -17,9 +23,8 @@ function resolveAgentsRoot(): string {
     repoDir,
     repoNested,
     desktopDir,
-  ].filter(Boolean) as string[];
+  ].filter(Boolean);
 
-  // First, pick the first candidate that both exists and contains a manifest
   for (const c of candidates) {
     try {
       if (c && fs.existsSync(c) && fs.existsSync(path.join(c, "agents.manifest.json"))) {
@@ -28,12 +33,10 @@ function resolveAgentsRoot(): string {
     } catch {}
   }
 
-  // Otherwise, fall back to the first existing directory among candidates
   for (const c of candidates) {
     try { if (c && fs.existsSync(c)) return c; } catch {}
   }
 
-  // Last resort: default to repo app/agents
   return repoDir;
 }
 
@@ -43,28 +46,34 @@ const PROMPTS_DIR = path.join(ROOT, "prompts");
 const WF_DIR = path.join(ROOT, "workflows");
 const LOG_DIR = path.join(process.cwd(), "scripts", "logs");
 
-async function ensureDir(p: string) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
+async function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
 
-type AgentIn = {
-  name: string; role?: string; tone?: string; vibe?: string; signature?: string; summary?: string;
-  tools?: string[]; datasources?: string[]; datasets?: string[]; playbooks?: string[]; guardrails?: string[];
-  handoffs?: string[]; kpis?: Record<string, string>; evals?: string[];
-  cadence?: any; ab_test?: { enabled?: boolean; variants?: string[]; sample?: number; metrics?: string[]; log?: string };
-  meta?: any; changelog?: string[]; version?: string; theme?: any;
-};
-
-async function upsertAgent(a: AgentIn) {
+async function upsertAgent(a) {
   const combinedMeta = { ...(a.meta ?? {}), ...(a.theme ? { theme: a.theme } : {}) };
   const changelogStr = Array.isArray(a.changelog) ? a.changelog.join('\n') : (a.changelog ?? '');
+  
   const agent = await prisma.agent.upsert({
     where: { name: a.name },
     create: {
-      name: a.name, role: a.role ?? "", tone: a.tone, vibe: a.vibe, signature: a.signature, summary: a.summary,
-      version: a.version ?? "2.0.0", meta: combinedMeta, changelog: changelogStr,
+      name: a.name, 
+      role: a.role ?? "", 
+      tone: a.tone, 
+      vibe: a.vibe, 
+      signature: a.signature, 
+      summary: a.summary,
+      version: a.version ?? "2.0.0", 
+      meta: combinedMeta, 
+      changelog: changelogStr,
     },
     update: {
-      role: a.role ?? "", tone: a.tone, vibe: a.vibe, signature: a.signature, summary: a.summary,
-      version: "2.0.0", meta: combinedMeta, changelog: changelogStr,
+      role: a.role ?? "", 
+      tone: a.tone, 
+      vibe: a.vibe, 
+      signature: a.signature, 
+      summary: a.summary,
+      version: "2.0.0", 
+      meta: combinedMeta, 
+      changelog: changelogStr,
     },
   });
 
@@ -76,20 +85,42 @@ async function upsertAgent(a: AgentIn) {
   await prisma.agentKPI.deleteMany({ where: { agentId: agent.id } });
   await prisma.agentEval.deleteMany({ where: { agentId: agent.id } });
 
-  const toArr = (x?: string[]) => (x ?? []).filter(Boolean);
+  const toArr = (x) => (x ?? []).filter(Boolean);
   const datasets = [...toArr(a.datasources), ...toArr(a.datasets)];
 
-  await prisma.$transaction([
-    ...toArr(a.tools).map(name => prisma.agentTool.create({ data: { agentId: agent.id, name } })),
-    ...datasets.map(key => prisma.agentDataset.create({ data: { agentId: agent.id, key } })),
-    ...toArr(a.playbooks).map(name => prisma.agentPlaybook.create({ data: { agentId: agent.id, name } })),
-    ...toArr(a.guardrails).map(rule => prisma.agentGuardrail.create({ data: { agentId: agent.id, rule } })),
-    ...toArr(a.handoffs).map(toName => prisma.agentHandoff.create({ data: { agentId: agent.id, toName } })),
-    ...Object.entries(a.kpis ?? {}).map(([key, target]) =>
-      prisma.agentKPI.create({ data: { agentId: agent.id, key, target: String(target) } })
-    ),
-    ...toArr(a.evals).map(name => prisma.agentEval.create({ data: { agentId: agent.id, name } })),
-  ]);
+  const operations = [];
+  
+  for (const name of toArr(a.tools)) {
+    operations.push(prisma.agentTool.create({ data: { agentId: agent.id, name } }));
+  }
+  
+  for (const key of datasets) {
+    operations.push(prisma.agentDataset.create({ data: { agentId: agent.id, key } }));
+  }
+  
+  for (const name of toArr(a.playbooks)) {
+    operations.push(prisma.agentPlaybook.create({ data: { agentId: agent.id, name } }));
+  }
+  
+  for (const rule of toArr(a.guardrails)) {
+    operations.push(prisma.agentGuardrail.create({ data: { agentId: agent.id, rule } }));
+  }
+  
+  for (const toName of toArr(a.handoffs)) {
+    operations.push(prisma.agentHandoff.create({ data: { agentId: agent.id, toName } }));
+  }
+  
+  for (const [key, target] of Object.entries(a.kpis ?? {})) {
+    operations.push(prisma.agentKPI.create({ data: { agentId: agent.id, key, target: String(target) } }));
+  }
+  
+  for (const name of toArr(a.evals)) {
+    operations.push(prisma.agentEval.create({ data: { agentId: agent.id, name } }));
+  }
+
+  if (operations.length > 0) {
+    await prisma.$transaction(operations);
+  }
 
   if (a.cadence) {
     await prisma.agentCadence.upsert({
@@ -104,6 +135,7 @@ async function upsertAgent(a: AgentIn) {
   if (a.ab_test) {
     const variantsStr = Array.isArray(a.ab_test.variants) ? a.ab_test.variants.join(',') : (a.ab_test.variants ?? '');
     const metricsStr = Array.isArray(a.ab_test.metrics) ? a.ab_test.metrics.join(',') : (a.ab_test.metrics ?? '');
+    
     await prisma.agentABTest.upsert({
       where: { agentId: agent.id },
       create: {
@@ -152,7 +184,7 @@ async function upsertWorkflows() {
       update: {},
     });
     await prisma.workflowStep.deleteMany({ where: { workflowId: wf.id } });
-    const steps = (raw.steps ?? []).map((s: any, i: number) => ({
+    const steps = (raw.steps ?? []).map((s, i) => ({
       workflowId: wf.id,
       order: i,
       agentName: s.agent,
@@ -168,16 +200,39 @@ async function upsertWorkflows() {
 
 async function main() {
   await ensureDir(LOG_DIR);
-  if (!fs.existsSync(MANIFEST)) throw new Error(`Missing manifest: ${MANIFEST}`);
-  const list: AgentIn[] = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
-  const names: string[] = [];
-  for (const a of list) names.push(await upsertAgent(a));
+  if (!fs.existsSync(MANIFEST)) {
+    console.error(`Missing manifest: ${MANIFEST}`);
+    process.exit(1);
+  }
+  
+  const list = JSON.parse(fs.readFileSync(MANIFEST, "utf8"));
+  const names = [];
+  
+  for (const a of list) {
+    console.log(`Seeding agent: ${a.name}...`);
+    names.push(await upsertAgent(a));
+  }
+  
   const wfCount = await upsertWorkflows();
+  
+  const logData = {
+    root: ROOT,
+    agents: { count: names.length, names },
+    workflows: { count: wfCount }
+  };
+  
   fs.writeFileSync(
     path.join(LOG_DIR, `seed_agents_${Date.now()}.log`),
-    JSON.stringify({ root: ROOT, agents: { count: names.length, names }, workflows: { count: wfCount } }, null, 2)
+    JSON.stringify(logData, null, 2)
   );
-  console.log(`Seeded ${names.length} agents from ${ROOT}. Imported ${wfCount} workflows.`);
+  
+  console.log(`✅ Seeded ${names.length} agents from ${ROOT}. Imported ${wfCount} workflows.`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); }).finally(() => prisma.$disconnect());
+main()
+  .catch(e => { 
+    console.error(e); 
+    process.exit(1); 
+  })
+  .finally(() => prisma.$disconnect());
+
