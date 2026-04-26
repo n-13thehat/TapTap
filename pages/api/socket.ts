@@ -1,4 +1,11 @@
-// Next.js Node handler for Socket.IO (lazy-initialized)
+// Next.js Node handler for Socket.IO (lazy-initialized).
+//
+// Stays in pages/api/ on purpose: Socket.IO needs the underlying Node
+// HTTP server via `res.socket.server`, which is a Pages Router contract.
+// App Router (Route Handlers) speaks the Web Fetch API and does not
+// expose the underlying server, so this handler cannot be migrated to
+// app/api/socket/route.ts without switching to a custom server or an
+// external pub/sub (Pusher, Ably, Vercel KV, etc.).
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type ResAny = NextApiResponse & { socket: any }
