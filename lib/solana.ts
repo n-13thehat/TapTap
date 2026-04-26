@@ -2,8 +2,8 @@
  * Solana blockchain utilities for TapTap Matrix
  */
 
-import { Connection, Keypair, PublicKey, clusterApiUrl, LAMPORTS_PER_SOL } from '@solana/web3.js';
-import { getOrCreateAssociatedTokenAccount, mintTo, transfer } from '@solana/spl-token';
+import { Connection, Keypair, PublicKey, SystemProgram, Transaction, clusterApiUrl, sendAndConfirmTransaction, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { getOrCreateAssociatedTokenAccount, mintTo, transfer, burn } from '@solana/spl-token';
 
 // Environment configuration
 export const getSolanaConfig = () => {
@@ -216,6 +216,69 @@ export const isValidSolanaAddress = (address: string): boolean => {
   } catch {
     return false;
   }
+};
+
+// Treasury keypair (separate from mint authority). Loaded from TREASURY_WALLET_SECRET base64.
+export const getTreasuryKeypair = (): Keypair => {
+  const secretB64 = process.env.TREASURY_WALLET_SECRET;
+  if (!secretB64) {
+    throw new Error('TREASURY_WALLET_SECRET not configured');
+  }
+  const secret = Buffer.from(secretB64, 'base64');
+  return Keypair.fromSecretKey(Uint8Array.from(secret));
+};
+
+// Transfer SOL from a signing keypair to a destination address.
+export const transferSolFrom = async (
+  fromKeypair: Keypair,
+  toAddress: string,
+  solAmount: number
+): Promise<string> => {
+  const connection = getSolanaConnection();
+  const toPubkey = new PublicKey(toAddress);
+  const lamports = Math.round(solAmount * LAMPORTS_PER_SOL);
+  const tx = new Transaction().add(
+    SystemProgram.transfer({ fromPubkey: fromKeypair.publicKey, toPubkey, lamports })
+  );
+  const sig = await sendAndConfirmTransaction(connection, tx, [fromKeypair], { commitment: 'confirmed' });
+  return sig;
+};
+
+// Transfer TAP tokens from a signing keypair (owner of source ATA) to a destination owner address.
+export const transferTapFrom = async (
+  fromKeypair: Keypair,
+  toAddress: string,
+  amount: number
+): Promise<string> => {
+  const { tapMintAddress, decimals } = getSolanaConfig();
+  if (!tapMintAddress) throw new Error('TAP_MINT_ADDRESS not configured');
+
+  const connection = getSolanaConnection();
+  const mint = new PublicKey(tapMintAddress);
+  const toPubkey = new PublicKey(toAddress);
+
+  const fromAta = await getOrCreateAssociatedTokenAccount(connection, fromKeypair, mint, fromKeypair.publicKey);
+  const toAta = await getOrCreateAssociatedTokenAccount(connection, fromKeypair, mint, toPubkey);
+
+  const raw = BigInt(amount) * (10n ** BigInt(decimals));
+  const sig = await transfer(connection, fromKeypair, fromAta.address, toAta.address, fromKeypair, Number(raw));
+  return sig;
+};
+
+// Burn TAP tokens held in a keypair's associated token account (reduces total supply on-chain).
+export const burnTapFrom = async (
+  ownerKeypair: Keypair,
+  amount: number
+): Promise<string> => {
+  const { tapMintAddress, decimals } = getSolanaConfig();
+  if (!tapMintAddress) throw new Error('TAP_MINT_ADDRESS not configured');
+
+  const connection = getSolanaConnection();
+  const mint = new PublicKey(tapMintAddress);
+  const ata = await getOrCreateAssociatedTokenAccount(connection, ownerKeypair, mint, ownerKeypair.publicKey);
+  const raw = BigInt(amount) * (10n ** BigInt(decimals));
+  const sig = await burn(connection, ownerKeypair, ata.address, mint, ownerKeypair, Number(raw));
+  return sig;
 };
 
 // Lightweight JSON-RPC caller for read paths that don't need a payer keypair.
