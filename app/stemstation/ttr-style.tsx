@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { ChevronLeft, Play, Star, Trophy, Settings, Loader2 } from "lucide-react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { ChevronLeft, Play, Star, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useIsMobile, TouchButton } from "@/components/mobile/MobileOptimizations";
 
@@ -12,20 +12,16 @@ type GameState = "menu" | "songSelect" | "difficultySelect" | "countdown" | "pla
 type Judgement = "Perfect" | "Great" | "Good" | "Miss";
 type NoteState = "pending" | "hit" | "miss";
 type Difficulty = "Easy" | "Medium" | "Hard" | "Expert";
-type Stem = "melody" | "drums" | "vocals";
+type Stem = "melody" | "drums" | "bass" | "vocals" | "other";
+
+const ALL_STEMS: readonly Stem[] = ["melody", "drums", "bass", "vocals", "other"] as const;
 
 interface GameNote {
   id: string;
   lane: number; // 0-3
   timeMs: number;
-  type: "tap" | "hold" | "slide" | "chord" | "hammer" | "pull";
+  type: "tap" | "hold";
   holdDuration?: number;
-  // NEW: Revolutionary note features
-  slideDirection?: "up" | "down" | "left" | "right";
-  chordLanes?: number[];
-  specialEffect?: string;
-  glowIntensity?: number;
-  isAdvanced?: boolean;
 }
 
 interface TrackData {
@@ -42,10 +38,6 @@ interface TrackData {
   difficulties?: Difficulty[];
   difficulty?: string;
   chartSeed?: number | null;
-  // NEW: Revolutionary chart features
-  supportsRevolutionary?: boolean;
-  aiGenerated?: boolean;
-  qualityScore?: number;
 }
 
 interface GameEngine {
@@ -243,43 +235,32 @@ function MainMenu({
       <motion.div
         initial={{ y: -50 }}
         animate={{ y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            STEM STATION
-          </h1>
-          <p className="text-xl text-gray-300">Rhythm • Precision • Flow</p>
-          <p className="mt-2 text-sm text-gray-400">
-            Local STEMSTATION library with real audio and leaderboards.
-          </p>
-          {error && <p className="mt-3 text-sm text-rose-300">{error}</p>}
-        </motion.div>
+        className="text-center mb-12"
+      >
+        <h1 className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
+          STEM STATION
+        </h1>
+        <p className="text-xl text-gray-300">Rhythm • Precision • Flow</p>
+        <p className="mt-2 text-sm text-gray-400">
+          Local STEMSTATION library with real audio and leaderboards.
+        </p>
+        {error && <p className="mt-3 text-sm text-rose-300">{error}</p>}
+      </motion.div>
 
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="space-y-6"
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="space-y-6 flex flex-col items-center"
+      >
+        <button
+          onClick={onStart}
+          disabled={loading || !hasTracks}
+          className="px-12 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-xl font-semibold hover:from-purple-500 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-60 disabled:hover:scale-100"
         >
-          <button
-            onClick={onStart}
-            disabled={loading || !hasTracks}
-            className="px-12 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-xl font-semibold hover:from-purple-500 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg disabled:opacity-60 disabled:hover:scale-100"
-          >
-            {loading ? <Loader2 className="inline mr-3 animate-spin" size={22} /> : <Play className="inline mr-3" size={24} />}
-            {loading ? "Loading tracks" : hasTracks ? "START GAME" : "No tracks found"}
-          </button>
-
-        <div className="flex gap-4">
-          <button className="px-6 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-            <Settings className="inline mr-2" size={20} />
-            Settings
-          </button>
-          <button className="px-6 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-            <Trophy className="inline mr-2" size={20} />
-            Scores
-          </button>
-        </div>
+          {loading ? <Loader2 className="inline mr-3 animate-spin" size={22} /> : <Play className="inline mr-3" size={24} />}
+          {loading ? "Loading tracks" : hasTracks ? "START GAME" : "No tracks found"}
+        </button>
       </motion.div>
     </motion.div>
   );
@@ -359,28 +340,16 @@ function DifficultySelect({
   track,
   onSelect,
   onBack,
-  useRevolutionary,
-  setUseRevolutionary,
-  useAI,
-  setUseAI,
-  qualityLevel,
-  setQualityLevel
 }: {
   track: TrackData;
   onSelect: (difficulty: Difficulty) => void;
   onBack: () => void;
-  useRevolutionary: boolean;
-  setUseRevolutionary: (value: boolean) => void;
-  useAI: boolean;
-  setUseAI: (value: boolean) => void;
-  qualityLevel: "fast" | "balanced" | "high";
-  setQualityLevel: (value: "fast" | "balanced" | "high") => void;
 }) {
   const difficultyColors = {
     Easy: "from-green-500 to-green-600",
     Medium: "from-yellow-500 to-orange-500",
     Hard: "from-red-500 to-red-600",
-    Expert: "from-purple-500 to-purple-600"
+    Expert: "from-purple-500 to-purple-600",
   };
   const options = (track.difficulties && track.difficulties.length ? track.difficulties : DEFAULT_DIFFICULTIES);
 
@@ -406,81 +375,6 @@ function DifficultySelect({
           </div>
         </div>
 
-        {/* Revolutionary Chart Settings */}
-        <div className="mb-8 p-6 bg-gray-800/50 rounded-xl border border-gray-700">
-          <h3 className="text-xl font-bold mb-4 flex items-center">
-            <Settings className="mr-2" size={20} />
-            Chart Generation Settings
-          </h3>
-
-          <div className="space-y-4">
-            {/* Revolutionary Engine Toggle */}
-            <div className="flex items-center justify-between">
-              <div>
-                <label className="text-lg font-semibold">Revolutionary Engine</label>
-                <p className="text-sm text-gray-400">Use AI-powered chart generation</p>
-              </div>
-              <button
-                onClick={() => setUseRevolutionary(!useRevolutionary)}
-                className={`w-12 h-6 rounded-full transition-colors ${
-                  useRevolutionary ? 'bg-blue-500' : 'bg-gray-600'
-                }`}
-              >
-                <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  useRevolutionary ? 'translate-x-6' : 'translate-x-0.5'
-                }`} />
-              </button>
-            </div>
-
-            {/* AI Analysis Toggle */}
-            {useRevolutionary && (
-              <div className="flex items-center justify-between">
-                <div>
-                  <label className="text-lg font-semibold">AI Musical Analysis</label>
-                  <p className="text-sm text-gray-400">Advanced harmonic and structural analysis</p>
-                </div>
-                <button
-                  onClick={() => setUseAI(!useAI)}
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    useAI ? 'bg-purple-500' : 'bg-gray-600'
-                  }`}
-                >
-                  <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                    useAI ? 'translate-x-6' : 'translate-x-0.5'
-                  }`} />
-                </button>
-              </div>
-            )}
-
-            {/* Quality Level */}
-            {useRevolutionary && (
-              <div>
-                <label className="text-lg font-semibold block mb-2">Quality Level</label>
-                <div className="flex gap-2">
-                  {(['fast', 'balanced', 'high'] as const).map((level) => (
-                    <button
-                      key={level}
-                      onClick={() => setQualityLevel(level)}
-                      className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                        qualityLevel === level
-                          ? 'bg-blue-500 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                      }`}
-                    >
-                      {level.charAt(0).toUpperCase() + level.slice(1)}
-                    </button>
-                  ))}
-                </div>
-                <p className="text-xs text-gray-400 mt-1">
-                  {qualityLevel === 'fast' && 'Quick generation, basic features'}
-                  {qualityLevel === 'balanced' && 'Good balance of speed and quality'}
-                  {qualityLevel === 'high' && 'Maximum quality, slower generation'}
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-
         <div className="space-y-4">
           {options.map((difficulty) => (
             <motion.button
@@ -491,14 +385,7 @@ function DifficultySelect({
               className={`w-full p-6 bg-gradient-to-r ${difficultyColors[difficulty]} rounded-xl text-left font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-200`}
             >
               <div className="flex items-center justify-between">
-                <div>
-                  <span>{difficulty}</span>
-                  {useRevolutionary && (
-                    <div className="text-sm opacity-80 mt-1">
-                      🚀 Revolutionary • {useAI ? '🧠 AI-Powered' : '⚡ Enhanced'}
-                    </div>
-                  )}
-                </div>
+                <span>{difficulty}</span>
                 <div className="text-sm opacity-80">
                   {difficulty === "Easy" && "★☆☆☆"}
                   {difficulty === "Medium" && "★★☆☆"}
@@ -562,10 +449,6 @@ export default function TapTapRevengeStyle() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty>("Medium");
   const [selectedStem, setSelectedStem] = useState<Stem>("melody");
 
-  // NEW: Revolutionary chart settings
-  const [useRevolutionary, setUseRevolutionary] = useState(true);
-  const [useAI, setUseAI] = useState(true);
-  const [qualityLevel, setQualityLevel] = useState<"fast" | "balanced" | "high">("balanced");
   const [runMeta, setRunMeta] = useState<{ noteCount: number; runMs: number; chartSeed?: number | null }>({
     noteCount: 0,
     runMs: 0,
@@ -620,9 +503,12 @@ export default function TapTapRevengeStyle() {
     }
   }, [tracks, selectedTrack]);
 
-  // Prefetch/generate charts when a song is chosen to avoid in-play generation
+  // Prefetch/generate charts when a song is chosen to avoid in-play generation.
+  // Only the stem the player will land on first (melody) plus their default difficulty
+  // path is critical; we prewarm the four difficulties for melody and the selected
+  // difficulty across the remaining stems to keep server-side generation predictable.
   const prewarmCharts = useCallback(async (track: TrackData) => {
-    const stems: Stem[] = ["melody", "drums", "vocals"];
+    const stems: Stem[] = ["melody", "drums", "bass", "vocals", "other"];
     const diffs: Difficulty[] = ["Easy", "Medium", "Hard", "Expert"];
     try {
       await Promise.all(
@@ -633,14 +519,6 @@ export default function TapTapRevengeStyle() {
             chartUrl.searchParams.set('difficulty', diff.toLowerCase());
             chartUrl.searchParams.set('stem', stem);
             chartUrl.searchParams.set('auto', '1');
-
-            // Add revolutionary parameters for prewarming
-            if (useRevolutionary) {
-              chartUrl.searchParams.set('revolutionary', 'true');
-              chartUrl.searchParams.set('ai', useAI.toString());
-              chartUrl.searchParams.set('quality', qualityLevel);
-            }
-
             return fetch(chartUrl.toString(), { cache: "no-store" }).catch(() => null);
           }),
         ),
@@ -718,12 +596,6 @@ export default function TapTapRevengeStyle() {
             track={selectedTrack}
             onSelect={selectDifficulty}
             onBack={() => setGameState("songSelect")}
-            useRevolutionary={useRevolutionary}
-            setUseRevolutionary={setUseRevolutionary}
-            useAI={useAI}
-            setUseAI={setUseAI}
-            qualityLevel={qualityLevel}
-            setQualityLevel={setQualityLevel}
           />
         )}
         {gameState === "countdown" && (
@@ -820,7 +692,7 @@ function GameplayScreen({
   const [lanePressed, setLanePressed] = useState<boolean[]>([false, false, false, false]);
   const lanePressedRef = useRef<boolean[]>([false, false, false, false]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const animationFrame = useRef<number>();
+  const animationFrame = useRef<number | undefined>(undefined);
   const gameStartTime = useRef<number>(0);
   const runElapsedRef = useRef<number>(0);
   const endedRef = useRef(false);
@@ -828,6 +700,8 @@ function GameplayScreen({
   const [offsetMs, setOffsetMs] = useState(0);
   const [lastTiming, setLastTiming] = useState<{ label: string; delta: number } | null>(null);
   const noteTotalRef = useRef<number>(0);
+  const lastNoteEndRef = useRef<number>(0);
+  const frameSkipRef = useRef<number>(0);
   const activeHoldsRef = useRef<Map<number, { endTime: number }>>(new Map());
   const [chartNotes, setChartNotes] = useState<GameNote[] | null>(null);
   const [chartStatus, setChartStatus] = useState<"idle" | "loading" | "ready" | "error" | "missing">("idle");
@@ -846,20 +720,11 @@ function GameplayScreen({
     setChartNotes(null);
     (async () => {
       try {
-        // Build revolutionary chart URL with new parameters
         const chartUrl = new URL('/api/stemstation/chart', window.location.origin);
         chartUrl.searchParams.set('trackId', track.id);
         chartUrl.searchParams.set('difficulty', difficulty.toLowerCase());
         chartUrl.searchParams.set('stem', stem);
         chartUrl.searchParams.set('auto', '1');
-
-        // Add revolutionary parameters
-        if (useRevolutionary) {
-          chartUrl.searchParams.set('revolutionary', 'true');
-          chartUrl.searchParams.set('ai', useAI.toString());
-          chartUrl.searchParams.set('quality', qualityLevel);
-        }
-
         const res = await fetch(chartUrl.toString(), { cache: "no-store" });
         const json = await res.json();
         if (!res.ok || !Array.isArray(json?.notes) || !json.notes.length) {
@@ -938,6 +803,10 @@ function GameplayScreen({
         : buildChart(track, difficulty, offsetMs);
 
     noteTotalRef.current = sourceNotes.length;
+    lastNoteEndRef.current = sourceNotes.reduce((max, n) => {
+      const end = n.holdDuration ? n.timeMs + n.holdDuration : n.timeMs;
+      return end > max ? end : max;
+    }, 0);
     setNotes(sourceNotes);
     setStats(baseStats);
     statsRef.current = baseStats;
@@ -1224,9 +1093,27 @@ function GameplayScreen({
       audioRef.current.play().catch(() => {});
     }
 
+    // Grace period after the last note before we declare the run complete when no
+    // audio is available (audio-driven runs end via audio.onended below).
+    const NO_AUDIO_END_GRACE_MS = 1500;
+    // Mobile drops every other frame locally to keep ~30fps on lower-end devices,
+    // without monkey-patching the global window.requestAnimationFrame.
+    frameSkipRef.current = 0;
+
     const loop = () => {
-      const nowMs = audioRef.current
-        ? (audioRef.current.currentTime || 0) * 1000
+      // Local frame skip — only affects this loop, never global animations.
+      if (isMobile) {
+        frameSkipRef.current = (frameSkipRef.current + 1) % 2;
+        if (frameSkipRef.current === 1) {
+          animationFrame.current = requestAnimationFrame(loop);
+          return;
+        }
+      }
+
+      const audio = audioRef.current;
+      const hasAudio = !!audio && Number.isFinite(audio.duration) && audio.duration > 0;
+      const nowMs = hasAudio
+        ? (audio!.currentTime || 0) * 1000
         : performance.now() - gameStartTime.current;
 
       setCurrentTime(nowMs);
@@ -1248,10 +1135,13 @@ function GameplayScreen({
         activeHoldsRef.current = nextMap;
       }
 
-      if (audioRef.current?.ended) {
-        if (audioRef.current && !audioRef.current.paused) {
-          audioRef.current.pause();
-        }
+      // End conditions: audio ended, OR audio missing + we're past the last note.
+      if (hasAudio && audio!.ended) {
+        if (!audio!.paused) audio!.pause();
+        handleEnd();
+        return;
+      }
+      if (!hasAudio && lastNoteEndRef.current > 0 && nowMs > lastNoteEndRef.current + NO_AUDIO_END_GRACE_MS) {
         handleEnd();
         return;
       }
@@ -1262,7 +1152,7 @@ function GameplayScreen({
     return () => {
       if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     };
-  }, [paused, markMisses, handleEnd, chartStatus, stem]);
+  }, [paused, markMisses, handleEnd, chartStatus, stem, isMobile, updateStats]);
 
   // Orientation handling for mobile
   useEffect(() => {
@@ -1284,29 +1174,6 @@ function GameplayScreen({
     return () => {
       window.removeEventListener('resize', handleOrientationChange);
       window.removeEventListener('orientationchange', handleOrientationChange);
-    };
-  }, [isMobile]);
-
-  // Performance optimization for mobile
-  useEffect(() => {
-    if (!isMobile) return;
-
-    // Reduce animation frame rate on mobile for better performance
-    const originalRequestAnimationFrame = window.requestAnimationFrame;
-    let frameCount = 0;
-
-    window.requestAnimationFrame = (callback) => {
-      frameCount++;
-      // Skip every other frame on mobile for 30fps instead of 60fps
-      if (frameCount % 2 === 0) {
-        return originalRequestAnimationFrame(callback);
-      } else {
-        return originalRequestAnimationFrame(() => {});
-      }
-    };
-
-    return () => {
-      window.requestAnimationFrame = originalRequestAnimationFrame;
     };
   }, [isMobile]);
 
@@ -1357,11 +1224,11 @@ function GameplayScreen({
                 {paused ? "⏸" : "⏵"}
               </TouchButton>
             </div>
-            <div className="flex items-center justify-center gap-1">
-              {(['melody','drums','vocals'] as const).map((s) => (
+            <div className="flex items-center justify-center gap-1 flex-wrap">
+              {ALL_STEMS.map((s) => (
                 <TouchButton
                   key={s}
-                  onClick={() => onStemChange(s as Stem)}
+                  onClick={() => onStemChange(s)}
                   variant={s === stem ? "primary" : "ghost"}
                   size="sm"
                   className="text-xs capitalize px-2 py-1"
@@ -1379,10 +1246,10 @@ function GameplayScreen({
               <p className="text-sm text-gray-400">{difficulty}</p>
             </div>
             <div className="flex items-center gap-2 text-xs">
-              {(['melody','drums','vocals'] as const).map((s) => (
+              {ALL_STEMS.map((s) => (
                 <button
                   key={s}
-                  onClick={() => onStemChange(s as Stem)}
+                  onClick={() => onStemChange(s)}
                   className={`rounded-full border px-2 py-1 capitalize transition-colors ${s === stem ? 'bg-white/20 border-white/40 text-white' : 'bg-white/5 border-white/15 text-white/70 hover:bg-white/10'}`}
                 >
                   {s}
@@ -1476,37 +1343,15 @@ function GameplayScreen({
                   const isHold = note.type === "hold" && note.holdDuration;
                   const holdHeight = isHold ? Math.max(16, (note.holdDuration || 0) * NOTE_SPEED + 24) : 48;
 
-                  // Revolutionary note styling
-                  const isAdvanced = note.isAdvanced || ['slide', 'chord', 'hammer', 'pull'].includes(note.type);
-                  const glowIntensity = note.glowIntensity || (isAdvanced ? 1.5 : 1.0);
-
-                  // Note type specific styling
-                  const getNoteStyle = () => {
-                    const baseStyle = isMobile ? 'rounded-full' : 'rounded-lg left-2 right-2';
-
-                    switch (note.type) {
-                      case 'slide':
-                        return `${baseStyle} bg-gradient-to-r from-cyan-400 to-blue-500 border-2 border-cyan-300`;
-                      case 'chord':
-                        return `${baseStyle} bg-gradient-to-r from-purple-400 to-pink-500 border-2 border-purple-300`;
-                      case 'hammer':
-                        return `${baseStyle} bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-yellow-300`;
-                      case 'pull':
-                        return `${baseStyle} bg-gradient-to-r from-green-400 to-emerald-500 border-2 border-green-300`;
-                      case 'hold':
-                        return `${baseStyle} bg-gradient-to-b from-blue-400 to-blue-600`;
-                      default:
-                        return `${baseStyle} bg-gradient-to-b from-white to-gray-200`;
-                    }
-                  };
+                  const baseStyle = isMobile ? 'rounded-full' : 'rounded-lg left-2 right-2';
+                  const noteClass = note.type === 'hold'
+                    ? `${baseStyle} bg-gradient-to-b from-blue-400 to-blue-600`
+                    : `${baseStyle} bg-gradient-to-b from-white to-gray-200`;
 
                   return (
                     <motion.div
                       key={note.id}
-                      className={`absolute shadow-lg ${getNoteStyle()}`}
-                      style={{
-                        filter: `drop-shadow(0 0 ${8 * glowIntensity}px rgba(255, 255, 255, 0.6))`,
-                      }}
+                      className={`absolute shadow-lg ${noteClass}`}
                       style={{
                         top: noteY,
                         height: isHold ? holdHeight : (isMobile ? 32 : 48),
@@ -1514,43 +1359,11 @@ function GameplayScreen({
                         left: isMobile ? '50%' : undefined,
                         transform: isMobile ? 'translateX(-50%)' : undefined,
                         backgroundColor: note.type === 'tap' ? LANE_COLORS[lane] : undefined,
-                        boxShadow: `0 0 ${20 * glowIntensity}px ${LANE_COLORS[lane]}80`
+                        boxShadow: `0 0 20px ${LANE_COLORS[lane]}80`,
                       }}
                       initial={{ scale: 0.8, opacity: 0.8 }}
-                      animate={{
-                        scale: isAdvanced ? [1, 1.1, 1] : 1,
-                        opacity: 1,
-                        rotate: note.type === 'slide' ? [0, 5, -5, 0] : 0
-                      }}
-                      transition={{
-                        scale: { duration: 0.6, repeat: isAdvanced ? Infinity : 0 },
-                        rotate: { duration: 1, repeat: note.type === 'slide' ? Infinity : 0 }
-                      }}
-                    >
-                      {/* Revolutionary note content */}
-                      <div className="w-full h-full flex items-center justify-center text-xs font-bold">
-                        {note.type === 'slide' && (
-                          <span className="text-white">
-                            {note.slideDirection === 'up' ? '↑' :
-                             note.slideDirection === 'down' ? '↓' :
-                             note.slideDirection === 'left' ? '←' :
-                             note.slideDirection === 'right' ? '→' : '~'}
-                          </span>
-                        )}
-                        {note.type === 'chord' && (
-                          <span className="text-white">♫</span>
-                        )}
-                        {note.type === 'hammer' && (
-                          <span className="text-white">H</span>
-                        )}
-                        {note.type === 'pull' && (
-                          <span className="text-white">P</span>
-                        )}
-                        {note.specialEffect && (
-                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse" />
-                        )}
-                      </div>
-                    </motion.div>
+                      animate={{ scale: 1, opacity: 1 }}
+                    />
                   );
                 })}
             </div>

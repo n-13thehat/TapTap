@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { promises as fs } from "fs";
-import { RevolutionaryChartEngine, RevolutionaryChartConfig } from "@/lib/stemstation/RevolutionaryChartEngine";
 
 export const dynamic = "force-dynamic";
 
@@ -78,6 +77,19 @@ async function ensureDir(dir: string) {
   await fs.mkdir(dir, { recursive: true });
 }
 
+// Avoid rewriting JSON when the bytes already on disk are identical. Prewarm bursts
+// can fire 5 stems × 4 difficulties = 20 GETs on song select; without this guard each
+// one would queue an fs.writeFile and bump mtime even when content is unchanged.
+async function writeIfChanged(target: string, contents: string): Promise<void> {
+  try {
+    const existing = await fs.readFile(target, "utf-8");
+    if (existing === contents) return;
+  } catch {
+    // file missing — fall through to write
+  }
+  await fs.writeFile(target, contents, "utf-8");
+}
+
 async function loadExistingChart(trackId: string, stem?: string, difficulty?: string): Promise<ChartFile | null> {
   const safe = sanitizeId(trackId);
   const candidates = [
@@ -147,8 +159,38 @@ async function readAudioMeta(audioPath: string): Promise<{
   }
 }
 
+// Stem-shaped pattern banks. Each entry is a single-bar pattern (beats in [0,4)).
+const STEM_PATTERNS: Record<string, Array<{ beats: number[]; lanes: number[] }>> = {
+  drums: [
+    { beats: [0, 1, 2, 3], lanes: [0, 1, 0, 1] },        // four-on-the-floor + snare
+    { beats: [0, 1.5, 2, 3.5], lanes: [0, 2, 1, 2] },    // backbeat with hat
+    { beats: [0, 0.5, 1, 2, 2.5, 3], lanes: [0, 2, 1, 0, 2, 1] },
+  ],
+  bass: [
+    { beats: [0, 2], lanes: [0, 1] },
+    { beats: [0, 1.5, 2, 3.5], lanes: [0, 1, 0, 1] },
+    { beats: [0, 0.75, 2, 2.75], lanes: [0, 1, 1, 0] },
+  ],
+  melody: [
+    { beats: [0, 1, 2, 3], lanes: [2, 3, 2, 3] },
+    { beats: [0, 1.5, 2, 3.5], lanes: [2, 3, 1, 2] },
+    { beats: [0, 0.5, 1, 2.5, 3], lanes: [3, 2, 1, 2, 3] },
+  ],
+  vocals: [
+    { beats: [0, 2], lanes: [2, 3] },
+    { beats: [0, 1.5, 3], lanes: [2, 3, 2] },
+    { beats: [0.5, 2, 3.5], lanes: [3, 2, 3] },
+  ],
+  other: [
+    { beats: [0, 1, 2, 3], lanes: [0, 1, 2, 3] },
+    { beats: [0, 1.25, 2.5, 3.25], lanes: [3, 0, 2, 1] },
+    { beats: [0, 0.5, 1, 2.5, 3], lanes: [2, 1, 3, 1, 2] },
+  ],
+};
+
 function buildProceduralChart({
   trackId,
+  stem,
   title,
   artist,
   bpm,
@@ -157,6 +199,7 @@ function buildProceduralChart({
   offsetMs,
 }: {
   trackId: string;
+  stem: string;
   title?: string | null;
   artist?: string | null;
   bpm: number;
@@ -165,43 +208,33 @@ function buildProceduralChart({
   offsetMs: number;
 }): ChartFile {
   const diff = difficulty.toLowerCase();
+  const stemLower = stem.toLowerCase();
+  // Per-stem density tuning so drums feel busier than vocals at the same difficulty.
+  const stemDensityScale: Record<string, number> = {
+    drums: 1.1, bass: 0.9, melody: 1.0, vocals: 0.7, other: 1.0,
+  };
   const densityMap: Record<string, number> = {
-    easy: 0.18,
-    medium: 0.45,
-    hard: 0.75,
-    expert: 1.0,
+    easy: 0.18, medium: 0.45, hard: 0.75, expert: 1.0,
   };
   const holdChance: Record<string, number> = {
-    easy: 0,
-    medium: 0.05,
-    hard: 0.14,
-    expert: 0.22,
+    easy: 0, medium: stemLower === "vocals" ? 0.18 : 0.05,
+    hard: stemLower === "vocals" ? 0.32 : 0.14,
+    expert: stemLower === "vocals" ? 0.45 : 0.22,
   };
   const beatMs = 60000 / Math.max(60, bpm || 120);
   const startAt = NOTE_TRAVEL_MS + offsetMs;
   const totalBeats = Math.max(8, Math.floor(durationMs / beatMs));
   const beatsPerBar = 4;
   const totalBars = Math.ceil(totalBeats / beatsPerBar);
-  const seed = Math.abs(
-    Array.from(`${trackId}-${difficulty}`).reduce(
-      (acc, ch) => (acc << 5) - acc + ch.charCodeAt(0),
-      0,
-    ),
-  );
+  const seed = hashSeed(trackId, stemLower, diff);
   const rand = seededRandom(seed);
-  const patterns: Array<{ beats: number[]; lanes: number[] }> = [
-    { beats: [0, 2], lanes: [0, 3] },
-    { beats: [0, 1, 2, 3], lanes: [0, 1, 2, 3] },
-    { beats: [0, 1.5, 2, 3.5], lanes: [1, 2, 1, 3] },
-    { beats: [0, 0.5, 1, 2.5, 3], lanes: [2, 1, 3, 1, 2] },
-    { beats: [0, 1.25, 2.5, 3.25], lanes: [3, 0, 2, 1] },
-  ];
+  const patterns = STEM_PATTERNS[stemLower] ?? STEM_PATTERNS.other;
 
   const notes: RawNote[] = [];
   for (let bar = 0; bar < totalBars; bar++) {
     const pattern = patterns[(seed + bar) % patterns.length];
     const barOffsetBeats = bar * beatsPerBar;
-    const density = densityMap[diff] ?? 0.55;
+    const density = (densityMap[diff] ?? 0.55) * (stemDensityScale[stemLower] ?? 1.0);
     pattern.beats.forEach((beat, idx) => {
       if (rand() > density) return;
       const lane = pattern.lanes[idx % pattern.lanes.length];
@@ -264,39 +297,57 @@ function buildProceduralChart({
   };
 }
 
-async function emitMidi(chart: ChartFile, safeId: string) {
-  try {
-    const midiLib = await import("@tonejs/midi");
-    const { Midi } = midiLib;
-    const midi = new Midi();
-    if (chart.bpm) midi.header.setTempo(chart.bpm);
-    const tr = midi.addTrack();
-    for (const note of chart.notes || []) {
-      const start = Math.max(0, note.timeMs / 1000);
-      const duration =
-        note.type === "hold" && note.endTimeMs
-          ? Math.max(0.1, (note.endTimeMs - note.timeMs) / 1000)
-          : 0.18;
-      tr.addNote({
-        midi: 48 + (note.lane ?? 0) * 4,
-        time: start,
-        duration,
-        velocity: 0.9,
-      });
-    }
-    await ensureDir(MIDI_DIR);
-    const midiPath = path.join(MIDI_DIR, `${safeId}.mid`);
-    await fs.writeFile(midiPath, Buffer.from(midi.toArray()));
-  } catch (err) {
-    console.warn("STEMSTATION MIDI emit skipped", err);
+
+
+// General MIDI percussion map: kick → 0, snare → 1, hat → 2, cymbal/tom → 3.
+function drumLane(pitch: number): number {
+  if (pitch === 35 || pitch === 36) return 0;          // kick
+  if (pitch === 38 || pitch === 40) return 1;          // snare / clap (39)
+  if (pitch === 39) return 1;
+  if (pitch >= 42 && pitch <= 46) return 2;            // closed/open hat, pedal
+  if (pitch === 49 || pitch === 51 || pitch === 55 || pitch === 57) return 3; // cymbals
+  if (pitch >= 41 && pitch <= 50) return 3;            // toms → cymbal lane
+  // unknown drum pitch — fold by mod
+  return Math.abs(pitch) % 4;
+}
+
+function bassLane(pitch: number): number {
+  // Concentrate bass on lanes 0-1 with a contour bias toward 0 for low notes.
+  if (pitch < 36) return 0;
+  if (pitch < 44) return 1;
+  if (pitch < 52) return 0;
+  return 1;
+}
+
+function vocalLane(pitch: number, idx: number): number {
+  // Vocals favor the inner lanes (2,3) with lane chosen by phrase-step parity.
+  return 2 + ((Math.floor(pitch / 2) + idx) % 2);
+}
+
+function contourLane(pitch: number, median: number): number {
+  // Map pitch relative to the track's median to one of 4 lanes (left=low → right=high).
+  const delta = pitch - median;
+  if (delta <= -7) return 0;
+  if (delta < 0)   return 1;
+  if (delta < 7)   return 2;
+  return 3;
+}
+
+function mapPitchToLane(pitch: number, stem: string, median: number, idx: number = 0): number {
+  switch (stem.toLowerCase()) {
+    case "drums":  return drumLane(pitch);
+    case "bass":   return bassLane(pitch);
+    case "vocals": return vocalLane(pitch, idx);
+    case "melody":
+    case "other":
+    default:       return contourLane(pitch, median);
   }
 }
 
-function mapPitchToLane(pitch: number): number {
-  if (pitch < 50) return 0;
-  if (pitch < 60) return 1;
-  if (pitch < 72) return 2;
-  return 3;
+function hashSeed(...parts: string[]): number {
+  return Math.abs(
+    parts.join("|").split("").reduce((acc, ch) => (acc << 5) - acc + ch.charCodeAt(0), 0),
+  );
 }
 
 function quantize(ms: number, bpm: number | null, division: number = 4) {
@@ -306,16 +357,17 @@ function quantize(ms: number, bpm: number | null, division: number = 4) {
   return Math.round(ms / grid) * grid;
 }
 
+type MidiNoteIn = { timeMs: number; durationMs: number; pitch: number; velocity: number };
+
 async function chartFromMidi(trackId: string, stem: string, difficulty: string): Promise<ChartFile | null> {
   try {
     const midiMod = await import("@tonejs/midi");
     const { Midi } = midiMod;
     const safeId = sanitizeId(trackId);
+    const stemLower = stem.toLowerCase();
+    // Stem-specific MIDI file is preferred. The generic file is a last resort.
     const candidates = [
-      path.join(MIDI_DIR, `${safeId}_${stem}.mid`),
-      ...(stem === "melody"
-        ? [path.join(MIDI_DIR, `${safeId}_other.mid`), path.join(MIDI_DIR, `${safeId}_bass.mid`)]
-        : []),
+      path.join(MIDI_DIR, `${safeId}_${stemLower}.mid`),
       path.join(MIDI_DIR, `${safeId}.mid`),
     ];
     let midiPath: string | null = null;
@@ -324,7 +376,7 @@ async function chartFromMidi(trackId: string, stem: string, difficulty: string):
       try {
         await fs.access(c);
         midiPath = c;
-        isStemSpecific = c.includes(`_${stem}.mid`);
+        isStemSpecific = c.includes(`_${stemLower}.mid`);
         break;
       } catch {
         // continue
@@ -334,63 +386,89 @@ async function chartFromMidi(trackId: string, stem: string, difficulty: string):
 
     const data = await fs.readFile(midiPath);
     const midi = new Midi(data);
-    const all: RawNote[] = [];
+    const raw: MidiNoteIn[] = [];
     midi.tracks.forEach((tr) => {
       tr.notes.forEach((n) => {
-        const timeMs = Math.round(n.time * 1000);
-        const durationMs = Math.max(0, Math.round(n.duration * 1000));
-        const lane = mapPitchToLane((n as any).midi ?? 60);
-        all.push({
-          timeMs: timeMs + NOTE_TRAVEL_MS,
-          lane,
-          type: durationMs > 0 ? "hold" : "tap",
-          endTimeMs: timeMs + durationMs + NOTE_TRAVEL_MS,
-          durationMs,
+        raw.push({
+          timeMs: Math.round(n.time * 1000),
+          durationMs: Math.max(0, Math.round(n.duration * 1000)),
           pitch: (n as any).midi ?? 60,
+          velocity: typeof n.velocity === "number" ? n.velocity : 0.8,
         });
       });
     });
+    if (!raw.length) return null;
 
-    // Stem-specific filtering if we only have a generic MIDI
-    let working = all;
+    // When pulled from a generic MIDI, narrow to the pitch band the stem typically
+    // occupies before mapping to lanes.
+    let working = raw;
     if (!isStemSpecific) {
-      const stemLower = stem.toLowerCase();
       if (stemLower === "drums") {
-        working = working
-          .filter((n) => n.lane <= 1 || (n.pitch ?? 0) < 60)
-          .map((n) => ({ ...n, type: "tap", endTimeMs: undefined }));
-      } else if (stemLower === "melody") {
-        working = working.filter((n) => n.lane >= 2 || (n.pitch ?? 0) >= 60);
+        // GM drum channel notes live around 35-81; filter to that band when the
+        // generic MIDI mixes melody + drums.
+        working = raw.filter((n) => n.pitch >= 35 && n.pitch <= 81 && n.durationMs <= 250);
+      } else if (stemLower === "bass") {
+        working = raw.filter((n) => n.pitch < 52);
       } else if (stemLower === "vocals") {
-        let alt = 0;
-        const vocals = working.filter((n) => (n.pitch ?? 0) >= 55 && (n.pitch ?? 0) <= 80);
-        working = vocals.map((n) => {
-          const lane = 2 + (alt++ % 2);
-          const dur = n.durationMs && n.durationMs > 120 ? n.durationMs : 180;
-          return { ...n, lane, type: "hold", endTimeMs: n.timeMs + dur };
-        });
+        working = raw.filter((n) => n.pitch >= 55 && n.pitch <= 84);
+      } else if (stemLower === "melody") {
+        working = raw.filter((n) => n.pitch >= 52);
       }
+      if (!working.length) working = raw;
     }
 
+    // Compute median pitch for contour-based lane mapping.
+    const pitches = [...working].map((n) => n.pitch).sort((a, b) => a - b);
+    const median = pitches[Math.floor(pitches.length / 2)] ?? 60;
+
     const bpm = midi.header.tempos[0]?.bpm ?? null;
-    const sorted = working
-      .map((n) => ({
-        ...n,
-        timeMs: quantize(n.timeMs, bpm, 4),
-        endTimeMs: n.endTimeMs ? quantize(n.endTimeMs, bpm, 4) : n.endTimeMs,
-      }))
+    const diff = difficulty.toLowerCase();
+    const minGap = MIN_GAP_BY_DIFF[diff] ?? 180;
+    const dropRate = DROP_RATE_BY_DIFF[diff] ?? 0;
+    const allowHolds = diff !== "easy";
+    const seed = hashSeed(trackId, stemLower, diff);
+    const rand = seededRandom(seed);
+
+    // Lane-mapped, quantized, velocity-tagged.
+    const mapped = working
+      .map((n, idx) => {
+        const lane = mapPitchToLane(n.pitch, stemLower, median, idx);
+        const start = quantize(n.timeMs, bpm, 4) + NOTE_TRAVEL_MS;
+        const isHold = allowHolds && n.durationMs > 240;
+        const sustain = diff === "expert" ? n.durationMs : Math.min(n.durationMs, 600);
+        return {
+          timeMs: start,
+          lane,
+          type: isHold ? "hold" : "tap",
+          endTimeMs: isHold ? quantize(n.timeMs + sustain, bpm, 4) + NOTE_TRAVEL_MS : undefined,
+          durationMs: isHold ? sustain : undefined,
+          pitch: n.pitch,
+          velocity: n.velocity,
+        };
+      })
       .sort((a, b) => a.timeMs - b.timeMs);
-    const minGap = MIN_GAP_BY_DIFF[difficulty.toLowerCase()] ?? 180;
-    const dropRate = DROP_RATE_BY_DIFF[difficulty.toLowerCase()] ?? 0;
+
+    // Density culling: drop the quietest notes first within each min-gap window.
+    // For easy/medium also apply a deterministic top-up drop driven by the seeded RNG.
     const lastByLane: Record<number, number> = {};
     const filtered: RawNote[] = [];
-    sorted.forEach((n) => {
+    for (const n of mapped) {
       const last = lastByLane[n.lane] ?? -Infinity;
-      if (n.timeMs - last < minGap && difficulty.toLowerCase() !== "expert") return;
-      if (dropRate > 0 && Math.random() < dropRate) return;
+      if (n.timeMs - last < minGap) {
+        if (diff !== "expert") continue;
+      }
+      // Velocity-weighted drop: louder notes (>0.6) survive even at higher drop rates.
+      if (dropRate > 0 && n.velocity < 0.6 && rand() < dropRate) continue;
       lastByLane[n.lane] = n.timeMs;
-      filtered.push(n);
-    });
+      filtered.push({
+        timeMs: n.timeMs,
+        lane: n.lane,
+        type: n.type,
+        endTimeMs: n.endTimeMs,
+        durationMs: n.durationMs,
+        pitch: n.pitch,
+      });
+    }
 
     return {
       songId: trackId,
@@ -398,7 +476,7 @@ async function chartFromMidi(trackId: string, stem: string, difficulty: string):
       artist: "STEMSTATION",
       bpm,
       offsetMs: 0,
-      difficulty: difficulty.toLowerCase(),
+      difficulty: diff,
       notes: filtered,
     };
   } catch (err) {
@@ -407,7 +485,12 @@ async function chartFromMidi(trackId: string, stem: string, difficulty: string):
   }
 }
 
-async function autoGenerateChart(trackId: string, difficulty: string, offsetMs: number): Promise<ChartFile | null> {
+async function autoGenerateChart(
+  trackId: string,
+  stem: string,
+  difficulty: string,
+  offsetMs: number,
+): Promise<ChartFile | null> {
   const audioPath = await findAudioFile(trackId);
   const meta = audioPath
     ? await readAudioMeta(audioPath)
@@ -415,6 +498,7 @@ async function autoGenerateChart(trackId: string, difficulty: string, offsetMs: 
 
   const chart = buildProceduralChart({
     trackId,
+    stem,
     title: meta.title ?? (audioPath ? path.basename(audioPath) : trackId),
     artist: meta.artist ?? "STEMSTATION",
     bpm: meta.bpm || 120,
@@ -425,8 +509,8 @@ async function autoGenerateChart(trackId: string, difficulty: string, offsetMs: 
 
   const safeId = sanitizeId(trackId);
   await ensureDir(CHART_DIR);
-  await fs.writeFile(path.join(CHART_DIR, `${safeId}_${difficulty}.json`), JSON.stringify(chart, null, 2), "utf-8");
-  await emitMidi(chart, safeId);
+  const target = path.join(CHART_DIR, `${safeId}_${stem}_${difficulty}.json`);
+  await writeIfChanged(target, JSON.stringify(chart, null, 2));
 
   return chart;
 }
@@ -500,110 +584,6 @@ function normalizeChartForResponse(chart: ChartFile, trackId: string, requestedD
   };
 }
 
-/**
- * Generate revolutionary chart using the new AI-powered engine
- */
-async function generateRevolutionaryChart(
-  trackId: string,
-  stem: string,
-  difficulty: string,
-  options: { useAI: boolean; qualityLevel: string; offsetMs: number }
-): Promise<ChartFile & { quality_metrics?: any } | null> {
-  console.log(`🚀 Generating revolutionary chart for ${trackId} (${stem}/${difficulty})`);
-
-  try {
-    // Find audio file
-    const audioPath = await findAudioFile(trackId);
-    if (!audioPath) {
-      console.warn("No audio file found for revolutionary chart generation");
-      return null;
-    }
-
-    // Load audio metadata
-    const meta = await readAudioMeta(audioPath);
-
-    // Create audio context (simplified for server-side)
-    // In a real implementation, you'd use a proper audio processing library
-    const mockAudioContext = {
-      sampleRate: 44100,
-      createBuffer: () => null,
-      decodeAudioData: () => null
-    } as any;
-
-    // Initialize revolutionary engine
-    const engine = new RevolutionaryChartEngine(mockAudioContext);
-
-    // Configure revolutionary generation
-    const config: RevolutionaryChartConfig = {
-      use_ai_analysis: options.useAI,
-      musical_intelligence_level: options.qualityLevel === 'high' ? 'professional' :
-                                 options.qualityLevel === 'balanced' ? 'advanced' : 'basic',
-      target_difficulties: [difficulty as any],
-      instruments: [stem as any],
-      enable_advanced_notes: true,
-      enable_dynamic_difficulty: true,
-      enable_real_time_adaptation: false,
-      beat_detection_quality: options.qualityLevel as any,
-      harmonic_analysis_depth: options.useAI ? 'advanced' : 'basic',
-      use_gpu_acceleration: false, // Server-side
-      enable_caching: true
-    };
-
-    // For now, create a mock audio buffer and stems
-    // In production, you'd load and process the actual audio files
-    const mockAudioBuffer = {
-      duration: (meta.durationMs || DEFAULT_DURATION_MS) / 1000,
-      sampleRate: 44100,
-      numberOfChannels: 2,
-      getChannelData: () => new Float32Array(44100 * 3) // 3 seconds of silence
-    } as AudioBuffer;
-
-    const mockStemBuffers = {
-      [stem]: mockAudioBuffer
-    };
-
-    // Generate revolutionary charts
-    const result = await engine.generateRevolutionaryCharts(
-      mockAudioBuffer,
-      mockStemBuffers,
-      config
-    );
-
-    if (result.charts.length === 0) {
-      return null;
-    }
-
-    // Convert to ChartFile format
-    const revolutionaryChart = result.charts[0];
-    const chartFile: ChartFile & { quality_metrics?: any } = {
-      songId: trackId,
-      title: meta.title || trackId,
-      artist: meta.artist || "STEMSTATION",
-      bpm: meta.bpm || revolutionaryChart.musical_context.beat_analysis.bpm || 120,
-      offsetMs: options.offsetMs,
-      difficulty: difficulty.toLowerCase(),
-      notes: revolutionaryChart.notes.map(note => ({
-        timeMs: note.timeMs,
-        lane: note.lane,
-        type: note.type,
-        endTimeMs: note.duration ? note.timeMs + note.duration : undefined,
-        holdDuration: note.duration,
-        pitch: note.pitch
-      })),
-      quality_metrics: result.quality_metrics
-    };
-
-    console.log(`✅ Revolutionary chart generated with ${chartFile.notes?.length} notes`);
-    console.log(`📊 Quality Score: ${(result.quality_metrics.overall_score * 100).toFixed(1)}%`);
-
-    return chartFile;
-
-  } catch (error) {
-    console.error("Revolutionary chart generation failed:", error);
-    throw error;
-  }
-}
-
 export async function GET(req: NextRequest) {
   const trackId = req.nextUrl.searchParams.get("trackId");
   const difficulty = (req.nextUrl.searchParams.get("difficulty") || "normal").toLowerCase();
@@ -612,69 +592,30 @@ export async function GET(req: NextRequest) {
   const offsetMs = Number(req.nextUrl.searchParams.get("offsetMs") || 0);
   const allowAuto = auto !== "0";
 
-  // NEW: Revolutionary chart engine parameters
-  const useRevolutionary = req.nextUrl.searchParams.get("revolutionary") === "true";
-  const useAI = req.nextUrl.searchParams.get("ai") === "true";
-  const qualityLevel = req.nextUrl.searchParams.get("quality") || "balanced";
-
   if (!trackId) {
     return NextResponse.json({ error: "trackId required" }, { status: 400 });
   }
 
   try {
-    // Check for existing charts first (backward compatibility)
     const existing = await loadExistingChart(trackId, stem, difficulty);
-    if (existing && chartMatches(existing, stem, difficulty) && !useRevolutionary) {
+    if (existing && chartMatches(existing, stem, difficulty)) {
       return NextResponse.json(normalizeChartForResponse(existing, trackId, difficulty, stem));
     }
 
-    if (!allowAuto && !useRevolutionary) {
+    if (!allowAuto) {
       return NextResponse.json({ error: "Chart not found", notes: [] }, { status: 404 });
     }
 
-    // NEW: Revolutionary chart generation
-    if (useRevolutionary) {
-      try {
-        const revolutionaryChart = await generateRevolutionaryChart(
-          trackId,
-          stem,
-          difficulty,
-          { useAI, qualityLevel, offsetMs }
-        );
-
-        if (revolutionaryChart) {
-          // Save the revolutionary chart
-          const safeId = sanitizeId(trackId);
-          await ensureDir(CHART_DIR);
-          await fs.writeFile(
-            path.join(CHART_DIR, `${safeId}_${stem}_${difficulty}_revolutionary.json`),
-            JSON.stringify(revolutionaryChart, null, 2),
-            "utf-8"
-          );
-
-          return NextResponse.json({
-            ...normalizeChartForResponse(revolutionaryChart, trackId, difficulty, stem),
-            revolutionary: true,
-            ai_powered: useAI,
-            quality_metrics: revolutionaryChart.quality_metrics
-          });
-        }
-      } catch (revolutionaryError) {
-        console.warn("Revolutionary chart generation failed, falling back to traditional:", revolutionaryError);
-        // Fall through to traditional methods
-      }
-    }
-
-    // Traditional chart generation (existing logic)
     const midiChart = await chartFromMidi(trackId, stem, difficulty);
     if (midiChart) {
       const safeId = sanitizeId(trackId);
       await ensureDir(CHART_DIR);
-      await fs.writeFile(path.join(CHART_DIR, `${safeId}_${stem}_${difficulty}.json`), JSON.stringify(midiChart, null, 2), "utf-8");
+      const target = path.join(CHART_DIR, `${safeId}_${stem}_${difficulty}.json`);
+      await writeIfChanged(target, JSON.stringify(midiChart, null, 2));
       return NextResponse.json(normalizeChartForResponse(midiChart, trackId, difficulty, stem));
     }
 
-    const generated = await autoGenerateChart(trackId, difficulty, offsetMs);
+    const generated = await autoGenerateChart(trackId, stem, difficulty, offsetMs);
     if (generated) {
       return NextResponse.json(normalizeChartForResponse(generated, trackId, difficulty, stem));
     }
