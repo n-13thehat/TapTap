@@ -20,6 +20,11 @@ const renderWithProviders = (ui: React.ReactElement) =>
     </SessionProvider>,
   );
 
+// Bypass the creatorHub feature gate so the dashboard content renders synchronously in tests
+vi.mock('@/components/RouteFeatureGate', () => ({
+  RouteFeatureGate: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
+
 // Mock framer-motion
 vi.mock('framer-motion', () => {
   const stripMotionProps = ({ children, ...props }: any, Component: any) => {
