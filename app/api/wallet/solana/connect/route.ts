@@ -1,7 +1,10 @@
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 
-type Body = { address?: string };
+const ConnectBody = z.object({
+  address: z.string().trim().min(32).max(64),
+});
 
 export async function POST(req: Request) {
   const session = await auth();
@@ -10,9 +13,12 @@ export async function POST(req: Request) {
   try {
     const user = await prisma.user.findUnique({ where: { email }, select: { id: true } });
     if (!user) return Response.json({ error: "User not found" }, { status: 404 });
-    const { address } = (await req.json()) as Body;
-    if (!address) return Response.json({ error: "address required" }, { status: 400 });
-    const normalized = address.trim();
+    const raw = await req.json().catch(() => null);
+    const parsed = ConnectBody.safeParse(raw);
+    if (!parsed.success) {
+      return Response.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const normalized = parsed.data.address;
     // Create a record for external wallet
     const w = await prisma.wallet.upsert({
       where: { address: normalized },

@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
+
+const DexBody = z.object({
+  tap: z.number().positive().finite(),
+});
 
 /**
  * DEX swap (TAP -> SOL) via Jupiter quote API.
@@ -10,13 +15,16 @@ export async function POST(req: Request) {
   const session = await auth();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try {
-    const body = await req.json().catch(() => ({}));
-    const tap = Number(body.tap || 0);
+    const raw = await req.json().catch(() => null);
+    const parsed = DexBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const tap = parsed.data.tap;
     const cluster = (process.env.SOLANA_NETWORK || "devnet").toLowerCase();
     const tapMint = process.env.TAP_MINT_ADDRESS;
     const decimals = Number(process.env.TAP_DECIMALS || 0);
 
-    if (!Number.isFinite(tap) || tap <= 0) return NextResponse.json({ error: "Invalid amount" }, { status: 400 });
     if (!tapMint) return NextResponse.json({ error: "Missing TAP_MINT_ADDRESS" }, { status: 500 });
     if (cluster !== "mainnet" && cluster !== "mainnet-beta") {
       return NextResponse.json({ ok: false, status: "unsupported_cluster", message: "Jupiter mainnet-only; set SOLANA_NETWORK=mainnet and SOLANA_RPC_URL accordingly." }, { status: 501 });

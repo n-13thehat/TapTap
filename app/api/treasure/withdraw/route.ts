@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 
-type WithdrawBody = { amount?: number; walletAddress?: string; provider?: "SOLANA" | "STRIPE" };
+const WithdrawBody = z.object({
+  amount: z.number().int().positive().max(1_000_000_000),
+  walletAddress: z.string().trim().min(32).max(64),
+  provider: z.enum(["SOLANA", "STRIPE"]).optional(),
+});
 
 async function getBalance(userId: string) {
   const sum = await prisma.tapCoinTransaction.aggregate({ where: { userId }, _sum: { amount: true } });
@@ -17,15 +22,17 @@ export async function POST(req: Request) {
     const user = await prisma.user.findUnique({ where: { email }, select: { id: true } });
     if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
 
-    const body = (await req.json()) as WithdrawBody;
-    const amount = Math.floor(Number(body.amount || 0));
-    if (!amount || amount <= 0) return NextResponse.json({ error: "Amount must be > 0" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = WithdrawBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const amount = parsed.data.amount;
     const balance = await getBalance(user.id);
     if (balance < amount) return NextResponse.json({ error: "Insufficient balance", balance }, { status: 400 });
 
-    const provider = body.provider || "SOLANA";
-    const address = String(body.walletAddress || "").trim();
-    if (!address) return NextResponse.json({ error: "walletAddress required" }, { status: 400 });
+    const provider = parsed.data.provider || "SOLANA";
+    const address = parsed.data.walletAddress;
 
     // Ensure a Wallet row exists (or create)
     const wallet = await prisma.wallet.upsert({

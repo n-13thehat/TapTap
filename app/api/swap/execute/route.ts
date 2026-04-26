@@ -1,10 +1,16 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { computeTapTax } from "@/lib/tax";
 import { Connection, Keypair, PublicKey, clusterApiUrl } from "@solana/web3.js";
 import { getOrCreateAssociatedTokenAccount, mintTo } from "@solana/spl-token";
 import crypto from "crypto";
+
+const ExecuteBody = z.object({
+  address: z.string().trim().min(32).max(64),
+  tap: z.number().positive().finite(),
+});
 
 async function getPrice(keyEnv: string, settingKey: string) {
   const envV = process.env[keyEnv] ? Number(process.env[keyEnv]) : undefined;
@@ -16,8 +22,6 @@ async function getPrice(keyEnv: string, settingKey: string) {
   } catch {}
   return 0;
 }
-
-type Body = { address?: string; tap?: number };
 
 async function maybeMintTap(params: { address: string; amount: number; label: string }) {
   const mintAddr = process.env.TAP_MINT_ADDRESS;
@@ -51,10 +55,12 @@ export async function POST(req: Request) {
   try {
     const user = await prisma.user.findUnique({ where: { email }, select: { id: true } });
     if (!user) return NextResponse.json({ error: 'User not found' }, { status: 404 });
-    const { address, tap } = (await req.json()) as Body;
-    const amt = Number(tap);
-    if (!address) return NextResponse.json({ error: 'address required' }, { status: 400 });
-    if (!Number.isFinite(amt) || amt <= 0) return NextResponse.json({ error: 'invalid tap amount' }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = ExecuteBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: 'Invalid request body', issues: parsed.error.issues }, { status: 400 });
+    }
+    const { address, tap: amt } = parsed.data;
     const owned = await prisma.wallet.findFirst({ where: { userId: user.id, address, provider: 'SOLANA' as any }, select: { id: true } });
     if (!owned) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 
