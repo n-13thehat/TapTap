@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   bigint-buffer:
-    hash: 9058c5b40d981f0e5af7a6e019beaf6c914812a9bfc4a1fc4563f2f23fd7271b
+    hash: uxjoh6ya3piems6bbxnbtr57ly
     path: patches/bigint-buffer.patch
 
 importers:
@@ -118,6 +118,9 @@ importers:
       nodemailer:
         specifier: ^7.0.10
         version: 7.0.10
+      openai:
+        specifier: ^6.34.0
+        version: 6.34.0(ws@7.5.10(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.25.76)
       otplib:
         specifier: ^12.0.1
         version: 12.0.1
@@ -175,6 +178,10 @@ importers:
       zustand:
         specifier: ^5.0.8
         version: 5.0.8(@types/react@19.2.6)(immer@10.2.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
+    optionalDependencies:
+      music-metadata:
+        specifier: ^7.14.0
+        version: 7.14.0
     devDependencies:
       '@axe-core/react':
         specifier: ^4.11.0
@@ -216,8 +223,8 @@ importers:
         specifier: ^10.4.20
         version: 10.4.22(postcss@8.5.6)
       baseline-browser-mapping:
-        specifier: ^2.9.4
-        version: 2.9.4
+        specifier: ^2.9.15
+        version: 2.10.23
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -275,10 +282,6 @@ importers:
       vitest-mock-extended:
         specifier: ^3.1.0
         version: 3.1.0(typescript@5.9.3)(vitest@4.0.13(@opentelemetry/api@1.9.0)(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@1.21.7)(jsdom@25.0.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(terser@5.44.1)(yaml@2.8.1))
-    optionalDependencies:
-      music-metadata:
-        specifier: ^7.14.0
-        version: 7.14.0
 
 packages:
 
@@ -2828,8 +2831,9 @@ packages:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
     engines: {node: ^4.5.0 || >= 5.9}
 
-  baseline-browser-mapping@2.9.4:
-    resolution: {integrity: sha512-ZCQ9GEWl73BVm8bu5Fts8nt7MHdbt5vY9bP6WGnUh+r3l8M7CgfyTlwsgCbMC66BNxPr6Xoce3j66Ms5YUQTNA==}
+  baseline-browser-mapping@2.10.23:
+    resolution: {integrity: sha512-xwVXGqevyKPsiuQdLj+dZMVjidjJV508TBqexND5HrF89cGdCYCJFB3qhcxRHSeMctdCfbR1jrxBajhDy7o29g==}
+    engines: {node: '>=6.0.0'}
     hasBin: true
 
   bcryptjs@2.4.3:
@@ -3921,7 +3925,7 @@ packages:
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-agent@3.0.0:
     resolution: {integrity: sha512-PT6XReJ+D07JvGoxQMkT6qji/jVNfX/h364XHZOWeRzy64sSFr+xJ5OX7LI3b4MPQzdL4H8Y8M0xzPpsVMwA8Q==}
@@ -4854,6 +4858,18 @@ packages:
   open@7.4.2:
     resolution: {integrity: sha512-MVHddDVweXZF3awtlAS+6pgKLlm/JgxZ90+/NBurBoQctVOOB/zDdVjcyPzQ+0laDGbsWgrRkflI65sQeOgT9Q==}
     engines: {node: '>=8'}
+
+  openai@6.34.0:
+    resolution: {integrity: sha512-yEr2jdGf4tVFYG6ohmr3pF6VJuveP0EA/sS8TBx+4Eq5NT10alu5zg2dmxMXMgqpihRDQlFGpRt2XwsGj+Fyxw==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.25 || ^4.0
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
 
   opener@1.5.2:
     resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
@@ -8253,7 +8269,7 @@ snapshots:
     dependencies:
       '@solana/buffer-layout': 4.0.1
       '@solana/web3.js': 1.98.4(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      bigint-buffer: 1.1.5(patch_hash=9058c5b40d981f0e5af7a6e019beaf6c914812a9bfc4a1fc4563f2f23fd7271b)
+      bigint-buffer: 1.1.5(patch_hash=uxjoh6ya3piems6bbxnbtr57ly)
       bignumber.js: 9.3.1
     transitivePeerDependencies:
       - bufferutil
@@ -9203,13 +9219,13 @@ snapshots:
 
   base64id@2.0.0: {}
 
-  baseline-browser-mapping@2.9.4: {}
+  baseline-browser-mapping@2.10.23: {}
 
   bcryptjs@2.4.3: {}
 
   bcryptjs@3.0.3: {}
 
-  bigint-buffer@1.1.5(patch_hash=9058c5b40d981f0e5af7a6e019beaf6c914812a9bfc4a1fc4563f2f23fd7271b):
+  bigint-buffer@1.1.5(patch_hash=uxjoh6ya3piems6bbxnbtr57ly):
     dependencies:
       bindings: 1.5.0
 
@@ -9253,7 +9269,7 @@ snapshots:
 
   browserslist@4.28.0:
     dependencies:
-      baseline-browser-mapping: 2.9.4
+      baseline-browser-mapping: 2.10.23
       caniuse-lite: 1.0.30001756
       electron-to-chromium: 1.5.259
       node-releases: 2.0.27
@@ -11539,6 +11555,11 @@ snapshots:
     dependencies:
       is-docker: 2.2.1
       is-wsl: 2.2.0
+
+  openai@6.34.0(ws@7.5.10(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@3.25.76):
+    optionalDependencies:
+      ws: 7.5.10(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      zod: 3.25.76
 
   opener@1.5.2: {}
 
