@@ -1,19 +1,20 @@
 import { prisma as prismaClient } from "@/lib/prisma";
+import {
+  computeTapTax as computeTapTaxCore,
+  isTaxExemptReason,
+  REASON_TAPTAX_TREASURY,
+  DISTRIBUTION_TYPE_TREASURY,
+  DISTRIBUTION_TYPE_BURN,
+  TAPTAX_TREASURY_PCT,
+  TAPTAX_BURN_PCT,
+  type TapTaxBreakdown,
+} from "@/lib/tokenomics";
 
-export type TapTaxBreakdown = {
-  tax: number;
-  treasury: number;
-  burn: number;
-};
+export type { TapTaxBreakdown };
 
-export function computeTapTax(amount: number): TapTaxBreakdown {
-  const a = Math.max(0, Math.floor(Number(amount || 0)));
-  // Percentages based on total amount
-  const treasury = Math.floor(a * 0.06);
-  const burn = Math.floor(a * 0.03);
-  const tax = treasury + burn; // 9%
-  return { tax, treasury, burn };
-}
+// Re-exported so existing call sites (`import { computeTapTax } from "@/lib/tax"`)
+// keep working. New code should import from "@/lib/tokenomics" directly.
+export const computeTapTax = computeTapTaxCore;
 
 export type ApplyTaxArgs = {
   fromUserId: string;
@@ -35,11 +36,11 @@ export async function applyTapTaxTransfer(args: ApplyTaxArgs) {
   const { fromUserId, toUserId, amount, reason } = args;
   const prisma = (args.prisma as any) || (prismaClient as any);
 
-  const isTip = String(reason || "").toUpperCase() === "TIP";
+  const isExempt = isTaxExemptReason(reason);
   const enforce = String(process.env.TAPTAX_ENFORCE || "true").toLowerCase() !== "false";
 
-  // If tip or disabled, do a full transfer with no tax.
-  if (!enforce || isTip) {
+  // If exempt or disabled, do a full transfer with no tax.
+  if (!enforce || isExempt) {
     await prisma.$transaction([
       prisma.tapCoinTransaction.create({ data: { userId: fromUserId, amount: -amount, reason: reason || "SEND" } }),
       prisma.tapCoinTransaction.create({ data: { userId: toUserId, amount, reason: reason || "RECEIVE" } }),
@@ -71,7 +72,7 @@ export async function applyTapTaxTransfer(args: ApplyTaxArgs) {
         })
         .then((w: any) =>
           prisma.tapCoinTransaction.create({
-            data: { userId: treasuryUserId, walletId: w.id, amount: treasury, reason: "TAPTAX_TREASURY" },
+            data: { userId: treasuryUserId, walletId: w.id, amount: treasury, reason: REASON_TAPTAX_TREASURY },
           })
         )
     );
@@ -96,12 +97,16 @@ export async function applyTapTaxTransfer(args: ApplyTaxArgs) {
   if (prisma.distribution?.create) {
     if (treasury > 0) {
       ops.push(
-        prisma.distribution.create({ data: { type: "TREASURY", amount: treasury, note: "6% TapTax to Treasury" } })
+        prisma.distribution.create({
+          data: { type: DISTRIBUTION_TYPE_TREASURY, amount: treasury, note: `${TAPTAX_TREASURY_PCT}% TapTax to Treasury` },
+        })
       );
     }
     if (burn > 0) {
       ops.push(
-        prisma.distribution.create({ data: { type: "BURN", amount: burn, note: "3% TapTax burned" } })
+        prisma.distribution.create({
+          data: { type: DISTRIBUTION_TYPE_BURN, amount: burn, note: `${TAPTAX_BURN_PCT}% TapTax burned` },
+        })
       );
     }
   }

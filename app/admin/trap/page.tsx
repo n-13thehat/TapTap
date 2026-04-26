@@ -180,7 +180,7 @@ export default function TrapPage() {
           <ul className="space-y-2 text-sm text-white/70">
             <li>Use marketplace buy with `paymentMethod: "venmo"` to generate approval URLs.</li>
             <li>TapTax treasury address: {data?.trap.wallet || "set TREASURY_WALLET_ADDRESS"} (env).</li>
-            <li>Trap balance reflects TapTax (6%) credits to treasury; ensure `TREASURY_USER_ID` is set for accurate accounting.</li>
+            <li>Trap balance reflects the 6% Treasury portion of the 9% TapTax (the other 3% is burned); ensure `TREASURY_USER_ID` is set for accurate accounting.</li>
             <li>For on-chain swaps, set `TAP_PRICE_USD`/`SOL_PRICE_USD` and keep TAP mint envs configured.</li>
           </ul>
         </section>
