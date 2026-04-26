@@ -44,12 +44,11 @@ export async function GET(req: Request) {
   } catch (error: any) {
     console.error("TAP-USD conversion error:", error);
     return NextResponse.json(
-      { 
-        error: "Failed to get TAP-USD conversion", 
+      {
+        error: "TAP-USD rate is not configured",
         details: error.message,
-        fallbackRate: 0.25 // Provide fallback
       },
-      { status: 500 }
+      { status: 503 }
     );
   }
 }

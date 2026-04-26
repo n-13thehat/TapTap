@@ -1,4 +1,9 @@
 import { prisma } from '@/lib/prisma';
+import {
+  MARKET_SETTING_USER_ID,
+  MARKET_SOL_USD_KEY,
+  MARKET_TAP_USD_KEY,
+} from '@/lib/tokenomics';
 
 export interface ExchangeRate {
   id: string;
@@ -8,80 +13,71 @@ export interface ExchangeRate {
   updatedAt: Date;
 }
 
-// Default exchange rates for fallback
-const DEFAULT_RATES: Record<string, number> = {
-  'TAPC-USD': 0.25, // 1 TapCoin = $0.25 USD
-  'USD-TAPC': 4.0,  // $1 = 4 TapCoin
-  'TAPC-SOL': 0.0025, // 1 TapCoin = 0.0025 SOL
-  'SOL-TAPC': 400.0,  // 1 SOL = 400 TapCoin
-  'SOL-USD': 100.0,   // 1 SOL = $100 USD
-  'USD-SOL': 0.01,    // $1 = 0.01 SOL
-};
+/**
+ * Read a USD price (per unit) from the market Setting cache populated by
+ * the admin Economy Control Center. Returns null if not configured.
+ */
+async function readMarketUsd(key: string): Promise<number | null> {
+  try {
+    const s = await prisma.setting.findUnique({
+      where: { userId_key: { userId: MARKET_SETTING_USER_ID, key } },
+    });
+    const v = (s?.value as any)?.usd;
+    return typeof v === 'number' && Number.isFinite(v) && v > 0 ? v : null;
+  } catch {
+    return null;
+  }
+}
 
 /**
- * Get exchange rate between two currencies
- * @param base Base currency (e.g., "TAPC", "USD", "SOL")
- * @param quote Quote currency (e.g., "USD", "SOL", "TAPC")
- * @returns Exchange rate (1 base = rate quote)
+ * Derive an exchange rate from the live SOL-USD and TAP-USD market cache.
+ * Returns null if the legs needed for this pair are not configured.
+ */
+async function deriveFromMarket(base: string, quote: string): Promise<number | null> {
+  const [solUsd, tapUsd] = await Promise.all([
+    readMarketUsd(MARKET_SOL_USD_KEY),
+    readMarketUsd(MARKET_TAP_USD_KEY),
+  ]);
+  const key = `${base}-${quote}`;
+  switch (key) {
+    case 'TAPC-USD': return tapUsd;
+    case 'USD-TAPC': return tapUsd ? 1 / tapUsd : null;
+    case 'SOL-USD':  return solUsd;
+    case 'USD-SOL':  return solUsd ? 1 / solUsd : null;
+    case 'TAPC-SOL': return tapUsd && solUsd ? tapUsd / solUsd : null;
+    case 'SOL-TAPC': return tapUsd && solUsd ? solUsd / tapUsd : null;
+    default: return null;
+  }
+}
+
+/**
+ * Get exchange rate between two currencies.
+ * Cascade: ExchangeRate DB row (admin override) -> live market Setting cache
+ * (CoinGecko for SOL/USD, manual for TAP/USD via /admin/economy) -> throw.
+ *
+ * No silent fallback prices; consumers see a clear error if the admin has
+ * not configured the necessary market data.
  */
 export async function getExchangeRate(base: string, quote: string): Promise<number> {
-  try {
-    // Try to get from database first
-    const exchangeRate = await prisma.exchangeRate.findFirst({
-      where: { base, quote },
-      orderBy: { updatedAt: 'desc' },
-    });
-
-    if (exchangeRate) {
-      return exchangeRate.rate;
-    }
-
-    // Fall back to default rates
-    const rateKey = `${base}-${quote}`;
-    const defaultRate = DEFAULT_RATES[rateKey];
-
-    if (defaultRate) {
-      // Optionally create the default rate in the database for future use
-      try {
-        await prisma.exchangeRate.upsert({
-          where: {
-            id: `${base}-${quote}-default`,
-          },
-          update: {
-            rate: defaultRate,
-            updatedAt: new Date(),
-          },
-          create: {
-            id: `${base}-${quote}-default`,
-            base,
-            quote,
-            rate: defaultRate,
-          },
-        });
-      } catch (dbError) {
-        // Ignore database errors for default rate creation
-        console.warn('Failed to create default exchange rate:', dbError);
-      }
-
-      return defaultRate;
-    }
-
-    // If no rate found, throw error
-    throw new Error(`Exchange rate not found for ${base}/${quote}`);
-  } catch (error) {
-    console.error('Error getting exchange rate:', error);
-    
-    // Return a safe fallback rate
-    const fallbackKey = `${base}-${quote}`;
-    const fallbackRate = DEFAULT_RATES[fallbackKey];
-    
-    if (fallbackRate) {
-      return fallbackRate;
-    }
-
-    // Ultimate fallback - assume 1:1 ratio
-    return 1.0;
+  // 1. Admin override stored in ExchangeRate table (most recent wins).
+  const overrideRow = await prisma.exchangeRate.findFirst({
+    where: { base, quote },
+    orderBy: { updatedAt: 'desc' },
+  }).catch(() => null);
+  if (overrideRow && Number.isFinite(overrideRow.rate) && overrideRow.rate > 0) {
+    return overrideRow.rate;
   }
+
+  // 2. Derive from the live market cache.
+  const derived = await deriveFromMarket(base, quote);
+  if (derived !== null && Number.isFinite(derived) && derived > 0) {
+    return derived;
+  }
+
+  throw new Error(
+    `Exchange rate ${base}/${quote} is not configured. ` +
+    `Set the price at /admin/economy or seed an ExchangeRate row.`
+  );
 }
 
 /**
