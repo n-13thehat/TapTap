@@ -18,14 +18,53 @@ export interface LogContext {
   componentStack?: string;
 }
 
+// Keys whose values should never appear in logs. Matched case-insensitively
+// as a substring against the property name, so "authToken", "X-Api-Key",
+// "stripeSecretKey", etc. all match.
+const SENSITIVE_KEY_PATTERN =
+  /pass(word)?|secret|token|authorization|cookie|api[_-]?key|private[_-]?key|mnemonic|seed[_-]?phrase|session/i;
+
+// Values that look like secrets even when the key is innocuous.
+// Long base58 (Solana addresses/keys), JWT-shaped tokens, raw bearer headers.
+const SENSITIVE_VALUE_PATTERN =
+  /^(Bearer\s+|Basic\s+)|^eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/;
+
+const REDACTED = '[REDACTED]';
+
+export function redactSensitive(input: unknown, depth = 0): unknown {
+  if (depth > 8 || input == null) return input;
+  if (typeof input === 'string') {
+    return SENSITIVE_VALUE_PATTERN.test(input) ? REDACTED : input;
+  }
+  if (input instanceof Error) {
+    return { name: input.name, message: input.message, stack: input.stack };
+  }
+  if (Array.isArray(input)) {
+    return input.map((v) => redactSensitive(v, depth + 1));
+  }
+  if (typeof input === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(input as Record<string, unknown>)) {
+      if (SENSITIVE_KEY_PATTERN.test(k)) {
+        out[k] = REDACTED;
+      } else {
+        out[k] = redactSensitive(v, depth + 1);
+      }
+    }
+    return out;
+  }
+  return input;
+}
+
 // Simple logger implementation
 const createSimpleLogger = () => {
   const log = (level: string, message: string, meta?: any) => {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${level.toUpperCase()}: ${message}`;
+    const safeMeta = meta == null ? meta : redactSensitive(meta);
 
-    if (meta) {
-      console.log(logMessage, meta);
+    if (safeMeta !== undefined && safeMeta !== null) {
+      console.log(logMessage, safeMeta);
     } else {
       console.log(logMessage);
     }
