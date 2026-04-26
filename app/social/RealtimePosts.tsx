@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { subscribeToTable } from "@/app/lib/supabase";
+import { subscribeToTable } from "@/lib/supabase";
 
 export default function RealtimePosts() {
   useEffect(() => {

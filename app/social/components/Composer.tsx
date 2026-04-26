@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Send } from 'lucide-react';
-import type { Post } from '@/app/lib/types/social';
+import type { Post } from '@/lib/types/social';
 import { tapInteraction } from '@/lib/animations';
 
 export function Composer({ onPost }: { onPost: (p: Post) => void }) {

@@ -1,6 +1,6 @@
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
-import { greetingForNow, moodOfDay, moodTagline } from "@/app/lib/astrotech";
+import { greetingForNow, moodOfDay, moodTagline } from "@/lib/astrotech";
 
 export async function GET() {
   const session = await auth();

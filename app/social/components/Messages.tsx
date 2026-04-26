@@ -1,7 +1,7 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import type { Thread } from '@/app/lib/types/social';
+import type { Thread } from '@/lib/types/social';
 
 export function Messages({ threads }: { threads: Thread[] }) {
   return (

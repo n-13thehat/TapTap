@@ -36,6 +36,31 @@ export const withServiceRole = async <T>(
   return operation(supabaseAdmin);
 };
 
+// Realtime helper for table-level changes
+export type RowChange = { eventType: "INSERT" | "UPDATE" | "DELETE"; payload: any };
+export function subscribeToTable(
+  table: string,
+  filter: string | null,
+  cb: (change: RowChange) => void
+) {
+  const channel = supabase
+    .channel(`table:${table}:${filter ?? "*"}`)
+    .on(
+      "postgres_changes",
+      { event: "*", schema: "public", table, filter: filter ?? undefined },
+      (payload: any) => {
+        cb({ eventType: payload.eventType as RowChange["eventType"], payload });
+      }
+    )
+    .subscribe();
+
+  return () => {
+    try {
+      supabase.removeChannel(channel);
+    } catch { /* ignore */ }
+  };
+}
+
 // Secure select function for multiple records
 export const secureSelectMany = async <T>(
   table: string,
