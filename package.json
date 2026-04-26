@@ -29,7 +29,8 @@
         "format": "prettier --write .",
         "test": "vitest run",
         "upload:default-album": "node scripts/upload_default_album.js",
-        "solana:setup:devnet": "node scripts/solana_setup_devnet.js"
+        "solana:setup:devnet": "node scripts/solana_setup_devnet.js",
+        "audit:zod": "node scripts/audit-zod.mjs"
     },
     "dependencies": {
         "@auth/prisma-adapter": "^2.11.1",

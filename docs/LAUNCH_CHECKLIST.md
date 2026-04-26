@@ -25,12 +25,14 @@
 - [ ] Rotate any secrets used for real services (Supabase, API keys, email, etc.) after testing.
 - [ ] Review route-to-role access matrix and verify `/api/admin/**` and admin UIs are ADMIN-only.
 - [ ] Confirm all API inputs are validated (Zod) and file uploads enforce type/size limits.
-- [ ] Verify logs do not contain sensitive data.
+  - Run `pnpm audit:zod` for the current triage queue (mutating routes that parse a body without zod), grouped CRITICAL / HIGH / MEDIUM / LOW.
+  - Baseline: 32/175 routes use zod (18.3%); 63 mutating+body routes still need schemas. Address CRITICAL (auth/admin/payments/wallet/swap/treasure/marketplace) before launch.
+- [x] Verify logs do not contain sensitive data — `lib/logger.ts` redacts keys matching `password|secret|token|authorization|cookie|api_key|private_key|mnemonic|seed_phrase|session` and Bearer/JWT-shaped values before console output.
 
 ## Deployment & Observability
 - [ ] Build app with `pnpm build` and fix any build-time errors.
 - [ ] Verify Dockerfile (and docker-compose if used) can run the app in production mode.
-- [ ] Set up CI to run lint, typecheck, test, and build on PRs and main.
+- [x] Set up CI to run lint, typecheck, test, and build on PRs and main — see `.github/workflows/ci.yml` (pnpm + Node 20).
 - [ ] Deploy to staging and confirm `/api/health` passes container/orchestrator health checks.
 - [ ] Wire logs and metrics into your monitoring stack and configure basic alerts (error rate, latency, health endpoints).
 
