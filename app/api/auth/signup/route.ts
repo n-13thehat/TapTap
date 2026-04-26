@@ -38,15 +38,15 @@ export async function POST(req: Request) {
           if (!existing) {
             const kp = await generateKeypair();
             const enc = encryptSecret(kp.secretKey);
-            const w = await prisma.wallet.create({ data: { userId: user.id, address: kp.publicKey, provider: "SOLANA" as any } });
+            const w = await prisma.wallet.create({ data: { userId: user.id, address: kp.publicKey.toBase58(), provider: "SOLANA" as any } });
             await prisma.setting.upsert({
               where: { userId_key: { userId: w.id, key: "sol:secret" } },
               update: { value: enc as any },
               create: { userId: w.id, key: "sol:secret", value: enc as any },
             });
             // Fund on devnet and mint TAP
-            await airdropSol(kp.publicKey, 1_000_000); // ~0.001 SOL for fees
-            await mintTapTo(kp.publicKey, 100);
+            await airdropSol(kp.publicKey.toBase58(), 1_000_000); // ~0.001 SOL for fees
+            await mintTapTo(kp.publicKey.toBase58(), 100);
           }
         }
       } catch (e) {

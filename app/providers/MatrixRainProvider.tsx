@@ -32,7 +32,7 @@ export function MatrixRainProvider({ children }: { children: React.ReactNode }) 
             className="absolute inset-0"
           >
             {mode === "rain" ? (
-              <MatrixRain speed={speed} glow={level} trail={trail} />
+              <MatrixRain />
             ) : (
               <GalaxyScene />
             )}

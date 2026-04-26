@@ -5,6 +5,7 @@ interface ExchangeRateData {
   timestamp: string;
   tapToUsd?: { tap: number; usd: number };
   usdToTap?: { usd: number; tap: number };
+  error?: string;
 }
 
 interface UseExchangeRateReturn {

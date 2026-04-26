@@ -25,6 +25,8 @@ import {
 } from 'lucide-react';
 import { cn } from '../utils';
 import { SectionKey } from '../types';
+import { tapInteraction, listContainer, listItem } from '@/lib/animations';
+import { colors } from '@/lib/design-tokens';
 
 const MAIN_SECTIONS: { key: SectionKey; label: string; icon: React.ComponentType<any> }[] = [
   { key: "featured", label: "Home", icon: Home },
@@ -80,15 +82,23 @@ const SectionGroup = ({ title, sections, selected, onSelect, collapsed }: {
         <h3 className="text-xs font-medium text-white/40 uppercase tracking-wider">{title}</h3>
       </div>
     )}
-    <div className="space-y-1">
-      {sections.map(({ key, label, icon: Icon }) => {
+    <motion.div
+      className="space-y-1"
+      variants={listContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      {sections.map(({ key, label, icon: Icon }, index) => {
         const active = key === selected;
         return (
           <motion.button
             key={key}
             onClick={() => onSelect(key)}
+            variants={listItem}
             whileHover={{ x: collapsed ? 0 : 4 }}
-            whileTap={{ scale: 0.98 }}
+            whileTap={tapInteraction}
+            aria-label={label}
+            aria-current={active ? 'page' : undefined}
             className={cn(
               "group flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200",
               active
@@ -108,7 +118,7 @@ const SectionGroup = ({ title, sections, selected, onSelect, collapsed }: {
           </motion.button>
         );
       })}
-    </div>
+    </motion.div>
   </div>
 );
 
@@ -136,7 +146,8 @@ export function Sidebar({ collapsed, onToggle, selected, onSelect }: SidebarProp
         <motion.button
           onClick={onToggle}
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileTap={tapInteraction}
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
         >
           {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}

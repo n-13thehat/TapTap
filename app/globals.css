@@ -43,7 +43,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #ef4444;
+    background: var(--color-error, #ef4444);
     color: white;
     text-align: center;
     padding: 0.5rem;
@@ -465,4 +465,73 @@ html, body {
     border-color: var(--matrix-primary);
     transform: translateY(-2px);
   }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 25%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+
+  /* Safe-area padding utilities */
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .safe-area-pt {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Card surface */
+  .surface {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .surface-hover {
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .surface-hover:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Accessible focus-visible ring */
+:focus-visible {
+  outline: 2px solid var(--matrix-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.55);
+}
+
+/* Offline indicator uses CSS var */
+.offline::before {
+  background: var(--color-error, #ef4444);
 }

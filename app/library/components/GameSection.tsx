@@ -47,6 +47,7 @@ export function GameSection() {
   const [activeNotes, setActiveNotes] = useState<ActiveNote[]>([]);
   const spawnTicker = useRef<number | null>(null);
   const cleanupTimers = useRef<number[]>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const { queue, addToQueue, playTrack, pause, current } = usePlayerStore((state) => ({
     queue: state.queue,
     addToQueue: state.addToQueue,

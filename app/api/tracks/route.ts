@@ -3,6 +3,7 @@ import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { withServiceRole } from "@/lib/supabase";
 import { MusicService } from "@/lib/services/musicService";
+import logger from "@/lib/logger";
 
 type TrackBody = {
   title?: string;
@@ -17,51 +18,32 @@ function pickBucket(input?: string | null) {
 
 export async function GET(request: NextRequest) {
   try {
-    console.log('🎵 GET /api/tracks called');
     const { searchParams } = new URL(request.url);
     const artistId = searchParams.get('artistId');
     const albumId = searchParams.get('albumId');
     const query = searchParams.get('q');
     const trackId = searchParams.get('id');
 
-    console.log('📊 Query params:', { artistId, albumId, query, trackId });
-
     let tracks;
 
     if (trackId) {
-      // Get single track
-      console.log('🔍 Getting single track:', trackId);
       const track = await MusicService.getTrackById(trackId);
-      console.log('✅ Single track result:', track ? 'found' : 'not found');
       return NextResponse.json({ track });
     } else if (query) {
-      // Search tracks
-      console.log('🔍 Searching tracks for:', query);
       tracks = await MusicService.searchTracks(query);
-      console.log('✅ Search results:', tracks.length);
     } else if (artistId) {
-      // Get tracks by artist
-      console.log('🔍 Getting tracks by artist:', artistId);
       tracks = await MusicService.getTracksByArtist(artistId);
-      console.log('✅ Artist tracks:', tracks.length);
     } else if (albumId) {
-      // Get tracks by album
-      console.log('🔍 Getting tracks by album:', albumId);
       tracks = await MusicService.getTracksByAlbum(albumId);
-      console.log('✅ Album tracks:', tracks.length);
     } else {
-      // Get all tracks
-      console.log('🔍 Getting all tracks');
       tracks = await MusicService.getAllTracks();
-      console.log('✅ All tracks result:', tracks.length);
     }
 
-    console.log('📤 Returning tracks:', tracks.length);
     return NextResponse.json({ tracks });
   } catch (error) {
-    console.error('❌ Error fetching tracks:', error);
+    logger.error('Failed to fetch tracks', { metadata: { error: String(error) } });
     return NextResponse.json(
-      { error: 'Failed to fetch tracks', details: error.message },
+      { error: 'Failed to fetch tracks' },
       { status: 500 }
     );
   }

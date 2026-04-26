@@ -336,7 +336,7 @@ export default function PosterizePage() {
         <PageContainer showMatrix={false}>
           <PageHeader
             title="Posterize"
-            description="Create NFT collectibles from your best moments"
+            subtitle="Create NFT collectibles from your best moments"
             icon={Zap}
           />
           <LoadingState message="Loading posterize..." showMatrix={false} />

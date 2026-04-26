@@ -1,32 +1,23 @@
 "use client";
 
 import React, { useState, useEffect, Suspense, useMemo } from "react";
+import Link from "next/link";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
-import { 
-  Home, 
-  Music, 
-  Users, 
-  ShoppingBag, 
-  Swords, 
-  Waves, 
-  Palette,
-  Library,
-  Globe,
-  Bot,
-  Telescope,
+import {
+  Home,
+  Music,
+  Users,
+  ShoppingBag,
+  Swords,
   TrendingUp,
-  Clock,
-  Star,
   Play,
   Heart,
   MessageCircle,
-  Share2,
   ChevronRight,
   Radio,
   Wifi,
   WifiOff,
-  RefreshCw
 } from "lucide-react";
 
 // Featured content types
@@ -35,14 +26,17 @@ interface FeaturedItem {
   title: string;
   subtitle?: string;
   image?: string;
-  type: 'track' | 'album' | 'post' | 'battle' | 'creator' | 'product';
+  type: 'track' | 'album' | 'post' | 'battle' | 'creator' | 'product' | 'video';
   stats?: {
     plays?: number;
     likes?: number;
     comments?: number;
     shares?: number;
+    views?: string;
   };
   href: string;
+  thumbnail?: string;
+  isYouTube?: boolean;
 }
 
 interface DashboardSection {
@@ -252,9 +246,7 @@ function DashboardContent() {
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
-      // For development/testing, show a message instead of redirecting
-      console.log('User not authenticated, would redirect to /');
-      // router.push('/');
+      // Unauthenticated users see the sign-in prompt instead of redirecting
       return;
     }
   }, [loading, isAuthenticated, router]);
@@ -317,12 +309,12 @@ function DashboardContent() {
             >
               Create Account
             </a>
-            <a
+            <Link
               href="/"
               className="block w-full px-6 py-3 text-white/60 hover:text-white transition-colors"
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -400,7 +392,8 @@ function DashboardSection({ section }: { section: DashboardSection }) {
     teal: 'text-teal-300 border-teal-400/30 bg-teal-500/10',
     purple: 'text-purple-300 border-purple-400/30 bg-purple-500/10',
     red: 'text-red-300 border-red-400/30 bg-red-500/10',
-    amber: 'text-amber-300 border-amber-400/30 bg-amber-500/10'
+    amber: 'text-amber-300 border-amber-400/30 bg-amber-500/10',
+    green: 'text-green-300 border-green-400/30 bg-green-500/10',
   };
 
   const colorClass = colorClasses[section.color as keyof typeof colorClasses] || colorClasses.teal;

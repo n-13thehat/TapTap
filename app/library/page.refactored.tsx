@@ -48,7 +48,7 @@ export default function LibraryPage() {
 
   // Hooks
   const agentBus = useAgentBus();
-  const { setQueueList, playTrack: playInStore } = usePlayerStore();
+  const { setQueue, playTrack: playInStore } = usePlayerStore();
 
   // Data with fallback
   const data = libraryData ?? EMPTY_LIBRARY_PAYLOAD;
@@ -122,7 +122,16 @@ export default function LibraryPage() {
   const handlePlayTrack = (track: Track) => {
     setCurrent(track);
     setPlaying(true);
-    playInStore(track);
+    // Convert library Track to player Track
+    playInStore({
+      id: track.id,
+      title: track.title,
+      artist: track.artist || 'Unknown Artist',
+      album: track.album,
+      cover: track.cover,
+      audioUrl: track.audioUrl || '',
+      duration: track.duration,
+    } as any);
     agentBus.emit("track.played", { trackId: track.id, title: track.title });
   };
 

@@ -16,15 +16,32 @@ export async function GET() {
       })
       .catch(() => [] as any[]);
 
-    const items = rows.map((n: any) => ({
-      id: n.id,
-      title: String(n.type ?? "Notification"),
-      message:
-        n.payload && typeof n.payload === "object" && "message" in n.payload
-          ? (n.payload as any).message
-          : "",
-      read: !!n.readAt,
-    }));
+    const items = rows.map((n: any) => {
+      let payload: any = {};
+
+      // Parse payload if it's a string
+      if (typeof n.payload === 'string') {
+        try {
+          payload = JSON.parse(n.payload);
+        } catch {
+          payload = { message: n.payload };
+        }
+      } else if (n.payload && typeof n.payload === 'object') {
+        payload = n.payload;
+      }
+
+      return {
+        id: n.id,
+        title: payload.title || String(n.type ?? "Notification"),
+        message: payload.message || "",
+        read: !!n.readAt,
+        agentId: payload.agentId,
+        priority: payload.priority || 'low',
+        actions: payload.actions || [],
+        metadata: payload.metadata || {},
+        createdAt: n.createdAt,
+      };
+    });
 
     return NextResponse.json(items);
   } catch {

@@ -51,10 +51,7 @@ async function followWrapper(payload: { userId: string }) {
 
 async function sendMessageWrapper(payload: { conversationId: string; text: string }) {
   "use server";
-  const formData = new FormData();
-  formData.append('conversationId', payload.conversationId);
-  formData.append('text', payload.text);
-  return sendMessageAction(formData);
+  return sendMessageAction({ conversationId: payload.conversationId, text: payload.text });
 }
 
 async function updateBioWrapper(payload: { bio: string }) {
@@ -389,7 +386,7 @@ const getTimelineRaw = cache(async (userId: string | null) => {
   const where: any = {};
 
   return withPrismaFallback(
-    () =>
+    async () =>
       prisma.post.findMany({
         where,
         orderBy: { createdAt: "desc" },
@@ -453,7 +450,7 @@ const getNotificationsRaw = cache(async (userId: string | null) => {
   if (!userId) return FALLBACK_NOTIFICATIONS;
 
   return withPrismaFallback(
-    () =>
+    async () =>
       prisma.notification.findMany({
         where: { userId },
         orderBy: { createdAt: "desc" },
@@ -509,7 +506,7 @@ const getNotificationsRaw = cache(async (userId: string | null) => {
 
 const getSuggestionsRaw = cache(async (userId: string | null) => {
   return withPrismaFallback(
-    () =>
+    async () =>
       prisma.user.findMany({
         where: userId
           ? {

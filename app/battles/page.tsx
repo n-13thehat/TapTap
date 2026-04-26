@@ -33,7 +33,7 @@ function BattlesContent() {
   const [manualUrl, setManualUrl] = useState("");
 
   // Global player integration
-  const { playTrack } = useEnhancedPlayerStore();
+  const { play } = useEnhancedPlayerStore();
 
   const fetchBattles = useCallback(
     async (sortParam: "recent" | "popular") => {
@@ -120,13 +120,12 @@ function BattlesContent() {
       id: v.id,
       title: v.title,
       artist: v.channelTitle,
-      audioUrl: v.url || `https://www.youtube.com/watch?v=${v.id}`,
-      coverUrl: v.thumbnail || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
-      duration: 0, // Will be determined by player
-      type: 'battle' as const
+      audio_url: v.url || `https://www.youtube.com/watch?v=${v.id}`,
+      cover_url: v.thumbnail || `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`,
+      duration: 0 // Will be determined by player
     };
 
-    playTrack(track);
+    play(track);
   }
 
   function addManualBattle() {

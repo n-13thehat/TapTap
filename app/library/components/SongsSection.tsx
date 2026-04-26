@@ -5,6 +5,7 @@ import { Track } from '../types';
 import { Header } from './Header';
 import { EmptyState } from './EmptyState';
 import { TrackRow } from './TrackRow';
+import { tapInteraction, listContainer, listItem } from '@/lib/animations';
 
 interface SongsSectionProps {
   query: string;
@@ -49,9 +50,11 @@ export function SongsSection({
           {/* Play All Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={tapInteraction}
             onClick={() => tracks.length > 0 && onPlay(tracks[0])}
-            className="flex items-center gap-2 px-6 py-3 bg-teal-500 hover:bg-teal-400 text-white rounded-full font-medium transition-colors"
+            disabled={tracks.length === 0}
+            aria-label="Play all tracks"
+            className="flex items-center gap-2 px-6 py-3 bg-teal-500 hover:bg-teal-400 text-white rounded-full font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Play className="w-4 h-4" />
             Play All
@@ -60,8 +63,10 @@ export function SongsSection({
           {/* Shuffle Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+            whileTap={tapInteraction}
+            disabled={tracks.length === 0}
+            aria-label="Shuffle all tracks"
+            className="flex items-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Shuffle className="w-4 h-4" />
             Shuffle
@@ -112,16 +117,16 @@ export function SongsSection({
         {/* Track Rows */}
         <motion.div
           className="space-y-1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.02 }}
+          variants={listContainer}
+          initial="hidden"
+          animate="visible"
+          role="list"
+          aria-label="Track list"
         >
           {tracks.map((t, i) => (
             <motion.div
               key={t.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.02 }}
+              variants={listItem}
             >
               <TrackRow
                 t={t}

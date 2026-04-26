@@ -4,6 +4,7 @@ import { Album as AlbumIcon, Disc3, Play, Heart, MoreHorizontal } from 'lucide-r
 import { Album } from '../types';
 import { Header } from './Header';
 import { EmptyState } from './EmptyState';
+import { tapInteraction, listContainer, listItem, cardHover } from '@/lib/animations';
 
 interface AlbumCardProps {
   a: Album;
@@ -40,10 +41,11 @@ function AlbumCard({ a, onPlay }: AlbumCardProps) {
             onClick={() => onPlay(a)}
             className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center shadow-xl hover:bg-white/90 transition-colors"
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={tapInteraction}
             initial={{ scale: 0 }}
             animate={{ scale: isHovered ? 1 : 0 }}
             transition={{ duration: 0.2, delay: 0.1 }}
+            aria-label={`Play ${a.title}`}
           >
             <Play className="w-6 h-6 ml-1" />
           </motion.button>
@@ -127,16 +129,16 @@ export function AlbumsSection({ albums, onPlay }: AlbumsSectionProps) {
       {/* Albums Grid */}
       <motion.div
         className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ staggerChildren: 0.1 }}
+        variants={listContainer}
+        initial="hidden"
+        animate="visible"
+        role="list"
+        aria-label="Albums grid"
       >
         {albums.map((a, index) => (
           <motion.div
             key={a.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            variants={listItem}
           >
             <AlbumCard a={a} onPlay={onPlay} />
           </motion.div>

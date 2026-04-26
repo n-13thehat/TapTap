@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import FeaturedSection from '@/components/library/FeaturedSection';
 import AppLayout from '@/components/layout/AppLayout';
@@ -82,24 +83,24 @@ export default function FeaturedPage() {
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
-                <a
+                <Link
                   href="/library"
                   className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
                   Explore Library
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/social"
                   className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
                   Join Community
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/creator"
                   className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
                   Create Music
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

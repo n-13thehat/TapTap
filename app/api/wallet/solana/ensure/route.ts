@@ -14,15 +14,15 @@ export async function POST() {
 
     const kp = await generateKeypair();
     const enc = encryptSecret(kp.secretKey);
-    const w = await prisma.wallet.create({ data: { userId: user.id, address: kp.publicKey, provider: "SOLANA" as any } });
+    const w = await prisma.wallet.create({ data: { userId: user.id, address: kp.publicKey.toBase58(), provider: "SOLANA" as any } });
     await prisma.setting.upsert({
       where: { userId_key: { userId: w.id, key: "sol:secret" } },
       update: { value: enc as any },
       create: { userId: w.id, key: "sol:secret", value: enc as any },
     });
-    await airdropSol(kp.publicKey, 1_000_000);
-    await mintTapTo(kp.publicKey, 100);
-    return Response.json({ ok: true, address: kp.publicKey.toString() });
+    await airdropSol(kp.publicKey.toBase58(), 1_000_000);
+    await mintTapTo(kp.publicKey.toBase58(), 100);
+    return Response.json({ ok: true, address: kp.publicKey.toBase58() });
   } catch (e: any) {
     return Response.json({ error: e?.message || "Internal error" }, { status: 500 });
   }

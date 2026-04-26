@@ -24,6 +24,7 @@ import { DEFAULT_COVER } from "./types";
 import FeaturedSection from "@/components/library/FeaturedSection";
 import { useFeaturedContent } from "@/hooks/useFeaturedContent";
 import DiscoveryEngine from "@/components/discovery/DiscoveryEngine";
+import { pageSlideTransition } from "@/lib/animations";
 
 const FALLBACK_LIBRARY: LibraryPayload = EMPTY_LIBRARY_PAYLOAD;
 const DEFAULT_ALBUM_SLUG = encodeURIComponent("Music For The Future -vx9");
@@ -189,7 +190,12 @@ export default function LibraryPage() {
       case "artists":
         return <ArtistsSection artists={filteredArtists} />;
       case "albums":
-        return <AlbumsSection albums={filteredAlbums} />;
+        return <AlbumsSection albums={filteredAlbums} onPlay={(album) => {
+          // Play first track of album
+          if (data.tracks.length > 0) {
+            handlePlay(data.tracks[0]);
+          }
+        }} />;
       case "posters":
         return <PostersSection posters={data.posters} />;
       case "trades":
@@ -208,7 +214,13 @@ export default function LibraryPage() {
             <FeaturedSection onPlayTrack={handlePlay} />
             <DiscoveryEngine />
             {data.recommendations.length > 0 && (
-              <RecommendationsSection recommendations={data.recommendations} />
+              <RecommendationsSection
+                recommendations={data.recommendations}
+                onPlay={handlePlay}
+                onSave={handleSave}
+                onAddToPlaylist={handleAddToPlaylist}
+                onAttachLyrics={handleAttachLyrics}
+              />
             )}
           </div>
         );
@@ -287,10 +299,10 @@ export default function LibraryPage() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                variants={pageSlideTransition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
               >
                 {section}
               </motion.div>
@@ -303,7 +315,13 @@ export default function LibraryPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <RecommendationsSection recommendations={data.recommendations} />
+                <RecommendationsSection
+                  recommendations={data.recommendations}
+                  onPlay={handlePlay}
+                  onSave={handleSave}
+                  onAddToPlaylist={handleAddToPlaylist}
+                  onAttachLyrics={handleAttachLyrics}
+                />
               </motion.div>
             )}
           </div>

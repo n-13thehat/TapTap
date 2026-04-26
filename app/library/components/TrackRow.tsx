@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Play, Pause, Heart, MoreHorizontal, Plus, Download } from 'lucide-react';
 import { formatTime } from '../utils';
 import { Track } from '../types';
+import { tapInteraction, cardHover } from '@/lib/animations';
 
 interface TrackRowProps {
   t: Track;
@@ -34,7 +35,10 @@ export function TrackRow({
       className="group grid grid-cols-[auto_1fr_auto_auto_auto] gap-4 items-center px-4 py-3 rounded-lg hover:bg-white/5 transition-all duration-200"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ x: 4 }}
+      variants={cardHover}
+      whileHover="hover"
+      role="row"
+      aria-label={`${t.title} by ${t.artist}`}
     >
       {/* Track Number / Play Button */}
       <div className="w-8 flex items-center justify-center">
@@ -42,7 +46,8 @@ export function TrackRow({
           <motion.button
             onClick={handlePlay}
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={tapInteraction}
+            aria-label={isPlaying ? `Pause ${t.title}` : `Play ${t.title}`}
             className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-white/90 transition-colors"
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
@@ -88,7 +93,8 @@ export function TrackRow({
             onSave(t);
           }}
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileTap={tapInteraction}
+          aria-label={t.saved ? `Remove ${t.title} from favorites` : `Add ${t.title} to favorites`}
           className={`p-2 rounded-full transition-colors ${
             t.saved
               ? "text-teal-400 bg-teal-500/20"
@@ -104,7 +110,8 @@ export function TrackRow({
             onAddToPlaylist(t);
           }}
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileTap={tapInteraction}
+          aria-label={`Add ${t.title} to playlist`}
           className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-colors"
         >
           <Plus className="w-4 h-4" />
@@ -112,7 +119,8 @@ export function TrackRow({
 
         <motion.button
           whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileTap={tapInteraction}
+          aria-label={`More options for ${t.title}`}
           className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-full transition-colors"
         >
           <MoreHorizontal className="w-4 h-4" />

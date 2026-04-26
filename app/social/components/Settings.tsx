@@ -27,8 +27,8 @@ export const Settings: React.FC<SettingsProps> = ({ userId }) => {
     const load = async () => {
       const { data } = await supabase.from('User').select('*').eq('id', userId).single()
       if (data) {
-        setBio(data.bio ?? '')
-        setEmail(data.email ?? '')
+        setBio((data as any).bio ?? '')
+        setEmail((data as any).email ?? '')
       }
     }
     load()
@@ -37,8 +37,8 @@ export const Settings: React.FC<SettingsProps> = ({ userId }) => {
   const handleSave = async () => {
     setLoading(true)
     try {
-      const { error } = await supabase
-        .from('User')
+      const { error } = await (supabase
+        .from('User') as any)
         .update({ bio, email })
         .eq('id', userId)
       if (error) console.error(error)
@@ -157,8 +157,8 @@ export const Settings: React.FC<SettingsProps> = ({ userId }) => {
               <Button
                 className="bg-teal-500/80 text-black hover:bg-teal-400"
                 onClick={() =>
-                  supabase
-                    .from('User')
+                  (supabase
+                    .from('User') as any)
                     .update({ visibility: privacy })
                     .eq('id', userId)
                 }

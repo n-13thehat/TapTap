@@ -7,6 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { PostsAPI } from '../supabaseClient'
 import { Heart, MessageCircle, Repeat2, MoreHorizontal } from 'lucide-react'
+import { listContainer, listItem, buttonTap, cardHover } from '@/lib/animations'
 
 type FeedProps = {
   onOpenProfile?: (id: string) => void
@@ -101,9 +102,10 @@ export const Feed: React.FC<FeedProps> = ({ onOpenProfile, authorId }) => {
                   </div>
                 </div>
                 <Button
-                  size="icon"
+                  size="sm"
                   variant="ghost"
-                  className="ml-auto h-8 w-8 text-gray-400 hover:text-teal-300"
+                  className="ml-auto h-8 w-8 p-0 text-gray-400 hover:text-teal-300"
+                  aria-label="More options"
                 >
                   <MoreHorizontal className="h-4 w-4" />
                 </Button>

@@ -1394,7 +1394,7 @@ export default function ClientSocial({
 
   const [iframeStatus, setIframeStatus] = useState<Record<string, "idle" | "loaded" | "error">>({});
 
-  const viewFallbacks: Record<string, JSX.Element> = {
+  const viewFallbacks: Record<string, React.ReactElement> = {
     dashboard: (
       <div className="p-6 space-y-2 text-white">
         <div className="font-semibold">Dashboard</div>

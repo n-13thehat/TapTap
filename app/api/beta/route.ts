@@ -1,20 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { BetaCommunityService } from '@/lib/services/betaCommunityService';
+import { auth } from '@/auth.config';
+import logger from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
   try {
-    console.log('🧪 GET /api/beta called');
-    
     const { searchParams } = new URL(request.url);
     const type = searchParams.get('type'); // 'challenges', 'achievements', 'tiers', 'stats'
     const userId = searchParams.get('userId');
 
     if (type === 'challenges') {
-      // Return current beta challenges
       const challenges = BetaCommunityService.getCurrentChallenges();
-      
-      console.log(`✅ Retrieved ${challenges.length} beta challenges`);
-      
       return NextResponse.json({
         challenges,
         totalChallenges: challenges.length,
@@ -23,11 +19,7 @@ export async function GET(request: NextRequest) {
     }
     
     if (type === 'achievements') {
-      // Return all available achievements
       const achievements = BetaCommunityService.getBetaAchievements();
-      
-      console.log(`✅ Retrieved ${Object.keys(achievements).length} achievements`);
-      
       return NextResponse.json({
         achievements,
         totalAchievements: Object.keys(achievements).length,
@@ -42,11 +34,7 @@ export async function GET(request: NextRequest) {
     }
     
     if (type === 'tiers') {
-      // Return tier information
       const tiers = BetaCommunityService.getBetaTierBenefits();
-      
-      console.log(`✅ Retrieved ${Object.keys(tiers).length} beta tiers`);
-      
       return NextResponse.json({
         tiers,
         tierOrder: ['BRONZE', 'SILVER', 'GOLD', 'PLATINUM', 'FOUNDER']
@@ -54,7 +42,6 @@ export async function GET(request: NextRequest) {
     }
     
     if (type === 'stats') {
-      // Return community statistics
       const stats = {
         totalBetaUsers: 247,
         activeBetaUsers: 189,
@@ -67,8 +54,6 @@ export async function GET(request: NextRequest) {
         totalRewardsDistributed: 125000
       };
       
-      console.log('✅ Retrieved beta community stats');
-      
       return NextResponse.json({
         stats,
         lastUpdated: new Date().toISOString()
@@ -76,7 +61,6 @@ export async function GET(request: NextRequest) {
     }
     
     if (userId) {
-      // Return user-specific beta data
       const mockUserData = {
         userId,
         betaStatus: 'ACTIVE',
@@ -90,8 +74,6 @@ export async function GET(request: NextRequest) {
         inviteCode: BetaCommunityService.generateInviteCode()
       };
       
-      console.log(`✅ Retrieved beta data for user: ${userId}`);
-      
       return NextResponse.json({
         user: mockUserData,
         nextTierRequirement: 1000 - mockUserData.points,
@@ -101,13 +83,9 @@ export async function GET(request: NextRequest) {
       });
     }
     
-    // Default: return overview
     const challenges = BetaCommunityService.getCurrentChallenges();
     const achievements = BetaCommunityService.getBetaAchievements();
     const tiers = BetaCommunityService.getBetaTierBenefits();
-    
-    console.log('✅ Beta community overview generated');
-    
     return NextResponse.json({
       overview: {
         totalChallenges: challenges.length,
@@ -138,29 +116,26 @@ export async function GET(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('❌ Error in beta API:', error);
-    return NextResponse.json(
-      { 
-        error: 'Failed to retrieve beta community data',
-        details: error.message 
-      },
-      { status: 500 }
-    );
+    logger.error('Failed to retrieve beta community data', { metadata: { error: String(error) } });
+    return NextResponse.json({ error: 'Failed to retrieve beta community data' }, { status: 500 });
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('🧪 POST /api/beta called');
-    
-    const body = await request.json();
-    const { action, userId, challengeId, feedbackData } = body;
+    // Require authentication for all point-awarding actions
+    const session = await auth();
+    const sessionUserId = (session as any)?.user?.id as string | undefined;
+    if (!sessionUserId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
-    if (action === 'join-challenge' && userId && challengeId) {
-      // Join a beta challenge
-      console.log(`✅ User ${userId} joined challenge ${challengeId}`);
-      
-      // Award points for joining
+    const body = await request.json();
+    const { action, challengeId, feedbackData } = body;
+    // Always use the authenticated user's id — never trust client-supplied userId
+    const userId = sessionUserId;
+
+    if (action === 'join-challenge' && challengeId) {
       await BetaCommunityService.awardPoints(userId, 50, 'Joined beta challenge');
       
       return NextResponse.json({
@@ -171,11 +146,7 @@ export async function POST(request: NextRequest) {
       });
     }
     
-    if (action === 'submit-feedback' && userId && feedbackData) {
-      // Submit beta feedback
-      console.log(`✅ User ${userId} submitted feedback`);
-      
-      // Award points for feedback
+    if (action === 'submit-feedback' && feedbackData) {
       await BetaCommunityService.awardPoints(userId, 100, 'Submitted valuable feedback');
       
       return NextResponse.json({
@@ -186,17 +157,12 @@ export async function POST(request: NextRequest) {
       });
     }
     
-    if (action === 'claim-achievement' && userId) {
-      // Claim an achievement
+    if (action === 'claim-achievement') {
       const { achievementId } = body;
       const achievements = BetaCommunityService.getBetaAchievements();
       const achievement = achievements[achievementId];
-      
       if (achievement) {
         await BetaCommunityService.awardPoints(userId, achievement.points, `Earned achievement: ${achievement.name}`);
-        
-        console.log(`✅ User ${userId} claimed achievement ${achievementId}`);
-        
         return NextResponse.json({
           success: true,
           message: `Achievement "${achievement.name}" claimed!`,
@@ -212,13 +178,7 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('❌ Error in beta POST API:', error);
-    return NextResponse.json(
-      { 
-        error: 'Failed to process beta action',
-        details: error.message 
-      },
-      { status: 500 }
-    );
+    logger.error('Failed to process beta action', { metadata: { error: String(error) } });
+    return NextResponse.json({ error: 'Failed to process beta action' }, { status: 500 });
   }
 }

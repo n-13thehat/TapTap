@@ -33,10 +33,10 @@ export const Profile: React.FC<ProfileProps> = ({ userId, isMe }) => {
       if (active && data) {
         setUser(data)
         setForm({
-          name: data.name,
-          bio: data.bio ?? '',
-          avatarUrl: data.avatarUrl ?? '',
-          bannerUrl: data.bannerUrl ?? ''
+          name: (data as any).name,
+          bio: (data as any).bio ?? '',
+          avatarUrl: (data as any).avatarUrl ?? '',
+          bannerUrl: (data as any).bannerUrl ?? ''
         })
       }
     }
@@ -56,7 +56,7 @@ export const Profile: React.FC<ProfileProps> = ({ userId, isMe }) => {
         avatarUrl: form.avatarUrl,
         bannerUrl: form.bannerUrl
       }
-      const { error } = await supabase.from('User').update(update).eq('id', userId)
+      const { error } = await (supabase.from('User') as any).update(update).eq('id', userId)
       if (error) console.error(error)
       else setUser({ ...user, ...update })
       setEditOpen(false)
