@@ -230,8 +230,10 @@ BACKUP_*/
 # Local tooling caches and scratch output
 .pnpm-store/
 docker-build-temp/
+TapTap_Matrix_BuildID_ZION/
 *.tmp.txt
 .git_status_audit.tmp
+.audit_lib_dupes*.ps1
 desktop.ini
 ts-out.tmp.txt
 test-out.tmp.txt
