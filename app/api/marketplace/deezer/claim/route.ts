@@ -46,38 +46,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: `Royalty is ${String(royalty.status).toLowerCase()}` }, { status: 409 });
     }
 
-    const credit = Math.max(0, Number(royalty.pendingTap || 0));
-
-    const [updated] = await db.$transaction([
-      db.externalArtistRoyalty.update({
-        where: { id: royalty.id },
-        data: {
-          status: "CLAIMED",
-          claimedByUserId: userId,
-          pendingTap: 0,
-          claimToken: null,
-        },
-        select: { id: true, status: true, claimedByUserId: true, stageName: true },
-      }),
-      ...(credit > 0
-        ? [
-            db.tapCoinTransaction.create({
-              data: {
-                userId,
-                amount: credit,
-                reason: `ROYALTY_CLAIM_${royalty.source}`,
-              },
-            }),
-          ]
-        : []),
-    ]);
+    const updated = await db.externalArtistRoyalty.update({
+      where: { id: royalty.id },
+      data: {
+        status: "PENDING_APPROVAL",
+        claimedByUserId: userId,
+        claimToken: null,
+      },
+      select: { id: true, status: true, claimedByUserId: true, stageName: true, pendingTap: true },
+    });
 
     return NextResponse.json({
       ok: true,
       royaltyId: updated.id,
       stageName: updated.stageName,
-      claimedTap: credit,
+      pendingTap: updated.pendingTap,
       status: updated.status,
+      message: "Submitted for admin approval. You will be credited once an admin reviews and approves the payout.",
     });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "Failed to claim royalty" }, { status: 500 });

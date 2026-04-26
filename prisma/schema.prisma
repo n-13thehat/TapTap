@@ -712,6 +712,7 @@ enum ExternalRoyaltySource {
 
 enum ExternalRoyaltyStatus {
   UNCLAIMED
+  PENDING_APPROVAL
   CLAIMED
   DISPUTED
 }

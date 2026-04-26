@@ -1,15 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Database, Music, Waves, Download, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Database, Music, Waves, Download, Loader2, CheckCircle2, AlertCircle, Coins, RefreshCw, X, Check } from "lucide-react";
 
 type RunResult = { ok?: boolean; error?: string; [k: string]: any } | null;
 
-async function postJson(url: string): Promise<RunResult> {
+type Payout = {
+  id: string;
+  source: string;
+  sourceId: string;
+  stageName: string;
+  pendingTap: number;
+  status: string;
+  claimedByUserId: string | null;
+  createdAt: string;
+  updatedAt: string;
+  claimedByUser: { id: string; username: string | null; email: string | null } | null;
+};
+
+async function postJson(url: string, body?: unknown): Promise<RunResult> {
   try {
-    const res = await fetch(url, { method: "POST" });
+    const res = await fetch(url, {
+      method: "POST",
+      headers: body ? { "Content-Type": "application/json" } : undefined,
+      body: body ? JSON.stringify(body) : undefined,
+    });
     return (await res.json()) as RunResult;
+  } catch (e: any) {
+    return { error: e?.message || "Network error" };
+  }
+}
+
+async function getJson<T = any>(url: string): Promise<T | { error: string }> {
+  try {
+    const res = await fetch(url);
+    return (await res.json()) as T;
   } catch (e: any) {
     return { error: e?.message || "Network error" };
   }
@@ -52,12 +78,43 @@ const EXPORTS = [
 export default function AdminToolsPage() {
   const [running, setRunning] = useState<string | null>(null);
   const [results, setResults] = useState<Record<string, RunResult>>({});
+  const [payouts, setPayouts] = useState<Payout[]>([]);
+  const [payoutsLoading, setPayoutsLoading] = useState(false);
+  const [payoutsError, setPayoutsError] = useState<string | null>(null);
+  const [actingId, setActingId] = useState<string | null>(null);
 
   const run = (key: string, url: string) => async () => {
     setRunning(key);
     const r = await postJson(url);
     setResults((prev) => ({ ...prev, [key]: r }));
     setRunning(null);
+  };
+
+  const loadPayouts = useCallback(async () => {
+    setPayoutsLoading(true);
+    setPayoutsError(null);
+    const r = (await getJson<{ ok?: boolean; payouts?: Payout[]; error?: string }>(
+      "/api/admin/marketplace/payouts?status=PENDING_APPROVAL&limit=100",
+    )) as { ok?: boolean; payouts?: Payout[]; error?: string };
+    if (r.error) setPayoutsError(r.error);
+    else setPayouts(r.payouts || []);
+    setPayoutsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    loadPayouts();
+  }, [loadPayouts]);
+
+  const decide = (id: string, action: "approve" | "reject") => async () => {
+    const note = action === "reject" ? window.prompt("Reason for rejection (optional):") || undefined : undefined;
+    setActingId(id);
+    const r = await postJson(`/api/admin/marketplace/payouts/${id}`, { action, note });
+    setActingId(null);
+    if (r && "error" in r && r.error) {
+      window.alert(`Failed: ${r.error}`);
+      return;
+    }
+    await loadPayouts();
   };
 
   return (
@@ -104,6 +161,92 @@ export default function AdminToolsPage() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Coins className="h-5 w-5 text-amber-300" />
+              <h2 className="text-2xl font-bold text-white">Pending Royalty Payouts</h2>
+              <span className="rounded-full bg-amber-400/20 px-2 py-0.5 text-xs text-amber-200">{payouts.length}</span>
+            </div>
+            <button
+              onClick={loadPayouts}
+              disabled={payoutsLoading}
+              className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/80 hover:bg-white/10 disabled:opacity-50"
+            >
+              {payoutsLoading ? <Loader2 className="h-3 w-3 animate-spin" /> : <RefreshCw className="h-3 w-3" />}
+              Refresh
+            </button>
+          </div>
+          {payoutsError && (
+            <div className="mb-3 rounded-lg border border-red-400/30 bg-red-400/10 p-3 text-sm text-red-200">{payoutsError}</div>
+          )}
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <table className="w-full text-sm">
+              <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/60">
+                <tr>
+                  <th className="px-3 py-2">Artist</th>
+                  <th className="px-3 py-2">Source</th>
+                  <th className="px-3 py-2">Claimant</th>
+                  <th className="px-3 py-2 text-right">Pending TAP</th>
+                  <th className="px-3 py-2">Submitted</th>
+                  <th className="px-3 py-2 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {payouts.length === 0 && !payoutsLoading && (
+                  <tr>
+                    <td colSpan={6} className="px-3 py-6 text-center text-white/50">No pending payouts.</td>
+                  </tr>
+                )}
+                {payouts.map((p) => {
+                  const acting = actingId === p.id;
+                  return (
+                    <tr key={p.id} className="border-t border-white/5">
+                      <td className="px-3 py-2">
+                        <div className="text-white">{p.stageName}</div>
+                        <div className="text-xs text-white/40 font-mono">{p.sourceId}</div>
+                      </td>
+                      <td className="px-3 py-2 text-white/70">{p.source}</td>
+                      <td className="px-3 py-2">
+                        {p.claimedByUser ? (
+                          <>
+                            <div className="text-white">{p.claimedByUser.username || "—"}</div>
+                            <div className="text-xs text-white/40">{p.claimedByUser.email}</div>
+                          </>
+                        ) : (
+                          <span className="text-white/40">—</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-right font-mono text-amber-200">{p.pendingTap.toLocaleString()}</td>
+                      <td className="px-3 py-2 text-xs text-white/60">{new Date(p.updatedAt).toLocaleString()}</td>
+                      <td className="px-3 py-2">
+                        <div className="flex justify-end gap-2">
+                          <button
+                            onClick={decide(p.id, "approve")}
+                            disabled={acting}
+                            className="flex items-center gap-1 rounded-lg border border-green-400/40 bg-green-400/10 px-2 py-1 text-xs font-medium text-green-200 hover:bg-green-400/20 disabled:opacity-50"
+                          >
+                            {acting ? <Loader2 className="h-3 w-3 animate-spin" /> : <Check className="h-3 w-3" />}
+                            Approve
+                          </button>
+                          <button
+                            onClick={decide(p.id, "reject")}
+                            disabled={acting}
+                            className="flex items-center gap-1 rounded-lg border border-red-400/40 bg-red-400/10 px-2 py-1 text-xs font-medium text-red-200 hover:bg-red-400/20 disabled:opacity-50"
+                          >
+                            <X className="h-3 w-3" />
+                            Reject
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </section>
 
