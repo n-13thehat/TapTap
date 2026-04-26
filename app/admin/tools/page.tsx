@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { Database, Music, Waves, Download, Loader2, CheckCircle2, AlertCircle, Coins, RefreshCw, X, Check } from "lucide-react";
+import { Database, Music, Waves, Download, Loader2, CheckCircle2, AlertCircle, Coins, RefreshCw, X, Check, Ticket, Copy, Trash2 } from "lucide-react";
 
 type RunResult = { ok?: boolean; error?: string; [k: string]: any } | null;
 
@@ -17,6 +17,15 @@ type Payout = {
   createdAt: string;
   updatedAt: string;
   claimedByUser: { id: string; username: string | null; email: string | null } | null;
+};
+
+type Invite = {
+  id: string;
+  code: string;
+  claimedByUserId: string | null;
+  claimedAt: string | null;
+  createdAt: string;
+  claimedBy: { id: string; username: string | null; email: string | null } | null;
 };
 
 async function postJson(url: string, body?: unknown): Promise<RunResult> {
@@ -82,6 +91,12 @@ export default function AdminToolsPage() {
   const [payoutsLoading, setPayoutsLoading] = useState(false);
   const [payoutsError, setPayoutsError] = useState<string | null>(null);
   const [actingId, setActingId] = useState<string | null>(null);
+  const [invites, setInvites] = useState<Invite[]>([]);
+  const [invitesLoading, setInvitesLoading] = useState(false);
+  const [invitesError, setInvitesError] = useState<string | null>(null);
+  const [inviteCount, setInviteCount] = useState(5);
+  const [creatingInvites, setCreatingInvites] = useState(false);
+  const [revokingInviteId, setRevokingInviteId] = useState<string | null>(null);
 
   const run = (key: string, url: string) => async () => {
     setRunning(key);
@@ -101,9 +116,48 @@ export default function AdminToolsPage() {
     setPayoutsLoading(false);
   }, []);
 
+  const loadInvites = useCallback(async () => {
+    setInvitesLoading(true);
+    setInvitesError(null);
+    const r = (await getJson<{ ok?: boolean; invites?: Invite[]; error?: string }>(
+      "/api/admin/invites?status=all&limit=200",
+    )) as { ok?: boolean; invites?: Invite[]; error?: string };
+    if (r.error) setInvitesError(r.error);
+    else setInvites(r.invites || []);
+    setInvitesLoading(false);
+  }, []);
+
+  const createInvites = async () => {
+    setCreatingInvites(true);
+    const r = await postJson("/api/admin/invites", { count: inviteCount });
+    setCreatingInvites(false);
+    if (r && "error" in r && r.error) {
+      window.alert(`Failed: ${r.error}`);
+      return;
+    }
+    await loadInvites();
+  };
+
+  const revokeInvite = (id: string) => async () => {
+    if (!window.confirm("Revoke this invite code?")) return;
+    setRevokingInviteId(id);
+    try {
+      const res = await fetch(`/api/admin/invites/${id}`, { method: "DELETE" });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        window.alert(`Failed: ${data?.error || res.statusText}`);
+        return;
+      }
+      await loadInvites();
+    } finally {
+      setRevokingInviteId(null);
+    }
+  };
+
   useEffect(() => {
     loadPayouts();
-  }, [loadPayouts]);
+    loadInvites();
+  }, [loadPayouts, loadInvites]);
 
   const decide = (id: string, action: "approve" | "reject") => async () => {
     const note = action === "reject" ? window.prompt("Reason for rejection (optional):") || undefined : undefined;
@@ -240,6 +294,113 @@ export default function AdminToolsPage() {
                             <X className="h-3 w-3" />
                             Reject
                           </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <Ticket className="h-5 w-5 text-teal-300" />
+              <h2 className="text-2xl font-bold text-white">Beta Invites</h2>
+              <span className="rounded-full bg-teal-400/20 px-2 py-0.5 text-xs text-teal-200">{invites.length}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min={1}
+                max={100}
+                value={inviteCount}
+                onChange={(e) => setInviteCount(Math.max(1, Math.min(100, Number(e.target.value) || 1)))}
+                className="w-16 rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-sm text-white"
+              />
+              <button
+                onClick={createInvites}
+                disabled={creatingInvites}
+                className="flex items-center gap-2 rounded-lg border border-teal-400/40 bg-teal-400/10 px-3 py-1.5 text-sm text-teal-200 hover:bg-teal-400/20 disabled:opacity-50"
+              >
+                {creatingInvites ? <Loader2 className="h-3 w-3 animate-spin" /> : <Ticket className="h-3 w-3" />}
+                Generate
+              </button>
+              <button
+                onClick={loadInvites}
+                disabled={invitesLoading}
+                className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/80 hover:bg-white/10 disabled:opacity-50"
+              >
+                {invitesLoading ? <Loader2 className="h-3 w-3 animate-spin" /> : <RefreshCw className="h-3 w-3" />}
+                Refresh
+              </button>
+            </div>
+          </div>
+          {invitesError && (
+            <div className="mb-3 rounded-lg border border-red-400/30 bg-red-400/10 p-3 text-sm text-red-200">{invitesError}</div>
+          )}
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <table className="w-full text-sm">
+              <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/60">
+                <tr>
+                  <th className="px-3 py-2">Code</th>
+                  <th className="px-3 py-2">Status</th>
+                  <th className="px-3 py-2">Claimed by</th>
+                  <th className="px-3 py-2">Created</th>
+                  <th className="px-3 py-2 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {invites.length === 0 && !invitesLoading && (
+                  <tr>
+                    <td colSpan={5} className="px-3 py-6 text-center text-white/50">No invites yet. Generate some above.</td>
+                  </tr>
+                )}
+                {invites.map((inv) => {
+                  const claimed = !!inv.claimedByUserId;
+                  const revoking = revokingInviteId === inv.id;
+                  return (
+                    <tr key={inv.id} className="border-t border-white/5">
+                      <td className="px-3 py-2 font-mono text-teal-200">{inv.code}</td>
+                      <td className="px-3 py-2">
+                        {claimed ? (
+                          <span className="rounded-full bg-amber-400/20 px-2 py-0.5 text-xs text-amber-200">Claimed</span>
+                        ) : (
+                          <span className="rounded-full bg-teal-400/20 px-2 py-0.5 text-xs text-teal-200">Available</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2">
+                        {inv.claimedBy ? (
+                          <>
+                            <div className="text-white">{inv.claimedBy.username || "—"}</div>
+                            <div className="text-xs text-white/40">{inv.claimedBy.email}</div>
+                          </>
+                        ) : (
+                          <span className="text-white/40">—</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-xs text-white/60">{new Date(inv.createdAt).toLocaleString()}</td>
+                      <td className="px-3 py-2">
+                        <div className="flex justify-end gap-2">
+                          <button
+                            onClick={() => navigator.clipboard?.writeText(inv.code)}
+                            className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs text-white/80 hover:bg-white/10"
+                          >
+                            <Copy className="h-3 w-3" />
+                            Copy
+                          </button>
+                          {!claimed && (
+                            <button
+                              onClick={revokeInvite(inv.id)}
+                              disabled={revoking}
+                              className="flex items-center gap-1 rounded-lg border border-red-400/40 bg-red-400/10 px-2 py-1 text-xs font-medium text-red-200 hover:bg-red-400/20 disabled:opacity-50"
+                            >
+                              {revoking ? <Loader2 className="h-3 w-3 animate-spin" /> : <Trash2 className="h-3 w-3" />}
+                              Revoke
+                            </button>
+                          )}
                         </div>
                       </td>
                     </tr>
