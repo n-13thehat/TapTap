@@ -1,0 +1,23 @@
+# TapTap Matrix - Minimal Dockerfile using volume mounts
+# This approach avoids copying the entire codebase into the image
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apk add --no-cache libc6-compat python3 make g++
+
+# Environment variables
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV SILENCE_BIGINT_NATIVE_WARNING=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+EXPOSE 3000
+
+# The actual code will be mounted as a volume
+# This way we don't need to copy anything during build
+CMD ["sh", "-c", "npm install --legacy-peer-deps && npx prisma generate && npm run dev"]
+
