@@ -15,6 +15,54 @@ async function isAdmin() {
   return (user as any)?.role === 'ADMIN';
 }
 
+const CACHE_KEY = 'market:sol:usd';
+const CACHE_TTL_MS = 60_000;
+
+async function readCached(): Promise<{ usd: number; fetchedAt: number } | null> {
+  try {
+    const s = await prisma.setting.findUnique({ where: { userId_key: { userId: 'market', key: CACHE_KEY } } });
+    const v = s?.value as any;
+    if (typeof v?.usd === 'number' && Number.isFinite(v.usd)) {
+      return { usd: v.usd, fetchedAt: Number(v.fetchedAt || 0) };
+    }
+  } catch {}
+  return null;
+}
+
+async function fetchCoinGeckoSol(): Promise<number | null> {
+  try {
+    const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
+    if (!res.ok) return null;
+    const j = await res.json();
+    const usd = Number(j?.solana?.usd);
+    return Number.isFinite(usd) && usd > 0 ? usd : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function GET(req: Request) {
+  if (!(await isAdmin())) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  const url = new URL(req.url);
+  const force = url.searchParams.get('refresh') === '1';
+  const cached = await readCached();
+  const now = Date.now();
+  if (cached && !force && now - cached.fetchedAt < CACHE_TTL_MS) {
+    return NextResponse.json({ usd: cached.usd, source: 'cache', fetchedAt: cached.fetchedAt });
+  }
+  const live = await fetchCoinGeckoSol();
+  if (live === null) {
+    if (cached) return NextResponse.json({ usd: cached.usd, source: 'cache-stale', fetchedAt: cached.fetchedAt, warning: 'CoinGecko fetch failed' });
+    return NextResponse.json({ error: 'CoinGecko unavailable' }, { status: 503 });
+  }
+  await prisma.setting.upsert({
+    where: { userId_key: { userId: 'market', key: CACHE_KEY } },
+    update: { value: { usd: live, fetchedAt: now } as any },
+    create: { userId: 'market', key: CACHE_KEY, value: { usd: live, fetchedAt: now } as any },
+  });
+  return NextResponse.json({ usd: live, source: 'coingecko', fetchedAt: now });
+}
+
 export async function POST(req: Request) {
   if (!(await isAdmin())) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   try {
@@ -25,9 +73,9 @@ export async function POST(req: Request) {
     }
     const { usd } = parsed.data;
     await prisma.setting.upsert({
-      where: { userId_key: { userId: 'market', key: 'market:sol:usd' } },
-      update: { value: { usd } as any },
-      create: { userId: 'market', key: 'market:sol:usd', value: { usd } as any },
+      where: { userId_key: { userId: 'market', key: CACHE_KEY } },
+      update: { value: { usd, fetchedAt: Date.now(), source: 'manual' } as any },
+      create: { userId: 'market', key: CACHE_KEY, value: { usd, fetchedAt: Date.now(), source: 'manual' } as any },
     });
     return NextResponse.json({ ok: true, usd });
   } catch (e: any) {
