@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { computeTapTax } from "@/lib/tax";
@@ -11,6 +12,10 @@ import { FeatureFlagManager } from "@/lib/features/flags";
 
 export const dynamic = "force-dynamic";
 
+const DeezerBuyBody = z.object({
+  listingId: z.string().trim().min(1).max(128),
+});
+
 async function deezerEnabled() {
   const envDisabled = String(process.env.DEEZER_MARKET_DISABLED || "").toLowerCase() === "true";
   if (envDisabled) return false;
@@ -21,8 +26,6 @@ async function deezerEnabled() {
   }
 }
 
-type Body = { listingId?: string };
-
 export async function POST(req: Request) {
   try {
     const enabled = await deezerEnabled();
@@ -32,9 +35,12 @@ export async function POST(req: Request) {
     const userId = (session as any)?.user?.id as string | undefined;
     if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-    const body = ((await req.json().catch(() => ({}))) || {}) as Body;
-    const listingId = String(body?.listingId || "").trim();
-    if (!listingId) return NextResponse.json({ error: "listingId required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = DeezerBuyBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const { listingId } = parsed.data;
 
     const listing = await getListingById(listingId);
     if (!listing) return NextResponse.json({ error: "Listing not found" }, { status: 404 });

@@ -1,11 +1,28 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+
+const WebhookEvent = z.object({
+  event_type: z.string().max(128).optional(),
+  resource: z.object({
+    id: z.string().max(128).optional(),
+    intent: z.string().max(64).optional(),
+    purchase_units: z.array(z.object({
+      amount: z.object({ value: z.union([z.string(), z.number()]).optional() }).passthrough().optional(),
+    }).passthrough()).optional(),
+  }).passthrough().optional(),
+}).passthrough();
 
 export async function POST(req: Request) {
   // For PayPal/Venmo webhooks. Verification omitted here; add transmission id/cert verify for production.
   try {
-    const event = await req.json();
-    const resource = event?.resource || {};
+    const raw = await req.json().catch(() => null);
+    const parsed = WebhookEvent.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid webhook payload", issues: parsed.error.issues }, { status: 400 });
+    }
+    const event = parsed.data;
+    const resource: any = event.resource || {};
     const intent = resource?.intent || event?.event_type || "";
     const providerOrderId = resource?.id || null;
     const amountValue = Number(resource?.purchase_units?.[0]?.amount?.value || 0);

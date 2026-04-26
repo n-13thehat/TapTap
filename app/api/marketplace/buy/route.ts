@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
 import { prisma } from "@/lib/prisma";
 import { usdCentsToTap } from "@/lib/exchange-rates";
@@ -12,25 +13,26 @@ function env() {
   return { url, key };
 }
 
-type Body = {
-  productId?: string;
-  paymentMethod?: "venmo" | "direct" | "tap";
-  items?: any;
-  userId?: string;
-};
+const BuyBody = z.object({
+  productId: z.string().trim().min(1).max(128),
+  paymentMethod: z.enum(["venmo", "direct", "tap"]).optional(),
+  items: z.unknown().optional(),
+  userId: z.string().trim().min(1).max(64).optional(),
+});
 
 export async function POST(req: Request) {
   try {
     const { url, key } = env();
     const supabase = createClient(url, key);
-    const body = (await req.json().catch(() => ({}))) as Body;
-    const productId = String(body?.productId || "");
-    const paymentMethod = (body?.paymentMethod || "direct") as Body["paymentMethod"];
-    const userId = body?.userId;
-
-    if (!productId) {
-      return NextResponse.json({ error: "productId required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = BuyBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const body = parsed.data;
+    const productId = body.productId;
+    const paymentMethod = body.paymentMethod || "direct";
+    const userId = body.userId;
 
     // Look up product + price
     const { data: product, error: pErr } = await supabase

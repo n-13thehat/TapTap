@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
+
+const CurrencyCode = z.string().trim().min(2).max(10).regex(/^[A-Za-z0-9_-]+$/);
+const RateBody = z.object({
+  base: CurrencyCode,
+  quote: CurrencyCode,
+  rate: z.number().positive().finite(),
+});
 
 // GET /api/exchange-rates - Fetch current exchange rates
 export async function GET(req: Request) {
@@ -50,22 +58,15 @@ export async function GET(req: Request) {
 // POST /api/exchange-rates - Update exchange rates (admin only)
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { base, quote, rate } = body;
-
-    if (!base || !quote || typeof rate !== "number") {
+    const raw = await req.json().catch(() => null);
+    const parsed = RateBody.safeParse(raw);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Missing required fields: base, quote, rate" },
+        { error: "Invalid request body", issues: parsed.error.issues },
         { status: 400 }
       );
     }
-
-    if (rate <= 0) {
-      return NextResponse.json(
-        { error: "Rate must be positive" },
-        { status: 400 }
-      );
-    }
+    const { base, quote, rate } = parsed.data;
 
     // Upsert the exchange rate
     const exchangeRate = await prisma.exchangeRate.upsert({

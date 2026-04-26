@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 
-type CreateBody = {
-  items: any;
-  currency?: "USD";
-  totalCents: number;
-  idempotencyKey?: string;
-};
+const CreateBody = z.object({
+  items: z.unknown().optional(),
+  currency: z.literal("USD").optional(),
+  totalCents: z.number().int().positive().max(100_000_000),
+  idempotencyKey: z.string().trim().min(1).max(128).optional(),
+});
 
 async function createPaypalOrder(totalCents: number, currency: string) {
   const client = process.env.PAYPAL_CLIENT_ID;
@@ -39,12 +40,16 @@ async function createPaypalOrder(totalCents: number, currency: string) {
 
 export async function POST(req: Request) {
   try {
-    const body = (await req.json()) as CreateBody;
-    const totalCents = Math.max(0, Math.floor(Number(body.totalCents || 0)));
-    if (!totalCents) return NextResponse.json({ error: "totalCents required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = CreateBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const body = parsed.data;
+    const totalCents = body.totalCents;
 
     // Optional idempotency via Setting
-    const idem = String(body.idempotencyKey || "").trim();
+    const idem = body.idempotencyKey || "";
     if (idem) {
       const hit = await prisma.setting.findFirst({ where: { key: `venmo:idemp:${idem}` } });
       if (hit) return NextResponse.json({ ok: true, idempotent: true });
