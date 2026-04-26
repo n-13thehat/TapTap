@@ -87,9 +87,9 @@ const authConfig = {
         const hashed = user.hashedPassword || "";
         const valid = hashed && password ? await bcrypt.compare(password, hashed) : false;
         if (!valid) throw new Error(genericError);
-        if (getEnvVar('BETA_MODE') === 'true' && user.inviteCode !== getSecret('BETA_ACCESS_CODE', ''))
-          throw new Error("Invite-only beta. Invalid access code.");
-        if (!user.hasTapPass) throw new Error("TapPass required to join TapTap Beta.");
+        if (user.status === 'SUSPENDED' || user.status === 'BANNED' || user.status === 'DELETED') {
+          throw new Error("Account is not active.");
+        }
         return user;
       },
     }),
@@ -156,10 +156,10 @@ const authConfig = {
       return session;
     },
   },
-  // pages: {
-  //   signIn: '/auth/signin',
-  //   error: '/auth/error',
-  // },
+  pages: {
+    signIn: '/login',
+    error: '/login',
+  },
 };
 
 // Initialize NextAuth for v4

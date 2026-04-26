@@ -12,6 +12,8 @@ const SignupBody = z.object({
   walletAddress: z.string().trim().min(32).max(64).optional(),
 });
 
+const BETA_REQUIRED = () => process.env.BETA_MODE === "true";
+
 export async function POST(req: Request) {
   try {
     const raw = await req.json().catch(() => null);
@@ -21,25 +23,60 @@ export async function POST(req: Request) {
     }
     const { name, email, password, inviteCode, walletAddress } = parsed.data;
 
-    if (process.env.BETA_MODE === "true" && inviteCode !== process.env.BETA_ACCESS_CODE) {
-      return Response.json({ error: "Invalid beta invite code." }, { status: 403 });
+    if (BETA_REQUIRED() && !inviteCode) {
+      return Response.json({ error: "An invite code is required to join the beta." }, { status: 403 });
     }
 
-    // Check TapPass (mock verification)
-    const hasTapPass = walletAddress && walletAddress.startsWith("Tap");
+    // Validate invite code (if provided) against the BetaInvite table.
+    let invite: { id: string; claimedByUserId: string | null } | null = null;
+    if (inviteCode) {
+      invite = await prisma.betaInvite.findUnique({
+        where: { code: inviteCode },
+        select: { id: true, claimedByUserId: true },
+      });
+      if (!invite) {
+        return Response.json({ error: "Invalid invite code." }, { status: 403 });
+      }
+      if (invite.claimedByUserId) {
+        return Response.json({ error: "Invite code has already been used." }, { status: 403 });
+      }
+    }
+
+    // Reject duplicate emails up-front so the client gets a clean 409.
+    const existing = await prisma.user.findUnique({ where: { email }, select: { id: true } });
+    if (existing) {
+      return Response.json({ error: "An account with that email already exists." }, { status: 409 });
+    }
 
     const hashed = await bcrypt.hash(password, 10);
+    const username = name || email.split("@")[0];
 
-    const user = await prisma.user.create({
-      data: {
-        username: name || email.split("@")[0],
-        email,
-        hashedPassword: hashed,
-        inviteCode,
-        walletAddress,
-        hasTapPass,
-        authUserId: crypto.randomUUID(),
-      },
+    // Create user, profile, Tier-0 TapPass, and claim the invite in one transaction.
+    const user = await prisma.$transaction(async (tx) => {
+      const u = await tx.user.create({
+        data: {
+          username,
+          email,
+          hashedPassword: hashed,
+          inviteCode,
+          walletAddress,
+          hasTapPass: true,
+          authUserId: crypto.randomUUID(),
+        },
+      });
+      await tx.profile.create({
+        data: { userId: u.id, displayName: name ?? username },
+      });
+      await tx.tapPass.create({
+        data: { userId: u.id, level: 0, isActive: true },
+      });
+      if (invite) {
+        await tx.betaInvite.update({
+          where: { id: invite.id },
+          data: { claimedByUserId: u.id, claimedAt: new Date() },
+        });
+      }
+      return u;
     });
     // Attach default album (best-effort; non-blocking)
     addDefaultAlbumToLibrary(user.id).catch((e) => console.error("default album add failed", e));
@@ -68,8 +105,10 @@ export async function POST(req: Request) {
       }
     })();
 
-    return Response.json({ success: true, user });
+    const { hashedPassword: _hashed, ...safeUser } = user as any;
+    return Response.json({ success: true, user: safeUser });
   } catch (err: any) {
-    return Response.json({ error: err.message }, { status: 500 });
+    console.error("[auth/signup] failed", err);
+    return Response.json({ error: "Signup failed. Please try again." }, { status: 500 });
   }
 }

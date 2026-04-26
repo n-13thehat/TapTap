@@ -92,6 +92,8 @@ model User {
   inviteCode       String?
   walletAddress    String?
   hasTapPass       Boolean              @default(false)
+  onboardingComplete Boolean            @default(false)
+  onboardedAt      DateTime?
   CreatorRequest   CreatorRequest[]
 
   // New relations for upgraded features
