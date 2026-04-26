@@ -10,7 +10,7 @@ const env = () => {
 
 export async function createSupabaseServerClient() {
   const { url, anon } = env();
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   return createServerClient(url, anon, {
     cookies: {
       getAll: () => cookieStore.getAll(),

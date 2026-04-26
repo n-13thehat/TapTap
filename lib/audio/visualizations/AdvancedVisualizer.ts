@@ -194,8 +194,8 @@ export class AdvancedVisualizer {
     this.animationId = requestAnimationFrame(this.animate);
     
     // Get audio data
-    this.analyser.getByteFrequencyData(this.frequencyData);
-    this.analyser.getByteTimeDomainData(this.timeData);
+    (this.analyser as any).getByteFrequencyData(this.frequencyData);
+    (this.analyser as any).getByteTimeDomainData(this.timeData);
     
     // Update peaks
     this.updatePeaks();

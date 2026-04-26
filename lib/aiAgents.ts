@@ -1,7 +1,9 @@
 /**
  * TapTap AI Agents Integration for Notification System
- * Uses existing agent profiles from app/agents/TapTap_AI_Agents/profiles
+ * Uses agents from the database (Agent model)
  */
+
+import { prisma } from './prisma';
 
 export interface AIAgent {
   id: string;
@@ -38,8 +40,92 @@ export interface AgentAction {
   data?: Record<string, any>;
 }
 
-// TapTap AI Agents (from existing profiles)
-export const AI_AGENTS: Record<string, AIAgent> = {
+// Cache for database agents
+let agentsCache: Record<string, AIAgent> | null = null;
+let lastCacheUpdate = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+/**
+ * Load agents from database and cache them
+ */
+export async function loadAgentsFromDatabase(): Promise<Record<string, AIAgent>> {
+  const now = Date.now();
+
+  // Return cached agents if still valid
+  if (agentsCache && (now - lastCacheUpdate) < CACHE_TTL) {
+    return agentsCache;
+  }
+
+  try {
+    const dbAgents = await prisma.agent.findMany({
+      orderBy: { name: 'asc' },
+    });
+
+    const agents: Record<string, AIAgent> = {};
+
+    for (const agent of dbAgents) {
+      const meta = agent.meta as any || {};
+      const theme = meta.theme || {};
+
+      agents[agent.name.toLowerCase()] = {
+        id: agent.id,
+        name: agent.name,
+        role: agent.role,
+        tone: agent.tone,
+        vibe: agent.vibe,
+        signature: agent.signature,
+        color: theme.color || '#FFFFFF',
+        emoji: theme.emoji || '✨',
+        summary: agent.summary,
+        specialties: extractSpecialties(agent.role, agent.summary),
+      };
+    }
+
+    agentsCache = agents;
+    lastCacheUpdate = now;
+
+    console.log(`✅ Loaded ${Object.keys(agents).length} agents from database`);
+    return agents;
+  } catch (error) {
+    console.error('Failed to load agents from database:', error);
+    // Return fallback agents if database fails
+    return getFallbackAgents();
+  }
+}
+
+/**
+ * Extract specialties from role and summary
+ */
+function extractSpecialties(role: string, summary: string): string[] {
+  const text = `${role} ${summary}`.toLowerCase();
+  const specialties: string[] = [];
+
+  const keywords = [
+    'music', 'playlist', 'social', 'community', 'creator', 'wallet', 'economy',
+    'safety', 'security', 'analytics', 'data', 'creative', 'campaign', 'brand',
+    'design', 'reward', 'support', 'automation', 'story', 'video', 'revenue',
+    'schedule', 'influencer', 'partner'
+  ];
+
+  for (const keyword of keywords) {
+    if (text.includes(keyword)) {
+      specialties.push(keyword);
+    }
+  }
+
+  return specialties.length > 0 ? specialties : ['general'];
+}
+
+/**
+ * Get AI agents (from cache or database)
+ */
+export async function getAIAgents(): Promise<Record<string, AIAgent>> {
+  return await loadAgentsFromDatabase();
+}
+
+// Fallback agents (in case database is unavailable)
+function getFallbackAgents(): Record<string, AIAgent> {
+  return {
   // Music & Playlist Agent
   harmony: {
     id: 'harmony',
@@ -165,7 +251,11 @@ export const AI_AGENTS: Record<string, AIAgent> = {
     summary: 'Guardrails for visuals, palettes, motion, and aesthetic rationale.',
     specialties: ['brand', 'design', 'aesthetics', 'visuals', 'style'],
   },
-};
+  };
+}
+
+// Legacy export for backward compatibility
+export const AI_AGENTS: Record<string, AIAgent> = getFallbackAgents();
 
 /**
  * Message Templates for Different Event Types (using existing TapTap agents)
@@ -345,7 +435,8 @@ export const MESSAGE_TEMPLATES = {
 /**
  * Get the appropriate AI agent for an event type
  */
-export function getAgentForEvent(eventType: string): AIAgent {
+export async function getAgentForEvent(eventType: string): Promise<AIAgent> {
+  const agents = await getAIAgents();
   // Map event types to existing TapTap agents
   const eventAgentMap: Record<string, string> = {
     // Music events → Harmony (Playlist Architect)
@@ -402,18 +493,18 @@ export function getAgentForEvent(eventType: string): AIAgent {
   };
 
   const agentId = eventAgentMap[eventType] || 'haven'; // Default to Haven for unknown events
-  return AI_AGENTS[agentId];
+  return agents[agentId] || agents['haven'] || Object.values(agents)[0];
 }
 
 /**
  * Generate a personalized message from an AI agent
  */
-export function generateAgentMessage(
+export async function generateAgentMessage(
   eventType: string,
   data: Record<string, any>,
   userId: string
-): AgentMessage {
-  const agent = getAgentForEvent(eventType);
+): Promise<AgentMessage> {
+  const agent = await getAgentForEvent(eventType);
   const templateKey = eventType.replace('.', '_');
   const template = MESSAGE_TEMPLATES[templateKey as keyof typeof MESSAGE_TEMPLATES];
   

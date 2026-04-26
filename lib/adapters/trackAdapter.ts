@@ -1,11 +1,11 @@
 // Track adapter functions to handle interface inconsistencies
-import type { Track, Artist, TrackStat } from '@prisma/client';
+import type { Track, Artist, TrackStat, Album } from '@prisma/client';
 import type { LegacyTrack, TrackWithArtist } from '@/types/track';
 
 /**
  * Convert Prisma Track to Legacy Track format
  */
-export function trackToLegacy(track: Track & { artist?: Artist; stats?: TrackStat }): LegacyTrack {
+export function trackToLegacy(track: Track & { artist?: Artist; stats?: TrackStat; album?: Album | null }): LegacyTrack {
   return {
     id: track.id,
     title: track.title,
@@ -15,7 +15,7 @@ export function trackToLegacy(track: Track & { artist?: Artist; stats?: TrackSta
     url: track.storageKey || '',
     coverArt: track.album?.coverUrl || undefined,
     genre: (track.meta as any)?.genre || undefined,
-    year: track.album?.releaseDate ? new Date(track.album.releaseDate).getFullYear() : undefined,
+    year: track.album?.releaseAt ? new Date(track.album.releaseAt).getFullYear() : undefined,
     bpm: (track.meta as any)?.bpm || undefined,
     key: (track.meta as any)?.key || undefined,
     energy: (track.meta as any)?.energy || undefined,
@@ -79,10 +79,10 @@ export function trackWithArtistAdapter(track: Track & { artist: Artist }): Track
       id: track.artist.id,
       userId: track.artist.userId,
       stageName: track.artist.stageName,
-      bio: track.artist.bio,
-      avatarUrl: track.artist.avatarUrl,
-      headerUrl: track.artist.headerUrl,
-      verified: track.artist.verified,
+      bio: (track.artist.about as string) || null,
+      avatarUrl: ((track.artist.links as any)?.avatarUrl as string) || null,
+      headerUrl: ((track.artist.links as any)?.headerUrl as string) || null,
+      verified: false, // TODO: Add verified field to Artist model
       createdAt: track.artist.createdAt,
       updatedAt: track.artist.updatedAt,
     },
@@ -134,28 +134,27 @@ export function normalizeTrack(track: any): TrackWithArtist {
   };
 }
 
+type AnyTrackUrlShape = { storageKey?: string | null; url?: string | null };
+type AnyTrackDurationShape = { durationMs?: number | null; duration?: number | null };
+
 /**
  * Get track URL for playback
  */
-export function getTrackUrl(track: Track | LegacyTrack): string {
-  if ('storageKey' in track) {
-    return track.storageKey || '';
-  }
-  if ('url' in track) {
-    return track.url || '';
-  }
+export function getTrackUrl(track: AnyTrackUrlShape): string {
+  if ('storageKey' in track && track.storageKey) return track.storageKey;
+  if ('url' in track && track.url) return track.url;
   return '';
 }
 
 /**
  * Get track duration in seconds
  */
-export function getTrackDuration(track: Track | LegacyTrack): number {
-  if ('durationMs' in track) {
-    return track.durationMs ? Math.floor(track.durationMs / 1000) : 0;
+export function getTrackDuration(track: AnyTrackDurationShape): number {
+  if ('durationMs' in track && track.durationMs != null) {
+    return Math.floor(track.durationMs / 1000);
   }
-  if ('duration' in track) {
-    return track.duration || 0;
+  if ('duration' in track && track.duration != null) {
+    return track.duration;
   }
   return 0;
 }

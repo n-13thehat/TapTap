@@ -185,14 +185,6 @@ export const BOOTSTRAP_FLAGS: Record<string, FeatureFlag> = {
     environment: 'all'
   },
 
-  battles: {
-    key: 'battles',
-    enabled: true,
-    description: 'Enable Battles experience',
-    rolloutPercentage: 100,
-    environment: 'all'
-  },
-
   posterize: {
     key: 'posterize',
     enabled: true,

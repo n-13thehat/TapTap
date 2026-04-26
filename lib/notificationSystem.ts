@@ -93,7 +93,7 @@ class NotificationSystemImpl {
     }
     
     // Generate agent message
-    const message = generateAgentMessage(event.type, event.data, event.userId);
+    const message = await generateAgentMessage(event.type, event.data, event.userId);
     
     // Apply user customizations
     this.customizeMessage(message, settings);

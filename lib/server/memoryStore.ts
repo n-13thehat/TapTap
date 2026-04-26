@@ -39,7 +39,7 @@ export type UploadSessionRecord = {
   totalChunks: number;
   uploadedChunks: number[];
   uploadedBytes: number;
-  status: "pending" | "completed";
+  status: "pending" | "completed" | "failed";
   createdAt: string;
   finalizedAt?: string;
 };

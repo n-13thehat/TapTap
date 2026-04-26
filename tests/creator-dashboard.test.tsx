@@ -2,6 +2,23 @@ import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import CreatorPage from '../app/creator/page';
 import Analytics from '../app/creator/Analytics';
+import { FeatureFlagsProvider } from '../providers/FeatureFlagsProvider';
+import { SessionProvider } from 'next-auth/react';
+import AuthProvider from '../providers/AuthProvider';
+
+const mockSession = {
+  user: { id: 'test-user', name: 'Test', email: 'test@example.com' },
+  expires: new Date(Date.now() + 86400_000).toISOString(),
+} as any;
+
+const renderWithProviders = (ui: React.ReactElement) =>
+  render(
+    <SessionProvider session={mockSession}>
+      <AuthProvider session={mockSession}>
+        <FeatureFlagsProvider>{ui}</FeatureFlagsProvider>
+      </AuthProvider>
+    </SessionProvider>,
+  );
 
 // Mock framer-motion
 vi.mock('framer-motion', () => {
@@ -42,7 +59,7 @@ describe('Creator Dashboard', () => {
 
   describe('Main Creator Dashboard', () => {
     it('renders creator dashboard with all sections', () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
       
       // Check header
       expect(screen.getByText('Home · Studio Dashboard')).toBeInTheDocument();
@@ -60,7 +77,7 @@ describe('Creator Dashboard', () => {
     });
 
     it('displays content table with proper data', () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
 
       // Check content items
       expect(screen.getByText('Music For The Future')).toBeInTheDocument();
@@ -75,7 +92,7 @@ describe('Creator Dashboard', () => {
     });
 
     it('switches between tabs correctly', async () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
       
       // Default tab should be content
       expect(screen.getByText('Content & Assets')).toBeInTheDocument();
@@ -98,7 +115,7 @@ describe('Creator Dashboard', () => {
     });
 
     it('displays agent inbox with messages', () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
       
       expect(screen.getByText('AI Crew (DMs)')).toBeInTheDocument();
       expect(screen.getByText('Serenity')).toBeInTheDocument();
@@ -108,7 +125,7 @@ describe('Creator Dashboard', () => {
     });
 
     it('shows onboarding tasks', () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
       
       expect(screen.getByText('Onboarding')).toBeInTheDocument();
       expect(screen.getByText('Request creator access')).toBeInTheDocument();
@@ -118,7 +135,7 @@ describe('Creator Dashboard', () => {
     });
 
     it('displays content in list view', () => {
-      render(<CreatorPage />);
+      renderWithProviders(<CreatorPage />);
 
       // Should display content in list view
       expect(screen.getAllByText('plays')).toHaveLength(4); // Multiple instances expected

@@ -39,12 +39,14 @@ export const withServiceRole = async <T>(
 // Secure select function for multiple records
 export const secureSelectMany = async <T>(
   table: string,
-  columns: string = "*",
+  columnsOrBuilder: string | ((q: any) => any) = "*",
   filters?: Record<string, any>
 ): Promise<T[]> => {
-  let query = supabase.from(table).select(columns);
+  let query = typeof columnsOrBuilder === 'string'
+    ? supabase.from(table).select(columnsOrBuilder)
+    : columnsOrBuilder(supabase.from(table));
 
-  if (filters) {
+  if (filters && typeof columnsOrBuilder === 'string') {
     Object.entries(filters).forEach(([key, value]) => {
       query = query.eq(key, value);
     });

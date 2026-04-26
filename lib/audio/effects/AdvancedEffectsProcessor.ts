@@ -764,7 +764,7 @@ export class AdvancedEffectsProcessor {
     lowCut.frequency.value = lowCutFreq;
 
     // Configure saturation
-    saturation.curve = this.generateTapeSaturationCurve();
+    (saturation as any).curve = this.generateTapeSaturationCurve();
     saturation.oversample = '2x';
 
     // Connect delay feedback loop
@@ -831,7 +831,7 @@ export class AdvancedEffectsProcessor {
     toneFilter.frequency.value = 1000 + (tone * 9000); // 1kHz to 10kHz
 
     // Generate tube saturation curve
-    waveshaper.curve = this.generateTubeSaturationCurve();
+    (waveshaper as any).curve = this.generateTubeSaturationCurve();
     waveshaper.oversample = effect.oversampling as OverSampleType;
 
     // Connect nodes

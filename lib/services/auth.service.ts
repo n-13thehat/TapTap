@@ -99,7 +99,7 @@ export class AuthService {
       });
 
       return {
-        user: toPublicUserDTO(context.user),
+        user: toPublicUserDTO(context.user as unknown as Parameters<typeof toPublicUserDTO>[0]),
         tapPass: tapPass ? {
           level: tapPass.level,
           features: tapPass.features,

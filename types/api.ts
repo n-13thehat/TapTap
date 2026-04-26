@@ -255,11 +255,4 @@ export interface WebhookResponse {
   error?: string;
 }
 
-// Additional types for compatibility
-export interface TrackWithArtist extends Track {
-  artist: {
-    id: string;
-    name: string;
-    stageName?: string;
-  };
-}
+// TrackWithArtist is defined in ./track to stay aligned with the Prisma schema

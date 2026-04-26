@@ -2,8 +2,7 @@
  * Type guards and validation utilities
  */
 
-import type { UUID, Email, URL } from '../../types/global';
-import type { ApiResponse, ErrorResponse, PaginatedResponse } from '../../types/api';
+import type { UUID, Email, URL, ApiResponse, PaginatedResponse } from '../../types/global';
 
 // ============================================================================
 // Primitive Type Guards
@@ -105,7 +104,7 @@ export function isSuccessResponse<T>(value: unknown): value is ApiResponse<T> & 
   return isApiResponse(value) && value.success === true;
 }
 
-export function isErrorResponse(value: unknown): value is ErrorResponse {
+export function isErrorResponse(value: unknown): value is ApiResponse & { success: false; error: string } {
   return (
     isApiResponse(value) &&
     value.success === false &&

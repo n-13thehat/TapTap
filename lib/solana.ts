@@ -128,9 +128,12 @@ export const transferTapTokens = async (
 
 // Airdrop SOL for testing (devnet only)
 export const airdropSol = async (
-  publicKey: PublicKey,
+  publicKeyOrAddress: PublicKey | string,
   amount: number = 1
 ): Promise<string> => {
+  const publicKey = typeof publicKeyOrAddress === 'string'
+    ? new PublicKey(publicKeyOrAddress)
+    : publicKeyOrAddress;
   const { network } = getSolanaConfig();
   if (network === 'mainnet') {
     throw new Error('Airdrop not available on mainnet');

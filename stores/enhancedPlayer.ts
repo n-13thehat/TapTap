@@ -10,7 +10,7 @@ import { AdvancedAudioEffects } from '@/lib/audio/effects/AdvancedAudioEffects';
 import { AIAudioProcessor } from '@/lib/audio/ai/AIAudioProcessor';
 import { AdvancedVisualizer } from '@/lib/audio/visualizations/AdvancedVisualizer';
 import { eventBus, EventTypes } from '@/lib/events/eventBus';
-import { checkHavenPolicy, logPolicyViolation } from '@/lib/haven/policy';
+import { checkHavenPolicy, logPolicyViolation } from '@/lib/havenPolicy';
 
 // ============================================================================
 // Types & Interfaces
@@ -508,7 +508,7 @@ export const useEnhancedPlayerStore = create<EnhancedPlayerStore>()(
           }));
 
           // Set up event listeners
-          get().setupEventListeners();
+          (get() as any).setupEventListeners();
 
           // Load persisted state
           await get().loadState();
@@ -647,7 +647,7 @@ export const useEnhancedPlayerStore = create<EnhancedPlayerStore>()(
 
             // Prepare next track for gapless playback
             if (state.audioSettings.gaplessPlayback) {
-              get().prepareNextTrack();
+              (get() as any).prepareNextTrack();
             }
           }
 
@@ -822,7 +822,7 @@ export const useEnhancedPlayerStore = create<EnhancedPlayerStore>()(
         if (playbackModes.shuffle || playbackModes.smartShuffle) {
           // Smart shuffle considers listening history and preferences
           if (playbackModes.smartShuffle && state.ai.enabled) {
-            nextIndex = get().getSmartShuffleIndex();
+            nextIndex = (get() as any).getSmartShuffleIndex();
           } else {
             nextIndex = Math.floor(Math.random() * queue.tracks.length);
           }

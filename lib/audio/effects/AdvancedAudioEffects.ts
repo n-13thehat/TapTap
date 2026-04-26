@@ -606,7 +606,7 @@ export class AdvancedAudioEffects {
     toneFilter.frequency.value = 1000 + (tone * 9000); // 1kHz to 10kHz
 
     // Generate distortion curve
-    waveshaper.curve = this.generateDistortionCurve(type);
+    (waveshaper as any).curve = this.generateDistortionCurve(type);
     waveshaper.oversample = '4x';
 
     // Connect nodes

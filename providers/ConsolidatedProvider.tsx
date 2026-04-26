@@ -6,6 +6,7 @@ import AuthProvider from "@/providers/AuthProvider";
 import { FeatureFlagsProvider } from "@/providers/FeatureFlagsProvider";
 import { EventBusProvider } from "@/providers/EventBusProvider";
 import GlobalSearchProvider from "@/providers/GlobalSearchProvider";
+import { ToastProvider } from "@/components/ui/toast-provider";
 
 interface ConsolidatedProviderProps {
   children: React.ReactNode;
@@ -19,7 +20,9 @@ export default function ConsolidatedProvider({ children, session }: Consolidated
         <FeatureFlagsProvider>
           <EventBusProvider>
             <GlobalSearchProvider>
-              {children}
+              <ToastProvider>
+                {children}
+              </ToastProvider>
             </GlobalSearchProvider>
           </EventBusProvider>
         </FeatureFlagsProvider>

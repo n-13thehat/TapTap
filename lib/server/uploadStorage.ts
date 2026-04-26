@@ -53,8 +53,8 @@ export async function finalizeChunks(sessionId: string, originalFileName: string
     writeStream.write(data);
   }
   writeStream.end();
-  await new Promise((resolve, reject) => {
-    writeStream.on("finish", resolve);
+  await new Promise<void>((resolve, reject) => {
+    writeStream.on("finish", () => resolve());
     writeStream.on("error", reject);
   });
 

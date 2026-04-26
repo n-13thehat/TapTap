@@ -23,9 +23,10 @@ const mapTrackToPersisted = (track: Track): PersistedTrack => ({
   id: track.id,
   title: track.title,
   artistId: track.artist || "legacy-artist",
-  audio_url: track.audio_url,
-  cover_art: track.cover_art ?? undefined,
-  duration: track.duration ?? undefined,
+  durationMs: track.duration != null ? Math.round(track.duration * 1000) : null,
+  storageKey: track.audio_url,
+  visibility: 'PUBLIC',
+  meta: { coverArt: track.cover_art ?? undefined } as any,
   createdAt: new Date(),
   updatedAt: new Date(),
 });
