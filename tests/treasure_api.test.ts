@@ -51,7 +51,7 @@ describe("TapCoin APIs", () => {
     const mod = await import("@/api/treasure/withdraw/route");
     const noAddr = await (mod as any).POST(new Request("http://localhost/api/treasure/withdraw", { method: "POST", body: JSON.stringify({ amount: 10 }) }));
     expect(noAddr.status).toBe(400);
-    const ok = await (mod as any).POST(new Request("http://localhost/api/treasure/withdraw", { method: "POST", body: JSON.stringify({ amount: 10, walletAddress: "So111" }) }));
+    const ok = await (mod as any).POST(new Request("http://localhost/api/treasure/withdraw", { method: "POST", body: JSON.stringify({ amount: 10, walletAddress: "So11111111111111111111111111111111111111112" }) }));
     expect(ok.ok).toBe(true);
   });
 });
