@@ -1,11 +1,25 @@
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
+import { z } from "zod";
 import { addDefaultAlbumToLibrary } from "@/lib/addDefaultAlbumToLibrary";
 import { generateKeypair, encryptSecret, airdropSol, mintTapTo } from "@/lib/solana";
 
+const SignupBody = z.object({
+  name: z.string().trim().min(1).max(60).optional(),
+  email: z.string().trim().toLowerCase().email().max(255),
+  password: z.string().min(8).max(128),
+  inviteCode: z.string().trim().min(1).max(64).optional(),
+  walletAddress: z.string().trim().min(32).max(64).optional(),
+});
+
 export async function POST(req: Request) {
   try {
-    const { name, email, password, inviteCode, walletAddress } = await req.json();
+    const raw = await req.json().catch(() => null);
+    const parsed = SignupBody.safeParse(raw);
+    if (!parsed.success) {
+      return Response.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const { name, email, password, inviteCode, walletAddress } = parsed.data;
 
     if (process.env.BETA_MODE === "true" && inviteCode !== process.env.BETA_ACCESS_CODE) {
       return Response.json({ error: "Invalid beta invite code." }, { status: 403 });

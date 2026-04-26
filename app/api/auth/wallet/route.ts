@@ -1,17 +1,28 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
+
+const WalletBody = z.object({
+  action: z.enum(["connect", "disconnect"]),
+  walletAddress: z.string().trim().min(32).max(64).optional(),
+  signature: z.string().trim().min(1).max(512).optional(),
+});
 
 export async function POST(req: Request) {
   try {
     const session = await auth();
-    
+
     if (!session?.user?.id) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const body = await req.json();
-    const { action, walletAddress, signature } = body;
+    const raw = await req.json().catch(() => null);
+    const parsed = WalletBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const { action, walletAddress, signature } = parsed.data;
 
     if (action === 'connect') {
       if (!walletAddress) {

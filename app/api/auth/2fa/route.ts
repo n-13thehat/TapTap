@@ -1,19 +1,30 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { authenticator } from 'otplib';
 import QRCode from 'qrcode';
 
+const TwoFaBody = z.object({
+  action: z.enum(["setup", "verify", "disable"]),
+  token: z.string().trim().min(1).max(20).optional(),
+  secret: z.string().trim().min(1).max(255).optional(),
+});
+
 export async function POST(req: Request) {
   try {
     const session = await auth();
-    
+
     if (!session?.user?.id) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const body = await req.json();
-    const { action, token, secret } = body;
+    const raw = await req.json().catch(() => null);
+    const parsed = TwoFaBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
+    }
+    const { action, token, secret } = parsed.data;
 
     if (action === 'setup') {
       // Generate secret for 2FA setup
