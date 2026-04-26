@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { randomBytes } from "crypto";
 import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
@@ -59,6 +60,7 @@ export async function POST(req: Request) {
         stageName: listing.artistName,
         pendingTap: netTap,
         status: "UNCLAIMED",
+        claimToken: randomBytes(16).toString("hex"),
       },
       select: { id: true, pendingTap: true, status: true, stageName: true, sourceId: true },
     });
