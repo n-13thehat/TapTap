@@ -26,7 +26,8 @@
 - [ ] Review route-to-role access matrix and verify `/api/admin/**` and admin UIs are ADMIN-only.
 - [ ] Confirm all API inputs are validated (Zod) and file uploads enforce type/size limits.
   - Run `pnpm audit:zod` for the current triage queue (mutating routes that parse a body without zod), grouped CRITICAL / HIGH / MEDIUM / LOW.
-  - Baseline: 32/175 routes use zod (18.3%); 63 mutating+body routes still need schemas. Address CRITICAL (auth/admin/payments/wallet/swap/treasure/marketplace) before launch.
+  - CRITICAL tier (auth/admin/payments/wallet/swap/treasure/marketplace): **closed (25/25)**.
+  - Coverage: 57/175 routes use zod (32.6%); 38 mutating+body routes remain (15 HIGH, 22 MEDIUM, 1 LOW) — non-launch-blocking but should be addressed for v1.x.
 - [x] Verify logs do not contain sensitive data — `lib/logger.ts` redacts keys matching `password|secret|token|authorization|cookie|api_key|private_key|mnemonic|seed_phrase|session` and Bearer/JWT-shaped values before console output.
 
 ## Deployment & Observability
