@@ -129,6 +129,27 @@ secrets/
 *.key
 *.crt
 
+# Wallets, mnemonics, treasury keypairs — NEVER COMMIT
+wallets.json
+wallet*.json
+*mnemonic*
+*.keypair
+*.keypair.json
+fee-payer*.json
+
+# Provider env exports / Vercel secrets dumps
+.env.vercel
+.env.*.local.backup
+.env.production.local.backup
+
+# DB auth-config / password reset scripts
+pg_hba*
+*-password.sql
+unlock_*.sql
+show-hba.sql
+update-pg-hba.*
+test-db-connection.*
+
 # Backup files
 *.bak
 *.backup
@@ -205,3 +226,14 @@ redis_data/
 *.backup
 *_BACKUP_*
 BACKUP_*/
+
+# Local tooling caches and scratch output
+.pnpm-store/
+docker-build-temp/
+*.tmp.txt
+.git_status_audit.tmp
+desktop.ini
+ts-out.tmp.txt
+test-out.tmp.txt
+build-out.tmp.txt
+lint-out.tmp.txt
