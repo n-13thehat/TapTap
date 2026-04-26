@@ -69,9 +69,9 @@ const nextConfig = {
     },
   },
 
-  // Disable TypeScript checking during build
+  // TypeScript checking enabled for build safety
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 
   // Security headers
