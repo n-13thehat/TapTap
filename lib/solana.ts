@@ -217,3 +217,17 @@ export const isValidSolanaAddress = (address: string): boolean => {
     return false;
   }
 };
+
+// Lightweight JSON-RPC caller for read paths that don't need a payer keypair.
+export const solanaRpcCall = async (method: string, params: any[]): Promise<any> => {
+  const { rpcUrl } = getSolanaConfig();
+  const res = await fetch(rpcUrl, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
+  });
+  if (!res.ok) throw new Error(`rpc ${method} failed: ${res.status}`);
+  const j = await res.json();
+  if (j.error) throw new Error(j.error?.message || `rpc ${method} error`);
+  return j.result;
+};
