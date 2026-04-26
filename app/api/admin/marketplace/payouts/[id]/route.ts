@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
+import { notifyAgentEvent } from "@/lib/agents/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -92,6 +93,17 @@ export async function POST(
         })
         .catch(() => {});
 
+      notifyAgentEvent({
+        userId: royalty.claimedByUserId,
+        eventType: "royalty.payout_approved",
+        data: {
+          royaltyId: royalty.id,
+          stageName: royalty.stageName,
+          source: royalty.source,
+          creditedTap: credit,
+        },
+      });
+
       return NextResponse.json({
         ok: true,
         royaltyId: royalty.id,
@@ -117,6 +129,18 @@ export async function POST(
         },
       })
       .catch(() => {});
+
+    notifyAgentEvent({
+      userId: royalty.claimedByUserId,
+      eventType: "royalty.payout_rejected",
+      data: {
+        royaltyId: royalty.id,
+        stageName: royalty.stageName,
+        source: royalty.source,
+        pendingTap: royalty.pendingTap,
+        note: note ?? "",
+      },
+    });
 
     return NextResponse.json({
       ok: true,

@@ -10,6 +10,7 @@ import {
   getListingById,
 } from "@/lib/marketplace/deezerListings";
 import { FeatureFlagManager } from "@/lib/features/flags";
+import { notifyAgentEvent } from "@/lib/agents/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -75,6 +76,20 @@ export async function POST(req: Request) {
         taxApplied: true,
       },
       select: { id: true },
+    });
+
+    notifyAgentEvent({
+      userId,
+      eventType: "marketplace.item_purchased",
+      data: {
+        item: listing.title || listingId,
+        amount: priceTap,
+        currency: "TAP",
+        transactionId: ledger.id,
+        listingId,
+        artistName: listing.artistName,
+        type: listing.type,
+      },
     });
 
     return NextResponse.json({

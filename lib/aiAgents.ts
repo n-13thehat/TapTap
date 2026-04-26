@@ -430,6 +430,34 @@ export const MESSAGE_TEMPLATES = {
       "🎯 Exclusive drop! '{collection}' just hit the marketplace.",
     ],
   },
+
+  // Royalty / payout events
+  royalty_claim_submitted: {
+    agentId: 'haven',
+    templates: [
+      "🛡️ Claim received for '{stageName}' ({pendingTap} TAP). Sending it to admins for review.",
+      "🛡️ Royalty claim from '{stageName}' is queued for admin approval ({pendingTap} TAP).",
+      "🛡️ Got your claim for '{stageName}'. The payout queue has it now.",
+    ],
+  },
+
+  royalty_payout_approved: {
+    agentId: 'treasure',
+    templates: [
+      "💰 Payout approved! {creditedTap} TAP credited for '{stageName}'. Your value is safe with me.",
+      "✅ {creditedTap} TAP unlocked for '{stageName}'. The payout is in your wallet.",
+      "💎 Royalty cleared — {creditedTap} TAP added for '{stageName}'.",
+    ],
+  },
+
+  royalty_payout_rejected: {
+    agentId: 'haven',
+    templates: [
+      "🛡️ Payout for '{stageName}' was sent back for review. {note}",
+      "⚠️ Your '{stageName}' claim needs another look. {note}",
+      "🛡️ Hold on '{stageName}' — flagged for follow-up. {note}",
+    ],
+  },
 };
 
 /**
@@ -463,6 +491,11 @@ export async function getAgentForEvent(eventType: string): Promise<AIAgent> {
     'marketplace.payment_processed': 'treasure',
     'marketplace.item_purchased': 'treasure',
     'marketplace.item_listed': 'treasure',
+
+    // Royalty / payout events
+    'royalty.claim_submitted': 'haven',
+    'royalty.payout_approved': 'treasure',
+    'royalty.payout_rejected': 'haven',
 
     // Live events → Nova (Creative Burst)
     'live.stream_started': 'nova',
@@ -549,6 +582,18 @@ export async function generateAgentMessage(
       break;
     case 'analytics.milestone':
       title = `${agent.emoji} Analytics Milestone`;
+      break;
+    case 'marketplace.item_purchased':
+      title = `${agent.emoji} Purchase Confirmed`;
+      break;
+    case 'royalty.claim_submitted':
+      title = `${agent.emoji} Claim Submitted`;
+      break;
+    case 'royalty.payout_approved':
+      title = `${agent.emoji} Payout Approved`;
+      break;
+    case 'royalty.payout_rejected':
+      title = `${agent.emoji} Payout Needs Review`;
       break;
     default:
       title = `${agent.emoji} Update from ${agent.name}`;

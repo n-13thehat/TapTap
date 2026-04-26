@@ -3,6 +3,7 @@ import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { FeatureFlagManager } from "@/lib/features/flags";
+import { notifyAgentEvent } from "@/lib/agents/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -54,6 +55,17 @@ export async function POST(req: Request) {
         claimToken: null,
       },
       select: { id: true, status: true, claimedByUserId: true, stageName: true, pendingTap: true },
+    });
+
+    notifyAgentEvent({
+      userId,
+      eventType: "royalty.claim_submitted",
+      data: {
+        royaltyId: updated.id,
+        stageName: updated.stageName,
+        pendingTap: updated.pendingTap,
+        source: royalty.source,
+      },
     });
 
     return NextResponse.json({

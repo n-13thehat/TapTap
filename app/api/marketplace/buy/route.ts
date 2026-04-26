@@ -3,6 +3,7 @@ import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
 import { prisma } from "@/lib/prisma";
 import { usdCentsToTap } from "@/lib/exchange-rates";
+import { notifyAgentEvent } from "@/lib/agents/notify";
 
 export const dynamic = "force-dynamic";
 
@@ -86,6 +87,18 @@ export async function POST(req: Request) {
               tapAmount,
               paymentMethod: "tap",
             },
+          },
+        });
+
+        notifyAgentEvent({
+          userId,
+          eventType: "marketplace.item_purchased",
+          data: {
+            item: productId,
+            amount: tapAmount,
+            currency: "TAP",
+            transactionId: transaction.id,
+            paymentMethod: "tap",
           },
         });
 
