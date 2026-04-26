@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
+
+const PriceBody = z.object({
+  usd: z.number().nonnegative().finite(),
+});
 
 async function isAdmin() {
   const session = await auth();
@@ -13,9 +18,12 @@ async function isAdmin() {
 export async function POST(req: Request) {
   if (!(await isAdmin())) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   try {
-    const body = await req.json();
-    const usd = Number(body.usd);
-    if (!Number.isFinite(usd) || usd < 0) return NextResponse.json({ error: 'invalid usd' }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = PriceBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: 'Invalid request body', issues: parsed.error.issues }, { status: 400 });
+    }
+    const { usd } = parsed.data;
     await prisma.setting.upsert({
       where: { userId_key: { userId: 'market', key: 'market:tap:usd' } },
       update: { value: { usd } as any },

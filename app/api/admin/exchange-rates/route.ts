@@ -1,8 +1,24 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { updateExchangeRate, getAllExchangeRates } from "@/lib/exchange-rates";
 
 export const dynamic = "force-dynamic";
+
+const CurrencyCode = z.string().trim().min(2).max(10).regex(/^[A-Za-z0-9_-]+$/);
+const RateEntry = z.object({
+  base: CurrencyCode,
+  quote: CurrencyCode,
+  rate: z.number().positive().finite(),
+});
+const BulkRatesBody = z.object({
+  rates: z.array(RateEntry).min(1).max(100),
+});
+const SingleRateBody = z.object({
+  base: CurrencyCode,
+  quote: CurrencyCode,
+  rate: z.number().positive().finite(),
+});
 
 // GET /api/admin/exchange-rates - Get all exchange rates (admin)
 export async function GET() {
@@ -21,32 +37,20 @@ export async function GET() {
 // POST /api/admin/exchange-rates - Update multiple exchange rates (admin)
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { rates } = body;
-
-    if (!Array.isArray(rates)) {
+    const raw = await req.json().catch(() => null);
+    const parsed = BulkRatesBody.safeParse(raw);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "rates must be an array" },
+        { error: "Invalid request body", issues: parsed.error.issues },
         { status: 400 }
       );
     }
+    const { rates } = parsed.data;
 
     const results = [];
     const errors = [];
 
-    for (const rate of rates) {
-      const { base, quote, rate: rateValue } = rate;
-
-      if (!base || !quote || typeof rateValue !== "number") {
-        errors.push(`Invalid rate data: ${JSON.stringify(rate)}`);
-        continue;
-      }
-
-      if (rateValue <= 0) {
-        errors.push(`Rate must be positive for ${base}/${quote}: ${rateValue}`);
-        continue;
-      }
-
+    for (const { base, quote, rate: rateValue } of rates) {
       try {
         const updatedRate = await updateExchangeRate(base, quote, rateValue);
         results.push(updatedRate);
@@ -73,22 +77,15 @@ export async function POST(req: Request) {
 // PUT /api/admin/exchange-rates - Update single exchange rate (admin)
 export async function PUT(req: Request) {
   try {
-    const body = await req.json();
-    const { base, quote, rate } = body;
-
-    if (!base || !quote || typeof rate !== "number") {
+    const raw = await req.json().catch(() => null);
+    const parsed = SingleRateBody.safeParse(raw);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Missing required fields: base, quote, rate" },
+        { error: "Invalid request body", issues: parsed.error.issues },
         { status: 400 }
       );
     }
-
-    if (rate <= 0) {
-      return NextResponse.json(
-        { error: "Rate must be positive" },
-        { status: 400 }
-      );
-    }
+    const { base, quote, rate } = parsed.data;
 
     const exchangeRate = await updateExchangeRate(base, quote, rate);
 

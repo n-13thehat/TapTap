@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { rateGate } from "@/api/_lib/rate";
+
+const StatusBody = z.object({
+  status: z.enum(["ACTIVE", "SUSPENDED", "BANNED"]),
+  reason: z.string().trim().max(500).optional(),
+});
 
 async function requireAdmin() {
   const session = await auth();
@@ -27,14 +33,12 @@ export async function PATCH(
 
   try {
     const { id } = await params;
-    const body = await req.json();
-    const { status } = body;
-
-    // Validate status
-    const validStatuses = ['ACTIVE', 'SUSPENDED', 'BANNED'];
-    if (!validStatuses.includes(status)) {
-      return NextResponse.json({ error: "Invalid status" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = StatusBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const { status, reason } = parsed.data;
 
     // Check if user exists
     const existingUser = await prisma.user.findUnique({
@@ -85,7 +89,7 @@ export async function PATCH(
         details: {
           newStatus: status,
           targetUserEmail: existingUser.email,
-          reason: body.reason || 'Admin action'
+          reason: reason || 'Admin action'
         }
       }
     }).catch(() => {

@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { rateGate } from "@/api/_lib/rate";
+
+const CreateLeagueBody = z.object({
+  name: z.string().trim().min(1).max(100),
+  youtubeChannelId: z.string().trim().min(1).max(64),
+  tier: z.enum(["PREMIER", "MAJOR", "RISING", "UNDERGROUND"]),
+  description: z.string().trim().max(2000).optional(),
+});
 
 async function requireAdmin() {
   const session = await auth();
@@ -137,13 +145,12 @@ export async function POST(req: Request) {
   if (!admin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   try {
-    const body = await req.json();
-    const { name, youtubeChannelId, tier, description } = body;
-
-    // Validate required fields
-    if (!name || !youtubeChannelId || !tier) {
-      return NextResponse.json({ error: "Name, YouTube channel ID, and tier are required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = CreateLeagueBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const { name, youtubeChannelId, tier, description } = parsed.data;
 
     const hasBattleLeague = Boolean((prisma as any).battleLeague);
     if (!hasBattleLeague) {

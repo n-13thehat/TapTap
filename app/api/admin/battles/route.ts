@@ -1,7 +1,17 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { rateGate } from "@/api/_lib/rate";
+
+const CreateBattleBody = z.object({
+  title: z.string().trim().min(1).max(200).optional(),
+  battlerA: z.string().trim().min(1).max(100),
+  battlerB: z.string().trim().min(1).max(100),
+  scheduledAt: z.string().datetime().optional(),
+  leagueId: z.string().trim().min(1).max(64).optional(),
+  battleType: z.string().trim().min(1).max(40).optional(),
+});
 
 const UI_STATUS_TO_CONTENT_STATUS: Record<string, string> = {
   LIVE: "ACTIVE",
@@ -175,13 +185,12 @@ export async function POST(req: Request) {
   if (!admin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   try {
-    const body = await req.json();
-    const { title, battlerA, battlerB, scheduledAt, leagueId, battleType } = body;
-
-    // Validate required fields
-    if (!battlerA || !battlerB) {
-      return NextResponse.json({ error: "Battler names are required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = CreateBattleBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const { title, battlerA, battlerB, scheduledAt, leagueId, battleType } = parsed.data;
 
     const hasBattle = Boolean((prisma as any).battle);
     if (!hasBattle) {

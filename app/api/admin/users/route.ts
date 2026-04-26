@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { rateGate } from "@/api/_lib/rate";
 import bcrypt from "bcryptjs";
+
+const CreateUserBody = z.object({
+  username: z.string().trim().min(3).max(30).regex(/^[a-zA-Z0-9_-]+$/),
+  email: z.string().trim().toLowerCase().email().max(255),
+  password: z.string().min(8).max(128),
+  role: z.enum(["USER", "CREATOR", "ADMIN"]).optional(),
+});
 
 async function requireAdmin() {
   const session = await auth();
@@ -115,13 +123,12 @@ export async function POST(req: Request) {
   if (!admin) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   try {
-    const body = await req.json();
-    const { username, email, role, password } = body;
-
-    // Validate required fields
-    if (!username || !email || !password) {
-      return NextResponse.json({ error: "Username, email, and password are required" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = CreateUserBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const { username, email, role, password } = parsed.data;
 
     // Check if user already exists
     const existingUser = await prisma.user.findFirst({

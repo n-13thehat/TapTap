@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { auth } from "@/auth.config";
 import { prisma } from "@/lib/prisma";
 import { rateGate } from "@/api/_lib/rate";
+
+const RoleBody = z.object({
+  role: z.enum(["USER", "CREATOR", "ADMIN"]),
+});
 
 async function requireAdmin() {
   const session = await auth();
@@ -27,14 +32,12 @@ export async function PATCH(
 
   try {
     const { id } = await params;
-    const body = await req.json();
-    const { role } = body;
-
-    // Validate role
-    const validRoles = ['USER', 'CREATOR', 'ADMIN'];
-    if (!validRoles.includes(role)) {
-      return NextResponse.json({ error: "Invalid role" }, { status: 400 });
+    const raw = await req.json().catch(() => null);
+    const parsed = RoleBody.safeParse(raw);
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid request body", issues: parsed.error.issues }, { status: 400 });
     }
+    const { role } = parsed.data;
 
     // Check if user exists
     const existingUser = await prisma.user.findUnique({
