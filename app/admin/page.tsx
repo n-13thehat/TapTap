@@ -258,9 +258,16 @@ export default function AdminDashboard() {
           <h2 className="text-2xl font-bold text-white mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             <QuickAction
+              icon={<Crown className="h-5 w-5" />}
+              title="Economy Control Center"
+              description="Blockchain bank, prices, mint/burn/transfer, swap"
+              href="/admin/economy"
+              color="amber"
+            />
+            <QuickAction
               icon={<Shield className="h-5 w-5" />}
               title="The Trap"
-              description="Treasury management, tax metrics, airdrops"
+              description="Off-chain treasury, tax metrics, airdrops"
               href="/admin/trap"
               color="emerald"
             />
