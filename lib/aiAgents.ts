@@ -507,6 +507,9 @@ export async function getAgentForEvent(eventType: string): Promise<AIAgent> {
     'system.error_occurred': 'haven',
     'user.signed_in': 'haven',
 
+    // Onboarding completion → Hope (Listener Companion welcomes new user)
+    'user.onboarded': 'hope',
+
     // Creator events → Muse (Creator Whisperer)
     'upload.completed': 'muse',
     'user.creator_mode_toggled': 'muse',

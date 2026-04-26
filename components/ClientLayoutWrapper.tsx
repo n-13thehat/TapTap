@@ -15,7 +15,6 @@ const AbstractOrb = dynamicVisual(() => import("@/visuals/AbstractOrb"));
 const AssistiveOverlay = dynamicClientOnly(() => import("@/providers/AssistiveOverlay"));
 const MatrixIframeInitializer = dynamicClientOnly(() => import("@/components/MatrixIframeInitializer"));
 const CommandPalette = dynamicClientOnly(() => import("@/components/navigation/CommandPalette").then(mod => ({ default: mod.CommandPalette })));
-const OnboardingFlow = dynamicClientOnly(() => import("@/components/onboarding/OnboardingFlow").then(mod => ({ default: mod.OnboardingFlow })));
 
 function DebugOverlaySlot() {
   const { isEnabled } = useFeatureFlagsContext();
@@ -38,7 +37,6 @@ export default function ClientLayoutWrapper({ children }: ClientLayoutWrapperPro
         <PWAInitializer />
         <DebugOverlaySlot />
         <CommandPalette />
-        <OnboardingFlow />
       </MatrixRainProvider>
     </ConsolidatedProvider>
   );

@@ -123,7 +123,7 @@ const authConfig = {
       : []),
   ],
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account, trigger, session }) {
       if (user) {
         const u = user;
         token.id = u.id;
@@ -132,12 +132,22 @@ const authConfig = {
         token.walletAddress = u.walletAddress || null;
         token.twoFactorEnabled = u.twoFactorEnabled || false;
         token.creatorMode = u.creatorMode || false;
+        token.onboardingComplete = u.onboardingComplete ?? false;
       }
 
       // Store provider info for wallet connections
       if (account) {
         token.provider = account.provider;
         token.providerAccountId = account.providerAccountId;
+      }
+
+      // Allow client-side useSession().update() to refresh the onboarding flag
+      // (and role, in case it changes during onboarding).
+      if (trigger === 'update' && session && typeof session === 'object') {
+        if (typeof session.onboardingComplete === 'boolean') {
+          token.onboardingComplete = session.onboardingComplete;
+        }
+        if (session.role) token.role = session.role;
       }
 
       return token;
@@ -150,6 +160,7 @@ const authConfig = {
         session.user.walletAddress = token.walletAddress;
         session.user.twoFactorEnabled = token.twoFactorEnabled;
         session.user.creatorMode = token.creatorMode;
+        session.user.onboardingComplete = token.onboardingComplete ?? false;
         session.user.provider = token.provider;
         session.user.providerAccountId = token.providerAccountId;
       }

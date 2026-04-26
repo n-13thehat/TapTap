@@ -81,16 +81,13 @@ export default function UXLabPage() {
                   icon={<Users className="w-5 h-5 text-blue-400" />} 
                 />
                 <CardContent>
-                  <p className="text-sm mb-3">4-step guided tour for new users</p>
+                  <p className="text-sm mb-3">Six-step agent-led wizard for new users</p>
                   <Button
-                    onClick={() => {
-                      localStorage.removeItem('taptap_onboarding_completed');
-                      window.location.reload();
-                    }}
+                    onClick={() => { window.location.href = '/onboarding'; }}
                     variant="outline"
                     className="w-full border-matrix-primary/30 text-matrix-primary"
                   >
-                    Reset & View
+                    Open Wizard
                   </Button>
                 </CardContent>
               </Card>

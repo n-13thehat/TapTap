@@ -56,6 +56,8 @@ const EVENT_TO_NOTIFICATION_TYPE: Record<string, NotificationType> = {
   'analytics.milestone': 'SYSTEM',
   'system.error_occurred': 'SYSTEM',
   'user.signed_in': 'SYSTEM',
+  // Onboarding
+  'user.onboarded': 'SYSTEM',
 };
 
 function resolveNotificationType(eventType: string): NotificationType {
