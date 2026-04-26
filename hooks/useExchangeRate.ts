@@ -10,6 +10,7 @@ export interface ExchangeRate {
 
 export interface UseExchangeRateReturn {
   rate: number;
+  ready: boolean;
   loading: boolean;
   error: string | null;
   convertTapToUsd: (tapAmount: number) => number;
@@ -17,10 +18,11 @@ export interface UseExchangeRateReturn {
   refresh: () => Promise<void>;
 }
 
-const DEFAULT_TAP_USD_RATE = 0.01; // 1 TapCoin = $0.01 USD (fallback)
-
+// No silent fallback. If TAP/USD has not been configured at /admin/economy,
+// `ready` is false and consumers should hide USD displays rather than print
+// a stale price.
 export function useExchangeRate(): UseExchangeRateReturn {
-  const [rate, setRate] = useState<number>(DEFAULT_TAP_USD_RATE);
+  const [rate, setRate] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -29,35 +31,30 @@ export function useExchangeRate(): UseExchangeRateReturn {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('/api/exchange-rates?base=TAPC&quote=USD');
+      const response = await fetch('/api/exchange-rates/tap-usd');
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch exchange rate: ${response.statusText}`);
+        throw new Error(data?.error || `Failed to fetch exchange rate: ${response.statusText}`);
       }
 
-      const data = await response.json();
-
-      if (data.rates && data.rates.length > 0) {
-        setRate(data.rates[0].rate);
-      } else {
-        // Use default rate if API doesn't return a rate
-        setRate(DEFAULT_TAP_USD_RATE);
-      }
+      const next = typeof data?.rate === 'number' && data.rate > 0 ? data.rate : 0;
+      setRate(next);
     } catch (err) {
-      console.warn('Failed to fetch exchange rate, using default:', err);
+      console.warn('Exchange rate unavailable:', err);
       setError(err instanceof Error ? err.message : 'Failed to fetch exchange rate');
-      setRate(DEFAULT_TAP_USD_RATE);
+      setRate(0);
     } finally {
       setLoading(false);
     }
   }, []);
 
   const convertTapToUsd = useCallback((tapAmount: number): number => {
-    return Number((tapAmount * rate).toFixed(2));
+    return rate > 0 ? Number((tapAmount * rate).toFixed(2)) : 0;
   }, [rate]);
 
   const convertUsdToTap = useCallback((usdAmount: number): number => {
-    return Number((usdAmount / rate).toFixed(0));
+    return rate > 0 ? Number((usdAmount / rate).toFixed(0)) : 0;
   }, [rate]);
 
   const refresh = useCallback(async () => {
@@ -70,6 +67,7 @@ export function useExchangeRate(): UseExchangeRateReturn {
 
   return {
     rate,
+    ready: rate > 0 && !error,
     loading,
     error,
     convertTapToUsd,

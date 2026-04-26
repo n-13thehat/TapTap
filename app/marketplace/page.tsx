@@ -261,14 +261,16 @@ function Filters({
 }
 
 function PriceTag({ tap, usd }: { tap: number; usd?: number }) {
-  const { convertTapToUsd } = useExchangeRate();
-  const displayUsd = usd !== undefined ? usd : convertTapToUsd(tap);
+  const { convertTapToUsd, ready } = useExchangeRate();
+  const computedUsd = usd !== undefined ? usd : (ready ? convertTapToUsd(tap) : null);
 
   return (
     <div className="flex items-center gap-2 text-sm text-white">
       <Coins className="h-4 w-4 text-amber-300" />
       <span className="font-semibold">{tap.toFixed(2)} TAP</span>
-      <span className="text-xs text-white/60">≈ ${displayUsd.toFixed(2)}</span>
+      {computedUsd !== null && (
+        <span className="text-xs text-white/60">≈ ${computedUsd.toFixed(2)}</span>
+      )}
     </div>
   );
 }
@@ -1120,7 +1122,7 @@ function MarketplaceShell() {
           <div className="flex items-center gap-2 text-xs text-white/60">
             <Coins className="h-3 w-3 text-amber-300" />
             <span>
-              TAP/USD: {rateLoading ? "Loading..." : rateError ? "Error" : `$${tapUsdRate.toFixed(4)}`}
+              TAP/USD: {rateLoading ? "Loading..." : rateError ? "Not configured" : tapUsdRate > 0 ? `$${tapUsdRate.toFixed(4)}` : "—"}
             </span>
             {rateError && (
               <span className="text-red-400" title={rateError}>⚠️</span>
