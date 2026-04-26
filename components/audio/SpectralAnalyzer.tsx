@@ -121,13 +121,13 @@ export default function SpectralAnalyzer({
   const [showSettings, setShowSettings] = useState(false);
   
   // Animation frame reference
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const lastUpdateTime = useRef<number>(0);
-  
+
   // Analysis buffers
-  const frequencyBuffer = useRef<Uint8Array>();
-  const timeBuffer = useRef<Uint8Array>();
-  const previousFrequencyData = useRef<Uint8Array>();
+  const frequencyBuffer = useRef<Uint8Array | undefined>(undefined);
+  const timeBuffer = useRef<Uint8Array | undefined>(undefined);
+  const previousFrequencyData = useRef<Uint8Array | undefined>(undefined);
 
   // Initialize analyzer
   useEffect(() => {
@@ -191,13 +191,13 @@ export default function SpectralAnalyzer({
       lastUpdateTime.current = timestamp;
 
       // Get frequency and time domain data
-      analyzerNode.getByteFrequencyData(frequencyBuffer.current!);
-      analyzerNode.getByteTimeDomainData(timeBuffer.current!);
+      (analyzerNode as any).getByteFrequencyData(frequencyBuffer.current!);
+      (analyzerNode as any).getByteTimeDomainData(timeBuffer.current!);
 
       // Perform analysis
       const analysis = performSpectralAnalysis(
-        frequencyBuffer.current!,
-        timeBuffer.current!,
+        frequencyBuffer.current! as unknown as Uint8Array,
+        timeBuffer.current! as unknown as Uint8Array,
         audioContext.sampleRate,
         analyzerNode.frequencyBinCount
       );

@@ -111,9 +111,12 @@ export default function Sidebar() {
       </motion.div>
 
       {/* Enhanced Navigation */}
-      <nav className="space-y-2 relative z-10">
+      <nav className="space-y-2 relative z-10" aria-label="Main navigation">
         {NAV.map((item, index) => {
-          const active = pathname === item.href || pathname?.startsWith(`${item.href}/`);
+          // Exact match for "/" to avoid it matching every route
+          const active = item.href === "/"
+            ? pathname === "/"
+            : pathname === item.href || pathname?.startsWith(`${item.href}/`);
           const Icon = item.icon;
 
           return (
@@ -126,6 +129,7 @@ export default function Sidebar() {
             >
               <Link
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={`group relative flex items-center gap-4 rounded-xl border px-4 py-3 text-sm transition-all duration-300 overflow-hidden
                   ${active
                     ? "border-cyan-400/50 bg-gradient-to-r from-cyan-500/20 to-purple-500/10 text-cyan-100 shadow-lg shadow-cyan-500/20"

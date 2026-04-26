@@ -56,7 +56,7 @@ export default function MatrixButton({
       whileHover={!disabled && !loading ? { scale: 1.02 } : undefined}
       whileTap={!disabled && !loading ? { scale: 0.98 } : undefined}
       disabled={disabled || loading}
-      {...props}
+      {...props as any}
     >
       {/* Matrix scan line effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000" />

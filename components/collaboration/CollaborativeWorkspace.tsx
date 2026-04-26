@@ -77,7 +77,8 @@ import {
   Minimize2,
   RefreshCw,
   Power,
-  Signal
+  Signal,
+  BarChart3
 } from 'lucide-react';
 
 interface CollaborativeWorkspaceProps {
@@ -188,7 +189,7 @@ export default function CollaborativeWorkspace({
   
   // Refs
   const chatContainerRef = useRef<HTMLDivElement>(null);
-  const typingTimeoutRef = useRef<NodeJS.Timeout>();
+  const typingTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   // Initialize real-time engine
   useEffect(() => {

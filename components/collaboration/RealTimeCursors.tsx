@@ -104,7 +104,7 @@ export default function RealTimeCursors({
   const [selectionStart, setSelectionStart] = useState<{ x: number; y: number } | null>(null);
   const [currentSelection, setCurrentSelection] = useState<SelectionBox | null>(null);
   
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const lastUpdateTime = useRef<number>(0);
   const cursorTrails = useRef<Map<string, { x: number; y: number; timestamp: number }[]>>(new Map());
 

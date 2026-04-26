@@ -43,9 +43,9 @@ import {
   Eye,
   EyeOff
 } from 'lucide-react';
-import { AdvancedAudioVisualizer } from '@/components/audio/AdvancedAudioVisualizer';
-import { AdvancedEffectsRack } from '@/components/audio/AdvancedEffectsRack';
-import { AIAudioStudio } from '@/components/audio/AIAudioStudio';
+import AdvancedAudioVisualizer from '@/components/audio/AdvancedAudioVisualizer';
+import AdvancedEffectsRack from '@/components/audio/AdvancedEffectsRack';
+import AIAudioStudio from '@/components/audio/AIAudioStudio';
 
 interface EnhancedGlobalPlayerProps {
   className?: string;
@@ -298,7 +298,7 @@ export default function EnhancedGlobalPlayer({ className = '' }: EnhancedGlobalP
               playbackModes.repeat !== 'none' ? 'text-green-400' : 'text-white/60 hover:text-white'
             }`}
           >
-            {playbackModes.repeat === 'one' ? <RepeatOnce size={16} /> : <Repeat size={16} />}
+            {playbackModes.repeat === 'one' ? <Repeat1 size={16} /> : <Repeat size={16} />}
           </button>
         </div>
 
@@ -503,7 +503,7 @@ export default function EnhancedGlobalPlayer({ className = '' }: EnhancedGlobalP
                         playbackModes.repeat !== 'none' ? 'bg-green-600 text-white' : 'text-white/60 hover:text-white hover:bg-white/10'
                       }`}
                     >
-                      {playbackModes.repeat === 'one' ? <RepeatOnce size={20} /> : <Repeat size={20} />}
+                      {playbackModes.repeat === 'one' ? <Repeat1 size={20} /> : <Repeat size={20} />}
                     </button>
                   </div>
                   
@@ -820,7 +820,7 @@ export default function EnhancedGlobalPlayer({ className = '' }: EnhancedGlobalP
                 playbackModes.repeat !== 'none' ? 'bg-white/20 text-white' : 'text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
-              {playbackModes.repeat === 'one' ? <RepeatOnce size={24} /> : <Repeat size={24} />}
+              {playbackModes.repeat === 'one' ? <Repeat1 size={24} /> : <Repeat size={24} />}
             </button>
           </div>
           

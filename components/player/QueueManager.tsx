@@ -103,7 +103,7 @@ export default function QueueManager({
     setDragOverIndex(null);
   }, [draggedIndex, onReorder]);
 
-  const handleDragEnd = useCallback(() => {
+  const handleDragEnd = useCallback((e?: any) => {
     setDraggedIndex(null);
     setDragOverIndex(null);
   }, []);
@@ -189,10 +189,10 @@ export default function QueueManager({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   draggable
-                  onDragStart={(e) => handleDragStart(e, index)}
-                  onDragOver={(e) => handleDragOver(e, index)}
-                  onDrop={(e) => handleDrop(e, index)}
-                  onDragEnd={handleDragEnd}
+                  onDragStart={(e: any) => handleDragStart(e, index)}
+                  onDragOver={(e: any) => handleDragOver(e, index)}
+                  onDrop={(e: any) => handleDrop(e, index)}
+                  onDragEnd={(e: any) => handleDragEnd(e)}
                   className={`
                     group flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all
                     ${isCurrentTrack 

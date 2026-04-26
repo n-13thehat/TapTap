@@ -16,7 +16,8 @@ import {
   Plus
 } from 'lucide-react';
 import { useFeaturedContent } from '@/hooks/useFeaturedContent';
-import { usePlayerStore, type Track as PlayerTrack } from '@/stores/player';
+import { usePlayerStore } from '@/stores/player';
+import { type Track as UnifiedTrack } from '@/stores/unifiedPlayer';
 import TrackList from '@/components/library/TrackList';
 import { DEFAULT_COVER, type Track as LibraryTrack } from '@/app/library/types';
 
@@ -37,14 +38,14 @@ export default function FeaturedSection({ onPlayTrack }: FeaturedSectionProps) {
 
   const { setQueueList, playTrack } = usePlayerStore();
 
-  const toPlayerTrack = (track: any): PlayerTrack => ({
+  const toPlayerTrack = (track: any): UnifiedTrack => ({
     id: track.id,
     title: track.title,
     artist: track.artist,
-    album_id: track.album_id ?? track.albumId ?? null,
-    audio_url: track.audio_url || track.audioUrl || track.url || '',
-    cover_art: track.cover_art || track.cover || track.coverArt || track.album?.coverUrl || null,
-    duration: track.duration ?? (track.durationMs ? track.durationMs / 1000 : null),
+    album: track.album,
+    cover: track.cover_art || track.cover || track.coverArt || track.album?.coverUrl,
+    audioUrl: track.audio_url || track.audioUrl || track.url || '',
+    duration: track.duration ?? (track.durationMs ? track.durationMs / 1000 : undefined),
   });
 
   const toLibraryTrack = (track: any): LibraryTrack => ({
@@ -61,20 +62,20 @@ export default function FeaturedSection({ onPlayTrack }: FeaturedSectionProps) {
 
   const handlePlayAll = () => {
     if (tracks.length === 0) return;
-    const queue = tracks.map(toPlayerTrack).filter(t => t.audio_url);
+    const queue = tracks.map(toPlayerTrack).filter(t => t.audioUrl);
     if (!queue.length) return;
-    setQueueList(queue);
-    playTrack(queue[0]);
+    setQueueList(queue as any);
+    playTrack(queue[0] as any);
     onPlayTrack?.(toLibraryTrack(queue[0]));
   };
 
   const handleShuffle = () => {
     if (tracks.length === 0) return;
     const shuffled = [...tracks].sort(() => Math.random() - 0.5);
-    const queue = shuffled.map(toPlayerTrack).filter(t => t.audio_url);
+    const queue = shuffled.map(toPlayerTrack).filter(t => t.audioUrl);
     if (!queue.length) return;
-    setQueueList(queue);
-    playTrack(queue[0]);
+    setQueueList(queue as any);
+    playTrack(queue[0] as any);
     onPlayTrack?.(toLibraryTrack(queue[0]));
   };
 

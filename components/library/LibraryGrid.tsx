@@ -82,7 +82,7 @@ function TrackCard({
 
         {/* Genre */}
         <div className="hidden md:block w-24">
-          <span className="text-sm text-white/60">{track.genre || 'Unknown'}</span>
+          <span className="text-sm text-white/60">{(track.meta as any)?.genre || 'Unknown'}</span>
         </div>
 
         {/* Play Count */}
@@ -92,7 +92,7 @@ function TrackCard({
 
         {/* Duration */}
         <div className="w-16 text-center">
-          <span className="text-sm text-white/60">{formatDuration(track.duration || 0)}</span>
+          <span className="text-sm text-white/60">{formatDuration(track.durationMs ? track.durationMs / 1000 : 0)}</span>
         </div>
 
         {/* Added Date */}
@@ -147,9 +147,9 @@ function TrackCard({
     <div className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors group">
       {/* Cover Art */}
       <div className="relative aspect-square bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg mb-3 overflow-hidden">
-        {track.cover_image ? (
-          <img 
-            src={track.cover_image} 
+        {(track.meta as any)?.coverUrl || track.album?.coverUrl ? (
+          <img
+            src={(track.meta as any)?.coverUrl || track.album?.coverUrl}
             alt={track.title}
             className="w-full h-full object-cover"
           />
@@ -188,8 +188,8 @@ function TrackCard({
         <p className="text-sm text-white/60 truncate">{getArtistName()}</p>
         
         <div className="flex items-center justify-between text-xs text-white/40">
-          <span>{track.genre || 'Unknown'}</span>
-          <span>{formatDuration(track.duration || 0)}</span>
+          <span>{(track.meta as any)?.genre || 'Unknown'}</span>
+          <span>{formatDuration(track.durationMs ? track.durationMs / 1000 : 0)}</span>
         </div>
 
         {playCount > 0 && (
@@ -208,8 +208,9 @@ export default function LibraryGrid({ tracks, viewMode, filter, sort }: LibraryG
   const { current, isPlaying, playTrack } = usePlayerStore();
 
   const handlePlay = async (track: Track) => {
-    if (!track.audio_url) {
-      console.warn('Track is missing audio_url, cannot play:', track.id);
+    const audioUrl = (track.meta as any)?.audioUrl || track.storageKey;
+    if (!audioUrl) {
+      console.warn('Track is missing audio URL, cannot play:', track.id);
       return;
     }
 
@@ -217,10 +218,10 @@ export default function LibraryGrid({ tracks, viewMode, filter, sort }: LibraryG
       id: track.id,
       title: track.title,
       artist: typeof track.artist === 'string' ? track.artist : track.artist?.stageName || null,
-      album_id: null,
-      audio_url: track.audio_url,
-      cover_art: track.cover_art ?? null,
-      duration: track.duration ?? null,
+      album_id: track.albumId || null,
+      audio_url: audioUrl,
+      cover_art: (track.meta as any)?.coverUrl || track.album?.coverUrl || null,
+      duration: track.durationMs ? track.durationMs / 1000 : null,
     };
 
     playTrack(playerTrack);

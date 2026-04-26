@@ -18,11 +18,11 @@ import {
   Send, 
   Mic, 
   MicOff, 
-  Video, 
-  VideoOff, 
-  Cast, 
+  Video,
+  VideoOff,
   Cast,
-  Share2, 
+  MonitorOff,
+  Share2,
   Copy, 
   ExternalLink, 
   Settings, 
@@ -366,7 +366,7 @@ export default function SocialPlayer({ className = '', onClose }: SocialPlayerPr
           >
             {social.broadcasting ? (
               <>
-                <CastOff size={14} className="inline mr-1" />
+                <MonitorOff size={14} className="inline mr-1" />
                 Stop
               </>
             ) : (

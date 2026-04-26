@@ -35,8 +35,8 @@ export default function MobileAudioPlayer({ className = '' }: MobileAudioPlayerP
     currentTime,
     duration,
     volume,
-    isShuffled,
-    repeatMode,
+    shuffle: isShuffled,
+    repeat: repeatMode,
     queue,
     currentIndex,
     play,
@@ -163,9 +163,11 @@ export default function MobileAudioPlayer({ className = '' }: MobileAudioPlayerP
             drag={isMobile ? 'y' : false}
             dragConstraints={{ top: -100, bottom: 100 }}
             dragElastic={0.2}
-            onDragEnd={(_, info) => handleSwipeGesture(info)}
+            onDragEnd={(_, info) => {
+              handleSwipeGesture(info);
+              setIsDragging(false);
+            }}
             onDragStart={() => setIsDragging(true)}
-            onDragEnd={() => setIsDragging(false)}
             whileTap={{ scale: 0.98 }}
           >
             {/* Track Info */}
@@ -315,7 +317,7 @@ export default function MobileAudioPlayer({ className = '' }: MobileAudioPlayerP
               </button>
 
               <motion.button
-                onClick={isPlaying ? pause : play}
+                onClick={() => isPlaying ? pause() : play()}
                 className="p-4 bg-teal-500 hover:bg-teal-600 text-white rounded-full transition-colors"
                 whileTap={{ scale: 0.95 }}
               >

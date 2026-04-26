@@ -90,6 +90,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setMode(mode === "rain" ? "galaxy" : "rain")}
                 className="matrix-mode-toggle"
+                aria-label={`Switch to ${mode === "rain" ? "Galaxy" : "Code Rain"} mode`}
                 title={`Switch to ${mode === "rain" ? "Galaxy" : "Code Rain"} mode`}
               >
                 {mode === "rain" ? (
@@ -105,6 +106,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 whileTap={{ scale: 0.98 }}
                 onClick={openSearch}
                 className="matrix-search-button"
+                aria-label="Open search (Cmd+K)"
                 title="Search (Cmd+K)"
               >
                 <Search className="h-4 w-4" />

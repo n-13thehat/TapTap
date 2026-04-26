@@ -47,10 +47,6 @@ export default function PWAInitializer() {
           body: message,
           tag: 'app-update',
           requireInteraction: true,
-          actions: [
-            { action: 'update', title: 'Update Now' },
-            { action: 'later', title: 'Later' }
-          ]
         });
       }
     };
