@@ -141,6 +141,8 @@ fee-payer*.json
 .env.vercel
 .env.*.local.backup
 .env.production.local.backup
+VERCEL_ENV*.txt
+verifyBucket.*
 
 # DB auth-config / password reset scripts
 pg_hba*
