@@ -130,9 +130,6 @@
     "engines": {
         "node": ">=18.18.0"
     },
-    "prisma": {
-        "seed": "node prisma/seed.js"
-    },
     "type": "module",
     "pnpm": {
         "onlyBuiltDependencies": [
