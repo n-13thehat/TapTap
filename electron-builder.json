@@ -8,15 +8,23 @@
   "files": [
     "electron/**/*.cjs",
     "electron/**/*.js",
-    ".next/**/*",
     "public/**/*",
-    "package.json",
-    "node_modules/**/*"
+    "package.json"
   ],
   "extraResources": [
     {
       "from": ".next/standalone",
       "to": "app-server",
+      "filter": ["**/*"]
+    },
+    {
+      "from": ".next/static",
+      "to": "app-server/.next/static",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "public",
+      "to": "app-server/public",
       "filter": ["**/*"]
     }
   ],
