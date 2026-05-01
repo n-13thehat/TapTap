@@ -10,6 +10,8 @@ import {
   Flag,
   Shield,
   ChevronRight,
+  Crown,
+  Hammer,
 } from "lucide-react";
 
 const ADMIN_ROLE_ALLOWLIST = ["ADMIN", "SUPERADMIN", "OWNER", "STAFF"];
@@ -53,6 +55,18 @@ const adminNavItems = [
     href: "/admin/trap",
     icon: Coins,
     description: "TAP token and treasury management",
+  },
+  {
+    name: "Economy",
+    href: "/admin/economy",
+    icon: Crown,
+    description: "On-chain bank, prices, swap",
+  },
+  {
+    name: "Token Forge",
+    href: "/admin/forge",
+    icon: Hammer,
+    description: "Mint, deploy, and manage SPL tokens across networks",
   },
   {
     name: "Feature Flags",

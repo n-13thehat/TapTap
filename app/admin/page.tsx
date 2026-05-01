@@ -24,7 +24,8 @@ import {
   Wallet,
   Flame,
   Waves,
-  Send
+  Send,
+  Hammer
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -262,6 +263,13 @@ export default function AdminDashboard() {
               title="Economy Control Center"
               description="Blockchain bank, prices, mint/burn/transfer, swap"
               href="/admin/economy"
+              color="amber"
+            />
+            <QuickAction
+              icon={<Hammer className="h-5 w-5" />}
+              title="Token Forge"
+              description="Spin up SPL tokens across Devnet → Testnet → Mainnet"
+              href="/admin/forge"
               color="amber"
             />
             <QuickAction

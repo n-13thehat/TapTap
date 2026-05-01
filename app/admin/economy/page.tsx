@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Crown, Shield, ExternalLink } from "lucide-react";
+import { Crown, Shield, ExternalLink, Hammer } from "lucide-react";
 import BankOverview from "@/components/admin/economy/BankOverview";
 import MarketPrices from "@/components/admin/economy/MarketPrices";
 import TreasuryActions from "@/components/admin/economy/TreasuryActions";
@@ -21,6 +21,13 @@ export default function EconomyControlCenter() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            <Link
+              href="/admin/forge"
+              className="inline-flex items-center gap-1 rounded-lg border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-xs text-amber-100 hover:bg-amber-400/20"
+            >
+              <Hammer className="h-3 w-3" /> Token Forge
+              <ExternalLink className="h-3 w-3" />
+            </Link>
             <Link
               href="/admin/trap"
               className="inline-flex items-center gap-1 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-3 py-2 text-xs text-emerald-100 hover:bg-emerald-400/20"
