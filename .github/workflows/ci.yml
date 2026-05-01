@@ -18,7 +18,26 @@ jobs:
   verify:
     name: typecheck · lint · test · build
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: ci
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+      SHADOW_DATABASE_URL: postgresql://ci:ci@localhost:5432/ci_shadow
 
     steps:
       - name: Checkout
@@ -39,8 +58,33 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Audit production dependencies (critical — hard gate)
+        run: pnpm audit --prod --audit-level=critical
+
+      - name: Audit production dependencies (high — advisory)
+        run: pnpm audit --prod --audit-level=high
+        continue-on-error: true
+
       - name: Generate Prisma client
         run: pnpm exec prisma generate
+
+      - name: Validate Prisma schema
+        run: pnpm exec prisma validate
+
+      - name: Apply migrations to ephemeral Postgres
+        run: pnpm exec prisma migrate deploy
+
+      # Advisory only: schema uses `relationMode = "prisma"` so app-level FKs
+      # disagree with legacy SQL-level FKs, producing benign cosmetic drift.
+      # The `migrate deploy` step above is the real gate that proves the
+      # migrations chain applies cleanly to an empty database.
+      - name: Check migration ↔ schema drift (advisory)
+        run: >
+          pnpm exec prisma migrate diff
+          --from-url "$DATABASE_URL"
+          --to-schema-datamodel prisma/schema.prisma
+          --exit-code
+        continue-on-error: true
 
       - name: Typecheck
         run: pnpm typecheck
@@ -57,8 +101,8 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
-          # Build-time stubs so Next.js does not fail on missing secrets in CI.
-          # Real values are injected at deploy-time by Vercel.
-          DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+          # Real DATABASE_URL is injected at deploy-time by Vercel; the CI
+          # service-container URL inherited from the job env is sufficient
+          # for build-time route collection / type generation.
           NEXTAUTH_SECRET: ci-build-only-not-a-real-secret
           NEXTAUTH_URL: http://localhost:3000
