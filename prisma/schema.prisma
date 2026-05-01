@@ -175,8 +175,8 @@ model User {
 }
 
 model Profile {
-  id String @id @default(uuid()) @db.Uuid 
-  userId      String   @unique 
+  id String @id @default(uuid()) @db.Uuid
+  userId      String   @unique
   displayName String?
   location    String?
   links Json?
@@ -192,8 +192,8 @@ model Profile {
 ///  * Devices & Sessions
 ///  * =======================
 model Device {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String     
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   type      DeviceType @default(WEB)
   ua        String?
   lastSeen  DateTime?
@@ -204,8 +204,8 @@ model Device {
 }
 
 model Session {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?   
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
   deviceId  String?
   ip        String?
   expiresAt DateTime?
@@ -218,8 +218,8 @@ model Session {
 
 // New: Auth tokens (refresh/reset/invite)
 model AuthToken {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String        
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   type      AuthTokenType @default(REFRESH)
   tokenHash String        @unique
   expiresAt DateTime
@@ -265,14 +265,14 @@ model Album {
 }
 
 model Waveform {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   points    String
   createdAt DateTime @default(now())
   tracks    Track[]
 }
 
 model Track {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   artistId        String           @db.Uuid
   albumId         String?          @db.Uuid
   title           String
@@ -305,8 +305,8 @@ model Track {
 
 // New: Aggregated counters per track
 model TrackStat {
-  id String @id @default(uuid()) @db.Uuid 
-  trackId     String   @unique 
+  id String @id @default(uuid()) @db.Uuid
+  trackId     String   @unique
   playCount   Int      @default(0)
   likeCount   Int      @default(0)
   repostCount Int      @default(0)
@@ -315,9 +315,9 @@ model TrackStat {
 }
 
 model TrackCredit {
-  id String @id @default(uuid()) @db.Uuid 
-  trackId   String   
-  userId    String?  
+  id String @id @default(uuid()) @db.Uuid
+  trackId   String
+  userId    String?
   name      String
   role      String
   createdAt DateTime @default(now())
@@ -333,8 +333,8 @@ model TrackCredit {
 ///  * Library & Playlists
 ///  * =======================
 model Playlist {
-  id String @id @default(uuid()) @db.Uuid 
-  userId     String          
+  id String @id @default(uuid()) @db.Uuid
+  userId     String
   title      String
   coverUrl   String?
   visibility Visibility      @default(PRIVATE)
@@ -349,10 +349,10 @@ model Playlist {
 }
 
 model PlaylistTrack {
-  id String @id @default(uuid()) @db.Uuid 
-  playlistId String   
-  trackId    String   
-  addedById  String?  
+  id String @id @default(uuid()) @db.Uuid
+  playlistId String
+  trackId    String
+  addedById  String?
   createdAt  DateTime @default(now())
   orderIndex Int      @default(0)
   addedBy    User?    @relation("UserAddedPlaylistTracks", fields: [addedById], references: [id])
@@ -366,8 +366,8 @@ model PlaylistTrack {
 }
 
 model Library {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String        @unique 
+  id String @id @default(uuid()) @db.Uuid
+  userId    String        @unique
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
   user      User          @relation(fields: [userId], references: [id])
@@ -377,9 +377,9 @@ model Library {
 }
 
 model LibraryItem {
-  id String @id @default(uuid()) @db.Uuid 
-  libraryId String   
-  trackId   String   
+  id String @id @default(uuid()) @db.Uuid
+  libraryId String
+  trackId   String
   createdAt DateTime @default(now())
   library   Library  @relation(fields: [libraryId], references: [id])
   track     Track    @relation(fields: [trackId], references: [id])
@@ -390,9 +390,9 @@ model LibraryItem {
 }
 
 model Favorite {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String         
-  targetId  String         
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
+  targetId  String
   createdAt DateTime       @default(now())
   target    FavoriteTarget @relation(fields: [targetId], references: [id])
   user      User           @relation(fields: [userId], references: [id])
@@ -402,7 +402,7 @@ model Favorite {
 }
 
 model FavoriteTarget {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   type      FavoriteTargetType
   refId     String
   meta Json?
@@ -419,9 +419,9 @@ model FavoriteTarget {
 ///  * =======================
 model Follow {
   createdAt   DateTime @default(now())
-  followingId String   
-  id String @id @default(uuid()) @db.Uuid 
-  followerId  String   
+  followingId String
+  id String @id @default(uuid()) @db.Uuid
+  followerId  String
   follower    User     @relation("Following", fields: [followerId], references: [id])
   following   User     @relation("Followers", fields: [followingId], references: [id])
 
@@ -439,13 +439,13 @@ model Post {
   mediaUrl         String?
   poll Json?
   text             String?
-  trackId          String?      
+  trackId          String?
   type             PostType     @default(TEXT)
-  userId           String       
+  userId           String
   visibility       Visibility   @default(PUBLIC)
   // New: algorithmic feed weight
   engagementWeight Float        @default(0)
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   comments         Comment[]
   likeTargets      LikeTarget[] @relation("LikePost")
   track            Track?       @relation(fields: [trackId], references: [id])
@@ -463,12 +463,12 @@ model Post {
 
 model Comment {
   createdAt   DateTime     @default(now())
-  parentId    String?      
+  parentId    String?
   text        String
   updatedAt   DateTime     @updatedAt
-  userId      String       
-  id String @id @default(uuid()) @db.Uuid 
-  postId      String       
+  userId      String
+  id String @id @default(uuid()) @db.Uuid
+  postId      String
   parent      Comment?     @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Restrict, onUpdate: Restrict)
   children    Comment[]    @relation("CommentReplies")
   post        Post         @relation(fields: [postId], references: [id])
@@ -482,9 +482,9 @@ model Comment {
 
 model Like {
   createdAt DateTime   @default(now())
-  targetId  String     
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String     
+  targetId  String
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   target    LikeTarget @relation(fields: [targetId], references: [id])
   user      User       @relation(fields: [userId], references: [id])
 
@@ -493,11 +493,11 @@ model Like {
 }
 
 model LikeTarget {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   type      LikeTargetType
-  postId    String?        
-  commentId String?        
-  trackId   String?        
+  postId    String?
+  commentId String?
+  trackId   String?
   createdAt DateTime       @default(now())
   likes     Like[]
   comment   Comment?       @relation(fields: [commentId], references: [id])
@@ -510,9 +510,9 @@ model LikeTarget {
 }
 
 model Repost {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String   
-  postId    String   
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
+  postId    String
   createdAt DateTime @default(now())
   post      Post     @relation(fields: [postId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
@@ -524,7 +524,7 @@ model Repost {
 
 // New: Tagging system for discovery/feeds
 model Tag {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   name      String    @unique
   createdAt DateTime  @default(now())
   posts     PostTag[]
@@ -546,9 +546,9 @@ model PostTag {
 ///  * Messaging
 ///  * =======================
 model Chat {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   title         String?
-  lastMessageId String?           
+  lastMessageId String?
   createdAt     DateTime          @default(now())
   updatedAt     DateTime          @updatedAt
   lastMessage   Message?          @relation("ChatLastMessage", fields: [lastMessageId], references: [id], onDelete: Restrict, onUpdate: Restrict)
@@ -559,9 +559,9 @@ model Chat {
 }
 
 model ChatParticipant {
-  id String @id @default(uuid()) @db.Uuid 
-  chatId   String   
-  userId   String   
+  id String @id @default(uuid()) @db.Uuid
+  chatId   String
+  userId   String
   role     String?
   joinedAt DateTime @default(now())
   chat     Chat     @relation("ChatParticipants", fields: [chatId], references: [id])
@@ -576,10 +576,10 @@ model Message {
   createdAt       DateTime      @default(now())
   text            String?
   mediaUrl        String?
-  chatId          String        
-  senderId        String        
+  chatId          String
+  senderId        String
   type            MessageType   @default(TEXT)
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   clientRequestId String?       @unique
   lastForChat     Chat[]        @relation("ChatLastMessage")
   chat            Chat          @relation("MessageChat", fields: [chatId], references: [id], onDelete: Restrict, onUpdate: Restrict)
@@ -593,9 +593,9 @@ model Message {
 
 // New: read receipts for messages
 model MessageRead {
-  id String @id @default(uuid()) @db.Uuid 
-  messageId String   
-  userId    String   
+  id String @id @default(uuid()) @db.Uuid
+  messageId String
+  userId    String
   readAt    DateTime @default(now())
   message   Message  @relation(fields: [messageId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
@@ -610,8 +610,8 @@ model MessageRead {
 ///  * Marketplace
 ///  * =======================
 model Product {
-  id String @id @default(uuid()) @db.Uuid 
-  ownerId      String?       
+  id String @id @default(uuid()) @db.Uuid
+  ownerId      String?
   title        String
   desc         String?
   priceCents   Int           @default(0)
@@ -630,9 +630,9 @@ model Product {
 }
 
 model Review {
-  id String @id @default(uuid()) @db.Uuid 
-  productId String   
-  userId    String   
+  id String @id @default(uuid()) @db.Uuid
+  productId String
+  userId    String
   rating    Int
   text      String?
   createdAt DateTime @default(now())
@@ -645,8 +645,8 @@ model Review {
 }
 
 model Cart {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String     
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   user      User       @relation(fields: [userId], references: [id])
@@ -656,9 +656,9 @@ model Cart {
 }
 
 model CartItem {
-  id String @id @default(uuid()) @db.Uuid 
-  cartId    String   
-  productId String   
+  id String @id @default(uuid()) @db.Uuid
+  cartId    String
+  productId String
   qty       Int      @default(1)
   createdAt DateTime @default(now())
   cart      Cart     @relation(fields: [cartId], references: [id])
@@ -670,8 +670,8 @@ model CartItem {
 }
 
 model Order {
-  id String @id @default(uuid()) @db.Uuid 
-  userId       String          
+  id String @id @default(uuid()) @db.Uuid
+  userId       String
   status       OrderStatus     @default(CREATED)
   totalCents   Int             @default(0)
   currency     Currency        @default(USD)
@@ -689,8 +689,8 @@ model Order {
 }
 
 model Payout {
-  id String @id @default(uuid()) @db.Uuid 
-  userId      String          
+  id String @id @default(uuid()) @db.Uuid
+  userId      String
   amount      Int
   currency    Currency        @default(USD)
   provider    PaymentProvider @default(STRIPE)
@@ -759,8 +759,8 @@ model Wallet {
   address            String               @unique
   createdAt          DateTime             @default(now())
   provider           PaymentProvider      @default(SOLANA)
-  id String @id @default(uuid()) @db.Uuid 
-  userId             String               
+  id String @id @default(uuid()) @db.Uuid
+  userId             String
   transactions       TapCoinTransaction[]
   walletTransactions Transaction[]
   user               User                 @relation(fields: [userId], references: [id])
@@ -772,12 +772,12 @@ model Wallet {
 model Transaction {
   amount    Int
   createdAt DateTime @default(now())
-  buyerId   String?  
+  buyerId   String?
   currency  Currency @default(USD)
-  orderId   String?  
-  productId String?  
-  id String @id @default(uuid()) @db.Uuid 
-  walletId  String?  
+  orderId   String?
+  productId String?
+  id String @id @default(uuid()) @db.Uuid
+  walletId  String?
   buyer     User?    @relation("UserTransactions", fields: [buyerId], references: [id])
   order     Order?   @relation(fields: [orderId], references: [id])
   product   Product? @relation(fields: [productId], references: [id])
@@ -792,9 +792,9 @@ model Transaction {
 
 // TapTax logging models
 model TaxEvent {
-  id String @id @default(uuid()) @db.Uuid 
-  fromUserId String   
-  toUserId   String   
+  id String @id @default(uuid()) @db.Uuid
+  fromUserId String
+  toUserId   String
   amount     Int
   tax        Int
   treasury   Int
@@ -1862,8 +1862,8 @@ enum PartnershipType {
 
 
 model TapPass {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String    
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   level     Int       @default(0)
   features Json? @default("[]")
   isActive  Boolean   @default(true)
@@ -1880,9 +1880,9 @@ model TapPass {
 }
 
 model TapCoinTransaction {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String   
-  walletId  String?  
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
+  walletId  String?
   amount    Int
   reason    String?
   createdAt DateTime @default(now())
@@ -1898,8 +1898,8 @@ model TapCoinTransaction {
 ///  * Live
 ///  * =======================
 model LiveStream {
-  id String @id @default(uuid()) @db.Uuid 
-  creatorId    String            
+  id String @id @default(uuid()) @db.Uuid
+  creatorId    String
   title        String
   desc         String?
   startedAt    DateTime?
@@ -1914,9 +1914,9 @@ model LiveStream {
 }
 
 model LiveChatMessage {
-  id String @id @default(uuid()) @db.Uuid 
-  streamId  String     
-  userId    String     
+  id String @id @default(uuid()) @db.Uuid
+  streamId  String
+  userId    String
   text      String
   createdAt DateTime   @default(now())
   stream    LiveStream @relation(fields: [streamId], references: [id])
@@ -1931,10 +1931,10 @@ model LiveChatMessage {
 ///  * Battles
 ///  * =======================
 model Battle {
-  id String @id @default(uuid()) @db.Uuid 
-  aUserId   String         
-  bUserId   String         
-  winnerId  String?        
+  id String @id @default(uuid()) @db.Uuid
+  aUserId   String
+  bUserId   String
+  winnerId  String?
   rules     String?
   createdAt DateTime       @default(now())
   endedAt   DateTime?
@@ -1951,9 +1951,9 @@ model Battle {
 }
 
 model Vote {
-  id String @id @default(uuid()) @db.Uuid 
-  battleId  String   
-  userId    String   
+  id String @id @default(uuid()) @db.Uuid
+  battleId  String
+  userId    String
   type      VoteType @default(UP)
   createdAt DateTime @default(now())
   battle    Battle   @relation(fields: [battleId], references: [id])
@@ -1965,10 +1965,10 @@ model Vote {
 }
 
 model BattleUnlock {
-  id String @id @default(uuid()) @db.Uuid 
-  battleId   String   
-  userId     String?  
-  treasureId String?  
+  id String @id @default(uuid()) @db.Uuid
+  battleId   String
+  userId     String?
+  treasureId String?
   createdAt  DateTime @default(now())
   battle     Battle   @relation(fields: [battleId], references: [id])
   user       User?    @relation(fields: [userId], references: [id])
@@ -1985,8 +1985,8 @@ model BattleUnlock {
 ///  * Uploads / Playback
 ///  * =======================
 model Upload {
-  id String @id @default(uuid()) @db.Uuid 
-  userId        String          
+  id String @id @default(uuid()) @db.Uuid
+  userId        String
   fileName      String
   sizeBytes     Int
   mimeType      String?
@@ -2006,10 +2006,10 @@ enum UploadSessionStatus {
 }
 
 model UploadSession {
-  id String @id @default(uuid()) @db.Uuid 
-  userId         String              
-  trackId        String              
-  uploadId       String?             
+  id String @id @default(uuid()) @db.Uuid
+  userId         String
+  trackId        String
+  uploadId       String?
   fileName       String
   mimeType       String?
   sizeBytes      Int
@@ -2034,9 +2034,9 @@ model UploadSession {
 }
 
 model PlayEvent {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?  
-  trackId   String   
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
+  trackId   String
   deviceId  String?
   sessionId String?
   msPlayed  Int      @default(0)
@@ -2056,9 +2056,9 @@ model PlayEvent {
 }
 
 model EventLog {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   eventId          String   @unique
-  userId           String   
+  userId           String
   eventType        String
   eventData        String
   sessionId        String
@@ -2075,9 +2075,9 @@ model EventLog {
 }
 
 model EventBatch {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   batchId          String    @unique
-  userId           String    
+  userId           String
   eventCount       Int
   processedCount   Int
   failedCount      Int
@@ -2091,8 +2091,8 @@ model EventBatch {
 }
 
 model AnalyticsEvent {
-  id String @id @default(uuid()) @db.Uuid 
-  userId      String   
+  id String @id @default(uuid()) @db.Uuid
+  userId      String
   eventType   String
   eventData   String
   sessionId   String
@@ -2106,8 +2106,8 @@ model AnalyticsEvent {
 }
 
 model ErrorLog {
-  id String @id @default(uuid()) @db.Uuid 
-  userId       String   
+  id String @id @default(uuid()) @db.Uuid
+  userId       String
   errorType    String
   errorMessage String
   stackTrace   String?
@@ -2127,8 +2127,8 @@ model ErrorLog {
 ///  * AI (Muse/Hope)
 ///  * =======================
 model AIDialog {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?  
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
   title     String?
   meta Json?
   createdAt DateTime @default(now())
@@ -2138,9 +2138,9 @@ model AIDialog {
 }
 
 model AITask {
-  id String @id @default(uuid()) @db.Uuid 
-  dialogId  String?   
-  userId    String?   
+  id String @id @default(uuid()) @db.Uuid
+  dialogId  String?
+  userId    String?
   input     String?
   output    String?
   status    String?
@@ -2154,8 +2154,8 @@ model AITask {
 }
 
 model Embedding {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?  
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
   space     String
   refId     String
   vector    Bytes
@@ -2168,9 +2168,9 @@ model Embedding {
 }
 
 model Recommendation {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String   
-  trackId   String   
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
+  trackId   String
   score     Float    @default(0)
   reason    String?
   createdAt DateTime @default(now())
@@ -2184,8 +2184,8 @@ model Recommendation {
 
 /// New: AI Profiles (Hope/Muse/Treasure/Zion personas)
 model AIProfile {
-  id String @id @default(uuid()) @db.Uuid 
-  userId       String?            
+  id String @id @default(uuid()) @db.Uuid
+  userId       String?
   name         String
   persona      AIPersona          @default(HOPE)
   systemPrompt String?
@@ -2200,9 +2200,9 @@ model AIProfile {
 
 /// New: AI interaction log (for analytics + training signals)
 model AIInteractionLog {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?    
-  profileId String?    
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
+  profileId String?
   message   String
   response  String?
   createdAt DateTime   @default(now())
@@ -2218,8 +2218,8 @@ model AIInteractionLog {
 ///  * Reporting & Moderation
 ///  * =======================
 model Report {
-  id String @id @default(uuid()) @db.Uuid 
-  reporterId String   
+  id String @id @default(uuid()) @db.Uuid
+  reporterId String
   targetType String
   targetId   String
   reason     String?
@@ -2231,8 +2231,8 @@ model Report {
 }
 
 model ModerationAction {
-  id String @id @default(uuid()) @db.Uuid 
-  moderatorId String               
+  id String @id @default(uuid()) @db.Uuid
+  moderatorId String
   action      ModerationActionType @default(WARN)
   targetType  String
   targetId    String
@@ -2245,8 +2245,8 @@ model ModerationAction {
 }
 
 model AuditLog {
-  id String @id @default(uuid()) @db.Uuid 
-  actorUserId String?  
+  id String @id @default(uuid()) @db.Uuid
+  actorUserId String?
   action      String
   payload     String?
   createdAt   DateTime @default(now())
@@ -2260,8 +2260,8 @@ model AuditLog {
 ///  * Platform
 ///  * =======================
 model APIKey {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String    
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   name      String
   keyHash   String    @unique
   scopes Json?
@@ -2273,9 +2273,9 @@ model APIKey {
 }
 
 model BetaInvite {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   code            String    @unique
-  claimedByUserId String?   
+  claimedByUserId String?
   claimedAt       DateTime?
   createdAt       DateTime  @default(now())
   claimedBy       User?     @relation(fields: [claimedByUserId], references: [id])
@@ -2284,7 +2284,7 @@ model BetaInvite {
 }
 
 model FeatureFlag {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   key               String    @unique
   enabled           Boolean   @default(false)
   description       String?
@@ -2306,8 +2306,8 @@ model Notification {
   createdAt DateTime         @default(now())
   payload   String?
   readAt    DateTime?
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String           
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   type      NotificationType
   user      User             @relation(fields: [userId], references: [id])
 
@@ -2317,8 +2317,8 @@ model Notification {
 }
 
 model Setting {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?  
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
   key       String
   value     String?
   createdAt DateTime @default(now())
@@ -2334,8 +2334,8 @@ model Setting {
 ///  * Surf (YouTube)
 ///  * =======================
 model SurfSession {
-  id String @id @default(uuid()) @db.Uuid 
-  userId         String    
+  id String @id @default(uuid()) @db.Uuid
+  userId         String
   youtubeVideoId String
   startedAt      DateTime  @default(now())
   endedAt        DateTime?
@@ -2347,8 +2347,8 @@ model SurfSession {
 }
 
 model SurfAllowance {
-  id String @id @default(uuid()) @db.Uuid 
-  userId           String    @unique 
+  id String @id @default(uuid()) @db.Uuid
+  userId           String    @unique
   minutesAvailable Int       @default(0)
   refreshedAt      DateTime?
   user             User      @relation(fields: [userId], references: [id])
@@ -2361,8 +2361,8 @@ model SurfAllowance {
 ///  * History / Treasure / Missions
 ///  * =======================
 model History {
-  id String @id @default(uuid()) @db.Uuid 
-  userId     String   
+  id String @id @default(uuid()) @db.Uuid
+  userId     String
   targetType String
   targetId   String
   event      String
@@ -2374,8 +2374,8 @@ model History {
 }
 
 model Treasure {
-  id String @id @default(uuid()) @db.Uuid 
-  creatorId String      
+  id String @id @default(uuid()) @db.Uuid
+  creatorId String
   currency  Currency    @default(TAP)
   amount    Int
   name      String
@@ -2391,8 +2391,8 @@ model Treasure {
 }
 
 model AIMission {
-  id String @id @default(uuid()) @db.Uuid 
-  treasureId String?             
+  id String @id @default(uuid()) @db.Uuid
+  treasureId String?
   name       String
   desc       String?
   isActive   Boolean             @default(true)
@@ -2406,9 +2406,9 @@ model AIMission {
 }
 
 model AIMissionProgress {
-  id String @id @default(uuid()) @db.Uuid 
-  missionId String    
-  userId    String    
+  id String @id @default(uuid()) @db.Uuid
+  missionId String
+  userId    String
   progress  Int       @default(0)
   updatedAt DateTime  @updatedAt
   createdAt DateTime  @default(now())
@@ -2425,8 +2425,8 @@ model AIMissionProgress {
 ///  * Analytics & Search (New)
 ///  * =======================
 model MetricEvent {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String?  
+  id String @id @default(uuid()) @db.Uuid
+  userId    String?
   type      String
   targetId  String?
   meta Json?
@@ -2439,7 +2439,7 @@ model MetricEvent {
 }
 
 model SearchIndex {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   refType   String
   refId     String
   keywords Json?
@@ -2451,8 +2451,8 @@ model SearchIndex {
 }
 
 model UserBadge {
-  id String @id @default(uuid()) @db.Uuid 
-  userId    String   
+  id String @id @default(uuid()) @db.Uuid
+  userId    String
   name      String
   desc      String?
   iconUrl   String?
@@ -2468,8 +2468,8 @@ model UserBadge {
 ///  * Subscriptions & Trades (New)
 ///  * =======================
 model Tier {
-  id String @id @default(uuid()) @db.Uuid 
-  creatorId     String         
+  id String @id @default(uuid()) @db.Uuid
+  creatorId     String
   name          String
   priceCents    Int
   perks         String?
@@ -2481,10 +2481,10 @@ model Tier {
 }
 
 model Subscription {
-  id String @id @default(uuid()) @db.Uuid 
-  creatorId    String   
-  subscriberId String   
-  tierId       String   
+  id String @id @default(uuid()) @db.Uuid
+  creatorId    String
+  subscriberId String
+  tierId       String
   status       String   @default("ACTIVE")
   renewsAt     DateTime
   createdAt    DateTime @default(now())
@@ -2500,9 +2500,9 @@ model Subscription {
 }
 
 model Trade {
-  id String @id @default(uuid()) @db.Uuid 
-  initiatorId String      
-  receiverId  String      
+  id String @id @default(uuid()) @db.Uuid
+  initiatorId String
+  receiverId  String
   status      TradeStatus @default(PENDING)
   items       String?
   createdAt   DateTime    @default(now())
@@ -2665,7 +2665,7 @@ enum TradeStatus {
 
 model CreatorRequest {
   id          String   @id @default(cuid())
-  userId      String   
+  userId      String
   stageName   String
   genre       String?
   socialLinks String?
@@ -2835,8 +2835,8 @@ model WorkflowStep {
 }
 
 model BmiConnection {
-  id String @id @default(uuid()) @db.Uuid 
-  userId        String                 @unique 
+  id String @id @default(uuid()) @db.Uuid
+  userId        String                 @unique
   accessToken   String?
   refreshToken  String?
   expiresAt     DateTime?
@@ -2853,21 +2853,21 @@ model BmiConnection {
 }
 
 model BmiOAuthState {
-  id String @id @default(uuid()) @db.Uuid 
+  id String @id @default(uuid()) @db.Uuid
   state           String         @unique
-  userId          String         
+  userId          String
   expiresAt       DateTime?
   createdAt       DateTime       @default(now())
   user            User           @relation(fields: [userId], references: [id])
   BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
-  bmiConnectionId String?        
+  bmiConnectionId String?
 
   @@index([userId])
 }
 
 model BmiTrackRegistration {
-  id String @id @default(uuid()) @db.Uuid 
-  userId          String         
+  id String @id @default(uuid()) @db.Uuid
+  userId          String
   trackId         String
   status          BmiSyncStatus  @default(PENDING)
   payload         String?
@@ -2877,15 +2877,15 @@ model BmiTrackRegistration {
   updatedAt       DateTime       @updatedAt
   user            User           @relation(fields: [userId], references: [id])
   BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
-  bmiConnectionId String?        
+  bmiConnectionId String?
 
   @@index([userId])
   @@index([trackId])
 }
 
 model BmiPerformanceLog {
-  id String @id @default(uuid()) @db.Uuid 
-  userId          String         
+  id String @id @default(uuid()) @db.Uuid
+  userId          String
   title           String
   streamDate      DateTime
   durationMinutes Float
@@ -2896,7 +2896,7 @@ model BmiPerformanceLog {
   updatedAt       DateTime       @updatedAt
   user            User           @relation(fields: [userId], references: [id])
   BmiConnection   BmiConnection? @relation(fields: [bmiConnectionId], references: [id])
-  bmiConnectionId String?        
+  bmiConnectionId String?
 
   @@index([userId])
 }
@@ -3028,3 +3028,219 @@ model TokenAuditEvent {
   @@index([action])
   @@index([deploymentId])
 }
+
+
+/// *
+///  * =======================
+///  * Hardware / Encoder / Trap (physical product pillars)
+///  * =======================
+enum ChipType {
+  NTAG213
+  NTAG215
+  NTAG216
+}
+
+enum FormFactor {
+  KEYCHAIN
+  WRISTBAND
+  TAG
+  STICKER
+  ART_TAG
+  CARD
+}
+
+enum BatchStatus {
+  GENERATED
+  ENCODING
+  ENCODED
+  SHIPPED
+  DEPLETED
+}
+
+enum ChipStatus {
+  UNENCODED
+  ENCODED
+  ACTIVATED
+  FLAGGED
+  RETIRED
+}
+
+enum PayloadType {
+  TRACK
+  ALBUM
+  PLAYLIST
+  VISUAL_ART
+  EXTERNAL_URL
+  CUSTOM
+}
+
+enum FraudSignalKind {
+  DUPLICATE_UID
+  GEO_VELOCITY
+  REPLAY_BURST
+  UID_MISMATCH
+  UNKNOWN_UID
+}
+
+enum FraudSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum CreatorOrderStatus {
+  DRAFT
+  SUBMITTED
+  ENCODING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model HardwareSku {
+  id            String             @id @default(uuid()) @db.Uuid
+  code          String             @unique
+  name          String
+  chipType      ChipType           @default(NTAG215)
+  formFactor    FormFactor         @default(KEYCHAIN)
+  unitCostCents Int                @default(0)
+  retailCents   Int                @default(0)
+  active        Boolean            @default(true)
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  batches       ChipBatch[]
+  orderItems    CreatorOrderItem[]
+
+  @@index([code])
+  @@index([active])
+}
+
+model ChipBatch {
+  id        String        @id @default(uuid()) @db.Uuid
+  skuId     String        @db.Uuid
+  size      Int
+  status    BatchStatus   @default(GENERATED)
+  notes     String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  sku       HardwareSku   @relation(fields: [skuId], references: [id])
+  chips     EncodedChip[]
+
+  @@index([skuId])
+  @@index([status])
+}
+
+model EncodedChip {
+  id           String            @id @default(uuid()) @db.Uuid
+  batchId      String            @db.Uuid
+  ttid         String            @unique
+  uid          String?           @unique
+  status       ChipStatus        @default(UNENCODED)
+  payloadType  PayloadType?
+  payloadId    String?
+  creatorId    String?           @db.Uuid
+  encodedAt    DateTime?
+  activatedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  batch        ChipBatch         @relation(fields: [batchId], references: [id])
+  activations  ChipActivation[]
+  fraudSignals ChipFraudSignal[]
+  visualArt    VisualArtPiece?   @relation("VisualArtChip")
+
+  @@index([ttid])
+  @@index([uid])
+  @@index([batchId])
+  @@index([status])
+  @@index([creatorId])
+}
+
+model ChipActivation {
+  id          String      @id @default(uuid()) @db.Uuid
+  chipId      String      @db.Uuid
+  userId      String?     @db.Uuid
+  ip          String?
+  userAgent   String?
+  countryCode String?
+  isFirst     Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+
+  chip        EncodedChip @relation(fields: [chipId], references: [id])
+
+  @@index([chipId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model ChipFraudSignal {
+  id        String          @id @default(uuid()) @db.Uuid
+  chipId    String          @db.Uuid
+  kind      FraudSignalKind
+  severity  FraudSeverity   @default(LOW)
+  details   Json?
+  resolved  Boolean         @default(false)
+  createdAt DateTime        @default(now())
+
+  chip      EncodedChip     @relation(fields: [chipId], references: [id])
+
+  @@index([chipId])
+  @@index([kind])
+  @@index([resolved])
+}
+
+model CreatorOrder {
+  id           String             @id @default(uuid()) @db.Uuid
+  creatorId    String             @db.Uuid
+  status       CreatorOrderStatus @default(DRAFT)
+  totalCents   Int                @default(0)
+  shippingAddr Json?
+  notes        String?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  items        CreatorOrderItem[]
+
+  @@index([creatorId])
+  @@index([status])
+}
+
+model CreatorOrderItem {
+  id            String       @id @default(uuid()) @db.Uuid
+  orderId       String       @db.Uuid
+  skuId         String       @db.Uuid
+  quantity      Int
+  payloadType   PayloadType?
+  payloadId     String?
+  unitCostCents Int          @default(0)
+
+  order         CreatorOrder @relation(fields: [orderId], references: [id])
+  sku           HardwareSku  @relation(fields: [skuId], references: [id])
+
+  @@index([orderId])
+  @@index([skuId])
+}
+
+model VisualArtPiece {
+  id          String       @id @default(uuid()) @db.Uuid
+  creatorId   String       @db.Uuid
+  chipId      String?      @unique @db.Uuid
+  title       String
+  description String?
+  process     String?
+  story       String?
+  meaning     String?
+  imageUrl    String?
+  videoUrl    String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  chip        EncodedChip? @relation("VisualArtChip", fields: [chipId], references: [id])
+
+  @@index([creatorId])
+  @@index([chipId])
+}
+
