@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { PageContainer } from "@/components/ui/StandardizedComponents";
 import { usePlayerStore } from "@/stores/player";
+import PillarsSection from "./PillarsSection";
 
 // Lazy load heavy visual components
 const HeroExperience = lazy(() => import("@/app/home/HeroExperience"));
@@ -71,6 +72,9 @@ export default function LandingShell({ counts }: Props) {
             <nav className="hidden items-center gap-6 text-[11px] font-medium text-teal-100/80 sm:flex">
               <Link href="#hero" className="font-mono text-[11px] transition hover:text-teal-300">
                 Overview
+              </Link>
+              <Link href="#pillars" className="font-mono text-[11px] transition hover:text-teal-300">
+                Pillars
               </Link>
               <Link href="#whitepaper" className="font-mono text-[11px] transition hover:text-teal-300">
                 Whitepaper
@@ -208,13 +212,16 @@ export default function LandingShell({ counts }: Props) {
         {/* Scroll hint */}
         <div className="flex items-center justify-center pb-6">
           <Link
-            href="#about"
+            href="#pillars"
             className="inline-flex flex-col items-center gap-1 text-[11px] text-teal-100/80 hover:text-teal-300"
           >
-            <span>Scroll to explore the rails</span>
+            <span>Scroll to the pillars</span>
             <span className="animate-bounce text-xs">⌄</span>
           </Link>
         </div>
+
+        {/* PILLARS SECTION */}
+        <PillarsSection />
 
         {/* WHITEPAPER SECTION */}
         <section
