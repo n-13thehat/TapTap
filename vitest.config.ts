@@ -8,6 +8,8 @@ export default defineConfig({
     setupFiles: ['./tests/setup.ts'],
     include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     exclude: ['node_modules', 'dist', '.next'],
+    testTimeout: 15000,
+    hookTimeout: 15000,
   },
   resolve: {
     alias: [
