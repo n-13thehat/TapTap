@@ -11,6 +11,11 @@ const RATE_LIMITED_PUBLIC = [
   "/api/surf/video",
   "/api/social/feed",
 ];
+const ONBOARDING_PUBLIC_PATHS = new Set<string>([
+  "/login",
+  "/signup",
+  "/onboarding",
+]);
 
 type Bucket = { tokens: number; lastRefill: number };
 const globalAny: any = globalThis as any;
@@ -106,9 +111,24 @@ export async function proxy(req: NextRequest) {
     if (gate) return gate;
   }
 
-  if (!needsAdmin && !needsCreator) return NextResponse.next();
+  // Beta onboarding gate applies to page routes only (not /api/*) and skips
+  // /login, /signup, /onboarding so the user can actually reach the wizard.
+  const isApiPath = pathname.startsWith("/api/");
+  const needsOnboardingCheck = !isApiPath && !ONBOARDING_PUBLIC_PATHS.has(pathname);
+
+  if (!needsAdmin && !needsCreator && !needsOnboardingCheck) return NextResponse.next();
 
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+
+  if (token && needsOnboardingCheck && (token as any).onboardingComplete === false) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/onboarding";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
+
+  if (!needsAdmin && !needsCreator) return NextResponse.next();
+
   if (!token) return NextResponse.redirect(new URL("/", req.url));
   const role = String((token as any).role || "LISTENER");
 
