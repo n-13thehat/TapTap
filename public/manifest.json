@@ -1,0 +1,147 @@
+{
+  "name": "TapTap Matrix - Music For The Future",
+  "short_name": "TapTap Matrix",
+  "description": "The ultimate music platform with AI discovery, social features, and Music For The Future collection",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#14b8a6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["music", "entertainment", "social"],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "TapTap Matrix Home Screen"
+    },
+    {
+      "src": "/screenshots/mobile-player.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Music Player Interface"
+    },
+    {
+      "src": "/screenshots/desktop-library.png",
+      "sizes": "1920x1080", 
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Music Library Desktop View"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96", 
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Music Library",
+      "short_name": "Library",
+      "description": "Browse your music collection",
+      "url": "/library",
+      "icons": [
+        {
+          "src": "/icons/shortcut-library.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Discover Music",
+      "short_name": "Discover", 
+      "description": "AI-powered music discovery",
+      "url": "/discover",
+      "icons": [
+        {
+          "src": "/icons/shortcut-discover.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Beta Community",
+      "short_name": "Beta",
+      "description": "Join the beta community",
+      "url": "/beta",
+      "icons": [
+        {
+          "src": "/icons/shortcut-beta.png", 
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Social Feed",
+      "short_name": "Social",
+      "description": "Connect with music lovers",
+      "url": "/social",
+      "icons": [
+        {
+          "src": "/icons/shortcut-social.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
+}

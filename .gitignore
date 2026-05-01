@@ -89,7 +89,9 @@ dist
 
 # Gatsby files
 .cache/
-public
+# NOTE: `public/` is intentionally tracked in this Next.js project — it holds
+# manifest.json, sw.js, PWA icons, branding, and favicons. Only the generated
+# Next.js build output is ignored (see `.next` above).
 
 # Storybook build outputs
 .out

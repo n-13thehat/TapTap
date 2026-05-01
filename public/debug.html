@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: monospace;
+            padding: 20px;
+        }
+        button {
+            background: #14b8a6;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0d9488;
+        }
+        .result {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #14b8a6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TapTap Matrix Debug Page</h1>
+    <p>This page tests basic JavaScript functionality outside of the Next.js framework.</p>
+    
+    <button onclick="testBasicJS()">Test Basic JavaScript</button>
+    <button onclick="testNavigation()">Test Navigation to Login</button>
+    <button onclick="testAlert()">Test Alert</button>
+    
+    <div id="results"></div>
+    
+    <script>
+        function testBasicJS() {
+            const results = document.getElementById('results');
+            results.innerHTML += '<div class="result">✅ Basic JavaScript is working!</div>';
+            console.log('Basic JavaScript test passed');
+        }
+        
+        function testNavigation() {
+            const results = document.getElementById('results');
+            results.innerHTML += '<div class="result">🔄 Attempting navigation to /login...</div>';
+            console.log('Navigation test - redirecting to /login');
+            setTimeout(() => {
+                window.location.href = '/login';
+            }, 1000);
+        }
+        
+        function testAlert() {
+            alert('Alert functionality is working!');
+            const results = document.getElementById('results');
+            results.innerHTML += '<div class="result">✅ Alert functionality is working!</div>';
+            console.log('Alert test passed');
+        }
+        
+        // Test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const results = document.getElementById('results');
+            results.innerHTML += '<div class="result">✅ Page loaded successfully</div>';
+            results.innerHTML += '<div class="result">📊 User Agent: ' + navigator.userAgent + '</div>';
+            console.log('Debug page loaded successfully');
+        });
+    </script>
+</body>
+</html>
