@@ -155,7 +155,16 @@ test-db-connection.*
 # Backup files
 *.bak
 *.backup
+*.backup.json
 backup/
+
+# Build/test caches
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Windows folder customization metadata
+desktop.ini
+Thumbs.db
 
 # Cache
 .cache/
